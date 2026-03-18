@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OPSCEN v5.3 — Iran Theatre Intelligence Briefing</title>
+<title>OPSCEN v5.4 — Iran Theatre Intelligence Briefing</title>
 <meta name="description" content="Real-time operations centre tracking the 2026 Iran conflict. Built entirely in Claude by RETSA Group.">
-<meta property="og:title" content="OPSCEN v5.3 — Iran Theatre Intelligence Briefing">
-<meta property="og:description" content="Day 18 — Operation Epic Fury. Multi-theatre conflict tracker with scenario analysis, oil markets, ASX impact, and Australian fuel crisis monitoring.">
+<meta property="og:title" content="OPSCEN v5.4 — Iran Theatre Intelligence Briefing">
+<meta property="og:description" content="Day 19 — Operation Epic Fury. Larijani killed. Top US official resigns. EU rejects Hormuz coalition. Multi-theatre conflict tracker with scenario analysis.">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=VT323&family=Share+Tech+Mono&display=swap" rel="stylesheet">
@@ -330,69 +330,77 @@ const { useState, useEffect, useCallback } = React;
 
 const SECTIONS = [
   {
-    id: "sitrep", title: "SITUATION REPORT", icon: "\u26A1",
+    id: "sitrep",
+    title: "SITUATION REPORT",
+    icon: "⚡",
     content: {
-      heading: "DAY 18 \u2014 OPERATION EPIC FURY",
+      heading: "DAY 19 — OPERATION EPIC FURY — THIRD WEEK",
       lines: [
-        "WAR DAY 18. Entering third week. US admin officials say they expect conflict to end \"within weeks or sooner.\" Israel says it has \"thousands\" of targets still to hit over next 3 weeks.",
-        "Iran FM Araghchi (Mar 16): \"We never asked for a ceasefire. We are ready to defend ourselves as long as it takes.\" Demands reparations + permanent end to strikes as preconditions.",
-        "Trump (Mar 16): Accused Iran of being \"master of media manipulation\" using AI disinformation. Said Iran is \"militarily ineffective and weak.\"",
-        "Senior Iranian security official told Al-Mayadeen: \"No scenario for a ceasefire\" at this stage. Axis of Resistance partners will be integral to any future agreement.",
-        "TOTAL DEATH TOLL: 2,200+ across Middle East (CNN tally). Iran: 1,444+ KIA, 18,551 injured. Lebanon: 850+ KIA. Israel: 15 civilians KIA, 3,329 injured.",
-        "Trump-Starmer call (Mar 16): Discussed \"importance\" of reopening Strait of Hormuz. No concrete commitments.",
-        "Trump seeking international naval coalition \u2014 claims \"some positive response\" but allies remain noncommittal.",
-        "Gulf states undergoing \"recalibration\" of foreign policy \u2014 questioning US as reliable long-term partner (Al Jazeera analysis).",
-        "53% of US voters oppose attacks (Quinnipiac). 75% oppose ground troops. 250+ orgs demanding Congress halt funding.",
+        "WAR DAY 19. Third week. Major decapitation strikes continue — Iran's security chief Ali Larijani and Basij commander Soleimani both confirmed killed overnight.",
+        "JOE KENT RESIGNS: Top US counterterrorism official quit over the war. \"Iran posed no imminent threat. We started this war due to pressure from Israel and its powerful American lobby.\"",
+        "Trump vs NATO: \"We no longer need or desire NATO countries' assistance — WE NEVER DID! Likewise Japan, Australia, or South Korea. WE DO NOT NEED THE HELP OF ANYONE!\"",
+        "EU REJECTS Hormuz coalition: Germany won't join. EU foreign policy chief says \"no appetite\" for troops. France says it will \"never\" participate in Hormuz operations.",
+        "Iran President Pezeshkian: \"We did not start this war and will not surrender to bullies.\" Iran FM says hundreds of civilians including 200+ children killed.",
+        "HRANA (independent): 1,330 civilians + 1,122 military + 613 unclassified killed in Iran. 206+ children. Lebanon: 886 killed, 111 children.",
+        "AMNESTY INTERNATIONAL: US strike on primary school in Minab killed 170+ people, mostly schoolgirls. Characterised as potential war crime under Rome Statute.",
+        "Australia/NZ foreign ministers met in Canberra (Mar 17): Called for war to end \"as quickly as possible\" and move to negotiated solution.",
+        "IMO extraordinary session begins TODAY (Mar 18-19) in London — discussing Hormuz shipping threats. Critical diplomatic window.",
       ],
     },
   },
   {
-    id: "kinetic", title: "KINETIC OPERATIONS", icon: "\uD83C\uDFAF",
+    id: "kinetic",
+    title: "KINETIC OPERATIONS",
+    icon: "🎯",
     content: {
-      heading: "STRIKE ACTIVITY \u2014 LAST 48 HRS",
+      heading: "STRIKE ACTIVITY — LAST 48 HRS (MAR 16-18)",
       lines: [
-        "IDF: 7,600+ strikes across Iran since war began, across nearly 5,000 aerial sorties. 100+ production system targets hit in recent days.",
-        "Mar 15-16 overnight: Wide wave of strikes on Tehran targeting nuclear program concealment sites and regime infrastructure.",
-        "Strikes continued Mar 16 in Tehran, Tabriz, Shiraz, and an IAF base in Isfahan.",
-        "US continues striking Kharg Island \u2014 central hub in Iran's energy and logistics infrastructure.",
-        "IDF struck aircraft used by senior Iranian officials for flights outside the country.",
-        "Trump (aboard AF1, Mar 16): \"We are hitting Iran's drone factories. Iran has very little firepower left. We have decimated their manufacturing capability.\"",
-        "Iran: 18 journalists from Iran International arrested \u2014 accused of ties to Israel (Press TV).",
-        "Iranian Red Crescent: 65 schools + 32 medical facilities targeted since war start. 10,000+ civilian sites damaged.",
-        "UNICEF (Mar 12): 1,100+ children injured or killed (200 in Iran, 91 Lebanon, 4 Israel, 1 Kuwait). Millions unable to attend school.",
+        "ALI LARIJANI KILLED: Iran's Supreme National Security Council secretary — confirmed dead by Iran state media. Son, security deputy, and protection team also killed.",
+        "BASIJ COMMANDER KILLED: IDF killed Gholamreza Soleimani, head of Iran's Basij paramilitary force. IDF: \"Significant blow to regime's security command-and-control.\"",
+        "IDF: 7,600+ strikes since war began across 5,000+ sorties. Tehran, Shiraz, Tabriz, Isfahan all hit in latest wave. Nuclear concealment sites targeted.",
+        "White House (Mar 15): \"Iran's ballistic missile capacity is functionally destroyed. Navy assessed combat ineffective. Complete aerial dominance over Iran.\"",
+        "US continues striking Kharg Island — Iran's main energy/logistics hub.",
+        "Baghdad Green Zone: Drone struck Al-Rasheed Hotel near US Embassy. Iraq Interior Ministry confirmed — no casualties.",
+        "Trump delayed China trip by one month — \"We've got a war going on.\"",
+        "Iran's senior military kills to date: Khamenei (Supreme Leader), Mousavi (CoS), Nasirzadeh (DefMin), Pakpour (IRGC CC), Larijani (SNSC), Soleimani (Basij).",
+        "US military deaths: 13 (7 enemy fire, 6 in Iraq crash). 8 severely injured.",
       ],
     },
   },
   {
-    id: "iran_response", title: "IRANIAN RETALIATION", icon: "\uD83D\uDE80",
+    id: "iran_response",
+    title: "IRANIAN RETALIATION",
+    icon: "🚀",
     content: {
-      heading: "IRANIAN COUNTER-STRIKE POSTURE",
+      heading: "IRANIAN COUNTER-STRIKE — CAPABILITY DECLINING BUT PERSISTENT",
       lines: [
-        "Iran claims: 700 missiles + 3,600 drones fired at US/Israeli targets since war began (state media, Mar 16).",
-        "IRGC spokesman BG Naini: Most weapons cache remains intact. Missiles used are \"from a decade ago\" \u2014 newer missiles not yet deployed.",
-        "Araghchi claims Mojtaba Khamenei is \"in excellent health\" and \"in control\" \u2014 contradicts US claim he is \"wounded and likely disfigured.\" No images released.",
-        "245 Iranian attack waves against Israel since Feb 28. Central Israel/Tel Aviv: 38.8%, South: 23.7%, North: 22.9%, Jerusalem: 14.7%.",
-        "Attack pace: Peaked at 55 waves/day (Mar 1), now averaging ~10 waves/day. Analysts cite missile depletion AND deliberate rationing for long war.",
-        "50% of ballistic missiles at Israel carry cluster submunitions \u2014 8km dispersal radius. 2 workers killed at Yehud construction site.",
-        "Khatam al-Anbiya HQ issued threat to Saudi Arabia: Presence of USS Gerald Ford in Red Sea = \"direct threat to Iran.\"",
-        "Saudi Arabia: Intercepted 37 drones in east on Monday (Mar 16). Total since war: hundreds of intercepts.",
-        "UAE: Air defences intercepted 6 ballistic missiles + 21 drones on Monday. Total since war start: 304 ballistic missiles, 15 cruise missiles, 1,627 drones.",
-        "Iran arrested 18 Iran International journalists. IRGC warned any internal protests would face \"harsher crackdown than January.\"",
+        "Iran missile output collapsing: Day 1 = 167 missiles + 541 drones at UAE alone. Day 15 = 4 missiles + 6 drones. Steep decline in launch rate.",
+        "Israel has put 290 out of ~440 Iranian missile launchers out of service. But Iran is a vast country — without ground troops, full elimination impossible.",
+        "IRGC claims most weapons cache intact and newer missiles not yet deployed. Analysts divided on whether this is bluff or genuine reserve.",
+        "Iran still firing strategically — enough to keep entire region on edge. Cheap Shahed-136 drones ($20K each) produced quickly, don't need complex launchers.",
+        "Iran closed Hormuz \"to our enemies\" — de facto blockade continues. South Korea: 26 vessels + 183 crew stranded near Strait.",
+        "UAE: Airspace temporarily closed on Tuesday. Air defences intercepted ballistic missiles + drones. Pakistani man killed by shrapnel in Abu Dhabi.",
+        "Qatar: Intercepted 13 of 14 ballistic missiles from Iran. Limited fire from falling debris in industrial zone.",
+        "Kuwait: Drone taken down. 14 Kuwaitis + 2 Lebanese (Hezbollah-linked) arrested for planning \"sabotage plot.\"",
+        "Bahrain: Neutralised 129 missiles + 221 drones since war began. Saudi Arabia: 12 drones intercepted in east.",
+        "Iran arrested 18 Iran International journalists. IRGC warned internal protests will face \"harsher crackdown than January.\"",
       ],
     },
   },
   {
-    id: "lebanon", title: "LEBANON / HEZBOLLAH FRONT", icon: "\uD83D\uDD25",
+    id: "lebanon",
+    title: "LEBANON / HEZBOLLAH FRONT",
+    icon: "🔥",
     content: {
-      heading: "SECOND FRONT \u2014 ACTIVE / TALKS POSSIBLE",
+      heading: "SECOND FRONT — ACTIVE / TALKS POSSIBLE",
       lines: [
         "Hezbollah: 269+ attack waves since Mar 2. Peak Mar 14 (56 waves), slight decrease Mar 15 (34 waves), but sustained offensive pace continues.",
-        "Weapons mix: 159 rocket/missile waves, 86 UAV waves, 9 ATGM, 1 IED. Fateh-110 missile (350km, 500kg) hit Ramla \u2014 kindergarten struck.",
-        "Israel expanded ground operations in Lebanon \u2014 91st Division operating in south, establishing \"security layer.\"",
+        "Weapons mix: 159 rocket/missile waves, 86 UAV waves, 9 ATGM, 1 IED. Fateh-110 missile (350km, 500kg) hit Ramla — kindergarten struck.",
+        "Israel expanded ground operations in Lebanon — 91st Division operating in south, establishing \"security layer.\"",
         "850+ killed in Lebanon since Feb 28. 800,000+ displaced. Israeli attacks reaching southern Beirut.",
-        "Israel-Lebanon ceasefire talks expected in coming days \u2014 France involved. Ron Dermer leading for Israel. No date set.",
-        "Lebanon's Pres Aoun demands full ceasefire before negotiations. FM Sa'ar denied planned talks \u2014 mixed signals persist.",
-        "Senior Iranian official told Al-Mayadeen: Axis of Resistance partners \"integral\" to any future agreement \u2014 complicates separate Lebanon deal.",
+        "Israel-Lebanon ceasefire talks expected in coming days — France involved. Ron Dermer leading for Israel. No date set.",
+        "Lebanon's Pres Aoun demands full ceasefire before negotiations. FM Sa'ar denied planned talks — mixed signals persist.",
+        "Senior Iranian official told Al-Mayadeen: Axis of Resistance partners \"integral\" to any future agreement — complicates separate Lebanon deal.",
         "Lebanese govt banned Hezbollah military activities. Amal-Hezbollah alliance fractured. Hezbollah financial support base eroding.",
         "Cyprus: Drone from Lebanon struck RAF Akrotiri. Turkey deployed F-16s + air defence to Northern Cyprus. Greece deployed frigates + F-16s.",
         "NATO confirmed interception of second ballistic missile over Turkish airspace, landing near Gaziantep.",
@@ -400,108 +408,121 @@ const SECTIONS = [
     },
   },
   {
-    id: "hormuz", title: "STRAIT OF HORMUZ", icon: "\uD83D\uDEA2",
+    id: "hormuz",
+    title: "STRAIT OF HORMUZ",
+    icon: "🚢",
     content: {
-      heading: "GLOBAL CHOKEPOINT \u2014 EFFECTIVELY CLOSED",
+      heading: "GLOBAL CHOKEPOINT — EFFECTIVELY CLOSED",
       lines: [
         "Strait of Hormuz remains effectively closed. Mojtaba Khamenei: Stays shut as \"tool to pressure the enemy.\"",
         "DUBAI AIRPORT HIT (Mar 16): Iranian drone struck fuel tank at world's busiest international airport. Flights suspended 7+ hours. 4th drone incident at DXB.",
         "Emirates: Flights resumed on limited schedule. EK Perth-Dubai diverted to Abu Dhabi. EK Dublin-Dubai turned around over Egypt after 8hrs.",
         "Fujairah: Fire at oil hub after drone strike. Umm Al Quwain: Drone hit building, no injuries. Abu Dhabi: Missile struck car, killing Palestinian resident.",
         "UAE TOTAL INTERCEPTS since war start: 304 ballistic missiles, 15 cruise missiles, 1,627 drones.",
-        "IMO extraordinary session Mar 18-19 in London \u2014 discussing shipping threats in Hormuz. Critical diplomatic moment.",
+        "IMO extraordinary session Mar 18-19 in London — discussing shipping threats in Hormuz. Critical diplomatic moment.",
         "US Energy Sec Wright: Navy \"not ready\" to escort tankers. Expects capability \"by end of month.\"",
-        "Trump called for coalition (China, France, Japan, SK, UK) to send warships \u2014 no commitments. \"Some positive response\" claimed.",
-        "Iran: Ships can transit if they cooperate with Iranian navy \u2014 de facto blockade with conditions.",
+        "Trump called for coalition (China, France, Japan, SK, UK) to send warships — no commitments. \"Some positive response\" claimed.",
+        "Iran: Ships can transit if they cooperate with Iranian navy — de facto blockade with conditions.",
         "IEA: Gulf production cut by at least 10 mb/d. Limited bypass capacity. Storage filling up. Supply losses set to increase.",
       ],
     },
   },
   {
-    id: "oil", title: "OIL & ENERGY MARKETS", icon: "\uD83D\uDEE2\uFE0F",
+    id: "oil",
+    title: "OIL & ENERGY MARKETS",
+    icon: "🛢️",
     content: {
-      heading: "BRENT CRUDE: $102.14/BBL (MAR 16) \u2014 DOWN $3 FROM PREV DAY",
+      heading: "BRENT: $103.26/BBL (MAR 18) — UP 3% OVERNIGHT",
       lines: [
-        "Brent Mar 16: $102.14/bbl. Down $3.05 from previous day but ~$30 higher YoY. Pre-war: ~$71. Peak: ~$120 (Mar 7-8).",
-        "EIA forecast: Brent stays above $95/bbl for next 2 months, then falls below $80/bbl Q3, ~$70 by year-end. Highly conflict-dependent.",
-        "IEA: Largest supply disruption in history of global oil market. Gulf production cut by 10+ mb/d. Global supply projected to plunge 8 mb/d in March.",
-        "IEA: 32 member states releasing record 400M barrels from emergency stockpiles. Largest coordinated release ever.",
-        "IEA cut 2026 global demand growth by 210 kb/d to 640 kb/d. Flight cancellations + LPG disruptions curbing demand by ~1 mb/d Mar-Apr.",
-        "European natural gas prices nearly doubled after Qatar halted gas production. Petrochemical plants curbing polymer production.",
-        "US gasoline prices: +60c/gal in March, forecast +70c/gal Q2. EIA annual avg forecast: $3.34/gal for 2026.",
-        "CBOE VIX near 25 (above 20 = rising fear). CNN Fear & Greed at Fear/Extreme Fear boundary.",
-        "JPMorgan: 8 regime changes in oil nations since 1979 \u2014 all caused prolonged high prices. Iran destabilisation could sustain elevated prices.",
-        "EIA: Higher oil prices driving more US production \u2014 forecast 13.6M b/d in 2026, 13.8M b/d in 2027.",
+        "Brent up 3% overnight to $103.26/bbl. WTI up 2.5% to $95.85. Driven by lack of Hormuz coalition support.",
+        "Pre-war: ~$71. Peak: ~$120 (Mar 7-8). Current: oscillating $92-103 range. No clear downward catalyst yet.",
+        "EIA forecast: Brent stays above $95/bbl for next 2 months, below $80 by Q3, ~$70 by year-end. Assumes conflict winds down.",
+        "IEA: Largest supply disruption in history. Gulf production cut 10+ mb/d. 400M barrel emergency stockpile release — largest ever coordinated.",
+        "Goldman Sachs: 18% of global oil supply removed from market. Shipments through Hormuz down 90%. Pipeline redirection only 25% effective.",
+        "Dozens of ships waiting on each side of Hormuz — satellite imagery shows near-total standstill.",
+        "European natural gas prices nearly doubled. Petrochemical plants curbing polymer production. Fertiliser supply chain at risk.",
+        "IMO extraordinary session TODAY (Mar 18-19) in London — could be first step toward shipping corridor framework.",
+        "Atlantic Council analysis: If US-Israel goals diverge, expect Trump to be the one who determines when war ends — oil price is political constraint.",
+        "EIA: Higher oil driving more US production — forecast 13.6M b/d 2026, 13.8M b/d 2027. Won't offset Gulf losses short-term.",
       ],
     },
   },
   {
-    id: "asx", title: "ASX 200 / AU MARKETS", icon: "\uD83D\uDCC9",
+    id: "asx",
+    title: "ASX 200 / AU MARKETS",
+    icon: "📉",
     content: {
-      heading: "ASX 200 / RBA RATE HIKE \u2014 CASH RATE NOW 4.10%",
+      heading: "ASX 200: 8,553 — LOWEST CLOSE OF 2026 / RBA AT 4.10%",
       lines: [
-        "RBA HIKED 25BPS TODAY (Mar 17): Cash rate 3.85% \u2192 4.10%. Second hike in 2026. Unanimous decision. Iran war fuel spike was key factor.",
-        "Bullock: \"If it's hard to get inflation down, we're going to have to deal with [a recession], possibly.\" Recession now openly discussed by the Governor.",
-        "Bullock: \"Second round\" effects from petrol prices would be worse if they didn't hike. Can't let businesses build fuel costs into everything.",
-        "Big Four banks expect ANOTHER hike in May \u2192 4.35%. Would be first three consecutive hikes since March 2023. Wipes out 2025 rate cuts.",
-        "Impact: $600K mortgage = +$91/month from today's hike alone. Two hikes in Q1 2026 = +$225/month or $2,700/year (Canstar).",
-        "CPI: January headline at 3.8% \u2014 well above 2-3% target band. Feb CPI data due Mar 25. Trimmed mean forecast revised up to 3.7% at June 2026.",
-        "Australia Institute: \"All pain, no gain \u2014 how can increasing Australian interest rates open the Strait of Hormuz?\" Supply-side inflation can't be hiked away.",
-        "ASX 200: ~8,629 (pre-decision). Down 6.3% since war start. Energy winners (Woodside, Santos, Ampol). Banks, travel, consumer discretionary weakest.",
-        "AUD weakening on risk-off USD strength \u2014 amplifies import costs. Gold above US$5,400, JPM target $6,300.",
-        "RBA forecasts GDP growth slowing. Unemployment expected to rise to 4.6% by mid-2028. Inflation not back to mid-band until 2028.",
+        "ASX 200 at 8,553 (Mar 16 close). Lowest close of 2026. Down 6.7% in March. Broke below 8,600 support. Futures -0.71% for Wednesday open.",
+        "RBA HIKED to 4.10% yesterday (Mar 17). Second hike in 2026. Bullock: Recession possible if inflation doesn't come down. Big Four expect May hike → 4.35%.",
+        "Impact: $600K mortgage = +$91/month from yesterday's hike. Two Q1 hikes combined = +$225/month ($2,700/year). Wipes out 2025 rate cuts.",
+        "S&P 500 at lowest since Nov 2025. Global risk-off accelerating. No clear path to de-escalation driving continued hawkish positioning.",
+        "Energy sector only winner: Woodside, Santos, Beach Energy, Ampol all green. Coal miners upgraded (New Hope → Hold with energy security premium).",
+        "Banks +0.41% — benefiting from higher net interest margins, but mortgage stress risk rising. Consumer discretionary, IT, real estate worst hit.",
+        "Gold above US$5,200. Lynas Rare Earths +16% on Japan supply deal extension to 2038. Rare earths in focus as China supply chain questioned.",
+        "ASX support levels: 8,500-8,550. Resistance: 8,700-8,800 needs positive catalyst. Momentum indicators negative.",
+        "CPI: January headline 3.8%. Feb data due Mar 25. If hot, May hike locked in. Trimmed mean forecast revised to 3.7% at June 2026.",
+        "Morgan Stanley: S&P 500 rises avg 2/6/8% at 1/6/12 months post geopolitical shock — BUT breaks down when oil surges 75-100% YoY.",
       ],
     },
   },
   {
-    id: "fuel_au", title: "AUSTRALIA FUEL SITUATION", icon: "\u26FD",
+    id: "fuel_au",
+    title: "AUSTRALIA FUEL SITUATION",
+    icon: "⛽",
     content: {
-      heading: "NATIONAL CRISIS \u2014 REGIONAL TOWNS RUNNING DRY",
+      heading: "NATIONAL CRISIS — REGIONAL TOWNS RUNNING DRY",
       lines: [
-        "REGIONAL SHORTAGES WORSENING: Robinvale (VIC) \u2014 all 3 stations ran dry over weekend. $50 sale limits imposed. \"Never seen this in 25 years.\"",
+        "REGIONAL SHORTAGES WORSENING: Robinvale (VIC) — all 3 stations ran dry over weekend. $50 sale limits imposed. \"Never seen this in 25 years.\"",
         "Wedderburn, Bonnie Doon (VIC) also ran dry. NSW regional towns reporting similar rationing. Farmers and primary producers hardest hit.",
-        "National avg petrol: $2.20+/L (up 50c since Feb 28). Diesel: $2.60+/L \u2014 record highs. Melbourne $2.08, Sydney $1.98 (earlier data, likely higher now).",
-        "Govt released 800M litres from reserves + relaxed sulphur standards for 60 days (10ppm \u2192 50ppm). Adds ~100M litres/month \u2014 less than 1 day's consumption.",
+        "National avg petrol: $2.20+/L (up 50c since Feb 28). Diesel: $2.60+/L — record highs. Melbourne $2.08, Sydney $1.98 (earlier data, likely higher now).",
+        "Govt released 800M litres from reserves + relaxed sulphur standards for 60 days (10ppm → 50ppm). Adds ~100M litres/month — less than 1 day's consumption.",
         "Ampol: Extra fuel prioritised for regional/rural Australia, especially Queensland.",
-        "NRMA: \"It's not a supply issue \u2014 we're getting the same fuel. It's that wholesale prices are at record highs and demand has doubled\" from panic buying.",
+        "NRMA: \"It's not a supply issue — we're getting the same fuel. It's that wholesale prices are at record highs and demand has doubled\" from panic buying.",
         "ACCC investigating: Pump prices rising IN LINE with wholesale, not lagged. Commissioner Brakey: \"Industry need to explain this wide discrepancy urgently.\"",
-        "Reserves now: ~26 days usable petrol, ~25 days diesel, ~20 days jet fuel (post-release estimates). Still below IEA 90-day requirement \u2014 non-compliant since 2012.",
+        "Reserves now: ~26 days usable petrol, ~25 days diesel, ~20 days jet fuel (post-release estimates). Still below IEA 90-day requirement — non-compliant since 2012.",
         "Analysts: ULP91 could hit $2.50-$3.50/L. RBA Bullock warned $3/L would cause \"significant challenges\" for consumers and monetary policy.",
-        "EV owners insulated from pump prices. Regional workers doing 100km+ daily commutes with no EV option \u2014 hardest hit demographic.",
+        "EV ADVANTAGE: Your EV costs stable. Regional workers doing 100km+ daily commutes with no EV option — your FuelWatch app timing is critical.",
       ],
     },
   },
   {
-    id: "scenarios", title: "SCENARIO ANALYSIS", icon: "\uD83D\uDD2E",
+    id: "scenarios",
+    title: "SCENARIO ANALYSIS",
+    icon: "🔮",
     content: {
-      heading: "PROBABILITY-WEIGHTED FORECASTS \u2014 UPDATED MAR 17 (POST-RBA)",
+      heading: "PROBABILITY-WEIGHTED FORECASTS — MAR 18",
       lines: [
-        "SCENARIO A \u2014 EXTENDED ATTRIT (50%): War grinds 3-6 more weeks. Hormuz contested. Oil $90-110. RBA hikes again May \u2192 4.35%. AU petrol $2.20-2.80/L. ASX tests 8,000.",
-        "SCENARIO B \u2014 ESCALATION (20%): Full Kharg destruction. Iran hits Saudi Aramco. Oil $130-150. RBA forced into emergency hold as recession risk spikes. AU petrol $3.00+/L.",
-        "SCENARIO C \u2014 NEGOTIATED DRAWDOWN (20%): US admin signals \"weeks or sooner.\" IMO session Mar 18-19. Oil retreats to $75-85. RBA MAY pause May hike if oil drops fast enough.",
-        "SCENARIO D \u2014 REGIME COLLAPSE / FRAGMENTATION (10%): IRGC fractures. Internal conflict. Oil wild card. RBA response depends entirely on duration.",
-        "NEW FACTOR: RBA hike to 4.10% adds domestic economic pressure on top of war-driven supply shock. Bullock openly discussing recession as possible outcome.",
-        "CRITICAL: Australia Institute's argument \u2014 rate hikes can't fix supply-side inflation. RBA hiking INTO a supply shock risks overtightening. This is the key policy tension for 2026.",
-        "KEY SIGNAL: IRGC claims newer missiles not yet deployed. Either deterrence bluff or genuine escalation reserve.",
-        "TRIGGER WATCH: Feb CPI (Mar 25), IMO session (Mar 18-19), Israel-Lebanon talks, US naval escort readiness, May RBA meeting.",
+        "SCENARIO A — EXTENDED ATTRIT (45%): War grinds 3-6 more weeks. Iran's conventional capability declining but drones persist. Oil $90-110. RBA May hike likely. ASX tests 8,200.",
+        "SCENARIO B — ESCALATION (15%): Iran deploys \"newer missiles\" from reserve. Targets Saudi Aramco or major Gulf infrastructure. Oil $130-150. Global recession trigger.",
+        "SCENARIO C — NEGOTIATED DRAWDOWN (25%): IMO session today could create shipping framework. Kent resignation + NATO refusal = mounting domestic/alliance pressure on Trump. Oil to $75-85.",
+        "SCENARIO D — REGIME COLLAPSE / FRAGMENTATION (15%): Larijani's death removes key moderate voice. IRGC command structure thinning. Internal power struggle increasingly likely.",
+        "CHANGE SINCE LAST BRIEFING: Scenario C +5%, Scenario D +5%, Scenario A -5%, Scenario B -5%. Pressure building on BOTH sides to find off-ramp.",
+        "KEY SIGNAL: Kent resignation is first high-profile US govt defection. His framing — \"pressure from Israel and its lobby\" — will amplify domestic opposition.",
+        "KEY SIGNAL: EU/NATO blanket refusal to join Hormuz coalition isolates US diplomatically. Trump's angry response (\"WE DO NOT NEED ANYONE\") masks real strategic vulnerability.",
+        "KEY SIGNAL: Atlantic Council analysis — if US-Israel goals diverge, Trump will impose the endpoint. Oil price is the political constraint that forces his hand.",
+        "TRIGGER WATCH: IMO session (TODAY), Feb CPI (Mar 25), May RBA, Iran internal stability post-Larijani, US midterm polling, Kent resignation fallout.",
       ],
     },
   },
   {
-    id: "actions", title: "PERSONAL ACTION ITEMS", icon: "\u2705",
+    id: "actions",
+    title: "PERSONAL ACTION ITEMS",
+    icon: "✅",
     content: {
-      heading: "WATCH LIST \u2014 KEY DECISIONS AHEAD",
+      heading: "WATCH LIST — KEY DECISIONS AHEAD",
       lines: [
-        "MORTGAGE IMPACT: $600K loan = +$91/month from today's hike. If May hike lands, total Q1 impact = +$225/month or $2,700/year. Review variable vs fixed rates.",
-        "FUEL CRISIS: Regional towns running dry. Robinvale, Wedderburn, Bonnie Doon all out. $50 sale limits. Diesel $2.60+/L hitting freight and food supply chains.",
-        "RBA says inflation not back to mid-band until 2028. This is a 2-year grind. Plan household and business cash flow accordingly.",
-        "EV owners insulated from pump prices. Running costs stable while ICE vehicle owners face double squeeze: fuel + rate hikes.",
-        "ASX: Defensive rotation is the play. Overweight energy (Woodside, Santos), gold, utilities. Underweight banks (mortgage stress), travel, consumer discretionary.",
-        "Banks face rising mortgage stress \u2192 higher bad debts. Dividend yields look attractive but risk profile has changed.",
-        "Budget for grocery price increases (4-6 week lag from diesel spike). Diesel at $2.60/L flows directly into freight and food costs.",
-        "WATCH: Feb CPI data (Mar 25). If hot, May hike is locked in. If somehow soft, markets will rally hard on relief.",
-        "WATCH: IMO extraordinary session (Mar 18-19). If shipping corridor agreement emerges, oil drops fast and Scenario C probability jumps.",
-        "WATCH: US naval escort capability expected \"by end of month.\" If Hormuz reopens partially, oil drops $15-20 fast.",
+        "IMO EXTRAORDINARY SESSION TODAY (Mar 18-19): If any shipping framework emerges, oil drops fast. Most important diplomatic event this week.",
+        "RBA AT 4.10%: Second hike in 2026. Big Four banks expect May hike to 4.35%. $600K mortgage = +$225/month combined Q1 impact. Review fixed vs variable.",
+        "FEB CPI DATA (Mar 25): If hot, May hike is locked in and ASX drops further. If soft, markets rally hard on relief. The single most important AU data point this month.",
+        "KENT RESIGNATION FALLOUT: First high-profile US govt defection. His framing — \"pressure from Israel\" — will amplify domestic opposition. Watch for more resignations.",
+        "ASX: Energy + gold overweight still working. ASX at lowest close of 2026. Not time to buy dips yet. Wait for Scenario C catalyst (Hormuz reopening or ceasefire signal).",
+        "FUEL: Regional AU towns running dry. Diesel $2.60+/L hitting freight and food supply chains. Grocery price increases arriving now (4-6 week lag).",
+        "EV ADVANTAGE: Running costs stable while ICE vehicle owners face double squeeze — fuel prices + rate hikes. Strongest EV narrative in AU history.",
+        "IRAN INTERNAL: Larijani was a moderate voice. His death removes a key potential negotiation counterpart. IRGC command structure thinning — regime fragmentation risk rising.",
+        "NATO/ALLIANCE: EU blanket refusal to join Hormuz coalition isolates US. Trump's angry response masks real strategic vulnerability.",
+        "ATLANTIC COUNCIL: If US-Israel goals diverge, Trump will impose the war's endpoint. Oil price is the political constraint that forces his hand.",
       ],
     },
   },
@@ -629,11 +650,11 @@ function OPSCEN() {
       <div className="scanlines" />
       <div className="opscen-container">
         <div className="header-bar">
-          <div className="header-title crt-glow">{"\u25E4"} OPSCEN v5.3 {"\u25E2"}</div>
-          <div className="header-sub">OPERATIONS CENTRE &mdash; IRAN THEATRE INTELLIGENCE BRIEFING &mdash; 17 MARCH 2026</div>
+          <div className="header-title crt-glow">{"\u25E4"} OPSCEN v5.4 {"\u25E2"}</div>
+          <div className="header-sub">OPERATIONS CENTRE &mdash; IRAN THEATRE INTELLIGENCE BRIEFING &mdash; 18 MARCH 2026</div>
           <div className="header-sub" style={{ color: "var(--crt-red)" }}>
             <span className="pulse-dot" />
-            CONFLICT DAY 18 &mdash; OPERATION EPIC FURY &mdash; ACTIVE COMBAT OPERATIONS
+            CONFLICT DAY 19 &mdash; OPERATION EPIC FURY &mdash; ACTIVE COMBAT OPERATIONS
           </div>
         </div>
 
@@ -653,7 +674,7 @@ function OPSCEN() {
             <div style={{ fontSize: 14, color: "var(--crt-green)", letterSpacing: 2 }}>SYSTEM CLOCK</div>
             <div style={{ fontSize: 22, color: "var(--crt-amber)", marginTop: 6, fontFamily: "'Share Tech Mono', monospace" }}>{aestStr}</div>
             <div style={{ fontSize: 13, color: "var(--crt-dim)", marginTop: 2, fontFamily: "'Share Tech Mono', monospace" }}>{utcStr}</div>
-            <div style={{ fontSize: 12, color: "var(--crt-dim)", marginTop: 4 }}>BRIEFING EPOCH: 17-MAR-2026 1430 AEDT</div>
+            <div style={{ fontSize: 12, color: "var(--crt-dim)", marginTop: 4 }}>BRIEFING EPOCH: 18-MAR-2026 0800 AEDT</div>
           </div>
         </div>
 
@@ -670,7 +691,7 @@ function OPSCEN() {
         ))}
 
         <div className="footer-bar">
-          <span>OPSCEN v5.3 &bull; RETSA GROUP INTELLIGENCE</span>
+          <span>OPSCEN v5.4 &bull; RETSA GROUP INTELLIGENCE</span>
           <span>CLASSIFICATION: OPEN SOURCE</span>
           <span><span className="blink" style={{ color: "var(--crt-red)" }}>&bull;</span> LIVE</span>
         </div>
