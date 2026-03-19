@@ -2,7 +2,7 @@
 
 A real-time military operations centre dashboard tracking the 2026 Iran conflict, built entirely in [Claude](https://claude.ai) by [RETSA Group](https://retsagroup.com.au).
 
-**[Live Dashboard →](https://marcus-rummler.github.io/opscen)**
+**[Live Dashboard →](https://mrummler17.github.io/operations-centre)**
 
 ## What is this?
 
