@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OPSCEN v5.7 — Iran Theatre Intelligence Briefing</title>
+<title>OPSCEN v5.8 — Iran Theatre Intelligence Briefing</title>
 <meta name="description" content="Real-time operations centre tracking the 2026 Iran conflict. Built entirely in Claude by RETSA Group.">
-<meta property="og:title" content="OPSCEN v5.7 — Iran Theatre Intelligence Briefing">
-<meta property="og:description" content="Day 21 — Trump orders Netanyahu to halt energy strikes. Brent $115. Qatar 17% LNG capacity lost. First crack in US-Israel alignment.">
+<meta property="og:title" content="OPSCEN v5.8 — Iran Theatre Intelligence Briefing">
+<meta property="og:description" content="Day 21 — De-escalation signals outnumber escalation for first time. Key metrics dashboard. Phased wind-down framework emerging.">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=VT323&family=Share+Tech+Mono&display=swap" rel="stylesheet">
@@ -300,6 +300,40 @@ body {
   color: var(--crt-green);
 }
 
+.key-metrics-bar {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 4px;
+  margin-bottom: 12px;
+}
+
+.metric-card {
+  border: 1px solid var(--crt-border);
+  background: var(--crt-panel);
+  padding: 8px 10px;
+  text-align: center;
+}
+
+.metric-label {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 10px;
+  color: var(--crt-dim);
+  letter-spacing: 2px;
+  margin-bottom: 2px;
+}
+
+.metric-value {
+  font-size: 22px;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.metric-delta {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 11px;
+  margin-top: 2px;
+}
+
 .built-with {
   text-align: center;
   padding: 12px;
@@ -334,18 +368,18 @@ const SECTIONS = [
     title: "SITUATION REPORT",
     icon: "⚡",
     content: {
-      heading: "DAY 21 — TRUMP ORDERS NETANYAHU TO STOP ENERGY STRIKES",
+      heading: "DAY 21 — DE-ESCALATION SIGNALS STACKING",
       lines: [
-        "TRUMP TOLD NETANYAHU TO HALT energy attacks: \"I told him, don't do that. And he won't do that.\" First time Trump has publicly reined in Israel. MAJOR de-escalation signal.",
-        "Netanyahu confirmed Israel \"acted alone\" on South Pars strike — but sources contradict Trump's claim US \"knew nothing.\" US was aware of the plan.",
-        "BRENT HIT $115/BBL — highest since energy war erupted. Global oil benchmark surging on production facility destruction across Gulf.",
-        "Qatar: 17% of LNG export capacity knocked out. $20B in lost annual revenue. QatarEnergy CEO warning supplies to Europe and Asia threatened.",
-        "Qatar expelled Iranian diplomats — military/security attaches declared persona non grata, 24hrs to leave. Relationship shattered.",
-        "Saudi FM: \"Little trust that remained in Iran has been completely shattered.\" Warned \"nonpolitical options on the table.\" Patience \"not unlimited.\"",
-        "US approved $16B in arms sales to UAE and Kuwait. Arming Gulf states against Iranian strikes.",
-        "Tulsi Gabbard (DNI) accused of ALTERING Senate testimony on Iran — allegedly omitting intelligence that contradicted Trump's claims of imminent threat.",
-        "TODAY IS NOWRUZ — Iranian New Year. Iranians celebrating despite war. Security forces firing on Chaharshanbe Suri festivities.",
-        "DEATH TOLL: 2,300+ across region. Lebanon now 1,000+ killed. Iran 1,444+ KIA (official — likely higher). 20+ vessels attacked in Gulf since war began.",
+        "TRUMP CHECKED NETANYAHU on energy strikes. \"I told him, don't do that. And he won't do that.\" First public break in US-Israel alignment since Feb 28.",
+        "AL JAZEERA ANALYSTS now publishing phased de-escalation frameworks: Phase 1 = halt attacks on Gulf states/civilian infrastructure. Phase 2 = end Iran-Israel exchange. Phase 3 = political settlement.",
+        "Iran proposed JOINT INVESTIGATION COMMITTEE with Gulf states to determine responsibility for attacks. First cooperative gesture from Tehran toward Gulf neighbours.",
+        "Iran FM Araghchi: \"We don't ask for ceasefire, but this war MUST end.\" Subtle but important shift from \"we'll fight forever\" to \"this needs to stop.\"",
+        "Iran loaded 2M barrel cargo from JASK terminal — its only export port OUTSIDE Hormuz. First such shipment since Oct 2024. Iran finding workarounds.",
+        "Saudi/UAE pipeline exports BYPASSING Hormuz nearly doubled: 3.5M bpd → ~6M bpd. Gulf states adapting, reducing Hormuz leverage.",
+        "Johnson: Military objectives \"virtually accomplished.\" Kent resigned. Gabbard testimony questioned. US domestic political pressure building.",
+        "Lebanon: 15 countries approached for diplomatic track. Ron Dermer (Netanyahu confidant) leading. France involved. Beirut forming delegation.",
+        "Arab Joint Defense Treaty activation being discussed at Riyadh emergency summit. Gulf states shifting from targets to potential actors.",
+        "DEATH TOLL: 2,300+ across region. Lebanon 1,000+. Iran 1,444+ (official). 20+ vessels attacked in Gulf. Global shipping in paralysis.",
       ],
     },
   },
@@ -485,7 +519,7 @@ const SECTIONS = [
         "ACCC investigating: Pump prices rising IN LINE with wholesale, not lagged. Commissioner Brakey: \"Industry need to explain this wide discrepancy urgently.\"",
         "Reserves now: ~26 days usable petrol, ~25 days diesel, ~20 days jet fuel (post-release estimates). Still below IEA 90-day requirement — non-compliant since 2012.",
         "Analysts: ULP91 could hit $2.50-$3.50/L. RBA Bullock warned $3/L would cause \"significant challenges\" for consumers and monetary policy.",
-        "DEMAND DOUBLED: NRMA says fuel supply volumes haven't changed — panic buying is the primary driver. Wholesale prices at record highs flowing directly to pumps.",
+        "DEMAND DOUBLED: NRMA says fuel supply volumes unchanged — panic buying is the primary driver. Wholesale prices at record highs flowing directly to pumps.",
       ],
     },
   },
@@ -494,17 +528,17 @@ const SECTIONS = [
     title: "SCENARIO ANALYSIS",
     icon: "🔮",
     content: {
-      heading: "PROBABILITY-WEIGHTED FORECASTS — MAR 20 — INFLECTION POINT",
+      heading: "PROBABILITY-WEIGHTED FORECASTS — MAR 20",
       lines: [
-        "SCENARIO A — MANAGED WIND-DOWN (35%): Trump reining in Israel + Johnson saying objectives \"accomplished\" + $115 oil = political pressure forcing off-ramp. ↑ FROM 25% (was Scenario C).",
-        "SCENARIO B — ENERGY ESCALATION SPIRAL (20%): Iran continues hitting Gulf energy despite Trump warning. Saudi/UAE shift from defence to offence. Oil $130-150. ↓ FROM 30%.",
-        "SCENARIO C — EXTENDED ATTRIT (30%): Military strikes continue but energy strikes halt per Trump order. Hormuz gradually reopens. Oil settles $90-105. Grinding war of attrition.",
-        "SCENARIO D — REGIME COLLAPSE (15%): 7+ senior leaders killed. Iran's launch rate down 90%. Nowruz protests signal internal fragility. But IAEA says nuclear capacity survives.",
-        "MAJOR SHIFT: Trump publicly ordering Netanyahu to stop energy strikes is THE most significant de-escalation signal since Feb 28. First crack in US-Israel alignment.",
-        "CRITICAL: Sources say US WAS aware of South Pars strike — Trump's \"knew nothing\" claim is political cover. This means US-Israel coordination is fraying publicly, not operationally.",
-        "GABBARD TESTIMONY: DNI accused of altering intelligence testimony = growing narrative that war was based on inflated threat. Echoes of Iraq 2003 WMD debate.",
-        "GULF STATES MOBILISING: Saudi \"nonpolitical options\" + $16B US arms sales = Gulf states may become active belligerents, not just targets. Would fundamentally change war dynamics.",
-        "TRIGGER WATCH: Does Netanyahu actually stop energy strikes? Iran's next move on Gulf states. Feb CPI (Mar 25). Oil trajectory. Gulf state military decisions.",
+        "SCENARIO A — MANAGED WIND-DOWN (40%): De-escalation signals stacking. Trump checked Netanyahu. Iran proposing joint committee. Gulf states adapting pipelines. Phased drawdown framework emerging. ↑ FROM 35%.",
+        "SCENARIO B — ENERGY ESCALATION SPIRAL (15%): Iran retaliates further on Gulf energy. Saudi/UAE shift to offensive. Oil $130-150. Possible but signals trending against it. ↓ FROM 20%.",
+        "SCENARIO C — EXTENDED ATTRIT (30%): Military strikes continue, energy strikes halt. Hormuz gradually reopens. Oil settles $90-105. Grinding war but contained.",
+        "SCENARIO D — REGIME COLLAPSE (15%): 7+ senior leaders killed. Iran's launch rate down 90%. Nowruz period = internal instability window. IAEA says nuclear capacity survives regardless.",
+        "DE-ESCALATION SIGNAL COUNT: Trump-Netanyahu intervention, Iran joint committee proposal, Johnson \"accomplished\", Jask oil loading, Gulf pipeline doubling, EU/Japan Hormuz statement, 8 ships through, Lebanon talks forming. EIGHT distinct signals in 72 hours.",
+        "ESCALATION SIGNAL COUNT: Brent $115, Ras Laffan damaged, South Pars struck, Caspian Sea strikes, Khatib killed, Israel blanket kill order. SIX signals.",
+        "NET ASSESSMENT: De-escalation signals (8) now outnumber escalation signals (6) for the first time since the war began. This is the inflection point I've been tracking.",
+        "KEY RISK: Iran formally rejects ceasefire. \"This war must end\" ≠ \"we agree to stop.\" Gap between rhetoric and action remains wide.",
+        "TRIGGER WATCH: Does Netanyahu ACTUALLY stop energy strikes? Iran's next move on Gulf states. Feb CPI (Mar 25). Gulf state military decisions. Nowruz protest activity.",
       ],
     },
   },
@@ -513,21 +547,32 @@ const SECTIONS = [
     title: "PERSONAL ACTION ITEMS",
     icon: "✅",
     content: {
-      heading: "WATCH LIST — WEEK 3 WRAP — KEY DECISIONS",
+      heading: "WATCH LIST — WEEKEND BRIEF",
       lines: [
-        "THE NARRATIVE SHIFTED: Trump ordering Netanyahu to stop = first real de-escalation lever. If it holds, oil drops $10-15 within days. Watch weekend headlines.",
-        "BUT: Sources say US knew about South Pars. If Trump is providing political cover while Israel continues, the de-escalation signal is hollow. Verify via actions, not words.",
-        "RBA: Cash rate at 4.10%. Oil at $115. May hike to 4.35% near-certain unless oil drops sharply. Mortgage holders should review rates urgently.",
-        "LNG CRISIS: Qatar 17% capacity lost. Australian gas prices will rise via LNG import benchmark. Electricity costs likely to follow within weeks.",
-        "ASX: Managed wind-down scenario now at 35% — first time de-escalation leads. But don't buy dips yet. Wait for Netanyahu compliance + Feb CPI.",
-        "ASX: If energy strikes halt, energy stocks may plateau. Start building watchlist of recovery plays: travel, consumer discretionary, banks.",
-        "FOOD/FUEL: LNG crisis → electricity spike → food prices accelerating. Non-perishables window closing. Supply chain cascading.",
-        "GULF STATES: Saudi \"nonpolitical options\" + $16B arms sales = potential military escalation FROM Gulf states. New dimension to watch.",
-        "GABBARD: DNI accused of altering testimony. Growing narrative war was based on inflated threat. Echoes Iraq 2003. Political fallout accelerating.",
-        "NOWRUZ: Iranian New Year today. If protests grow over weekend, Scenario D (regime collapse) rises. But IAEA says nuclear capacity survives regardless.",
+        "DE-ESCALATION SIGNALS (8) NOW OUTNUMBER ESCALATION SIGNALS (6) for the first time since Feb 28. This is the inflection point.",
+        "MANAGED WIND-DOWN at 40% — leading scenario. Trump checked Netanyahu. Iran proposed joint committee. Gulf states adapting pipelines. Phased framework emerging.",
+        "RBA: Cash rate 4.10%. If oil drops below $100 in next 2 weeks, May hike becomes a coin flip instead of a certainty. Watch oil trajectory closely.",
+        "GULF WORKAROUND: Saudi/UAE pipeline exports bypassing Hormuz nearly doubled (3.5M → 6M bpd). Iran loaded oil from Jask — its only non-Hormuz port. Both sides finding alternatives.",
+        "ASX: If wind-down scenario plays out, watch for rotation FROM energy INTO recovery names — travel, consumer discretionary, banks. Don't chase yet. Wait for confirmation.",
+        "FOOD/FUEL: Grocery prices accelerating now. LNG crisis → electricity spike coming. But worst-case energy spiral (Scenario B) dropped from 30% to 15%. Pressure easing at margins.",
+        "IRAN INTERNAL: 7+ senior leaders killed. Launch rate down 90%. Nowruz celebrations despite war and security crackdowns. Regime fragility vs resilience being tested in real time.",
+        "KEY RISK: Iran formally rejects ceasefire. \"This war must end\" is NOT \"we agree to stop.\" Gap between rhetoric and action remains wide.",
+        "PHASED DE-ESCALATION: Phase 1 = halt Gulf attacks. Phase 2 = end Iran-Israel exchange. Phase 3 = political settlement. This is the framework analysts are converging on.",
+        "WEEKEND WATCH: Nowruz protests. Netanyahu compliance with Trump energy order. Gulf state military decisions. Oil futures Sunday night open.",
       ],
     },
   },
+];
+
+const KEY_METRICS = [
+  { label: "WAR DAY", value: "21", color: "var(--crt-red)" },
+  { label: "BRENT", value: "$115", color: "var(--crt-red)", delta: "+$44", deltaColor: "#ff4400" },
+  { label: "ASX 200", value: "8,553", color: "var(--crt-red)", delta: "-7.1%", deltaColor: "#ff4400" },
+  { label: "RBA RATE", value: "4.10%", color: "var(--crt-amber)", delta: "+25bp", deltaColor: "#ff4400" },
+  { label: "AU PETROL", value: "$2.20+", color: "var(--crt-amber)", delta: "+50¢", deltaColor: "#ff4400" },
+  { label: "IRAN LAUNCH", value: "-90%", color: "var(--crt-green)", delta: "↓↓", deltaColor: "#44cc44" },
+  { label: "HORMUZ", value: "8 SHIPS", color: "var(--crt-amber)", delta: "PARTIAL", deltaColor: "#ffaa00" },
+  { label: "SCENARIO", value: "WIND-DOWN 35%", color: "var(--crt-cyan)", delta: "LEADING", deltaColor: "#00ffcc" },
 ];
 
 const DEFCON_LEVELS = [
@@ -572,6 +617,20 @@ function DefconGauge({ level }) {
             style={{ backgroundColor: colors[colorIdx], color: colors[colorIdx] }} />
         );
       })}
+    </div>
+  );
+}
+
+function KeyMetrics() {
+  return (
+    <div className="key-metrics-bar">
+      {KEY_METRICS.map((m) => (
+        <div key={m.label} className="metric-card">
+          <div className="metric-label">{m.label}</div>
+          <div className="metric-value" style={{ color: m.color }}>{m.value}</div>
+          {m.delta && <div className="metric-delta" style={{ color: m.deltaColor }}>{m.delta}</div>}
+        </div>
+      ))}
     </div>
   );
 }
@@ -652,13 +711,15 @@ function OPSCEN() {
       <div className="scanlines" />
       <div className="opscen-container">
         <div className="header-bar">
-          <div className="header-title crt-glow">{"\u25E4"} OPSCEN v5.7 {"\u25E2"}</div>
+          <div className="header-title crt-glow">{"\u25E4"} OPSCEN v5.8 {"\u25E2"}</div>
           <div className="header-sub">OPERATIONS CENTRE &mdash; IRAN THEATRE INTELLIGENCE BRIEFING &mdash; 20 MARCH 2026</div>
           <div className="header-sub" style={{ color: "var(--crt-red)" }}>
             <span className="pulse-dot" />
             CONFLICT DAY 21 &mdash; OPERATION EPIC FURY &mdash; ACTIVE COMBAT OPERATIONS
           </div>
         </div>
+
+        <KeyMetrics />
 
         <div className="status-row">
           <div className="defcon-panel">
@@ -693,7 +754,7 @@ function OPSCEN() {
         ))}
 
         <div className="footer-bar">
-          <span>OPSCEN v5.7 &bull; RETSA GROUP INTELLIGENCE</span>
+          <span>OPSCEN v5.8 &bull; RETSA GROUP INTELLIGENCE</span>
           <span>CLASSIFICATION: OPEN SOURCE</span>
           <span><span className="blink" style={{ color: "var(--crt-red)" }}>&bull;</span> LIVE</span>
         </div>
