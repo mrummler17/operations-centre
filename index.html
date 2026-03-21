@@ -795,147 +795,168 @@ function fuelStatus(days) {
 }
 
 function FuelForecast() {
-  const [demand, setDemand] = useState(1.3);
-  const [imports, setImports] = useState(60);
-  const [refBoost, setRefBoost] = useState(true);
-  const [reserve, setReserve] = useState(true);
-  const [activePreset, setActivePreset] = useState("current");
-  const applyPreset = useCallback((key) => { const s = FUEL_SCENARIOS[key]; setDemand(s.demand); setImports(s.imports); setRefBoost(s.refBoost); setReserve(s.reserve); setActivePreset(key); }, []);
-  const { data, dryDays } = useMemo(() => projectFuel({ demand, imports, refBoost, reserve }), [demand, imports, refBoost, reserve]);
-  const chartW = 900, chartH = 300, padL = 55, padR = 15, padT = 15, padB = 35;
-  const plotW = chartW - padL - padR, plotH = chartH - padT - padB;
-  const maxML = Math.max(FUEL_STOCKS_ML.petrol, FUEL_STOCKS_ML.diesel, FUEL_STOCKS_ML.jet) * 1.05;
-  const ratY = 14 * FUEL_DAILY_ML.diesel;
-  const emgY = 7 * FUEL_DAILY_ML.diesel;
+  var demand = 1.3, imports = 60, refB = true, res = true, preset = "current";
+  var stateD = useState(1.3);    demand = stateD[0]; var setDemand = stateD[1];
+  var stateI = useState(60);     imports = stateI[0]; var setImports = stateI[1];
+  var stateR = useState(true);   refB = stateR[0]; var setRefB = stateR[1];
+  var stateRs = useState(true);  res = stateRs[0]; var setRes = stateRs[1];
+  var stateP = useState("current"); preset = stateP[0]; var setPreset = stateP[1];
 
-  function toSvgPath(key) {
-    return data.map((d, i) => {
-      const x = padL + (i / 120) * plotW;
-      const y = padT + plotH - (d[key] / maxML) * plotH;
-      return (i === 0 ? "M" : "L") + x.toFixed(1) + "," + y.toFixed(1);
-    }).join(" ");
+  function applyPreset(key) {
+    var s = FUEL_SCENARIOS[key];
+    setDemand(s.demand); setImports(s.imports); setRefB(s.refBoost); setRes(s.reserve); setPreset(key);
   }
-  function toAreaPath(key) {
-    const line = data.map((d, i) => {
-      const x = padL + (i / 120) * plotW;
-      const y = padT + plotH - (d[key] / maxML) * plotH;
-      return (i === 0 ? "M" : "L") + x.toFixed(1) + "," + y.toFixed(1);
-    }).join(" ");
-    const lastX = padL + plotW;
-    const firstX = padL;
-    const baseY = padT + plotH;
-    return line + " L" + lastX + "," + baseY + " L" + firstX + "," + baseY + " Z";
+
+  var result = projectFuel({ demand: demand, imports: imports, refBoost: refB, reserve: res });
+  var data = result.data;
+  var dryDays = result.dryDays;
+
+  var W = 900, H = 300, pL = 55, pR = 15, pT = 15, pB = 35;
+  var pW = W - pL - pR, pH = H - pT - pB;
+  var maxV = Math.max(FUEL_STOCKS_ML.petrol, FUEL_STOCKS_ML.diesel, FUEL_STOCKS_ML.jet) * 1.05;
+
+  function makePath(key) {
+    var pts = [];
+    for (var i = 0; i <= 120; i++) {
+      var x = pL + (i / 120) * pW;
+      var y = pT + pH - (data[i][key] / maxV) * pH;
+      pts.push((i === 0 ? "M" : "L") + x.toFixed(1) + "," + y.toFixed(1));
+    }
+    return pts.join(" ");
   }
-  function refLineY(val) { return padT + plotH - (val / maxML) * plotH; }
+  function makeArea(key) {
+    var line = makePath(key);
+    return line + " L" + (pL + pW) + "," + (pT + pH) + " L" + pL + "," + (pT + pH) + " Z";
+  }
+  function yPos(val) { return pT + pH - (val / maxV) * pH; }
 
-  return (
-    <React.Fragment>
-      <div className="countdown-row">
-        {[{ fuel: "PETROL", key: "petrol", icon: "\u26FD" }, { fuel: "DIESEL", key: "diesel", icon: "\uD83D\uDEE2\uFE0F" }, { fuel: "JET FUEL", key: "jet", icon: "\u2708\uFE0F" }].map(({ fuel, key, icon }) => {
-          const days = dryDays[key] !== null ? dryDays[key] : 120;
-          const depleted = dryDays[key] !== null;
-          const dryDate = depleted ? new Date(FUEL_BASE_DATE.getTime() + dryDays[key] * 86400000).toLocaleDateString("en-AU", { day: "numeric", month: "short" }) : "120+ DAYS";
-          const st = fuelStatus(depleted ? 0 : days);
-          return (
-            <div key={key} className="cd-card">
-              <div className="cd-label">{icon} {fuel}</div>
-              <div className="cd-value" style={{ color: depleted ? "var(--crt-red)" : fuelDaysColor(days) }}>{depleted ? days : days >= 120 ? "120+" : days}</div>
-              <div className="cd-sub">DAYS UNTIL DEPLETION</div>
-              <div className="cd-sub" style={{ color: depleted ? "var(--crt-red)" : "var(--crt-dim)", marginTop: 2 }}>{depleted ? "DRY: " + dryDate : dryDate}</div>
-              <div className="cd-status" style={{ color: st.color, background: st.bg, border: "1px solid " + st.border }}>{st.text}</div>
-            </div>
-          );
-        })}
-      </div>
+  var fuels = [
+    { name: "PETROL", key: "petrol" },
+    { name: "DIESEL", key: "diesel" },
+    { name: "JET FUEL", key: "jet" }
+  ];
 
-      <div className="presets">
-        {Object.entries(FUEL_SCENARIOS).map(([key, s]) => (
-          <button key={key} className={"preset-btn " + (activePreset === key ? "active" : "")} style={{ border: "1px solid " + s.color, color: s.color }} onClick={() => applyPreset(key)}>{s.name}</button>
-        ))}
-      </div>
+  var presetKeys = Object.keys(FUEL_SCENARIOS);
 
-      <div className="ctrl-box">
-        <div className="ctrl-title">{"\u25C6"} INTERACTIVE PARAMETERS</div>
-        <div className="ctrl-grid">
-          <div className="ctrl-item"><label>DEMAND MULTIPLIER <span className="ctrl-val">{demand.toFixed(1)}x</span></label><input type="range" min="0.8" max="2.5" step="0.1" value={demand} onChange={(e) => { setDemand(+e.target.value); setActivePreset(null); }} /></div>
-          <div className="ctrl-item"><label>IMPORT FLOW RATE <span className="ctrl-val">{imports}%</span></label><input type="range" min="0" max="100" step="5" value={imports} onChange={(e) => { setImports(+e.target.value); setActivePreset(null); }} /></div>
-        </div>
-        <div className="toggle-row">
-          <button className={"toggle-btn " + (refBoost ? "on" : "")} onClick={() => { setRefBoost(!refBoost); setActivePreset(null); }}>{refBoost ? "\u2713" : "\u2717"} SULPHUR WAIVER (+3.3 ML/day petrol)</button>
-          <button className={"toggle-btn " + (reserve ? "on" : "")} onClick={() => { setReserve(!reserve); setActivePreset(null); }}>{reserve ? "\u2713" : "\u2717"} MSO RESERVE RELEASE (762 ML)</button>
-        </div>
-      </div>
+  return React.createElement("div", null,
+    // Countdown cards
+    React.createElement("div", { className: "countdown-row" },
+      fuels.map(function(f) {
+        var days = dryDays[f.key] !== null ? dryDays[f.key] : 120;
+        var depleted = dryDays[f.key] !== null;
+        var dryDate = depleted ? new Date(FUEL_BASE_DATE.getTime() + dryDays[f.key] * 86400000).toLocaleDateString("en-AU", { day: "numeric", month: "short" }) : "120+ DAYS";
+        var st = fuelStatus(depleted ? 0 : days);
+        return React.createElement("div", { key: f.key, className: "cd-card" },
+          React.createElement("div", { className: "cd-label" }, f.name),
+          React.createElement("div", { className: "cd-value", style: { color: depleted ? "var(--crt-red)" : fuelDaysColor(days) } }, depleted ? days : days >= 120 ? "120+" : days),
+          React.createElement("div", { className: "cd-sub" }, "DAYS UNTIL DEPLETION"),
+          React.createElement("div", { className: "cd-sub", style: { color: depleted ? "var(--crt-red)" : "var(--crt-dim)", marginTop: 2 } }, depleted ? "DRY: " + dryDate : dryDate),
+          React.createElement("div", { className: "cd-status", style: { color: st.color, background: st.bg, border: "1px solid " + st.border } }, st.text)
+        );
+      })
+    ),
 
-      <div className="chart-panel">
-        <div className="chart-title">{"\u25C6"} DEPLETION CURVES &mdash; MILLION LITRES REMAINING</div>
-        <svg viewBox={"0 0 " + chartW + " " + chartH} style={{ width: "100%", height: "auto", fontFamily: "'Share Tech Mono', monospace" }}>
-          <defs>
-            <linearGradient id="gP" x1="0" y1="0" x2="0" y2="1"><stop offset="5%" stopColor="#33ff33" stopOpacity="0.2" /><stop offset="95%" stopColor="#33ff33" stopOpacity="0" /></linearGradient>
-            <linearGradient id="gD" x1="0" y1="0" x2="0" y2="1"><stop offset="5%" stopColor="#ff6600" stopOpacity="0.2" /><stop offset="95%" stopColor="#ff6600" stopOpacity="0" /></linearGradient>
-            <linearGradient id="gJ" x1="0" y1="0" x2="0" y2="1"><stop offset="5%" stopColor="#00ffcc" stopOpacity="0.2" /><stop offset="95%" stopColor="#00ffcc" stopOpacity="0" /></linearGradient>
-          </defs>
-          {/* Grid lines */}
-          {[0, 0.25, 0.5, 0.75, 1].map((f) => {
-            const y = padT + plotH * (1 - f);
-            return <line key={f} x1={padL} y1={y} x2={padL + plotW} y2={y} stroke="#1a3a1a" strokeDasharray="3 3" />;
-          })}
-          {/* Y axis labels */}
-          {[0, 0.25, 0.5, 0.75, 1].map((f) => {
-            const y = padT + plotH * (1 - f);
-            const val = (maxML * f / 1000).toFixed(1);
-            return <text key={f} x={padL - 5} y={y + 4} textAnchor="end" fill="#3a7a3a" fontSize="10">{val}k</text>;
-          })}
-          {/* X axis labels */}
-          {[0, 30, 60, 90, 120].map((d) => {
-            const x = padL + (d / 120) * plotW;
-            const dt = data[d] ? data[d].date : "";
-            return <text key={d} x={x} y={padT + plotH + 20} textAnchor="middle" fill="#3a7a3a" fontSize="10">{dt}</text>;
-          })}
-          {/* Reference lines */}
-          <line x1={padL} y1={refLineY(ratY)} x2={padL + plotW} y2={refLineY(ratY)} stroke="#ffaa00" strokeDasharray="6 3" />
-          <text x={padL + plotW - 5} y={refLineY(ratY) - 4} textAnchor="end" fill="#ffaa00" fontSize="9">RATIONING 14d</text>
-          <line x1={padL} y1={refLineY(emgY)} x2={padL + plotW} y2={refLineY(emgY)} stroke="#ff3333" strokeDasharray="6 3" />
-          <text x={padL + plotW - 5} y={refLineY(emgY) - 4} textAnchor="end" fill="#ff3333" fontSize="9">EMERGENCY 7d</text>
-          {/* Area fills */}
-          <path d={toAreaPath("petrol")} fill="url(#gP)" />
-          <path d={toAreaPath("diesel")} fill="url(#gD)" />
-          <path d={toAreaPath("jet")} fill="url(#gJ)" />
-          {/* Lines */}
-          <path d={toSvgPath("petrol")} fill="none" stroke="#33ff33" strokeWidth="2" />
-          <path d={toSvgPath("diesel")} fill="none" stroke="#ff6600" strokeWidth="2" />
-          <path d={toSvgPath("jet")} fill="none" stroke="#00ffcc" strokeWidth="2" />
-          {/* Axes */}
-          <line x1={padL} y1={padT} x2={padL} y2={padT + plotH} stroke="#3a7a3a" />
-          <line x1={padL} y1={padT + plotH} x2={padL + plotW} y2={padT + plotH} stroke="#3a7a3a" />
-        </svg>
-        <div className="legend-row">
-          <div className="legend-item"><div className="legend-dot" style={{ background: "#33ff33" }} /> PETROL</div>
-          <div className="legend-item"><div className="legend-dot" style={{ background: "#ff6600" }} /> DIESEL (PRIORITY)</div>
-          <div className="legend-item"><div className="legend-dot" style={{ background: "#00ffcc" }} /> JET FUEL</div>
-          <div className="legend-item" style={{ color: "#ffaa00" }}>--- RATIONING (14d)</div>
-          <div className="legend-item" style={{ color: "#ff3333" }}>--- EMERGENCY (7d)</div>
-        </div>
-      </div>
+    // Presets
+    React.createElement("div", { className: "presets" },
+      presetKeys.map(function(key) {
+        var s = FUEL_SCENARIOS[key];
+        return React.createElement("button", {
+          key: key,
+          className: "preset-btn " + (preset === key ? "active" : ""),
+          style: { border: "1px solid " + s.color, color: s.color },
+          onClick: function() { applyPreset(key); }
+        }, s.name);
+      })
+    ),
 
-      <div className="ctx-notes">
-        <div className="ctx-title">{"\u25C6"} SUPPLY CHAIN CONTEXT</div>
-        <div className="ctx-line crit">Strait of Hormuz effectively closed &mdash; 20% of global seaborne oil transits here. 3 tankers hit by Iranian fire.</div>
-        <div className="ctx-line crit">China banned refined fuel exports. Thailand suspended exports. Singapore under force majeure.</div>
-        <div className="ctx-line warn">107+ NSW fuel stations experienced diesel shortages. Regional centres past $3.00/L.</div>
-        <div className="ctx-line warn">Even with ceasefire, first meaningful supply doesn't reach AU terminals until weeks 8-10 post-ceasefire.</div>
-        <div className="ctx-line warn">Full recovery: minimum 4-6 months from ceasefire. Emergency crude-to-refined round trip: 30-40 days.</div>
-        <div className="ctx-line">69% of Australia's imported urea fertiliser comes from Middle East. Food impact lags fuel by ~6 months.</div>
-        <div className="ctx-line">NFF president warned food prices could rise up to 50%.</div>
-        <div className="ctx-line">Diesel breaks the economy first &mdash; freight, farming, mining, emergency backup power all depend on it.</div>
-      </div>
+    // Controls
+    React.createElement("div", { className: "ctrl-box" },
+      React.createElement("div", { className: "ctrl-title" }, "INTERACTIVE PARAMETERS"),
+      React.createElement("div", { className: "ctrl-grid" },
+        React.createElement("div", { className: "ctrl-item" },
+          React.createElement("label", null, "DEMAND MULTIPLIER ", React.createElement("span", { className: "ctrl-val" }, demand.toFixed(1) + "x")),
+          React.createElement("input", { type: "range", min: "0.8", max: "2.5", step: "0.1", value: demand,
+            onChange: function(e) { setDemand(parseFloat(e.target.value)); setPreset(null); } })
+        ),
+        React.createElement("div", { className: "ctrl-item" },
+          React.createElement("label", null, "IMPORT FLOW RATE ", React.createElement("span", { className: "ctrl-val" }, imports + "%")),
+          React.createElement("input", { type: "range", min: "0", max: "100", step: "5", value: imports,
+            onChange: function(e) { setImports(parseInt(e.target.value)); setPreset(null); } })
+        )
+      ),
+      React.createElement("div", { className: "toggle-row" },
+        React.createElement("button", { className: "toggle-btn " + (refB ? "on" : ""), onClick: function() { setRefB(!refB); setPreset(null); } },
+          (refB ? "[ON]" : "[OFF]") + " SULPHUR WAIVER (+3.3 ML/day petrol)"),
+        React.createElement("button", { className: "toggle-btn " + (res ? "on" : ""), onClick: function() { setRes(!res); setPreset(null); } },
+          (res ? "[ON]" : "[OFF]") + " MSO RESERVE RELEASE (762 ML)")
+      )
+    ),
 
-      <div className="ctx-notes">
-        <div className="ctx-title">{"\u25C6"} DATA SOURCES</div>
-        <div className="ctx-line">Mar 3 data: Energy Minister Chris Bowen, Parliament Question Time</div>
-        <div className="ctx-line">Mar 10 data: DCCEEW Weekly MSO Report via Argus Media</div>
-        <div className="ctx-line">Diesel lost 4 days of cover in 7 calendar days (Mar 3{"\u2192"}10) &mdash; accelerated depletion already in effect</div>
-      </div>
-    </React.Fragment>
+    // SVG Chart
+    React.createElement("div", { className: "chart-panel" },
+      React.createElement("div", { className: "chart-title" }, "DEPLETION CURVES - MILLION LITRES REMAINING"),
+      React.createElement("svg", { viewBox: "0 0 " + W + " " + H, style: { width: "100%", height: "auto", fontFamily: "'Share Tech Mono', monospace" } },
+        // Grid
+        [0, 0.25, 0.5, 0.75, 1].map(function(f) {
+          var y = pT + pH * (1 - f);
+          return React.createElement("line", { key: "g" + f, x1: pL, y1: y, x2: pL + pW, y2: y, stroke: "#1a3a1a", strokeDasharray: "3 3" });
+        }),
+        // Y labels
+        [0, 0.25, 0.5, 0.75, 1].map(function(f) {
+          var y = pT + pH * (1 - f);
+          return React.createElement("text", { key: "yl" + f, x: pL - 5, y: y + 4, textAnchor: "end", fill: "#3a7a3a", fontSize: "10" }, (maxV * f / 1000).toFixed(1) + "k");
+        }),
+        // X labels
+        [0, 30, 60, 90, 120].map(function(d) {
+          var x = pL + (d / 120) * pW;
+          var dt = data[d] ? data[d].date : "";
+          return React.createElement("text", { key: "xl" + d, x: x, y: pT + pH + 20, textAnchor: "middle", fill: "#3a7a3a", fontSize: "10" }, dt);
+        }),
+        // Ref lines
+        React.createElement("line", { x1: pL, y1: yPos(14 * FUEL_DAILY_ML.diesel), x2: pL + pW, y2: yPos(14 * FUEL_DAILY_ML.diesel), stroke: "#ffaa00", strokeDasharray: "6 3" }),
+        React.createElement("text", { x: pL + pW - 5, y: yPos(14 * FUEL_DAILY_ML.diesel) - 4, textAnchor: "end", fill: "#ffaa00", fontSize: "9" }, "RATIONING 14d"),
+        React.createElement("line", { x1: pL, y1: yPos(7 * FUEL_DAILY_ML.diesel), x2: pL + pW, y2: yPos(7 * FUEL_DAILY_ML.diesel), stroke: "#ff3333", strokeDasharray: "6 3" }),
+        React.createElement("text", { x: pL + pW - 5, y: yPos(7 * FUEL_DAILY_ML.diesel) - 4, textAnchor: "end", fill: "#ff3333", fontSize: "9" }, "EMERGENCY 7d"),
+        // Area fills
+        React.createElement("path", { d: makeArea("diesel"), fill: "rgba(255,102,0,0.15)" }),
+        React.createElement("path", { d: makeArea("petrol"), fill: "rgba(51,255,51,0.15)" }),
+        React.createElement("path", { d: makeArea("jet"), fill: "rgba(0,255,204,0.15)" }),
+        // Lines
+        React.createElement("path", { d: makePath("petrol"), fill: "none", stroke: "#33ff33", strokeWidth: "2" }),
+        React.createElement("path", { d: makePath("diesel"), fill: "none", stroke: "#ff6600", strokeWidth: "2" }),
+        React.createElement("path", { d: makePath("jet"), fill: "none", stroke: "#00ffcc", strokeWidth: "2" }),
+        // Axes
+        React.createElement("line", { x1: pL, y1: pT, x2: pL, y2: pT + pH, stroke: "#3a7a3a" }),
+        React.createElement("line", { x1: pL, y1: pT + pH, x2: pL + pW, y2: pT + pH, stroke: "#3a7a3a" })
+      ),
+      React.createElement("div", { className: "legend-row" },
+        React.createElement("div", { className: "legend-item" }, React.createElement("div", { className: "legend-dot", style: { background: "#33ff33" } }), " PETROL"),
+        React.createElement("div", { className: "legend-item" }, React.createElement("div", { className: "legend-dot", style: { background: "#ff6600" } }), " DIESEL (PRIORITY)"),
+        React.createElement("div", { className: "legend-item" }, React.createElement("div", { className: "legend-dot", style: { background: "#00ffcc" } }), " JET FUEL"),
+        React.createElement("div", { className: "legend-item", style: { color: "#ffaa00" } }, "--- RATIONING (14d)"),
+        React.createElement("div", { className: "legend-item", style: { color: "#ff3333" } }, "--- EMERGENCY (7d)")
+      )
+    ),
+
+    // Context notes
+    React.createElement("div", { className: "ctx-notes" },
+      React.createElement("div", { className: "ctx-title" }, "SUPPLY CHAIN CONTEXT"),
+      React.createElement("div", { className: "ctx-line crit" }, "Strait of Hormuz effectively closed. 20% of global seaborne oil transits here. 3 tankers hit by Iranian fire."),
+      React.createElement("div", { className: "ctx-line crit" }, "China banned refined fuel exports. Thailand suspended exports. Singapore under force majeure."),
+      React.createElement("div", { className: "ctx-line warn" }, "107+ NSW fuel stations experienced diesel shortages. Regional centres past $3.00/L."),
+      React.createElement("div", { className: "ctx-line warn" }, "Even with ceasefire, first meaningful supply doesn't reach AU terminals until weeks 8-10 post-ceasefire."),
+      React.createElement("div", { className: "ctx-line warn" }, "Full recovery: minimum 4-6 months from ceasefire. Emergency crude-to-refined round trip: 30-40 days."),
+      React.createElement("div", { className: "ctx-line" }, "69% of Australia's imported urea fertiliser comes from Middle East. Food impact lags fuel by ~6 months."),
+      React.createElement("div", { className: "ctx-line" }, "NFF president warned food prices could rise up to 50%."),
+      React.createElement("div", { className: "ctx-line" }, "Diesel breaks the economy first: freight, farming, mining, emergency backup power all depend on it.")
+    ),
+
+    React.createElement("div", { className: "ctx-notes" },
+      React.createElement("div", { className: "ctx-title" }, "DATA SOURCES"),
+      React.createElement("div", { className: "ctx-line" }, "Mar 3 data: Energy Minister Chris Bowen, Parliament Question Time"),
+      React.createElement("div", { className: "ctx-line" }, "Mar 10 data: DCCEEW Weekly MSO Report via Argus Media"),
+      React.createElement("div", { className: "ctx-line" }, "Diesel lost 4 days of cover in 7 calendar days (Mar 3 to 10) - accelerated depletion already in effect")
+    )
   );
 }
 
