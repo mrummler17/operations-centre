@@ -1,4 +1,4 @@
-# OPSCEN v5.9 — Iran Theatre Intelligence Briefing
+# OPSCEN v5.9.1 — Iran Theatre Intelligence Briefing
 
 A real-time military operations centre dashboard tracking the 2026 Iran conflict, built entirely in [Claude](https://claude.ai) by [RETSA Group](https://retsagroup.com.au).
 
@@ -15,7 +15,10 @@ Two words. Fresh every morning. The news comes to me now.
 ## Features
 
 - **CRT military aesthetic** — retro-futuristic operations centre design
+- **Two-tab interface** — Briefing view + interactive Fuel Depletion Forecast
+- **Key metrics dashboard** — quick-reference tiles at top of page
 - **10 collapsible intelligence sections** covering all theatres of the conflict
+- **Australian Fuel Forecast module** — interactive depletion projections for petrol, diesel, and jet fuel with scenario presets and adjustable parameters
 - **Live system clock** (AEDT + UTC)
 - **DEFCON gauge** with visual assessment
 - **Multi-theatre threat matrix** — 9 active zones tracked

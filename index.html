@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>OPSCEN v5.9 — Iran Theatre Intelligence Briefing</title>
-<meta name="description" content="Real-time operations centre tracking the 2026 Iran conflict. Built entirely in Claude by RETSA Group.">
+<meta name="description" content="Real-time operations centre tracking the 2026 Iran conflict + interactive Australian fuel depletion forecast. Built entirely in Claude by RETSA Group.">
 <meta property="og:title" content="OPSCEN v5.9 — Iran Theatre Intelligence Briefing">
 <meta property="og:description" content="Day 22 — Netanyahu confirms energy strike halt. Oil eases to $108. Wind-down scenario at 45%. De-escalation signals 10 vs 6.">
 <meta property="og:type" content="website">
@@ -13,6 +13,7 @@
 <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
 <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
 <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.9/babel.min.js"></script>
+<script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/recharts/2.12.7/Recharts.min.js"></script>
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -349,6 +350,74 @@ body {
 
 .built-with a:hover { text-decoration: underline; }
 
+.tab-bar {
+  display: flex;
+  gap: 0;
+  margin-bottom: 12px;
+  border: 1px solid var(--crt-border);
+  overflow: hidden;
+}
+
+.tab-btn {
+  flex: 1;
+  background: var(--crt-panel);
+  border: none;
+  border-right: 1px solid var(--crt-border);
+  color: var(--crt-dim);
+  font-family: 'VT323', monospace;
+  font-size: 16px;
+  padding: 10px 16px;
+  cursor: pointer;
+  letter-spacing: 3px;
+  transition: all 0.2s;
+}
+
+.tab-btn:last-child { border-right: none; }
+.tab-btn:hover { background: rgba(0, 60, 0, 0.15); }
+.tab-btn.active {
+  background: rgba(0, 60, 0, 0.25);
+  color: var(--crt-green);
+  text-shadow: 0 0 5px var(--crt-green);
+  border-bottom: 2px solid var(--crt-green);
+}
+
+.countdown-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-bottom: 12px; }
+.cd-card { border: 1px solid var(--crt-border); background: var(--crt-panel); padding: 12px; text-align: center; }
+.cd-label { font-family: 'Share Tech Mono', monospace; font-size: 11px; color: var(--crt-dim); letter-spacing: 2px; }
+.cd-value { font-size: 48px; line-height: 1.1; margin: 4px 0; }
+.cd-sub { font-family: 'Share Tech Mono', monospace; font-size: 12px; color: var(--crt-dim); }
+.cd-status { font-family: 'Share Tech Mono', monospace; font-size: 11px; padding: 2px 8px; margin-top: 4px; display: inline-block; letter-spacing: 1px; }
+.ctrl-box { border: 1px solid var(--crt-border); background: var(--crt-panel); padding: 12px; margin-bottom: 12px; }
+.ctrl-title { font-size: 15px; color: var(--crt-green); letter-spacing: 2px; margin-bottom: 10px; }
+.ctrl-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.ctrl-item label { display: block; font-family: 'Share Tech Mono', monospace; font-size: 12px; color: var(--crt-dim); letter-spacing: 1px; margin-bottom: 4px; }
+.ctrl-item input[type=range] { width: 100%; accent-color: var(--crt-green); cursor: pointer; }
+.ctrl-val { font-size: 16px; color: var(--crt-amber); float: right; }
+.toggle-row { display: flex; gap: 16px; margin-top: 10px; align-items: center; flex-wrap: wrap; }
+.toggle-btn { background: transparent; border: 1px solid var(--crt-border); color: var(--crt-dim); font-family: 'VT323', monospace; font-size: 14px; padding: 4px 12px; cursor: pointer; letter-spacing: 1px; }
+.toggle-btn.on { border-color: var(--crt-green); color: var(--crt-green); }
+.presets { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; }
+.preset-btn { background: transparent; font-family: 'VT323', monospace; font-size: 13px; padding: 4px 10px; cursor: pointer; letter-spacing: 1px; transition: all 0.2s; }
+.preset-btn:hover { filter: brightness(1.3); }
+.preset-btn.active { filter: brightness(1.5); }
+.chart-panel { border: 1px solid var(--crt-border); background: var(--crt-panel); padding: 12px; margin-bottom: 12px; }
+.chart-title { font-size: 15px; color: var(--crt-green); letter-spacing: 2px; margin-bottom: 8px; }
+.legend-row { display: flex; gap: 16px; margin-top: 8px; justify-content: center; flex-wrap: wrap; }
+.legend-item { font-family: 'Share Tech Mono', monospace; font-size: 12px; display: flex; align-items: center; gap: 4px; }
+.legend-dot { width: 10px; height: 10px; border-radius: 2px; }
+.ctx-notes { border: 1px solid var(--crt-border); background: var(--crt-panel); padding: 10px 14px; margin-bottom: 12px; }
+.ctx-title { font-size: 14px; color: var(--crt-cyan); letter-spacing: 1px; margin-bottom: 6px; }
+.ctx-line { font-family: 'Share Tech Mono', monospace; font-size: 12px; color: #99cc99; line-height: 1.6; padding-left: 12px; position: relative; border-left: 2px solid var(--crt-border); margin-bottom: 2px; }
+.ctx-line::before { content: '\25B8'; position: absolute; left: 2px; color: var(--crt-dim); }
+.ctx-line.warn { color: var(--crt-amber); border-left-color: var(--crt-amber); }
+.ctx-line.crit { color: var(--crt-red); border-left-color: var(--crt-red); }
+
+@media (max-width: 600px) {
+  .countdown-row { grid-template-columns: 1fr; }
+  .ctrl-grid { grid-template-columns: 1fr; }
+  .cd-value { font-size: 36px; }
+}
+
 @media (max-width: 600px) {
   .header-title { font-size: 20px; letter-spacing: 3px; }
   .threat-grid { grid-template-columns: 1fr; }
@@ -360,7 +429,7 @@ body {
 <body>
 <div id="root"></div>
 <script type="text/babel">
-const { useState, useEffect, useCallback } = React;
+const { useState, useEffect, useCallback, useMemo } = React;
 
 const SECTIONS = [
   {
@@ -683,10 +752,152 @@ function Section({ section, isOpen, toggle }) {
   );
 }
 
+/* ── FUEL DEPLETION MODULE ── */
+const FUEL_BASE_DATE = new Date("2026-03-10");
+const FUEL_STOCKS_ML = { petrol: 1606, diesel: 2757, jet: 812 };
+const FUEL_DAILY_ML = { petrol: 43.4, diesel: 91.9, jet: 28 };
+const FUEL_MSO_ML = { petrol: 400, diesel: 362, jet: 0 };
+const FUEL_SULPHUR_BOOST = 3.3;
+const FUEL_SCENARIOS = {
+  optimistic: { name: "GOVT OPTIMISTIC", demand: 1.0, imports: 80, refBoost: true, reserve: true, color: "#44cc44" },
+  current: { name: "CURRENT TRAJECTORY", demand: 1.3, imports: 60, refBoost: true, reserve: true, color: "#ffaa00" },
+  prolonged: { name: "HORMUZ PROLONGED", demand: 1.5, imports: 30, refBoost: true, reserve: true, color: "#ff6600" },
+  worst: { name: "WORST CASE", demand: 2.0, imports: 10, refBoost: false, reserve: false, color: "#ff0000" },
+};
+
+function projectFuel(params) {
+  const { demand, imports, refBoost, reserve } = params;
+  const impFrac = imports / 100;
+  const data = [];
+  let stocks = { ...FUEL_STOCKS_ML };
+  const relPerDay = { petrol: reserve ? FUEL_MSO_ML.petrol / 21 : 0, diesel: reserve ? FUEL_MSO_ML.diesel / 21 : 0, jet: 0 };
+  let dryDays = { petrol: null, diesel: null, jet: null };
+  for (let d = 0; d <= 120; d++) {
+    data.push({ day: d, date: new Date(FUEL_BASE_DATE.getTime() + d * 86400000).toLocaleDateString("en-AU", { day: "numeric", month: "short" }),
+      petrol: Math.max(0, stocks.petrol), diesel: Math.max(0, stocks.diesel), jet: Math.max(0, stocks.jet) });
+    ["petrol", "diesel", "jet"].forEach((f) => {
+      const consumed = FUEL_DAILY_ML[f] * demand;
+      const imported = FUEL_DAILY_ML[f] * impFrac;
+      let boost = (f === "petrol" && refBoost) ? FUEL_SULPHUR_BOOST : 0;
+      let rel = (d >= 7 && d < 28) ? relPerDay[f] : 0;
+      stocks[f] = stocks[f] - consumed + imported + boost + rel;
+      if (stocks[f] <= 0 && dryDays[f] === null) { dryDays[f] = d; stocks[f] = 0; }
+    });
+  }
+  return { data, dryDays };
+}
+
+function fuelDaysColor(days) { return days <= 7 ? "var(--crt-red)" : days <= 14 ? "var(--crt-amber)" : "var(--crt-green)"; }
+function fuelStatus(days) {
+  if (days <= 0) return { text: "DEPLETED", color: "var(--crt-red)", bg: "rgba(255,50,50,0.15)", border: "var(--crt-red)" };
+  if (days <= 7) return { text: "EMERGENCY", color: "var(--crt-red)", bg: "rgba(255,50,50,0.1)", border: "var(--crt-red)" };
+  if (days <= 14) return { text: "RATIONING LIKELY", color: "var(--crt-amber)", bg: "rgba(255,170,0,0.1)", border: "var(--crt-amber)" };
+  return { text: "MONITORING", color: "var(--crt-green)", bg: "rgba(50,255,50,0.05)", border: "var(--crt-green)" };
+}
+
+function FuelForecast() {
+  const [demand, setDemand] = useState(1.3);
+  const [imports, setImports] = useState(60);
+  const [refBoost, setRefBoost] = useState(true);
+  const [reserve, setReserve] = useState(true);
+  const [activePreset, setActivePreset] = useState("current");
+  const applyPreset = useCallback((key) => { const s = FUEL_SCENARIOS[key]; setDemand(s.demand); setImports(s.imports); setRefBoost(s.refBoost); setReserve(s.reserve); setActivePreset(key); }, []);
+  const { data, dryDays } = useMemo(() => projectFuel({ demand, imports, refBoost, reserve }), [demand, imports, refBoost, reserve]);
+  const { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip: RTooltip, ReferenceLine, ResponsiveContainer } = Recharts;
+
+  return (
+    <React.Fragment>
+      <div className="countdown-row">
+        {[{ fuel: "PETROL", key: "petrol", icon: "\u26FD" }, { fuel: "DIESEL", key: "diesel", icon: "\uD83D\uDEE2\uFE0F" }, { fuel: "JET FUEL", key: "jet", icon: "\u2708\uFE0F" }].map(({ fuel, key, icon }) => {
+          const days = dryDays[key] !== null ? dryDays[key] : 120;
+          const depleted = dryDays[key] !== null;
+          const dryDate = depleted ? new Date(FUEL_BASE_DATE.getTime() + dryDays[key] * 86400000).toLocaleDateString("en-AU", { day: "numeric", month: "short" }) : "120+ DAYS";
+          const st = fuelStatus(depleted ? 0 : days);
+          return (
+            <div key={key} className="cd-card">
+              <div className="cd-label">{icon} {fuel}</div>
+              <div className="cd-value" style={{ color: depleted ? "var(--crt-red)" : fuelDaysColor(days) }}>{depleted ? days : days >= 120 ? "120+" : days}</div>
+              <div className="cd-sub">DAYS UNTIL DEPLETION</div>
+              <div className="cd-sub" style={{ color: depleted ? "var(--crt-red)" : "var(--crt-dim)", marginTop: 2 }}>{depleted ? "DRY: " + dryDate : dryDate}</div>
+              <div className="cd-status" style={{ color: st.color, background: st.bg, border: "1px solid " + st.border }}>{st.text}</div>
+            </div>
+          );
+        })}
+      </div>
+
+      <div className="presets">
+        {Object.entries(FUEL_SCENARIOS).map(([key, s]) => (
+          <button key={key} className={"preset-btn " + (activePreset === key ? "active" : "")} style={{ border: "1px solid " + s.color, color: s.color }} onClick={() => applyPreset(key)}>{s.name}</button>
+        ))}
+      </div>
+
+      <div className="ctrl-box">
+        <div className="ctrl-title">{"\u25C6"} INTERACTIVE PARAMETERS</div>
+        <div className="ctrl-grid">
+          <div className="ctrl-item"><label>DEMAND MULTIPLIER <span className="ctrl-val">{demand.toFixed(1)}x</span></label><input type="range" min="0.8" max="2.5" step="0.1" value={demand} onChange={(e) => { setDemand(+e.target.value); setActivePreset(null); }} /></div>
+          <div className="ctrl-item"><label>IMPORT FLOW RATE <span className="ctrl-val">{imports}%</span></label><input type="range" min="0" max="100" step="5" value={imports} onChange={(e) => { setImports(+e.target.value); setActivePreset(null); }} /></div>
+        </div>
+        <div className="toggle-row">
+          <button className={"toggle-btn " + (refBoost ? "on" : "")} onClick={() => { setRefBoost(!refBoost); setActivePreset(null); }}>{refBoost ? "\u2713" : "\u2717"} SULPHUR WAIVER (+3.3 ML/day petrol)</button>
+          <button className={"toggle-btn " + (reserve ? "on" : "")} onClick={() => { setReserve(!reserve); setActivePreset(null); }}>{reserve ? "\u2713" : "\u2717"} MSO RESERVE RELEASE (762 ML)</button>
+        </div>
+      </div>
+
+      <div className="chart-panel">
+        <div className="chart-title">{"\u25C6"} DEPLETION CURVES &mdash; MILLION LITRES REMAINING</div>
+        <ResponsiveContainer width="100%" height={340}>
+          <AreaChart data={data} margin={{ top: 10, right: 10, left: 0, bottom: 0 }}>
+            <defs>
+              <linearGradient id="gP" x1="0" y1="0" x2="0" y2="1"><stop offset="5%" stopColor="#33ff33" stopOpacity={0.3} /><stop offset="95%" stopColor="#33ff33" stopOpacity={0} /></linearGradient>
+              <linearGradient id="gD" x1="0" y1="0" x2="0" y2="1"><stop offset="5%" stopColor="#ff6600" stopOpacity={0.3} /><stop offset="95%" stopColor="#ff6600" stopOpacity={0} /></linearGradient>
+              <linearGradient id="gJ" x1="0" y1="0" x2="0" y2="1"><stop offset="5%" stopColor="#00ffcc" stopOpacity={0.3} /><stop offset="95%" stopColor="#00ffcc" stopOpacity={0} /></linearGradient>
+            </defs>
+            <CartesianGrid strokeDasharray="3 3" stroke="#1a3a1a" />
+            <XAxis dataKey="date" stroke="#3a7a3a" tick={{ fontSize: 11, fontFamily: "'Share Tech Mono'" }} interval={9} />
+            <YAxis stroke="#3a7a3a" tick={{ fontSize: 11, fontFamily: "'Share Tech Mono'" }} tickFormatter={(v) => (v/1000).toFixed(1) + "k"} />
+            <ReferenceLine y={14 * FUEL_DAILY_ML.diesel} stroke="#ffaa00" strokeDasharray="6 3" />
+            <ReferenceLine y={7 * FUEL_DAILY_ML.diesel} stroke="#ff3333" strokeDasharray="6 3" />
+            <Area type="monotone" dataKey="petrol" name="Petrol" stroke="#33ff33" fill="url(#gP)" strokeWidth={2} dot={false} />
+            <Area type="monotone" dataKey="diesel" name="Diesel" stroke="#ff6600" fill="url(#gD)" strokeWidth={2} dot={false} />
+            <Area type="monotone" dataKey="jet" name="Jet Fuel" stroke="#00ffcc" fill="url(#gJ)" strokeWidth={2} dot={false} />
+          </AreaChart>
+        </ResponsiveContainer>
+        <div className="legend-row">
+          <div className="legend-item"><div className="legend-dot" style={{ background: "#33ff33" }} /> PETROL</div>
+          <div className="legend-item"><div className="legend-dot" style={{ background: "#ff6600" }} /> DIESEL (PRIORITY)</div>
+          <div className="legend-item"><div className="legend-dot" style={{ background: "#00ffcc" }} /> JET FUEL</div>
+          <div className="legend-item" style={{ color: "#ffaa00" }}>--- RATIONING (14d)</div>
+          <div className="legend-item" style={{ color: "#ff3333" }}>--- EMERGENCY (7d)</div>
+        </div>
+      </div>
+
+      <div className="ctx-notes">
+        <div className="ctx-title">{"\u25C6"} SUPPLY CHAIN CONTEXT</div>
+        <div className="ctx-line crit">Strait of Hormuz effectively closed &mdash; 20% of global seaborne oil transits here. 3 tankers hit by Iranian fire.</div>
+        <div className="ctx-line crit">China banned refined fuel exports. Thailand suspended exports. Singapore under force majeure.</div>
+        <div className="ctx-line warn">107+ NSW fuel stations experienced diesel shortages. Regional centres past $3.00/L.</div>
+        <div className="ctx-line warn">Even with ceasefire, first meaningful supply doesn't reach AU terminals until weeks 8-10 post-ceasefire.</div>
+        <div className="ctx-line warn">Full recovery: minimum 4-6 months from ceasefire. Emergency crude-to-refined round trip: 30-40 days.</div>
+        <div className="ctx-line">69% of Australia's imported urea fertiliser comes from Middle East. Food impact lags fuel by ~6 months.</div>
+        <div className="ctx-line">NFF president warned food prices could rise up to 50%.</div>
+        <div className="ctx-line">Diesel breaks the economy first &mdash; freight, farming, mining, emergency backup power all depend on it.</div>
+      </div>
+
+      <div className="ctx-notes">
+        <div className="ctx-title">{"\u25C6"} DATA SOURCES</div>
+        <div className="ctx-line">Mar 3 data: Energy Minister Chris Bowen, Parliament Question Time</div>
+        <div className="ctx-line">Mar 10 data: DCCEEW Weekly MSO Report via Argus Media</div>
+        <div className="ctx-line">Diesel lost 4 days of cover in 7 calendar days (Mar 3{"\u2192"}10) &mdash; accelerated depletion already in effect</div>
+      </div>
+    </React.Fragment>
+  );
+}
+
 function OPSCEN() {
   const clock = useClock();
   const [openSections, setOpenSections] = useState({ sitrep: true });
   const [allOpen, setAllOpen] = useState(false);
+  const [activeTab, setActiveTab] = useState("briefing");
   const defconLevel = 3;
 
   const toggle = useCallback((id) => {
@@ -719,39 +930,50 @@ function OPSCEN() {
           </div>
         </div>
 
-        <KeyMetrics />
-
-        <div className="status-row">
-          <div className="defcon-panel">
-            <div style={{ fontSize: 14, color: "var(--crt-green)", letterSpacing: 2 }}>DEFCON ASSESSMENT</div>
-            <DefconGauge level={defconLevel} />
-            <div style={{ display: "flex", justifyContent: "space-between", fontSize: 14 }}>
-              <span style={{ color: defconInfo.color }}>DEFCON {defconLevel}</span>
-              <span style={{ color: defconInfo.color, fontSize: 12 }}>{defconInfo.label}</span>
-            </div>
-            <div style={{ fontSize: 12, color: "var(--crt-dim)", marginTop: 4 }}>
-              REGIONAL CONFLICT &bull; MULTI-THEATRE &bull; NO NUCLEAR USE (YET)
-            </div>
-          </div>
-          <div className="clock-panel">
-            <div style={{ fontSize: 14, color: "var(--crt-green)", letterSpacing: 2 }}>SYSTEM CLOCK</div>
-            <div style={{ fontSize: 22, color: "var(--crt-amber)", marginTop: 6, fontFamily: "'Share Tech Mono', monospace" }}>{aestStr}</div>
-            <div style={{ fontSize: 13, color: "var(--crt-dim)", marginTop: 2, fontFamily: "'Share Tech Mono', monospace" }}>{utcStr}</div>
-            <div style={{ fontSize: 12, color: "var(--crt-dim)", marginTop: 4 }}>BRIEFING EPOCH: 21-MAR-2026 0800 AEDT </div>
-          </div>
+        <div className="tab-bar">
+          <button className={"tab-btn " + (activeTab === "briefing" ? "active" : "")} onClick={() => setActiveTab("briefing")}>{"\u26A1"} BRIEFING</button>
+          <button className={"tab-btn " + (activeTab === "fuel" ? "active" : "")} onClick={() => setActiveTab("fuel")}>{"\u26FD"} FUEL FORECAST</button>
         </div>
 
-        <ThreatMatrix />
+        {activeTab === "briefing" && (
+          <React.Fragment>
+            <KeyMetrics />
 
-        <div style={{ display: "flex", justifyContent: "flex-end", marginBottom: 6 }}>
-          <button className="expand-all-btn" onClick={toggleAll}>
-            {allOpen ? "\u25BC COLLAPSE ALL" : "\u25B6 EXPAND ALL"}
-          </button>
-        </div>
+            <div className="status-row">
+              <div className="defcon-panel">
+                <div style={{ fontSize: 14, color: "var(--crt-green)", letterSpacing: 2 }}>DEFCON ASSESSMENT</div>
+                <DefconGauge level={defconLevel} />
+                <div style={{ display: "flex", justifyContent: "space-between", fontSize: 14 }}>
+                  <span style={{ color: defconInfo.color }}>DEFCON {defconLevel}</span>
+                  <span style={{ color: defconInfo.color, fontSize: 12 }}>{defconInfo.label}</span>
+                </div>
+                <div style={{ fontSize: 12, color: "var(--crt-dim)", marginTop: 4 }}>
+                  REGIONAL CONFLICT &bull; MULTI-THEATRE &bull; NO NUCLEAR USE (YET)
+                </div>
+              </div>
+              <div className="clock-panel">
+                <div style={{ fontSize: 14, color: "var(--crt-green)", letterSpacing: 2 }}>SYSTEM CLOCK</div>
+                <div style={{ fontSize: 22, color: "var(--crt-amber)", marginTop: 6, fontFamily: "'Share Tech Mono', monospace" }}>{aestStr}</div>
+                <div style={{ fontSize: 13, color: "var(--crt-dim)", marginTop: 2, fontFamily: "'Share Tech Mono', monospace" }}>{utcStr}</div>
+                <div style={{ fontSize: 12, color: "var(--crt-dim)", marginTop: 4 }}>BRIEFING EPOCH: 21-MAR-2026 0800 AEDT</div>
+              </div>
+            </div>
 
-        {SECTIONS.map((s) => (
-          <Section key={s.id} section={s} isOpen={!!openSections[s.id]} toggle={() => toggle(s.id)} />
-        ))}
+            <ThreatMatrix />
+
+            <div style={{ display: "flex", justifyContent: "flex-end", marginBottom: 6 }}>
+              <button className="expand-all-btn" onClick={toggleAll}>
+                {allOpen ? "\u25BC COLLAPSE ALL" : "\u25B6 EXPAND ALL"}
+              </button>
+            </div>
+
+            {SECTIONS.map((s) => (
+              <Section key={s.id} section={s} isOpen={!!openSections[s.id]} toggle={() => toggle(s.id)} />
+            ))}
+          </React.Fragment>
+        )}
+
+        {activeTab === "fuel" && <FuelForecast />}
 
         <div className="footer-bar">
           <span>OPSCEN v5.9 &bull; RETSA GROUP INTELLIGENCE</span>
