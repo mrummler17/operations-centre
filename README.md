@@ -1,4 +1,4 @@
-# OPSCEN v6.0 — Iran Theatre Intelligence Briefing
+# OPSCEN v6.1 — Iran Theatre Intelligence Briefing
 
 A real-time military operations centre dashboard tracking the 2026 Iran conflict, built entirely in [Claude](https://claude.ai) by [RETSA Group](https://retsagroup.com.au).
 
@@ -26,15 +26,17 @@ Two words. Fresh every morning. The news comes to me now.
 - **Australian-specific sections** — ASX 200, RBA rate impacts, fuel crisis monitoring
 - **UPDATED badges** showing what changed since last briefing
 
-## Current Briefing: Day 23
+## Current Briefing: Day 24
 
-- Nuclear sites targeted on BOTH sides — US hit Natanz, Iran hit Dimona
-- IDF chief says campaign at "halfway" point — fighting through Passover
-- 22 nations condemned Iran's Hormuz closure including Australia
-- Brent crude hit $112.19 — war high
-- Sydney diesel at $2.71/L — 107 NSW stations diesel-dry
-- Scenarios rebalanced: Wind-down 35%, Extended Attrit 35% (tied)
-- US drew up ground invasion plans + deploying 2,500 more Marines
+- **48-HOUR ULTIMATUM**: Trump demands Iran open Hormuz or US destroys power grid
+- **Live countdown timer** ticking to deadline (Tue 10:44 AEDT)
+- Iran counter-threatens desalination plants — Gulf water supply at risk
+- Iran vows to COMPLETELY close Hormuz if power plants hit
+- DEFCON raised to 2 — civilian infrastructure now being targeted both sides
+- Brent $112 (war high) — could spike to $120-150 Monday
+- Scenarios inverted: Energy Escalation Spiral now leading at 30%
+- Wind-Down collapsed from 45% to 20% in 48 hours
+- Sydney diesel $2.71/L — 107 NSW stations dry
 
 ## How it works
 

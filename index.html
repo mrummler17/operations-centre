@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OPSCEN v6.0 — Iran Theatre Intelligence Briefing</title>
-<meta name="description" content="Real-time operations centre tracking the 2026 Iran conflict + interactive Australian fuel depletion forecast. Built entirely in Claude by RETSA Group.">
-<meta property="og:title" content="OPSCEN v6.0 — Iran Theatre Intelligence Briefing">
-<meta property="og:description" content="Day 23 — Nuclear sites targeted both sides. IDF 'halfway.' Brent $112. Scenarios rebalanced: Wind-down 35%, Extended Attrit 35%.">
+<title>OPSCEN v6.1 — Iran Theatre Intelligence Briefing</title>
+<meta name="description" content="Real-time ops centre tracking the 2026 Iran conflict. 48-hour ultimatum countdown. Interactive AU fuel depletion forecast. Built in Claude by RETSA Group.">
+<meta property="og:title" content="OPSCEN v6.1 — Iran Theatre Intelligence Briefing">
+<meta property="og:description" content="Day 24 — Trump 48hr ultimatum: open Hormuz or power grid destroyed. Iran counter-threatens desalination. Energy Escalation now lead scenario at 30%.">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=VT323&family=Share+Tech+Mono&display=swap" rel="stylesheet">
@@ -72,7 +72,6 @@ body { background: var(--crt-bg); color: var(--crt-text); font-family: 'VT323', 
 .built-with a:hover { text-decoration: underline; }
 @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
 .blink { animation: blink 1s infinite; }
-/* Fuel forecast styles */
 .countdown-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 12px; }
 .cd-card { border: 1px solid var(--crt-border); padding: 12px; text-align: center; background: var(--crt-panel); }
 .cd-label { font-size: 14px; color: var(--crt-dim); letter-spacing: 2px; margin-bottom: 4px; }
@@ -123,161 +122,162 @@ const SECTIONS = [
   {
     id: "sitrep", title: "SITUATION REPORT", icon: "\u26A1",
     content: {
-      heading: "DAY 23 \u2014 NUCLEAR SITES TARGETED BOTH SIDES / IDF 'HALFWAY'",
+      heading: "DAY 24 \u2014 \u26A0 TRUMP 48-HOUR ULTIMATUM: OPEN HORMUZ OR POWER GRID DESTROYED",
       lines: [
-        "NUCLEAR ESCALATION: US struck Iran's Natanz enrichment facility with bunker busters (Mar 21). IDF struck Malek Ashtar University in Tehran \u2014 nuclear weapons R&D site under international sanctions.",
-        "IRAN RETALIATED ON DIMONA: Iranian ballistic missile struck Dimona \u2014 home of Israel's Negev Nuclear Research Centre. Building collapsed, 34 wounded inc. 12-year-old boy (serious). IDF investigating failed interception.",
-        "ARAD ALSO HIT: Second Iranian missile struck Arad (15km from Dimona). 64 wounded inc. 7 serious, 5-year-old girl critical. Cluster munitions also hit kindergarten in Rishon Lezion \u2014 empty at time.",
-        "IAEA: No damage to facilities containing nuclear material in Iran. No radiation risk. But 2 buildings visibly damaged at Natanz. No abnormal radiation at Dimona either.",
-        "IDF CHIEF ZAMIR: Campaign at 'HALFWAY' point. Expects fighting through Passover (~3 more weeks). Iran's regime 'battered and confused.'",
-        "DIEGO GARCIA: Iran fired 2 intermediate-range ballistic missiles at US-UK base in Indian Ocean. Both missed. Zamir: 'Berlin, Paris, Rome all within range.'",
-        "22-NATION STATEMENT: Australia, UK, France, Germany, Japan, UAE, Bahrain + 15 others condemned Iran's Hormuz closure and attacks on commercial vessels.",
-        "BRENT CLOSED $112.19 Friday \u2014 highest of the war. Opened ~$107 Sunday. Goldman Sachs: high prices could persist through 2027. Oil up 45% since war began.",
-        "US LIFTING SANCTIONS on 140M barrels of Iranian oil at sea \u2014 expires April 19. Analysts: won't meaningfully lower prices.",
-        "TRUMP CONTRADICTION: Says 'winding down' BUT USS Boxer + 2,500 Marines deploying. US drew up ground invasion plans + POW detention protocols.",
+        "\u26A0 ULTIMATUM: Trump Truth Social 23:44 GMT Sat: 'If Iran doesn't FULLY OPEN the Strait of Hormuz within 48 HOURS, the US will hit and obliterate their various POWER PLANTS, STARTING WITH THE BIGGEST ONE FIRST.'",
+        "DEADLINE: ~Monday 23:44 GMT / Tuesday 10:44 AEDT (March 24). Feb CPI drops next day (March 25).",
+        "IRAN COUNTER-THREAT: Khatam Al-Anbiya command: 'If Iran's fuel and energy infrastructure is violated, ALL energy, IT systems, and DESALINATION infrastructure belonging to the US and Israel in the region will be targeted.'",
+        "IRAN DOUBLES DOWN: 'Strait of Hormuz will be COMPLETELY CLOSED and will NOT BE REOPENED until our destroyed power plants are rebuilt.'",
+        "DESALINATION THREAT: 42% of world desalination capacity in Middle East. Kuwait 90% dependent, Saudi 70%, UAE 42%. CIA warned Riyadh evacuation within a week if Jubail plant hit.",
+        "Ghalibaf (Parliament Speaker): 'Critical infrastructure, energy and oil across the region will be irreversibly destroyed and oil prices will rise for a long time.'",
+        "Pezeshkian (President): 'Threats and terror only strengthen our unity. The Strait is open to all except those who violate our soil.'",
+        "CHATHAM HOUSE: 'Unlikely Tehran will cave. Trump admin didn't foresee Iran's response.'",
+        "AXIOS: 'Dramatic reversal from just a day earlier when Trump floated ending the war. Hormuz has become the issue he can't walk away from.'",
+        "THE CONTRADICTION RESOLVED: Friday = 'winding down.' Saturday = 48-hour ultimatum to destroy power grid. The $200B budget and troop deployments were always the tell.",
       ],
     },
   },
   {
     id: "kinetic", title: "KINETIC OPERATIONS", icon: "\uD83C\uDFAF",
     content: {
-      heading: "STRIKE ACTIVITY \u2014 DAY 21-23 \u2014 8,000 TARGETS HIT",
+      heading: "8,000+ TARGETS / NUCLEAR SITES BOTH SIDES / IDF HALFWAY",
       lines: [
-        "US/ISRAEL HIT 8,000+ TARGETS across Iran in 23 days. 130 Iranian vessels destroyed. 'Most extensive air defense umbrella in world' deployed \u2014 CENTCOM.",
-        "NATANZ: US bunker busters reportedly struck Iran's main uranium enrichment facility. IAEA confirmed attack \u2014 no radiation leak.",
-        "MALEK ASHTAR UNIVERSITY: IDF struck 'strategic nuclear weapons development site' in Tehran. Under sanctions for nuclear/ballistic missile program.",
-        "US NOW USING APACHE HELICOPTERS + A-10 WARTHOGS \u2014 close air support aircraft. Signal that Iranian air defence threat severely degraded.",
-        "IRAN'S 70TH WAVE of attacks launched \u2014 missiles and drones toward Israel and US bases. Despite 90% degradation claims, Iran sustaining offensive tempo.",
-        "IRGC SPOKESMAN ASSASSINATED \u2014 killed after publicly denying Netanyahu's claim that Iran's missile production capacity was destroyed.",
-        "BASIJ INTELLIGENCE CHIEF Ahmadi confirmed killed in Monday strike that also killed Basij commander Soleimani.",
-        "ISRAEL DEAD: 10 killed since Feb 28. 89+ wounded. Cluster munitions increasingly targeting civilian areas.",
-        "IRAN DEAD: 1,444 killed including 204 children (Al Jazeera). 6,668+ civilian units targeted. WHO: 13 health infrastructure sites struck.",
-        "SENIOR KILL LIST NOW 8+: Khamenei, Mousavi, Nasirzadeh, Pakpour, Larijani, Soleimani, Khatib, Ahmadi. Mojtaba Khamenei \u2014 CIA/Mossad searching.",
+        "US/ISRAEL: 8,000+ targets. 130 vessels destroyed. IDF chief: campaign at 'halfway' point. Fighting through Passover.",
+        "NATANZ struck by US bunker busters. IAEA confirmed \u2014 no radiation. Malek Ashtar University (nuclear R&D) also struck.",
+        "IRAN HIT DIMONA: Missile struck near Negev Nuclear Research Centre. 34 wounded. IDF interceptors FAILED. Arad: 64 wounded, 5-year-old girl critical.",
+        "US using Apache + A-10 Warthogs \u2014 close air support. Iranian air defence severely degraded.",
+        "IRGC spokesman assassinated. Basij intel chief Ahmadi confirmed killed. 8+ senior officials eliminated since Feb 28.",
+        "Iran's 70th wave of attacks. 12+ salvos Day 22. Diego Garcia targeted \u2014 'Berlin, Paris, Rome all within range.'",
+        "IRAN DEAD: 1,444 inc. 204 children. ISRAEL: 10 killed. LEBANON: 1,000+ inc. 118 children.",
+        "Cluster munitions hitting civilian areas \u2014 kindergartens, apartment buildings. War crimes allegations from both sides.",
+        "US drew up ground invasion plans + POW detention protocols. USS Boxer + 2,500 Marines deploying.",
+        "KILL LIST: Khamenei, Mousavi, Nasirzadeh, Pakpour, Larijani, Soleimani, Khatib, Ahmadi. Mojtaba Khamenei \u2014 CIA searching.",
       ],
     },
   },
   {
     id: "iran_response", title: "IRANIAN RETALIATION", icon: "\uD83D\uDE80",
     content: {
-      heading: "IRAN RETAINS 'EFFECTIVE COMMAND AND CONTROL' \u2014 ANALYST",
+      heading: "IRAN: 'NEW PHASE OF THE BATTLE' \u2014 DESALINATION TARGETS NAMED",
       lines: [
-        "DIMONA STRIKE: Israeli analyst Citrinowicz (INSS) says strike demonstrates 'effective command and control with strategic guidance translating into precise operational execution.'",
-        "PATTERN: South Pars \u2192 Ras Laffan \u2192 Natanz \u2192 Dimona. Each side escalating to the other's strategic assets. Tit-for-tat on nuclear/energy infrastructure.",
-        "Despite 90% reduction in launch rate, Iran executing 12+ salvos on Day 22 alone. Mix of ballistic missiles + cluster munitions + Shahed drones.",
-        "INTERCEPTION FAILURES: IDF confirmed air defences ENGAGED the Dimona missile but interceptors failed. Also investigating Arad failure.",
-        "GULF ATTACKS: Kuwait's Mina Al-Ahmadi refinery hit AGAIN. Iran claims it destroyed UAE Al-Minhad base + Kuwait Ali Al Salem airbase.",
-        "Mojtaba Khamenei Nowruz/Eid statement: Text-only \u2014 still no video or audio. CIA/Mossad hunting for confirmation he's alive.",
-        "21 CONFIRMED ATTACKS on commercial vessels since Mar 1. Threat level 'CRITICAL' across Gulf, Hormuz, Gulf of Oman.",
-        "3,000+ VESSELS STRANDED in Persian Gulf. IMO: Gulf has become 'massive parking lot.'",
-        "Iran arrested 18 Iran International journalists. Internal crackdown continuing alongside warfare.",
-        "Iran's Pezeshkian: 'We don't seek war with neighbours and aren't pursuing nuclear weapons.' Diplomatic channel still technically open.",
+        "Ghalibaf: 'If Israel cannot intercept missiles in heavily protected Dimona, it is a sign of entering a NEW PHASE.' Iron Dome failure validated.",
+        "COUNTER-THREAT MATRIX: Energy, IT systems, desalination explicitly named. First time desalination threatened as target category.",
+        "DESALINATION: Riyadh could face evacuation within a week if Jubail plant hit (CIA assessment). Veolia deploying extra security.",
+        "COMPLETE CLOSURE: Iran military says if power plants hit, Hormuz 'completely closed until rebuilt.' Escalates from de facto to declared blockade.",
+        "ESCALATION LADDER: South Pars \u2192 Ras Laffan \u2192 Natanz \u2192 Dimona \u2192 Power Plants? \u2192 Desalination? Climbing toward civilian infrastructure.",
+        "12+ salvos Day 22. 4,000km-range missiles demonstrated (Diego Garcia). European capitals in range.",
+        "Mojtaba Khamenei: Text-only statements since Feb 28. No video/audio. CIA/Mossad still searching.",
+        "Internet blackout: 4th week. 80M+ Iranians cut off from independent information.",
+        "21+ attacks on commercial vessels since Mar 1. 3,000+ vessels stranded. 'Massive parking lot.'",
+        "Chatham House: 'Iran will continue escalating costs. Threats won't change Tehran's calculus.'",
       ],
     },
   },
   {
     id: "lebanon", title: "LEBANON / HEZBOLLAH FRONT", icon: "\uD83D\uDD25",
     content: {
-      heading: "SECOND FRONT \u2014 1,000+ DEAD / 118+ CHILDREN",
+      heading: "1,000+ DEAD / HEZBOLLAH CLAIMS KILL IN NORTHERN ISRAEL",
       lines: [
-        "1,000+ KILLED in Lebanon since Mar 2. 118+ children killed. UNICEF: already exceeds child death toll from entire 2024 Lebanon conflict.",
-        "IDF killed 570+ Hezbollah operatives this month. Struck 2,000+ targets. 91st Division pushing deeper into southern Lebanon.",
-        "Hezbollah sustained fire: North and south of Israel simultaneously targeted. Coordinated timing with Iranian barrages.",
-        "IDF ordered evacuation south of Zahrani River \u2014 25km north of Israeli border. Widest displacement since 2006.",
-        "France involved in ceasefire talks. Ron Dermer leading for Israel. Lebanon demands full ceasefire before negotiations.",
-        "G5 (Canada, France, Germany, Italy, UK): 'A significant Israeli ground offensive must be averted.'",
-        "Hezbollah named new operation 'Eaten Straw' \u2014 Quran reference. Signals existential fight.",
-        "Hezbollah intelligence head Makled killed. PIJ armed wing leader al-Othman killed in Lebanon.",
-        "Cyprus: RAF Akrotiri targeted by drone from Lebanon. Turkey deployed F-16s to Northern Cyprus. Greece deployed frigates.",
-        "Strava OPSEC breach: French officer's app revealed aircraft carrier Charles de Gaulle location in Mediterranean.",
+        "Hezbollah airstrike KILLED a man in northern Israel Sunday. Coordinated attacks north (Hezbollah) and east (Iran).",
+        "1,000+ killed in Lebanon since Mar 2. 118 children, 79 women. 2,786+ wounded.",
+        "IDF: 570+ Hezbollah operatives killed. 2,000+ targets. 91st Division deep in southern Lebanon.",
+        "Evacuation south of Zahrani River \u2014 25km north of border. Widest displacement since 2006.",
+        "G5: 'Significant Israeli ground offensive must be averted.' France in ceasefire talks.",
+        "Gulf states intercepting fresh Iranian barrages \u2014 Saudi Arabia, UAE, Bahrain under daily fire.",
+        "Hezbollah intelligence head Makled + PIJ leader al-Othman killed.",
+        "Cyprus: RAF Akrotiri hit. Turkey + Greece deploying military assets.",
+        "Strava OPSEC breach exposed French carrier Charles de Gaulle position.",
+        "Lebanese govt banned Hezbollah military activities but enforcement impossible during hostilities.",
       ],
     },
   },
   {
     id: "hormuz", title: "STRAIT OF HORMUZ", icon: "\uD83D\uDEA2",
     content: {
-      heading: "HORMUZ \u2014 22-NATION CONDEMNATION / IRAN 'DEGRADED'",
+      heading: "\u26A0 48-HOUR DEADLINE / IRAN THREATENS COMPLETE CLOSURE",
       lines: [
-        "CENTCOM: Iran's ability to threaten Hormuz is 'DEGRADED' but not eliminated. De facto blockade persists.",
-        "22-NATION JOINT STATEMENT condemned Iran's attacks. Australia signed. 'Effects will be felt worldwide, especially by the most vulnerable.'",
-        "UK sent military planners to work with US on Hormuz reopening. Other allies unlikely to send assets during active hostilities.",
-        "TRUMP called NATO 'COWARDS' for not helping. Demanding burden-sharing while allies resist involvement.",
-        "3,000+ VESSELS STRANDED. Insurance premiums at historic highs. Commercial transit near zero.",
-        "US clearing mines along strait corridor. But Iran can re-seed faster than US can clear.",
-        "Kuwait, UAE, Bahrain all targeted this week. Gulf coalition hardening against Iran.",
-        "Qatar Ras Laffan: Repairs could take UP TO 5 YEARS. 17% LNG export capacity lost. $20B/yr revenue impact.",
-        "FERTILISER CRISIS: Hormuz closure cutting urea/sulphur flows. USDA expanded emergency farm credit.",
-        "IEA: Called this 'the largest supply disruption in the history of the global oil market.' Urged WFH + reduced speeds.",
+        "\u26A0 DEADLINE: 'FULLY OPEN, WITHOUT THREAT' by ~Mon 23:44 GMT. Iran: complete closure if power plants hit.",
+        "IRAN POSITION: 'Open to non-enemies.' But 21+ vessel attacks contradict this. De facto blockade regardless.",
+        "IF TRUMP FOLLOWS THROUGH: Power grid strikes \u2192 complete closure \u2192 oil spikes \u2192 desalination attacks \u2192 Gulf humanitarian crisis.",
+        "IF TRUMP BLINKS: Credibility damaged. Iran emboldened. Hormuz stays de facto closed. Oil $100-115.",
+        "CENTCOM: Iran's Hormuz capability 'degraded' \u2014 5,000lb bunker busters on coastal missile sites. But degraded \u2260 eliminated.",
+        "22-NATION STATEMENT condemned closure. Australia signed. No nation committing military assets during active war.",
+        "3,000+ vessels stranded. Insurance at historic highs. Commercial transit near zero.",
+        "Qatar Ras Laffan: 5 YEARS to repair. 17% global LNG export capacity lost permanently.",
+        "IEA: 'Largest supply disruption in history of global oil market.'",
+        "Fertiliser crisis: Urea/sulphur severed. Northern hemisphere planting threatened.",
       ],
     },
   },
   {
     id: "oil", title: "OIL & ENERGY MARKETS", icon: "\uD83D\uDEE2\uFE0F",
     content: {
-      heading: "BRENT: $112 FRIDAY CLOSE \u2014 WAR HIGH / $107 SUNDAY OPEN",
+      heading: "BRENT $112 FRI CLOSE \u2014 ULTIMATUM WILL SPIKE MONDAY OPEN",
       lines: [
-        "Brent closed $112.19 Friday \u2014 highest since war began. Oil up 45% since Feb 28 ($71 pre-war). Goldman Sachs: elevated through 2027.",
-        "BEST CASE (Goldman): Gradual Hormuz recovery from April \u2192 Brent $70s by Q4 2026. WORST CASE: Triple-digit oil for years.",
-        "US lifted sanctions on 140M barrels Iranian oil at sea. Expires Apr 19. Analysts: 1.4 days global consumption \u2014 symbolic only.",
-        "US also lifted some Russian crude sanctions. Moscow profiting from Gulf supply collapse.",
-        "US gas: $3.91/gallon \u2014 highest since Oct 2022. Bond yields rising. Some traders pricing possible US rate HIKE.",
-        "EIA FORECAST: Brent above $95/bbl for 2 months, falling below $80 in Q3 if Hormuz recovers. US production rising to 13.6M bpd.",
-        "Qatar Ras Laffan: 17% LNG capacity destroyed. Force majeure on gas exports. European/Asian supply chains impacted for years.",
-        "AIRLINES: Air NZ cut 1,100 flights. United cutting routes. IEA urging people to avoid air travel.",
-        "FERTILISER: Soaring as spring planting approaches. 69% of AU urea imports from Middle East.",
-        "TRUMP seeking $200B war funding. Market read: war not ending imminently despite 'winding down' rhetoric.",
+        "Brent closed $112.19 Friday \u2014 war high. 52-week: $58-$120. Up 46% YTD. Goldman: elevated through 2027.",
+        "MONDAY: If market prices in follow-through \u2192 Brent $120-130. If bluff \u2192 pullback to $108-110. Extreme volatility.",
+        "Goldman: Every $10 oil increase adds 0.3% to US inflation. $150 oil = recession trigger for multiple economies.",
+        "US lifted sanctions on 140M barrels Iranian oil at sea. Expires Apr 19. 1.4 days global consumption.",
+        "US gas: $3.91/gal (+93\u00A2 since war). Highest since Oct 2022.",
+        "If desalination plants hit: water crisis \u2192 Gulf population displacement \u2192 oil worker evacuation \u2192 cascading supply collapse.",
+        "Ras Laffan: 5-year repair. European + Asian LNG permanently disrupted.",
+        "Airlines collapsing: Air NZ -1,100 flights. Jet fuel most vulnerable (29 days AU reserve).",
+        "Trump $200B war funding \u2014 Congress hasn't voted. Budget = real signal. Ultimatum confirmed it.",
+        "DESALINATION STRIKE SCENARIO: Could force evacuation of Gulf capital cities. Oil production workers leave. Supply collapse beyond Hormuz.",
       ],
     },
   },
   {
     id: "asx", title: "ASX 200 / AU MARKETS", icon: "\uD83D\uDCC9",
     content: {
-      heading: "ASX 200: ~8,498 \u2014 DOWN 1.65% THURSDAY / -7.6% MTD",
+      heading: "ASX ~8,498 \u2014 ULTIMATUM TUE / CPI WED \u2014 BACK-TO-BACK",
       lines: [
-        "ASX 200 fell 1.65% to 8,497.8 Thursday. Down ~7.6% from pre-war record of 9,199. Worst month since COVID.",
-        "RBA AT 4.10%: Hiked Mar 17. May hike to 4.35% expected if Feb CPI (due Mar 25) comes in hot.",
-        "MORTGAGE IMPACT: $600K variable = +$225/month from two Q1 hikes ($2,700/year). Wipes out 2025 rate cuts.",
-        "GOLD HIT $5,247+ before pulling back to ~$4,643. Massive volatility. Northern Star -18.8% on guidance warning.",
-        "ENERGY STOCKS ONLY WINNERS: Woodside, Santos, Beach Energy, Ampol all green.",
-        "Materials -2.22%: BHP, Rio Tinto, Fortescue falling. Banks +0.41% on rate margins.",
-        "ASX FORECAST: March end ~8,336 (-9.4%). Gradual recovery expected from Q3 if oil normalises.",
-        "S&P 500 down 1.36% Friday. Nasdaq -2.5%. Global risk-off accelerating.",
-        "FEB CPI due March 25 \u2014 most important AU data release of the month for RBA May decision.",
-        "Energy names paying strong dividends. Woodside ~6% yield. Franking credits intact.",
+        "ASX at 8,498 (Thu close). Down 7.6% from 9,199 pre-war. Monday will react to ultimatum.",
+        "\u26A0 BACK-TO-BACK: Ultimatum expires Tue 10:44 AEDT. Feb CPI drops Wed (Mar 25). Two-day volatility gauntlet.",
+        "If CPI hot + follow-through \u2192 May hike locked in + oil spikes \u2192 ASX could breach 8,200.",
+        "If CPI soft + Trump blinks \u2192 May hike uncertain + oil pulls back \u2192 relief rally possible.",
+        "RBA at 4.10%. Bullock: 'Recession possible.' Mortgage stress rising across variable rate holders.",
+        "Energy only winners: Woodside, Santos, Beach, Ampol. If power plants struck, energy gaps up further.",
+        "Gold volatile \u2014 $5,247 to $4,643. Safe haven demand should surge on ultimatum. Watch Monday.",
+        "S&P 500 down 1.36%. VIX 26.78 (+11%). Global risk-off accelerating.",
+        "Feb CPI (Mar 25): If core above 3.5%, May hike locked in. Most important AU data of the month.",
+        "Dividend strategy: Energy yielding 5-6% fully franked. Ex-energy sustainability under pressure.",
       ],
     },
   },
   {
     id: "fuel_au", title: "AUSTRALIA FUEL SITUATION", icon: "\u26FD",
     content: {
-      heading: "NATIONAL CRISIS \u2014 107+ NSW STATIONS DRY / DIESEL $2.71/L",
+      heading: "\u26A0 IF HORMUZ 'COMPLETELY CLOSED' \u2014 AU DEPLETION ACCELERATES",
       lines: [
-        "SYDNEY: Petrol $2.30/L (NRMA, up 70c since Feb 15). Diesel $2.71/L (up 50c in one week). Premium 98 at $2.54/L.",
-        "107+ NSW stations experienced diesel shortages. 42 stations completely fuel-free. Regional prices significantly higher.",
-        "DEMAND SPIKE: 35-40% surge in regional areas from panic buying. Independent retailers worst hit.",
-        "NATIONAL CABINET convened on fuel supply. Govt position: 'national crisis.' Released 800M litres from MSO reserves + 60-day sulphur waiver.",
-        "Sulphur waiver adds ~100M litres/month \u2014 less than 1 day's national consumption. Insufficient for sustained shortage.",
-        "RESERVES: ~26 days diesel, ~29 days petrol. Down from 34 days diesel on Mar 6. Non-compliant with IEA 90-day requirement since 2012.",
-        "NFF WARNING: Food prices could rise up to 50% if shortages persist through seeding season.",
-        "ACCC investigating wholesale-to-retail spread. Pump prices tracking wholesale 'too closely.'",
-        "Analysts: ULP91 could hit $3.50/L in extreme scenario. RBA warned $3/L would cause 'significant challenges.'",
+        "Iran threatened COMPLETE closure if power plants hit. Current de facto closure allows some military-escorted transits. Complete = zero.",
+        "SYDNEY: Petrol $2.30/L, Diesel $2.71/L (NRMA). Up 70\u00A2 petrol / 50\u00A2 diesel in one week.",
+        "107+ NSW stations diesel-dry. 42 completely fuel-free. Demand surged 35-40%.",
+        "RESERVES: ~26 days diesel, ~29 days petrol. Complete closure makes 'Worst Case' the base case.",
+        "Complete closure + power grid strikes = Gulf refineries shut down (no power). Even non-Hormuz routes disrupted.",
+        "Govt released 800M litres MSO + sulphur waiver. Combined = 1-2 days national consumption.",
+        "NFF: Food prices up 50% if shortages persist through seeding season. Seeding is NOW.",
+        "Analysts: ULP91 could hit $3.50/L. Bullock warned $3/L causes 'significant challenges.'",
         "Diesel breaks the economy first: freight, farming, mining, emergency backup power all depend on it.",
+        "Use the Fuel Forecast tab to model complete Hormuz closure: set imports to 10%, demand to 2.0x.",
       ],
     },
   },
   {
     id: "scenarios", title: "SCENARIO ANALYSIS", icon: "\uD83D\uDD2E",
     content: {
-      heading: "PROBABILITY-WEIGHTED FORECASTS \u2014 MAR 22 \u2014 REBALANCED",
+      heading: "\u26A0 EMERGENCY REBALANCE \u2014 SCENARIOS INVERTED IN 12 HOURS",
       lines: [
-        "\u26A0 MAJOR REBALANCE: Nuclear targeting both sides (Natanz/Dimona) + IDF 'halfway' + ground op plans. Wind-down no longer sole leader.",
-        "SCENARIO A \u2014 MANAGED WIND-DOWN (35%): \u2193 FROM 45%. IDF says 3 more weeks minimum. Ground plans drawn up. $200B budget. Energy halt holds but war broadening.",
-        "SCENARIO B \u2014 ENERGY ESCALATION SPIRAL (15%): \u2191 FROM 10%. Nuclear site targeting = new escalation ladder. Dimona shows Iran can threaten Israel's nuclear program.",
-        "SCENARIO C \u2014 EXTENDED ATTRIT (35%): NOW JOINT LEADING. \u2191 FROM 30%. IDF 'halfway' = Passover + 3 weeks. More Marines. Ground plans. Close air support aircraft deployed.",
-        "SCENARIO D \u2014 REGIME COLLAPSE (15%): 8+ leaders killed. But Khamenei issued statement. Iran executing sophisticated Dimona strikes. Regime functional.",
-        "ESCALATION SIGNALS: Natanz struck, Dimona struck, Diego Garcia targeted, ground op plans, 70th wave, IDF 'halfway', cluster bombs on kindergartens. Count: 8.",
-        "DE-ESCALATION SIGNALS: Energy halt holds, 22-nation statement, oil sanctions lifted, IEA measures, UK planners on Hormuz. Count: 6.",
-        "THE SHIFT: Yesterday esc=6, de-esc=10. Today roughly EVEN. Nuclear exchange changed everything. No longer trending toward exit.",
-        "TRIGGER WATCH: Feb CPI (Mar 25). Hormuz reopening. $200B vote. Iran Nowruz protests. Mojtaba Khamenei status. Passover (Apr 12).",
+        "\u26A0 12 HOURS AGO: Wind-Down 35% (joint leading). NOW: Wind-Down 20%. The 48-hour ultimatum INVERTED the distribution.",
+        "SCENARIO A \u2014 MANAGED WIND-DOWN (20%): \u2193\u2193 FROM 35%. Trump went from 'winding down' to 'obliterate power plants' in 24 hours.",
+        "SCENARIO B \u2014 ENERGY ESCALATION SPIRAL (30%): \u2191\u2191 NOW LEADING. Power plants \u2192 desalination \u2192 complete closure \u2192 cascading destruction.",
+        "SCENARIO C \u2014 EXTENDED ATTRIT (30%): Joint second. If Trump blinks, back to grinding war. IDF 'halfway' = Passover + 3 weeks.",
+        "SCENARIO D \u2014 REGIME COLLAPSE (20%): Destroying power grid could trigger mass unrest (80M in blackout). But also unifies population against external enemy.",
+        "THE 48-HOUR CLOCK: Expires Mon 23:44 GMT / Tue 10:44 AEDT (Mar 24). Iran will not comply. Does Trump follow through?",
+        "IF FOLLOW-THROUGH: Oil $120-150. Desalination attacks. Gulf humanitarian crisis. Complete Hormuz shutdown. Global recession risk.",
+        "IF HE BLINKS: Credibility destroyed. Iran emboldened. War continues on current trajectory.",
+        "ESCALATION vs DE-ESCALATION: 12 signals to 3. Worst ratio of the entire war.",
+        "TRIGGER WATCH: Ultimatum deadline (Tue). Feb CPI (Wed). Hormuz response. Congressional $200B vote. Passover (Apr 12).",
       ],
     },
   },
@@ -294,84 +294,65 @@ const DEFCON_LEVELS = [
 const THREAT_MATRIX = [
   { theatre: "IRAN (MAINLAND)", level: "CRITICAL", color: "#ff0000" },
   { theatre: "STRAIT OF HORMUZ", level: "CRITICAL", color: "#ff0000" },
-  { theatre: "LEBANON", level: "SEVERE", color: "#ff4400" },
-  { theatre: "ISRAEL (HOME)", level: "SEVERE", color: "#ff4400" },
-  { theatre: "GULF STATES", level: "HIGH", color: "#ffaa00" },
-  { theatre: "NUCLEAR", level: "ELEVATED", color: "#cccc00" },
-  { theatre: "IRAQ", level: "ELEVATED", color: "#cccc00" },
+  { theatre: "GULF STATES", level: "CRITICAL", color: "#ff0000" },
   { theatre: "GLOBAL ECON", level: "CRITICAL", color: "#ff0000" },
+  { theatre: "ISRAEL (HOME)", level: "SEVERE", color: "#ff4400" },
+  { theatre: "LEBANON", level: "SEVERE", color: "#ff4400" },
+  { theatre: "NUCLEAR", level: "HIGH", color: "#ffaa00" },
   { theatre: "AUSTRALIA", level: "HIGH", color: "#ffaa00" },
+  { theatre: "IRAQ/PROXIES", level: "ELEVATED", color: "#cccc00" },
 ];
 
 const KEY_METRICS = [
-  { label: "WAR DAY", value: "23", color: "var(--crt-red)" },
-  { label: "BRENT", value: "$112", color: "var(--crt-red)", delta: "+$41 FRI", deltaColor: "#ff4400" },
-  { label: "ASX 200", value: "8,498", color: "var(--crt-red)", delta: "-7.6%", deltaColor: "#ff4400" },
-  { label: "RBA RATE", value: "4.10%", color: "var(--crt-amber)", delta: "MAY\u21924.35%?", deltaColor: "#ff4400" },
-  { label: "AU DIESEL", value: "$2.71", color: "var(--crt-red)", delta: "+50\u00A2/WK", deltaColor: "#ff4400" },
-  { label: "IRAN DEAD", value: "1,444", color: "var(--crt-red)", delta: "204 KIDS", deltaColor: "#ff4400" },
-  { label: "NUCLEAR", value: "BOTH SIDES", color: "var(--crt-red)", delta: "ESCALATION", deltaColor: "#ff4400" },
-  { label: "SCENARIOS", value: "A=C 35%", color: "var(--crt-cyan)", delta: "TIED", deltaColor: "#00ffcc" },
+  { label: "WAR DAY", value: "24", color: "var(--crt-red)" },
+  { label: "BRENT", value: "$112", color: "var(--crt-red)", delta: "\u2192$120-150?", deltaColor: "#ff4400" },
+  { label: "ULTIMATUM", value: "48 HRS", color: "var(--crt-red)", delta: "TUE 10:44 AEDT", deltaColor: "#ff4400" },
+  { label: "RBA RATE", value: "4.10%", color: "var(--crt-amber)", delta: "CPI WED", deltaColor: "#ff4400" },
+  { label: "AU DIESEL", value: "$2.71", color: "var(--crt-red)", delta: "\u2192$3.00+?", deltaColor: "#ff4400" },
+  { label: "ESC vs DE-ESC", value: "12 vs 3", color: "var(--crt-red)", delta: "WORST RATIO", deltaColor: "#ff4400" },
+  { label: "LEAD SCENARIO", value: "ENERGY ESC", color: "var(--crt-red)", delta: "30%", deltaColor: "#ff4400" },
+  { label: "WIND-DOWN", value: "20%", color: "var(--crt-cyan)", delta: "\u2193\u2193 FROM 45%", deltaColor: "#00ffcc" },
 ];
 
 function KeyMetrics() {
-  return (
-    <div className="key-metrics-bar">
-      {KEY_METRICS.map((m) => (
-        <div key={m.label} className="metric-card">
-          <div className="metric-label">{m.label}</div>
-          <div className="metric-value" style={{ color: m.color }}>{m.value}</div>
-          {m.delta && <div className="metric-delta" style={{ color: m.deltaColor }}>{m.delta}</div>}
-        </div>
-      ))}
-    </div>
-  );
+  return (<div className="key-metrics-bar">
+    {KEY_METRICS.map((m) => (<div key={m.label} className="metric-card">
+      <div className="metric-label">{m.label}</div>
+      <div className="metric-value" style={{ color: m.color }}>{m.value}</div>
+      {m.delta && <div className="metric-delta" style={{ color: m.deltaColor }}>{m.delta}</div>}
+    </div>))}
+  </div>);
 }
 
 function ThreatMatrix() {
-  return (
-    <div className="threat-matrix">
-      <div style={{ fontSize: 15, letterSpacing: 2, color: "var(--crt-green)" }}>{"\u25C6"} THREAT MATRIX</div>
-      <div className="threat-grid">
-        {THREAT_MATRIX.map((t) => (
-          <div key={t.theatre} className="threat-cell">
-            <span>{t.theatre}</span>
-            <span className="threat-level" style={{ color: t.color, border: `1px solid ${t.color}` }}>{t.level}</span>
-          </div>
-        ))}
-      </div>
+  return (<div className="threat-matrix">
+    <div style={{ fontSize: 15, letterSpacing: 2, color: "var(--crt-green)" }}>{"\u25C6"} THREAT MATRIX</div>
+    <div className="threat-grid">
+      {THREAT_MATRIX.map((t) => (<div key={t.theatre} className="threat-cell">
+        <span>{t.theatre}</span>
+        <span className="threat-level" style={{ color: t.color, border: `1px solid ${t.color}` }}>{t.level}</span>
+      </div>))}
     </div>
-  );
+  </div>);
 }
 
 function Section({ section, isOpen, toggle }) {
-  return (
-    <div className="section-block">
-      <div className={`section-header ${isOpen ? "open" : ""}`} onClick={toggle}>
-        <span style={{ fontSize: 12 }}>{isOpen ? "\u25BC" : "\u25B6"}</span>
-        <span>{section.icon}</span>
-        <span>{section.title}</span>
-      </div>
-      {isOpen && (
-        <div className="section-body">
-          <div className="section-heading">{section.content.heading}</div>
-          {section.content.lines.map((line, i) => (
-            <div key={i} className="intel-line">{line}</div>
-          ))}
-        </div>
-      )}
+  return (<div className="section-block">
+    <div className={`section-header ${isOpen ? "open" : ""}`} onClick={toggle}>
+      <span style={{ fontSize: 12 }}>{isOpen ? "\u25BC" : "\u25B6"}</span>
+      <span>{section.icon}</span><span>{section.title}</span>
     </div>
-  );
+    {isOpen && (<div className="section-body">
+      <div className="section-heading">{section.content.heading}</div>
+      {section.content.lines.map((line, i) => (<div key={i} className="intel-line">{line}</div>))}
+    </div>)}
+  </div>);
 }
 
 function DefconGauge({ level }) {
-  return (
-    <div className="defcon-gauge">
-      {DEFCON_LEVELS.map((d) => (
-        <div key={d.level} className={`defcon-seg ${d.level >= level ? "active" : ""}`} style={{ backgroundColor: d.color }} />
-      ))}
-    </div>
-  );
+  return (<div className="defcon-gauge">
+    {DEFCON_LEVELS.map((d) => (<div key={d.level} className={`defcon-seg ${d.level >= level ? "active" : ""}`} style={{ backgroundColor: d.color }} />))}
+  </div>);
 }
 
 function useClock() {
@@ -394,27 +375,22 @@ const FUEL_SCENARIOS = {
 };
 
 function projectFuel(params) {
-  const { demand, imports, refBoost, reserve } = params;
-  const impFrac = imports / 100;
-  const data = [];
-  let stocks = { ...FUEL_STOCKS_ML };
-  const relPerDay = { petrol: reserve ? FUEL_MSO_ML.petrol / 21 : 0, diesel: reserve ? FUEL_MSO_ML.diesel / 21 : 0, jet: 0 };
-  let dryDays = { petrol: null, diesel: null, jet: null };
-  for (let d = 0; d <= 120; d++) {
+  var impFrac = params.imports / 100, data = [], stocks = { petrol: FUEL_STOCKS_ML.petrol, diesel: FUEL_STOCKS_ML.diesel, jet: FUEL_STOCKS_ML.jet };
+  var relPerDay = { petrol: params.reserve ? FUEL_MSO_ML.petrol / 21 : 0, diesel: params.reserve ? FUEL_MSO_ML.diesel / 21 : 0, jet: 0 };
+  var dryDays = { petrol: null, diesel: null, jet: null };
+  for (var d = 0; d <= 120; d++) {
     data.push({ day: d, date: new Date(FUEL_BASE_DATE.getTime() + d * 86400000).toLocaleDateString("en-AU", { day: "numeric", month: "short" }),
       petrol: Math.max(0, stocks.petrol), diesel: Math.max(0, stocks.diesel), jet: Math.max(0, stocks.jet) });
-    ["petrol", "diesel", "jet"].forEach((f) => {
-      const consumed = FUEL_DAILY_ML[f] * demand;
-      const imported = FUEL_DAILY_ML[f] * impFrac;
-      let boost = (f === "petrol" && refBoost) ? FUEL_SULPHUR_BOOST : 0;
-      let rel = (d >= 7 && d < 28) ? relPerDay[f] : 0;
+    ["petrol", "diesel", "jet"].forEach(function(f) {
+      var consumed = FUEL_DAILY_ML[f] * params.demand, imported = FUEL_DAILY_ML[f] * impFrac;
+      var boost = (f === "petrol" && params.refBoost) ? FUEL_SULPHUR_BOOST : 0;
+      var rel = (d >= 7 && d < 28) ? relPerDay[f] : 0;
       stocks[f] = stocks[f] - consumed + imported + boost + rel;
       if (stocks[f] <= 0 && dryDays[f] === null) { dryDays[f] = d; stocks[f] = 0; }
     });
   }
-  return { data, dryDays };
+  return { data: data, dryDays: dryDays };
 }
-
 function fuelDaysColor(days) { return days <= 7 ? "var(--crt-red)" : days <= 14 ? "var(--crt-amber)" : "var(--crt-green)"; }
 function fuelStatus(days) {
   if (days <= 0) return { text: "DEPLETED", color: "var(--crt-red)", bg: "rgba(255,50,50,0.15)", border: "var(--crt-red)" };
@@ -424,107 +400,47 @@ function fuelStatus(days) {
 }
 
 function FuelForecast() {
-  var demand = 1.3, imports = 60, refB = true, res = true, preset = "current";
-  var stateD = useState(1.3);    demand = stateD[0]; var setDemand = stateD[1];
-  var stateI = useState(60);     imports = stateI[0]; var setImports = stateI[1];
-  var stateR = useState(true);   refB = stateR[0]; var setRefB = stateR[1];
-  var stateRs = useState(true);  res = stateRs[0]; var setRes = stateRs[1];
-  var stateP = useState("current"); preset = stateP[0]; var setPreset = stateP[1];
-
-  function applyPreset(key) {
-    var s = FUEL_SCENARIOS[key];
-    setDemand(s.demand); setImports(s.imports); setRefB(s.refBoost); setRes(s.reserve); setPreset(key);
-  }
-
-  var result = projectFuel({ demand: demand, imports: imports, refBoost: refB, reserve: res });
-  var data = result.data;
-  var dryDays = result.dryDays;
-
-  var W = 900, H = 300, pL = 55, pR = 15, pT = 15, pB = 35;
-  var pW = W - pL - pR, pH = H - pT - pB;
+  var stateD = useState(1.3), stateI = useState(60), stateR = useState(true), stateRs = useState(true), stateP = useState("current");
+  var demand = stateD[0], setDemand = stateD[1], imports = stateI[0], setImports = stateI[1];
+  var refB = stateR[0], setRefB = stateR[1], res = stateRs[0], setRes = stateRs[1], preset = stateP[0], setPreset = stateP[1];
+  function applyPreset(key) { var s = FUEL_SCENARIOS[key]; setDemand(s.demand); setImports(s.imports); setRefB(s.refBoost); setRes(s.reserve); setPreset(key); }
+  var result = projectFuel({ demand: demand, imports: imports, refBoost: refB, reserve: res }), data = result.data, dryDays = result.dryDays;
+  var W = 900, H = 300, pL = 55, pR = 15, pT = 15, pB = 35, pW = W - pL - pR, pH = H - pT - pB;
   var maxV = Math.max(FUEL_STOCKS_ML.petrol, FUEL_STOCKS_ML.diesel, FUEL_STOCKS_ML.jet) * 1.05;
-
-  function makePath(key) {
-    var pts = [];
-    for (var i = 0; i <= 120; i++) {
-      var x = pL + (i / 120) * pW;
-      var y = pT + pH - (data[i][key] / maxV) * pH;
-      pts.push((i === 0 ? "M" : "L") + x.toFixed(1) + "," + y.toFixed(1));
-    }
-    return pts.join(" ");
-  }
-  function makeArea(key) {
-    var line = makePath(key);
-    return line + " L" + (pL + pW) + "," + (pT + pH) + " L" + pL + "," + (pT + pH) + " Z";
-  }
+  function makePath(key) { var pts = []; for (var i = 0; i <= 120; i++) { var x = pL + (i / 120) * pW, y = pT + pH - (data[i][key] / maxV) * pH; pts.push((i === 0 ? "M" : "L") + x.toFixed(1) + "," + y.toFixed(1)); } return pts.join(" "); }
+  function makeArea(key) { return makePath(key) + " L" + (pL + pW) + "," + (pT + pH) + " L" + pL + "," + (pT + pH) + " Z"; }
   function yPos(val) { return pT + pH - (val / maxV) * pH; }
-
   var fuels = [{ name: "PETROL", key: "petrol" }, { name: "DIESEL", key: "diesel" }, { name: "JET FUEL", key: "jet" }];
-  var presetKeys = Object.keys(FUEL_SCENARIOS);
-
   return React.createElement("div", null,
-    React.createElement("div", { className: "countdown-row" },
-      fuels.map(function(f) {
-        var days = dryDays[f.key] !== null ? dryDays[f.key] : 120;
-        var depleted = dryDays[f.key] !== null;
-        var dryDate = depleted ? new Date(FUEL_BASE_DATE.getTime() + dryDays[f.key] * 86400000).toLocaleDateString("en-AU", { day: "numeric", month: "short" }) : "120+ DAYS";
-        var st = fuelStatus(depleted ? 0 : days);
-        return React.createElement("div", { key: f.key, className: "cd-card" },
-          React.createElement("div", { className: "cd-label" }, f.name),
-          React.createElement("div", { className: "cd-value", style: { color: depleted ? "var(--crt-red)" : fuelDaysColor(days) } }, depleted ? days : days >= 120 ? "120+" : days),
-          React.createElement("div", { className: "cd-sub" }, "DAYS UNTIL DEPLETION"),
-          React.createElement("div", { className: "cd-sub", style: { color: depleted ? "var(--crt-red)" : "var(--crt-dim)", marginTop: 2 } }, depleted ? "DRY: " + dryDate : dryDate),
-          React.createElement("div", { className: "cd-status", style: { color: st.color, background: st.bg, border: "1px solid " + st.border } }, st.text)
-        );
-      })
-    ),
-    React.createElement("div", { className: "presets" },
-      presetKeys.map(function(key) {
-        var s = FUEL_SCENARIOS[key];
-        return React.createElement("button", {
-          key: key, className: "preset-btn " + (preset === key ? "active" : ""),
-          style: { border: "1px solid " + s.color, color: s.color },
-          onClick: function() { applyPreset(key); }
-        }, s.name);
-      })
-    ),
+    React.createElement("div", { className: "countdown-row" }, fuels.map(function(f) {
+      var days = dryDays[f.key] !== null ? dryDays[f.key] : 120, depleted = dryDays[f.key] !== null;
+      var dryDate = depleted ? new Date(FUEL_BASE_DATE.getTime() + dryDays[f.key] * 86400000).toLocaleDateString("en-AU", { day: "numeric", month: "short" }) : "120+ DAYS";
+      var st = fuelStatus(depleted ? 0 : days);
+      return React.createElement("div", { key: f.key, className: "cd-card" },
+        React.createElement("div", { className: "cd-label" }, f.name),
+        React.createElement("div", { className: "cd-value", style: { color: depleted ? "var(--crt-red)" : fuelDaysColor(days) } }, depleted ? days : days >= 120 ? "120+" : days),
+        React.createElement("div", { className: "cd-sub" }, "DAYS UNTIL DEPLETION"),
+        React.createElement("div", { className: "cd-sub", style: { color: depleted ? "var(--crt-red)" : "var(--crt-dim)", marginTop: 2 } }, depleted ? "DRY: " + dryDate : dryDate),
+        React.createElement("div", { className: "cd-status", style: { color: st.color, background: st.bg, border: "1px solid " + st.border } }, st.text));
+    })),
+    React.createElement("div", { className: "presets" }, Object.keys(FUEL_SCENARIOS).map(function(key) {
+      var s = FUEL_SCENARIOS[key];
+      return React.createElement("button", { key: key, className: "preset-btn " + (preset === key ? "active" : ""), style: { border: "1px solid " + s.color, color: s.color }, onClick: function() { applyPreset(key); } }, s.name);
+    })),
     React.createElement("div", { className: "ctrl-box" },
       React.createElement("div", { className: "ctrl-title" }, "INTERACTIVE PARAMETERS"),
       React.createElement("div", { className: "ctrl-grid" },
-        React.createElement("div", { className: "ctrl-item" },
-          React.createElement("label", null, "DEMAND MULTIPLIER ", React.createElement("span", { className: "ctrl-val" }, demand.toFixed(1) + "x")),
-          React.createElement("input", { type: "range", min: "0.8", max: "2.5", step: "0.1", value: demand,
-            onChange: function(e) { setDemand(parseFloat(e.target.value)); setPreset(null); } })
-        ),
-        React.createElement("div", { className: "ctrl-item" },
-          React.createElement("label", null, "IMPORT FLOW RATE ", React.createElement("span", { className: "ctrl-val" }, imports + "%")),
-          React.createElement("input", { type: "range", min: "0", max: "100", step: "5", value: imports,
-            onChange: function(e) { setImports(parseInt(e.target.value)); setPreset(null); } })
-        )
-      ),
+        React.createElement("div", { className: "ctrl-item" }, React.createElement("label", null, "DEMAND MULTIPLIER ", React.createElement("span", { className: "ctrl-val" }, demand.toFixed(1) + "x")), React.createElement("input", { type: "range", min: "0.8", max: "2.5", step: "0.1", value: demand, onChange: function(e) { setDemand(parseFloat(e.target.value)); setPreset(null); } })),
+        React.createElement("div", { className: "ctrl-item" }, React.createElement("label", null, "IMPORT FLOW RATE ", React.createElement("span", { className: "ctrl-val" }, imports + "%")), React.createElement("input", { type: "range", min: "0", max: "100", step: "5", value: imports, onChange: function(e) { setImports(parseInt(e.target.value)); setPreset(null); } }))),
       React.createElement("div", { className: "toggle-row" },
-        React.createElement("button", { className: "toggle-btn " + (refB ? "on" : ""), onClick: function() { setRefB(!refB); setPreset(null); } },
-          (refB ? "[ON]" : "[OFF]") + " SULPHUR WAIVER (+3.3 ML/day petrol)"),
-        React.createElement("button", { className: "toggle-btn " + (res ? "on" : ""), onClick: function() { setRes(!res); setPreset(null); } },
-          (res ? "[ON]" : "[OFF]") + " MSO RESERVE RELEASE (762 ML)")
-      )
-    ),
+        React.createElement("button", { className: "toggle-btn " + (refB ? "on" : ""), onClick: function() { setRefB(!refB); setPreset(null); } }, (refB ? "[ON]" : "[OFF]") + " SULPHUR WAIVER (+3.3 ML/day petrol)"),
+        React.createElement("button", { className: "toggle-btn " + (res ? "on" : ""), onClick: function() { setRes(!res); setPreset(null); } }, (res ? "[ON]" : "[OFF]") + " MSO RESERVE RELEASE (762 ML)"))),
     React.createElement("div", { className: "chart-panel" },
       React.createElement("div", { className: "chart-title" }, "DEPLETION CURVES - MILLION LITRES REMAINING"),
       React.createElement("svg", { viewBox: "0 0 " + W + " " + H, style: { width: "100%", height: "auto", fontFamily: "'Share Tech Mono', monospace" } },
-        [0, 0.25, 0.5, 0.75, 1].map(function(f) {
-          var y = pT + pH * (1 - f);
-          return React.createElement("line", { key: "g" + f, x1: pL, y1: y, x2: pL + pW, y2: y, stroke: "#1a3a1a", strokeDasharray: "3 3" });
-        }),
-        [0, 0.25, 0.5, 0.75, 1].map(function(f) {
-          var y = pT + pH * (1 - f);
-          return React.createElement("text", { key: "yl" + f, x: pL - 5, y: y + 4, textAnchor: "end", fill: "#3a7a3a", fontSize: "10" }, (maxV * f / 1000).toFixed(1) + "k");
-        }),
-        [0, 30, 60, 90, 120].map(function(d) {
-          var x = pL + (d / 120) * pW;
-          var dt = data[d] ? data[d].date : "";
-          return React.createElement("text", { key: "xl" + d, x: x, y: pT + pH + 20, textAnchor: "middle", fill: "#3a7a3a", fontSize: "10" }, dt);
-        }),
+        [0, 0.25, 0.5, 0.75, 1].map(function(f) { var y = pT + pH * (1 - f); return React.createElement("line", { key: "g" + f, x1: pL, y1: y, x2: pL + pW, y2: y, stroke: "#1a3a1a", strokeDasharray: "3 3" }); }),
+        [0, 0.25, 0.5, 0.75, 1].map(function(f) { var y = pT + pH * (1 - f); return React.createElement("text", { key: "yl" + f, x: pL - 5, y: y + 4, textAnchor: "end", fill: "#3a7a3a", fontSize: "10" }, (maxV * f / 1000).toFixed(1) + "k"); }),
+        [0, 30, 60, 90, 120].map(function(d) { var x = pL + (d / 120) * pW; return React.createElement("text", { key: "xl" + d, x: x, y: pT + pH + 20, textAnchor: "middle", fill: "#3a7a3a", fontSize: "10" }, data[d] ? data[d].date : ""); }),
         React.createElement("line", { x1: pL, y1: yPos(14 * FUEL_DAILY_ML.diesel), x2: pL + pW, y2: yPos(14 * FUEL_DAILY_ML.diesel), stroke: "#ffaa00", strokeDasharray: "6 3" }),
         React.createElement("text", { x: pL + pW - 5, y: yPos(14 * FUEL_DAILY_ML.diesel) - 4, textAnchor: "end", fill: "#ffaa00", fontSize: "9" }, "RATIONING 14d"),
         React.createElement("line", { x1: pL, y1: yPos(7 * FUEL_DAILY_ML.diesel), x2: pL + pW, y2: yPos(7 * FUEL_DAILY_ML.diesel), stroke: "#ff3333", strokeDasharray: "6 3" }),
@@ -536,33 +452,25 @@ function FuelForecast() {
         React.createElement("path", { d: makePath("diesel"), fill: "none", stroke: "#ff6600", strokeWidth: "2" }),
         React.createElement("path", { d: makePath("jet"), fill: "none", stroke: "#00ffcc", strokeWidth: "2" }),
         React.createElement("line", { x1: pL, y1: pT, x2: pL, y2: pT + pH, stroke: "#3a7a3a" }),
-        React.createElement("line", { x1: pL, y1: pT + pH, x2: pL + pW, y2: pT + pH, stroke: "#3a7a3a" })
-      ),
+        React.createElement("line", { x1: pL, y1: pT + pH, x2: pL + pW, y2: pT + pH, stroke: "#3a7a3a" })),
       React.createElement("div", { className: "legend-row" },
         React.createElement("div", { className: "legend-item" }, React.createElement("div", { className: "legend-dot", style: { background: "#33ff33" } }), " PETROL"),
         React.createElement("div", { className: "legend-item" }, React.createElement("div", { className: "legend-dot", style: { background: "#ff6600" } }), " DIESEL (PRIORITY)"),
         React.createElement("div", { className: "legend-item" }, React.createElement("div", { className: "legend-dot", style: { background: "#00ffcc" } }), " JET FUEL"),
         React.createElement("div", { className: "legend-item", style: { color: "#ffaa00" } }, "--- RATIONING (14d)"),
-        React.createElement("div", { className: "legend-item", style: { color: "#ff3333" } }, "--- EMERGENCY (7d)")
-      )
-    ),
+        React.createElement("div", { className: "legend-item", style: { color: "#ff3333" } }, "--- EMERGENCY (7d)"))),
     React.createElement("div", { className: "ctx-notes" },
       React.createElement("div", { className: "ctx-title" }, "SUPPLY CHAIN CONTEXT"),
-      React.createElement("div", { className: "ctx-line crit" }, "Strait of Hormuz effectively closed. 21+ attacks on commercial vessels since Mar 1. 3,000+ vessels stranded."),
-      React.createElement("div", { className: "ctx-line crit" }, "China banned refined fuel exports. Thailand suspended exports. Singapore under force majeure."),
-      React.createElement("div", { className: "ctx-line warn" }, "107+ NSW fuel stations experienced diesel shortages. Sydney diesel $2.71/L. Regional centres past $3.00/L."),
+      React.createElement("div", { className: "ctx-line crit" }, "Iran threatens COMPLETE Hormuz closure if power plants hit. 21+ attacks on commercial vessels since Mar 1."),
+      React.createElement("div", { className: "ctx-line crit" }, "China banned refined fuel exports. Thailand suspended. Singapore force majeure. 3,000+ vessels stranded."),
+      React.createElement("div", { className: "ctx-line warn" }, "107+ NSW fuel stations diesel-dry. Sydney diesel $2.71/L. Regional centres past $3.00/L."),
       React.createElement("div", { className: "ctx-line warn" }, "Even with ceasefire, first meaningful supply doesn't reach AU terminals until weeks 8-10 post-ceasefire."),
-      React.createElement("div", { className: "ctx-line warn" }, "Full recovery: minimum 4-6 months from ceasefire. Emergency crude-to-refined round trip: 30-40 days."),
-      React.createElement("div", { className: "ctx-line" }, "69% of Australia's imported urea fertiliser comes from Middle East. Food impact lags fuel by ~6 months."),
-      React.createElement("div", { className: "ctx-line" }, "NFF president warned food prices could rise up to 50%."),
-      React.createElement("div", { className: "ctx-line" }, "Diesel breaks the economy first: freight, farming, mining, emergency backup power all depend on it.")
-    ),
+      React.createElement("div", { className: "ctx-line" }, "69% of AU urea fertiliser from Middle East. NFF: food prices up 50% if shortages persist."),
+      React.createElement("div", { className: "ctx-line" }, "Diesel breaks the economy first: freight, farming, mining, emergency backup power all depend on it.")),
     React.createElement("div", { className: "ctx-notes" },
       React.createElement("div", { className: "ctx-title" }, "DATA SOURCES"),
-      React.createElement("div", { className: "ctx-line" }, "Mar 3 data: Energy Minister Chris Bowen, Parliament Question Time"),
-      React.createElement("div", { className: "ctx-line" }, "Mar 10 data: DCCEEW Weekly MSO Report via Argus Media"),
-      React.createElement("div", { className: "ctx-line" }, "Diesel lost 4 days of cover in 7 calendar days (Mar 3 to 10) - accelerated depletion already in effect")
-    )
+      React.createElement("div", { className: "ctx-line" }, "Mar 3: Energy Minister Bowen, Parliament. Mar 10: DCCEEW MSO Report."),
+      React.createElement("div", { className: "ctx-line" }, "Diesel lost 4 days cover in 7 calendar days (Mar 3-10). Accelerated depletion in effect."))
   );
 }
 
@@ -571,34 +479,32 @@ function OPSCEN() {
   const [openSections, setOpenSections] = useState({ sitrep: true });
   const [allOpen, setAllOpen] = useState(false);
   const [activeTab, setActiveTab] = useState("briefing");
-  const defconLevel = 3;
-
-  const toggle = useCallback((id) => {
-    setOpenSections((prev) => ({ ...prev, [id]: !prev[id] }));
-  }, []);
-
-  const toggleAll = useCallback(() => {
-    const next = !allOpen;
-    setAllOpen(next);
-    const state = {};
-    SECTIONS.forEach((s) => (state[s.id] = next));
-    setOpenSections(state);
-  }, [allOpen]);
-
+  const defconLevel = 2;
+  const toggle = useCallback((id) => { setOpenSections((prev) => ({ ...prev, [id]: !prev[id] })); }, []);
+  const toggleAll = useCallback(() => { const next = !allOpen; setAllOpen(next); const state = {}; SECTIONS.forEach((s) => (state[s.id] = next)); setOpenSections(state); }, [allOpen]);
   const defconInfo = DEFCON_LEVELS.find((d) => d.level === defconLevel);
   const utcStr = clock.toISOString().replace("T", " ").slice(0, 19) + "Z";
   const aest = new Date(clock.getTime() + 11 * 3600000);
   const aestStr = aest.toISOString().replace("T", " ").slice(0, 19) + " AEDT";
+
+  // Countdown — 48hrs from Trump post 23:44 GMT Sat Mar 22
+  const deadlineUTC = new Date(Date.UTC(2026, 2, 23, 23, 44, 0));
+  const msLeft = deadlineUTC - clock;
+  const hrsLeft = Math.max(0, Math.floor(msLeft / 3600000));
+  const minsLeft = Math.max(0, Math.floor((msLeft % 3600000) / 60000));
+  const secsLeft = Math.max(0, Math.floor((msLeft % 60000) / 1000));
+  const countdownStr = msLeft > 0 ? `${String(hrsLeft).padStart(2,"0")}:${String(minsLeft).padStart(2,"0")}:${String(secsLeft).padStart(2,"0")}` : "EXPIRED";
 
   return (
     <React.Fragment>
       <div className="scanlines" />
       <div className="opscen-container">
         <div className="header-bar">
-          <div className="header-title crt-glow">{"\u25E4"} OPSCEN v6.0 {"\u25E2"}</div>
-          <div className="header-sub">IRAN THEATRE INTELLIGENCE BRIEFING &mdash; OPERATION EPIC FURY &mdash; DAY 23</div>
-          <div className="header-sub" style={{ color: "var(--crt-red)", marginTop: 2 }}>
-            {"\u26A0"} NUCLEAR SITES TARGETED BOTH SIDES &mdash; SCENARIOS REBALANCED
+          <div className="header-title crt-glow">{"\u25E4"} OPSCEN v6.1 {"\u25E2"}</div>
+          <div className="header-sub">IRAN THEATRE INTELLIGENCE BRIEFING &mdash; OPERATION EPIC FURY &mdash; DAY 24</div>
+          <div className="header-sub" style={{ color: "var(--crt-red)", marginTop: 2 }}>{"\u26A0"} 48-HOUR ULTIMATUM: OPEN HORMUZ OR POWER GRID DESTROYED</div>
+          <div style={{ textAlign: "center", marginTop: 8, fontSize: 32, color: "var(--crt-red)", fontFamily: "'Share Tech Mono', monospace", textShadow: "0 0 10px #ff3333, 0 0 20px #ff3333" }}>
+            DEADLINE: {countdownStr}
           </div>
         </div>
 
@@ -610,7 +516,6 @@ function OPSCEN() {
         {activeTab === "briefing" && (
           <React.Fragment>
             <KeyMetrics />
-
             <div className="status-row">
               <div className="defcon-panel">
                 <div style={{ fontSize: 14, color: "var(--crt-green)", letterSpacing: 2 }}>DEFCON ASSESSMENT</div>
@@ -619,40 +524,29 @@ function OPSCEN() {
                   <span style={{ color: defconInfo.color }}>DEFCON {defconLevel}</span>
                   <span style={{ color: defconInfo.color, fontSize: 12 }}>{defconInfo.label}</span>
                 </div>
-                <div style={{ fontSize: 12, color: "var(--crt-dim)", marginTop: 4 }}>
-                  REGIONAL CONFLICT &bull; MULTI-THEATRE &bull; NUCLEAR SITES TARGETED
-                </div>
+                <div style={{ fontSize: 12, color: "var(--crt-dim)", marginTop: 4 }}>CIVILIAN INFRASTRUCTURE TARGETING &bull; DESALINATION THREATS &bull; NUCLEAR SITES HIT</div>
               </div>
               <div className="clock-panel">
                 <div style={{ fontSize: 14, color: "var(--crt-green)", letterSpacing: 2 }}>SYSTEM CLOCK</div>
                 <div style={{ fontSize: 22, color: "var(--crt-amber)", marginTop: 6, fontFamily: "'Share Tech Mono', monospace" }}>{aestStr}</div>
                 <div style={{ fontSize: 13, color: "var(--crt-dim)", marginTop: 2, fontFamily: "'Share Tech Mono', monospace" }}>{utcStr}</div>
-                <div style={{ fontSize: 12, color: "var(--crt-dim)", marginTop: 4 }}>BRIEFING EPOCH: 22-MAR-2026 0900 AEDT</div>
+                <div style={{ fontSize: 12, color: "var(--crt-dim)", marginTop: 4 }}>BRIEFING EPOCH: 23-MAR-2026 1000 AEDT</div>
               </div>
             </div>
-
             <ThreatMatrix />
-
             <div style={{ display: "flex", justifyContent: "flex-end", marginBottom: 6 }}>
-              <button className="expand-all-btn" onClick={toggleAll}>
-                {allOpen ? "\u25BC COLLAPSE ALL" : "\u25B6 EXPAND ALL"}
-              </button>
+              <button className="expand-all-btn" onClick={toggleAll}>{allOpen ? "\u25BC COLLAPSE ALL" : "\u25B6 EXPAND ALL"}</button>
             </div>
-
-            {SECTIONS.map((s) => (
-              <Section key={s.id} section={s} isOpen={!!openSections[s.id]} toggle={() => toggle(s.id)} />
-            ))}
+            {SECTIONS.map((s) => (<Section key={s.id} section={s} isOpen={!!openSections[s.id]} toggle={() => toggle(s.id)} />))}
           </React.Fragment>
         )}
-
         {activeTab === "fuel" && <FuelForecast />}
 
         <div className="footer-bar">
-          <span>OPSCEN v6.0 &bull; RETSA GROUP INTELLIGENCE</span>
+          <span>OPSCEN v6.1 &bull; RETSA GROUP INTELLIGENCE</span>
           <span>CLASSIFICATION: OPEN SOURCE</span>
           <span><span className="blink" style={{ color: "var(--crt-red)" }}>&bull;</span> LIVE</span>
         </div>
-
         <div className="built-with">
           Built entirely in <a href="https://claude.ai" target="_blank" rel="noopener">Claude</a> by <a href="https://retsagroup.com.au" target="_blank" rel="noopener">RETSA Group</a> &bull;
           <a href="https://x.com/Marcus_Rummler" target="_blank" rel="noopener">@Marcus_Rummler</a>
