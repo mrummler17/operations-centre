@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OPSCEN v5.9 — Iran Theatre Intelligence Briefing</title>
+<title>OPSCEN v6.0 — Iran Theatre Intelligence Briefing</title>
 <meta name="description" content="Real-time operations centre tracking the 2026 Iran conflict + interactive Australian fuel depletion forecast. Built entirely in Claude by RETSA Group.">
-<meta property="og:title" content="OPSCEN v5.9 — Iran Theatre Intelligence Briefing">
-<meta property="og:description" content="Day 22 — Netanyahu confirms energy strike halt. Oil eases to $108. Wind-down scenario at 45%. De-escalation signals 10 vs 6.">
+<meta property="og:title" content="OPSCEN v6.0 — Iran Theatre Intelligence Briefing">
+<meta property="og:description" content="Day 23 — Nuclear sites targeted both sides. IDF 'halfway.' Brent $112. Scenarios rebalanced: Wind-down 35%, Extended Attrit 35%.">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=VT323&family=Share+Tech+Mono&display=swap" rel="stylesheet">
@@ -15,632 +15,272 @@
 <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.9/babel.min.js"></script>
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
-
 :root {
-  --crt-green: #33ff33;
-  --crt-amber: #ffaa00;
-  --crt-red: #ff3333;
-  --crt-cyan: #00ffcc;
-  --crt-dim: #3a7a3a;
-  --crt-bg: #0a0e0a;
-  --crt-panel: #0d120d;
-  --crt-border: #1a3a1a;
-  --crt-text: #22cc22;
-  --crt-scanline: rgba(0,0,0,0.15);
+  --crt-green: #33ff33; --crt-amber: #ffaa00; --crt-red: #ff3333; --crt-cyan: #00ffcc;
+  --crt-dim: #3a7a3a; --crt-bg: #0a0e0a; --crt-panel: #0d120d; --crt-border: #1a3a1a;
+  --crt-text: #22cc22; --crt-scanline: rgba(0,0,0,0.15);
 }
-
-body {
-  background: var(--crt-bg);
-  color: var(--crt-text);
-  font-family: 'VT323', monospace;
-  overflow-x: hidden;
-}
-
-.scanlines {
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  pointer-events: none;
-  z-index: 9999;
-  background: repeating-linear-gradient(0deg, transparent, transparent 2px, var(--crt-scanline) 2px, var(--crt-scanline) 4px);
-}
-
+body { background: var(--crt-bg); color: var(--crt-text); font-family: 'VT323', monospace; overflow-x: hidden; }
+.scanlines { position: fixed; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none; z-index: 9999;
+  background: repeating-linear-gradient(0deg, transparent, transparent 2px, var(--crt-scanline) 2px, var(--crt-scanline) 4px); }
 .crt-glow { text-shadow: 0 0 5px currentColor, 0 0 10px currentColor; }
-
-.opscen-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 12px;
-  min-height: 100vh;
-}
-
-.header-bar {
-  border: 1px solid var(--crt-green);
-  padding: 12px 16px;
-  margin-bottom: 12px;
-  background: linear-gradient(180deg, rgba(0,40,0,0.3) 0%, var(--crt-bg) 100%);
-  position: relative;
-  overflow: hidden;
-}
-
-.header-bar::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 1px;
-  background: var(--crt-green);
-  box-shadow: 0 0 8px var(--crt-green);
-}
-
-.header-title {
-  font-size: 28px;
-  letter-spacing: 6px;
-  color: var(--crt-green);
-  text-align: center;
-}
-
-.header-sub {
-  font-family: 'Share Tech Mono', monospace;
-  font-size: 13px;
-  color: var(--crt-amber);
-  text-align: center;
-  margin-top: 4px;
-  letter-spacing: 2px;
-}
-
-.status-row {
-  display: flex;
-  gap: 8px;
-  margin-bottom: 12px;
-  flex-wrap: wrap;
-}
-
-.defcon-panel, .clock-panel {
-  border: 1px solid var(--crt-border);
-  padding: 10px 14px;
-  background: var(--crt-panel);
-  flex: 1;
-  min-width: 200px;
-}
-
-.defcon-gauge {
-  display: flex;
-  gap: 2px;
-  margin: 8px 0;
-  height: 20px;
-}
-
-.defcon-seg {
-  flex: 1;
-  opacity: 0.2;
-  transition: opacity 0.3s;
-}
-
-.defcon-seg.active {
-  opacity: 1;
-  box-shadow: 0 0 6px currentColor;
-}
-
-.threat-matrix {
-  border: 1px solid var(--crt-border);
-  padding: 10px;
-  margin-bottom: 12px;
-  background: var(--crt-panel);
-}
-
-.threat-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 4px;
-  margin-top: 8px;
-}
-
-.threat-cell {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 4px 8px;
-  border: 1px solid #1a2a1a;
-  font-size: 14px;
-  background: rgba(0,0,0,0.3);
-}
-
-.threat-level {
-  font-size: 12px;
-  padding: 1px 6px;
-  font-weight: bold;
-  letter-spacing: 1px;
-}
-
-.section-block {
-  border: 1px solid var(--crt-border);
-  margin-bottom: 6px;
-  background: var(--crt-panel);
-  transition: border-color 0.2s;
-}
-
+.opscen-container { max-width: 1200px; margin: 0 auto; padding: 12px; min-height: 100vh; }
+.header-bar { border: 1px solid var(--crt-green); padding: 12px 16px; margin-bottom: 12px;
+  background: linear-gradient(180deg, rgba(0,40,0,0.3) 0%, var(--crt-bg) 100%); position: relative; overflow: hidden; }
+.header-bar::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: var(--crt-green); box-shadow: 0 0 8px var(--crt-green); }
+.header-title { font-size: 28px; letter-spacing: 6px; color: var(--crt-green); text-align: center; }
+.header-sub { font-family: 'Share Tech Mono', monospace; font-size: 13px; color: var(--crt-amber); text-align: center; margin-top: 4px; letter-spacing: 2px; }
+.tab-bar { display: flex; gap: 4px; margin-bottom: 12px; }
+.tab-btn { flex: 1; padding: 10px; background: var(--crt-panel); border: 1px solid var(--crt-border); color: var(--crt-dim);
+  font-family: 'VT323', monospace; font-size: 18px; cursor: pointer; letter-spacing: 3px; transition: all 0.2s; }
+.tab-btn:hover { border-color: var(--crt-green); color: var(--crt-green); }
+.tab-btn.active { border-color: var(--crt-green); color: var(--crt-green); background: rgba(0,40,0,0.3);
+  box-shadow: 0 0 8px rgba(51,255,51,0.2); }
+.status-row { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
+.defcon-panel, .clock-panel { border: 1px solid var(--crt-border); padding: 10px 14px; background: var(--crt-panel); flex: 1; min-width: 200px; }
+.defcon-gauge { display: flex; gap: 2px; margin: 8px 0; height: 20px; }
+.defcon-seg { flex: 1; opacity: 0.2; transition: opacity 0.3s; }
+.defcon-seg.active { opacity: 1; box-shadow: 0 0 6px currentColor; }
+.threat-matrix { border: 1px solid var(--crt-border); padding: 10px; margin-bottom: 12px; background: var(--crt-panel); }
+.threat-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px; margin-top: 8px; }
+.threat-cell { display: flex; justify-content: space-between; align-items: center; padding: 4px 8px; border: 1px solid #1a2a1a; font-size: 14px; background: rgba(0,0,0,0.3); }
+.threat-level { font-size: 12px; padding: 1px 6px; font-weight: bold; letter-spacing: 1px; }
+.section-block { border: 1px solid var(--crt-border); margin-bottom: 6px; background: var(--crt-panel); transition: border-color 0.2s; }
 .section-block:hover { border-color: var(--crt-dim); }
-
-.section-header {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 8px 12px;
-  cursor: pointer;
-  user-select: none;
-  font-size: 16px;
-  letter-spacing: 2px;
-  color: var(--crt-green);
-  border-bottom: 1px solid transparent;
-  transition: all 0.2s;
-}
-
-.section-header:hover { background: rgba(0, 60, 0, 0.15); }
-
-.section-header.open {
-  border-bottom: 1px solid var(--crt-border);
-  color: var(--crt-amber);
-}
-
-.section-chevron {
-  font-size: 14px;
-  transition: transform 0.2s;
-  margin-left: auto;
-  color: var(--crt-dim);
-}
-
-.section-chevron.open {
-  transform: rotate(90deg);
-  color: var(--crt-amber);
-}
-
-.section-body {
-  padding: 10px 14px;
-  animation: fadeIn 0.2s ease;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-4px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.section-heading {
-  font-size: 15px;
-  color: var(--crt-cyan);
-  margin-bottom: 8px;
-  padding-bottom: 4px;
-  border-bottom: 1px solid #0a2a2a;
-  letter-spacing: 1px;
-}
-
-.intel-line {
-  font-family: 'Share Tech Mono', monospace;
-  font-size: 13px;
-  line-height: 1.6;
-  padding: 3px 0 3px 16px;
-  position: relative;
-  color: #99cc99;
-  border-left: 2px solid #1a3a1a;
-  margin-bottom: 2px;
-}
-
-.intel-line::before {
-  content: '\25B8';
-  position: absolute;
-  left: 4px;
-  color: var(--crt-dim);
-}
-
-.intel-line.highlight {
-  color: var(--crt-amber);
-  border-left-color: var(--crt-amber);
-}
-
-.intel-line.critical {
-  color: var(--crt-red);
-  border-left-color: var(--crt-red);
-}
-
-.footer-bar {
-  border: 1px solid var(--crt-border);
-  padding: 8px 14px;
-  margin-top: 12px;
-  background: var(--crt-panel);
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 8px;
-  font-size: 13px;
-  color: var(--crt-dim);
-}
-
-.blink { animation: blinkAnim 1.2s step-end infinite; }
-
-@keyframes blinkAnim { 50% { opacity: 0; } }
-
-.pulse-dot {
-  display: inline-block;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--crt-red);
-  animation: pulseDot 1.5s ease-in-out infinite;
-  vertical-align: middle;
-  margin-right: 6px;
-}
-
-@keyframes pulseDot {
-  0%, 100% { opacity: 1; box-shadow: 0 0 4px var(--crt-red); }
-  50% { opacity: 0.3; box-shadow: none; }
-}
-
-.delta-badge {
-  font-size: 11px;
-  padding: 1px 6px;
-  margin-left: 8px;
-  background: rgba(255,100,0,0.15);
-  border: 1px solid #ff6600;
-  color: #ff9944;
-  letter-spacing: 1px;
-}
-
-.expand-all-btn {
-  background: transparent;
-  border: 1px solid var(--crt-border);
-  color: var(--crt-dim);
-  font-family: 'VT323', monospace;
-  font-size: 14px;
-  padding: 4px 12px;
-  cursor: pointer;
-  letter-spacing: 1px;
-  transition: all 0.2s;
-}
-
-.expand-all-btn:hover {
-  border-color: var(--crt-green);
-  color: var(--crt-green);
-}
-
-.key-metrics-bar {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 4px;
-  margin-bottom: 12px;
-}
-
-.metric-card {
-  border: 1px solid var(--crt-border);
-  background: var(--crt-panel);
-  padding: 8px 10px;
-  text-align: center;
-}
-
-.metric-label {
-  font-family: 'Share Tech Mono', monospace;
-  font-size: 10px;
-  color: var(--crt-dim);
-  letter-spacing: 2px;
-  margin-bottom: 2px;
-}
-
-.metric-value {
-  font-size: 22px;
-  font-weight: bold;
-  line-height: 1.2;
-}
-
-.metric-delta {
-  font-family: 'Share Tech Mono', monospace;
-  font-size: 11px;
-  margin-top: 2px;
-}
-
-.built-with {
-  text-align: center;
-  padding: 12px;
-  font-family: 'Share Tech Mono', monospace;
-  font-size: 12px;
-  color: var(--crt-dim);
-}
-
-.built-with a {
-  color: var(--crt-green);
-  text-decoration: none;
-}
-
+.section-header { display: flex; align-items: center; gap: 10px; padding: 8px 12px; cursor: pointer; user-select: none;
+  font-size: 16px; letter-spacing: 2px; color: var(--crt-green); border-bottom: 1px solid transparent; transition: all 0.2s; }
+.section-header:hover { background: rgba(0,60,0,0.15); }
+.section-header.open { border-bottom-color: var(--crt-border); }
+.section-body { padding: 10px 14px; }
+.section-heading { font-family: 'Share Tech Mono', monospace; font-size: 14px; color: var(--crt-amber); letter-spacing: 1px;
+  margin-bottom: 8px; padding-bottom: 6px; border-bottom: 1px solid var(--crt-border); }
+.intel-line { font-size: 15px; line-height: 1.5; padding: 3px 0; padding-left: 14px; position: relative; color: var(--crt-text); }
+.intel-line::before { content: '\25B8'; position: absolute; left: 0; color: var(--crt-dim); }
+.key-metrics-bar { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 6px; margin-bottom: 12px; }
+.metric-card { border: 1px solid var(--crt-border); padding: 8px; text-align: center; background: var(--crt-panel); }
+.metric-label { font-size: 11px; color: var(--crt-dim); letter-spacing: 2px; }
+.metric-value { font-size: 22px; margin: 2px 0; }
+.metric-delta { font-size: 12px; font-family: 'Share Tech Mono', monospace; }
+.expand-all-btn { background: none; border: 1px solid var(--crt-dim); color: var(--crt-dim); font-family: 'VT323', monospace;
+  font-size: 14px; padding: 4px 12px; cursor: pointer; letter-spacing: 1px; }
+.expand-all-btn:hover { border-color: var(--crt-green); color: var(--crt-green); }
+.footer-bar { border: 1px solid var(--crt-border); padding: 8px 14px; margin-top: 12px; display: flex;
+  justify-content: space-between; font-size: 13px; color: var(--crt-dim); flex-wrap: wrap; gap: 8px; }
+.built-with { text-align: center; font-size: 13px; color: var(--crt-dim); margin-top: 8px; padding-bottom: 20px; }
+.built-with a { color: var(--crt-green); text-decoration: none; }
 .built-with a:hover { text-decoration: underline; }
-
-.tab-bar {
-  display: flex;
-  gap: 0;
-  margin-bottom: 12px;
-  border: 1px solid var(--crt-border);
-  overflow: hidden;
-}
-
-.tab-btn {
-  flex: 1;
-  background: var(--crt-panel);
-  border: none;
-  border-right: 1px solid var(--crt-border);
-  color: var(--crt-dim);
-  font-family: 'VT323', monospace;
-  font-size: 16px;
-  padding: 10px 16px;
-  cursor: pointer;
-  letter-spacing: 3px;
-  transition: all 0.2s;
-}
-
-.tab-btn:last-child { border-right: none; }
-.tab-btn:hover { background: rgba(0, 60, 0, 0.15); }
-.tab-btn.active {
-  background: rgba(0, 60, 0, 0.25);
-  color: var(--crt-green);
-  text-shadow: 0 0 5px var(--crt-green);
-  border-bottom: 2px solid var(--crt-green);
-}
-
-.countdown-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-bottom: 12px; }
-.cd-card { border: 1px solid var(--crt-border); background: var(--crt-panel); padding: 12px; text-align: center; }
-.cd-label { font-family: 'Share Tech Mono', monospace; font-size: 11px; color: var(--crt-dim); letter-spacing: 2px; }
-.cd-value { font-size: 48px; line-height: 1.1; margin: 4px 0; }
-.cd-sub { font-family: 'Share Tech Mono', monospace; font-size: 12px; color: var(--crt-dim); }
-.cd-status { font-family: 'Share Tech Mono', monospace; font-size: 11px; padding: 2px 8px; margin-top: 4px; display: inline-block; letter-spacing: 1px; }
-.ctrl-box { border: 1px solid var(--crt-border); background: var(--crt-panel); padding: 12px; margin-bottom: 12px; }
-.ctrl-title { font-size: 15px; color: var(--crt-green); letter-spacing: 2px; margin-bottom: 10px; }
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+.blink { animation: blink 1s infinite; }
+/* Fuel forecast styles */
+.countdown-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 12px; }
+.cd-card { border: 1px solid var(--crt-border); padding: 12px; text-align: center; background: var(--crt-panel); }
+.cd-label { font-size: 14px; color: var(--crt-dim); letter-spacing: 2px; margin-bottom: 4px; }
+.cd-value { font-size: 42px; margin: 4px 0; }
+.cd-sub { font-size: 11px; color: var(--crt-dim); letter-spacing: 1px; }
+.cd-status { font-size: 12px; margin-top: 6px; padding: 2px 8px; display: inline-block; letter-spacing: 1px; }
+.presets { display: flex; gap: 6px; margin-bottom: 12px; flex-wrap: wrap; }
+.preset-btn { background: none; font-family: 'VT323', monospace; font-size: 14px; padding: 6px 12px; cursor: pointer; letter-spacing: 1px; transition: all 0.2s; }
+.preset-btn:hover, .preset-btn.active { background: rgba(255,255,255,0.05); }
+.ctrl-box { border: 1px solid var(--crt-border); padding: 12px; margin-bottom: 12px; background: var(--crt-panel); }
+.ctrl-title { font-size: 14px; color: var(--crt-green); letter-spacing: 2px; margin-bottom: 10px; }
 .ctrl-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-.ctrl-item label { display: block; font-family: 'Share Tech Mono', monospace; font-size: 12px; color: var(--crt-dim); letter-spacing: 1px; margin-bottom: 4px; }
-.ctrl-item input[type=range] { width: 100%; accent-color: var(--crt-green); cursor: pointer; }
-.ctrl-val { font-size: 16px; color: var(--crt-amber); float: right; }
-.toggle-row { display: flex; gap: 16px; margin-top: 10px; align-items: center; flex-wrap: wrap; }
-.toggle-btn { background: transparent; border: 1px solid var(--crt-border); color: var(--crt-dim); font-family: 'VT323', monospace; font-size: 14px; padding: 4px 12px; cursor: pointer; letter-spacing: 1px; }
+.ctrl-item label { display: block; font-size: 13px; color: var(--crt-dim); margin-bottom: 4px; }
+.ctrl-val { color: var(--crt-amber); }
+.ctrl-item input[type="range"] { width: 100%; accent-color: var(--crt-green); }
+.toggle-row { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
+.toggle-btn { background: none; border: 1px solid var(--crt-border); color: var(--crt-dim); font-family: 'VT323', monospace;
+  font-size: 13px; padding: 4px 10px; cursor: pointer; }
 .toggle-btn.on { border-color: var(--crt-green); color: var(--crt-green); }
-.presets { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; }
-.preset-btn { background: transparent; font-family: 'VT323', monospace; font-size: 13px; padding: 4px 10px; cursor: pointer; letter-spacing: 1px; transition: all 0.2s; }
-.preset-btn:hover { filter: brightness(1.3); }
-.preset-btn.active { filter: brightness(1.5); }
-.chart-panel { border: 1px solid var(--crt-border); background: var(--crt-panel); padding: 12px; margin-bottom: 12px; }
-.chart-title { font-size: 15px; color: var(--crt-green); letter-spacing: 2px; margin-bottom: 8px; }
-.legend-row { display: flex; gap: 16px; margin-top: 8px; justify-content: center; flex-wrap: wrap; }
-.legend-item { font-family: 'Share Tech Mono', monospace; font-size: 12px; display: flex; align-items: center; gap: 4px; }
+.chart-panel { border: 1px solid var(--crt-border); padding: 12px; margin-bottom: 12px; background: var(--crt-panel); }
+.chart-title { font-size: 14px; color: var(--crt-green); letter-spacing: 2px; margin-bottom: 10px; }
+.legend-row { display: flex; gap: 16px; margin-top: 8px; flex-wrap: wrap; font-size: 13px; }
+.legend-item { display: flex; align-items: center; gap: 6px; color: var(--crt-dim); }
 .legend-dot { width: 10px; height: 10px; border-radius: 2px; }
-.ctx-notes { border: 1px solid var(--crt-border); background: var(--crt-panel); padding: 10px 14px; margin-bottom: 12px; }
-.ctx-title { font-size: 14px; color: var(--crt-cyan); letter-spacing: 1px; margin-bottom: 6px; }
-.ctx-line { font-family: 'Share Tech Mono', monospace; font-size: 12px; color: #99cc99; line-height: 1.6; padding-left: 12px; position: relative; border-left: 2px solid var(--crt-border); margin-bottom: 2px; }
-.ctx-line::before { content: '\25B8'; position: absolute; left: 2px; color: var(--crt-dim); }
-.ctx-line.warn { color: var(--crt-amber); border-left-color: var(--crt-amber); }
-.ctx-line.crit { color: var(--crt-red); border-left-color: var(--crt-red); }
-
-@media (max-width: 600px) {
-  .countdown-row { grid-template-columns: 1fr; }
-  .ctrl-grid { grid-template-columns: 1fr; }
-  .cd-value { font-size: 36px; }
-}
-
+.ctx-notes { border: 1px solid var(--crt-border); padding: 12px; margin-bottom: 8px; background: var(--crt-panel); }
+.ctx-title { font-size: 14px; color: var(--crt-green); letter-spacing: 2px; margin-bottom: 8px; }
+.ctx-line { font-size: 14px; line-height: 1.5; padding: 2px 0; color: var(--crt-dim); }
+.ctx-line.crit { color: var(--crt-red); }
+.ctx-line.warn { color: var(--crt-amber); }
 @media (max-width: 600px) {
   .header-title { font-size: 20px; letter-spacing: 3px; }
+  .key-metrics-bar { grid-template-columns: repeat(2, 1fr); }
   .threat-grid { grid-template-columns: 1fr; }
   .status-row { flex-direction: column; }
-  .opscen-container { padding: 6px; }
+  .footer-bar { flex-direction: column; text-align: center; }
+  .countdown-row { grid-template-columns: 1fr; }
+  .ctrl-grid { grid-template-columns: 1fr; }
+  .tab-btn { font-size: 15px; letter-spacing: 1px; }
 }
 </style>
 </head>
 <body>
 <div id="root"></div>
 <script type="text/babel">
-const { useState, useEffect, useCallback, useMemo } = React;
+const { useState, useEffect, useCallback } = React;
 
 const SECTIONS = [
   {
-    id: "sitrep",
-    title: "SITUATION REPORT",
-    icon: "⚡",
+    id: "sitrep", title: "SITUATION REPORT", icon: "\u26A1",
     content: {
-      heading: "DAY 22 — NETANYAHU HALTS ENERGY STRIKES / TRUMP SEEKS $200B",
+      heading: "DAY 23 \u2014 NUCLEAR SITES TARGETED BOTH SIDES / IDF 'HALFWAY'",
       lines: [
-        "NETANYAHU CONFIRMED: Israel will halt strikes on Iranian energy sites at Trump's request. Also claimed Iran can no longer enrich uranium or make ballistic missiles.",
-        "TRUMP SEEKING $200B from Congress for war funding. Called it \"a small price to pay.\" US national debt now $39 trillion. Congressional approval required.",
-        "US DEPLOYING MORE TROOPS: 2,500 Marines (11th MEU from San Diego) + 3 warships accelerated to Middle East. No end in sight despite \"accomplished\" rhetoric.",
-        "US F-35 HIT by Iranian fire — emergency landing at US air base. Pilot stable. First confirmed hit on a US stealth fighter in the war.",
-        "BRENT EASED to $108.29 — down from $115 peak after Netanyahu energy halt announcement. But still $37 above pre-war levels.",
-        "Iran warned of \"ZERO RESTRAINT\" if energy facilities are attacked again. But Pezeshkian said Iran doesn't seek war with neighbours and isn't pursuing nuclear weapons.",
-        "Mojtaba Khamenei Nowruz message: \"The enemy has been defeated.\" No video or audio — only text. Still no confirmed images of the new Supreme Leader.",
-        "IRGC spokesman: Iran is STILL BUILDING MISSILES despite claims of destruction. Tehran says it has used only a \"fraction\" of its firepower.",
-        "EID AL-FITR today — end of Ramadan. Attacks continuing across Gulf during the holiday. Missile intercepts in Saudi Arabia, UAE, Bahrain, Kuwait.",
-        "220 UKRAINIAN DRONE EXPERTS deployed across 5 Middle East countries helping counter Iranian drones. Zelensky working on \"serious agreements.\"",
+        "NUCLEAR ESCALATION: US struck Iran's Natanz enrichment facility with bunker busters (Mar 21). IDF struck Malek Ashtar University in Tehran \u2014 nuclear weapons R&D site under international sanctions.",
+        "IRAN RETALIATED ON DIMONA: Iranian ballistic missile struck Dimona \u2014 home of Israel's Negev Nuclear Research Centre. Building collapsed, 34 wounded inc. 12-year-old boy (serious). IDF investigating failed interception.",
+        "ARAD ALSO HIT: Second Iranian missile struck Arad (15km from Dimona). 64 wounded inc. 7 serious, 5-year-old girl critical. Cluster munitions also hit kindergarten in Rishon Lezion \u2014 empty at time.",
+        "IAEA: No damage to facilities containing nuclear material in Iran. No radiation risk. But 2 buildings visibly damaged at Natanz. No abnormal radiation at Dimona either.",
+        "IDF CHIEF ZAMIR: Campaign at 'HALFWAY' point. Expects fighting through Passover (~3 more weeks). Iran's regime 'battered and confused.'",
+        "DIEGO GARCIA: Iran fired 2 intermediate-range ballistic missiles at US-UK base in Indian Ocean. Both missed. Zamir: 'Berlin, Paris, Rome all within range.'",
+        "22-NATION STATEMENT: Australia, UK, France, Germany, Japan, UAE, Bahrain + 15 others condemned Iran's Hormuz closure and attacks on commercial vessels.",
+        "BRENT CLOSED $112.19 Friday \u2014 highest of the war. Opened ~$107 Sunday. Goldman Sachs: high prices could persist through 2027. Oil up 45% since war began.",
+        "US LIFTING SANCTIONS on 140M barrels of Iranian oil at sea \u2014 expires April 19. Analysts: won't meaningfully lower prices.",
+        "TRUMP CONTRADICTION: Says 'winding down' BUT USS Boxer + 2,500 Marines deploying. US drew up ground invasion plans + POW detention protocols.",
       ],
     },
   },
   {
-    id: "kinetic",
-    title: "KINETIC OPERATIONS",
-    icon: "🎯",
+    id: "kinetic", title: "KINETIC OPERATIONS", icon: "\uD83C\uDFAF",
     content: {
-      heading: "STRIKE ACTIVITY — DAY 20-21",
+      heading: "STRIKE ACTIVITY \u2014 DAY 21-23 \u2014 8,000 TARGETS HIT",
       lines: [
-        "Israel struck 200 targets across western/central Iran on Wednesday — military infrastructure. Also began striking NORTHERN Iran for first time.",
-        "CASPIAN SEA: Israel struck Iranian naval targets in the Caspian Sea — first such strikes. Bordered by Russia. Significant geographic expansion.",
-        "Iran's missile/drone launch rate collapsed: Down 90% from Day 1 (ballistic) and 83% (drones). Admiral Cooper confirmed. From 480 missiles/day to ~40.",
-        "Israel put 290 of ~440 Iranian launchers out of service. Iran's offensive capability severely degraded but not eliminated.",
-        "IRGC claimed \"50th wave of operations\" against US bases in UAE, Bahrain, Kuwait. Iran vowed to \"pursue and kill\" Netanyahu.",
-        "Iranian attacks hit Israeli refinery. Two killed in Ramat Gan near Tel Aviv. Three women killed in West Bank hair salon by Iranian cluster munitions.",
-        "Lebanon: Widest forced evacuation since 2006 — Tyre, 3 Palestinian refugee camps, southern villages ordered to flee. 4 killed in Bekaa Valley.",
-        "Kataib Hezbollah (Iraq): 5-day pause offer on Baghdad Embassy attacks — conditional on Israel stopping Beirut strikes + CIA confinement to Embassy.",
-        "ACLED: Nearly 2,000 distinct conflict events across 29 of Iran's 31 provinces. Tehran heaviest hit. 20+ weapons systems used by US alone.",
-        "SENIOR KILL LIST: Khamenei, Mousavi, Nasirzadeh, Pakpour, Larijani, Soleimani, Khatib — 7 top officials eliminated in 20 days.",
+        "US/ISRAEL HIT 8,000+ TARGETS across Iran in 23 days. 130 Iranian vessels destroyed. 'Most extensive air defense umbrella in world' deployed \u2014 CENTCOM.",
+        "NATANZ: US bunker busters reportedly struck Iran's main uranium enrichment facility. IAEA confirmed attack \u2014 no radiation leak.",
+        "MALEK ASHTAR UNIVERSITY: IDF struck 'strategic nuclear weapons development site' in Tehran. Under sanctions for nuclear/ballistic missile program.",
+        "US NOW USING APACHE HELICOPTERS + A-10 WARTHOGS \u2014 close air support aircraft. Signal that Iranian air defence threat severely degraded.",
+        "IRAN'S 70TH WAVE of attacks launched \u2014 missiles and drones toward Israel and US bases. Despite 90% degradation claims, Iran sustaining offensive tempo.",
+        "IRGC SPOKESMAN ASSASSINATED \u2014 killed after publicly denying Netanyahu's claim that Iran's missile production capacity was destroyed.",
+        "BASIJ INTELLIGENCE CHIEF Ahmadi confirmed killed in Monday strike that also killed Basij commander Soleimani.",
+        "ISRAEL DEAD: 10 killed since Feb 28. 89+ wounded. Cluster munitions increasingly targeting civilian areas.",
+        "IRAN DEAD: 1,444 killed including 204 children (Al Jazeera). 6,668+ civilian units targeted. WHO: 13 health infrastructure sites struck.",
+        "SENIOR KILL LIST NOW 8+: Khamenei, Mousavi, Nasirzadeh, Pakpour, Larijani, Soleimani, Khatib, Ahmadi. Mojtaba Khamenei \u2014 CIA/Mossad searching.",
       ],
     },
   },
   {
-    id: "iran_response",
-    title: "IRANIAN RETALIATION",
-    icon: "🚀",
+    id: "iran_response", title: "IRANIAN RETALIATION", icon: "\uD83D\uDE80",
     content: {
-      heading: "IRANIAN COUNTER-STRIKE — CAPABILITY DECLINING BUT PERSISTENT",
+      heading: "IRAN RETAINS 'EFFECTIVE COMMAND AND CONTROL' \u2014 ANALYST",
       lines: [
-        "Iran missile output collapsing: Day 1 = 167 missiles + 541 drones at UAE alone. Day 15 = 4 missiles + 6 drones. Steep decline in launch rate.",
-        "Israel has put 290 out of ~440 Iranian missile launchers out of service. But Iran is a vast country — without ground troops, full elimination impossible.",
-        "IRGC claims most weapons cache intact and newer missiles not yet deployed. Analysts divided on whether this is bluff or genuine reserve.",
-        "Iran still firing strategically — enough to keep entire region on edge. Cheap Shahed-136 drones ($20K each) produced quickly, don't need complex launchers.",
-        "Iran closed Hormuz \"to our enemies\" — de facto blockade continues. South Korea: 26 vessels + 183 crew stranded near Strait.",
-        "UAE: Airspace temporarily closed on Tuesday. Air defences intercepted ballistic missiles + drones. Pakistani man killed by shrapnel in Abu Dhabi.",
-        "Qatar: Intercepted 13 of 14 ballistic missiles from Iran. Limited fire from falling debris in industrial zone.",
-        "Kuwait: Drone taken down. 14 Kuwaitis + 2 Lebanese (Hezbollah-linked) arrested for planning \"sabotage plot.\"",
-        "Bahrain: Neutralised 129 missiles + 221 drones since war began. Saudi Arabia: 12 drones intercepted in east.",
-        "Iran arrested 18 Iran International journalists. IRGC warned internal protests will face \"harsher crackdown than January.\"",
+        "DIMONA STRIKE: Israeli analyst Citrinowicz (INSS) says strike demonstrates 'effective command and control with strategic guidance translating into precise operational execution.'",
+        "PATTERN: South Pars \u2192 Ras Laffan \u2192 Natanz \u2192 Dimona. Each side escalating to the other's strategic assets. Tit-for-tat on nuclear/energy infrastructure.",
+        "Despite 90% reduction in launch rate, Iran executing 12+ salvos on Day 22 alone. Mix of ballistic missiles + cluster munitions + Shahed drones.",
+        "INTERCEPTION FAILURES: IDF confirmed air defences ENGAGED the Dimona missile but interceptors failed. Also investigating Arad failure.",
+        "GULF ATTACKS: Kuwait's Mina Al-Ahmadi refinery hit AGAIN. Iran claims it destroyed UAE Al-Minhad base + Kuwait Ali Al Salem airbase.",
+        "Mojtaba Khamenei Nowruz/Eid statement: Text-only \u2014 still no video or audio. CIA/Mossad hunting for confirmation he's alive.",
+        "21 CONFIRMED ATTACKS on commercial vessels since Mar 1. Threat level 'CRITICAL' across Gulf, Hormuz, Gulf of Oman.",
+        "3,000+ VESSELS STRANDED in Persian Gulf. IMO: Gulf has become 'massive parking lot.'",
+        "Iran arrested 18 Iran International journalists. Internal crackdown continuing alongside warfare.",
+        "Iran's Pezeshkian: 'We don't seek war with neighbours and aren't pursuing nuclear weapons.' Diplomatic channel still technically open.",
       ],
     },
   },
   {
-    id: "lebanon",
-    title: "LEBANON / HEZBOLLAH FRONT",
-    icon: "🔥",
+    id: "lebanon", title: "LEBANON / HEZBOLLAH FRONT", icon: "\uD83D\uDD25",
     content: {
-      heading: "SECOND FRONT — ACTIVE / TALKS POSSIBLE",
+      heading: "SECOND FRONT \u2014 1,000+ DEAD / 118+ CHILDREN",
       lines: [
-        "Hezbollah: 269+ attack waves since Mar 2. Peak Mar 14 (56 waves), slight decrease Mar 15 (34 waves), but sustained offensive pace continues.",
-        "Weapons mix: 159 rocket/missile waves, 86 UAV waves, 9 ATGM, 1 IED. Fateh-110 missile (350km, 500kg) hit Ramla — kindergarten struck.",
-        "Israel expanded ground operations in Lebanon — 91st Division operating in south, establishing \"security layer.\"",
-        "850+ killed in Lebanon since Feb 28. 800,000+ displaced. Israeli attacks reaching southern Beirut.",
-        "Israel-Lebanon ceasefire talks expected in coming days — France involved. Ron Dermer leading for Israel. No date set.",
-        "Lebanon's Pres Aoun demands full ceasefire before negotiations. FM Sa'ar denied planned talks — mixed signals persist.",
-        "Senior Iranian official told Al-Mayadeen: Axis of Resistance partners \"integral\" to any future agreement — complicates separate Lebanon deal.",
-        "Lebanese govt banned Hezbollah military activities. Amal-Hezbollah alliance fractured. Hezbollah financial support base eroding.",
-        "Cyprus: Drone from Lebanon struck RAF Akrotiri. Turkey deployed F-16s + air defence to Northern Cyprus. Greece deployed frigates + F-16s.",
-        "NATO confirmed interception of second ballistic missile over Turkish airspace, landing near Gaziantep.",
+        "1,000+ KILLED in Lebanon since Mar 2. 118+ children killed. UNICEF: already exceeds child death toll from entire 2024 Lebanon conflict.",
+        "IDF killed 570+ Hezbollah operatives this month. Struck 2,000+ targets. 91st Division pushing deeper into southern Lebanon.",
+        "Hezbollah sustained fire: North and south of Israel simultaneously targeted. Coordinated timing with Iranian barrages.",
+        "IDF ordered evacuation south of Zahrani River \u2014 25km north of Israeli border. Widest displacement since 2006.",
+        "France involved in ceasefire talks. Ron Dermer leading for Israel. Lebanon demands full ceasefire before negotiations.",
+        "G5 (Canada, France, Germany, Italy, UK): 'A significant Israeli ground offensive must be averted.'",
+        "Hezbollah named new operation 'Eaten Straw' \u2014 Quran reference. Signals existential fight.",
+        "Hezbollah intelligence head Makled killed. PIJ armed wing leader al-Othman killed in Lebanon.",
+        "Cyprus: RAF Akrotiri targeted by drone from Lebanon. Turkey deployed F-16s to Northern Cyprus. Greece deployed frigates.",
+        "Strava OPSEC breach: French officer's app revealed aircraft carrier Charles de Gaulle location in Mediterranean.",
       ],
     },
   },
   {
-    id: "hormuz",
-    title: "STRAIT OF HORMUZ",
-    icon: "🚢",
+    id: "hormuz", title: "STRAIT OF HORMUZ", icon: "\uD83D\uDEA2",
     content: {
-      heading: "HORMUZ / ENERGY WAR — TRUMP INTERVENES",
+      heading: "HORMUZ \u2014 22-NATION CONDEMNATION / IRAN 'DEGRADED'",
       lines: [
-        "TRUMP REINED IN ISRAEL: \"I told him don't do that\" re energy strikes. First public check on Netanyahu. If it holds, energy-for-energy exchange may stabilise.",
-        "Qatar Ras Laffan: 17% of LNG export capacity destroyed. $20B annual revenue lost. Supplies to Europe and Asia threatened. QatarEnergy CEO confirmed.",
-        "Qatar expelled Iranian military/security diplomats — 24hr deadline. Saudi Arabia: \"Trust in Iran completely shattered.\" Gulf alliance against Iran hardening.",
-        "Saudi FM warned \"nonpolitical options on the table\" — strongest language yet from Riyadh. Gulf states shifting from defence to potential offence.",
-        "US approved $16B arms sales to UAE + Kuwait. Gulf rearmament accelerating. War reshaping regional military balance permanently.",
-        "European nations + Japan: Joint statement ready to \"ensure safe passage\" through Hormuz once hostilities end. First coordinated commitment.",
-        "US dropped 5,000-lb bunker busters on Hormuz coastline missile sites. Campaign to clear shipping corridor continues.",
-        "8 ships transited Hormuz Monday. But 20+ vessels attacked since war began. Insurance premiums remain at historic highs.",
-        "South Korea: 26 vessels + 183 crew stranded. Global shipping paralysis persists despite partial transit.",
-        "Iran's ambassador asked Germany about Ramstein airbase role in war. Conflict risk expanding to NATO territory.",
+        "CENTCOM: Iran's ability to threaten Hormuz is 'DEGRADED' but not eliminated. De facto blockade persists.",
+        "22-NATION JOINT STATEMENT condemned Iran's attacks. Australia signed. 'Effects will be felt worldwide, especially by the most vulnerable.'",
+        "UK sent military planners to work with US on Hormuz reopening. Other allies unlikely to send assets during active hostilities.",
+        "TRUMP called NATO 'COWARDS' for not helping. Demanding burden-sharing while allies resist involvement.",
+        "3,000+ VESSELS STRANDED. Insurance premiums at historic highs. Commercial transit near zero.",
+        "US clearing mines along strait corridor. But Iran can re-seed faster than US can clear.",
+        "Kuwait, UAE, Bahrain all targeted this week. Gulf coalition hardening against Iran.",
+        "Qatar Ras Laffan: Repairs could take UP TO 5 YEARS. 17% LNG export capacity lost. $20B/yr revenue impact.",
+        "FERTILISER CRISIS: Hormuz closure cutting urea/sulphur flows. USDA expanded emergency farm credit.",
+        "IEA: Called this 'the largest supply disruption in the history of the global oil market.' Urged WFH + reduced speeds.",
       ],
     },
   },
   {
-    id: "oil",
-    title: "OIL & ENERGY MARKETS",
-    icon: "🛢️",
+    id: "oil", title: "OIL & ENERGY MARKETS", icon: "\uD83D\uDEE2\uFE0F",
     content: {
-      heading: "BRENT: $108/BBL — EASING FROM $115 PEAK ON ENERGY HALT",
+      heading: "BRENT: $112 FRIDAY CLOSE \u2014 WAR HIGH / $107 SUNDAY OPEN",
       lines: [
-        "Brent pulled back to $108.29 from $115 peak — Netanyahu energy halt announcement providing relief. But still $37 above pre-war $71.",
-        "US gas prices hit $3.91/gallon — highest since Oct 2022. Bond yields rising as traders cancel Fed rate cut bets. Some now pricing possible US rate HIKE.",
-        "Netanyahu: Iran can no longer enrich uranium or make ballistic missiles. If true, strategic objectives largely achieved. Oil should ease further.",
-        "But IRGC says still building missiles. Iran warned \"zero restraint\" if energy sites hit again. Contradiction between Israeli claims and Iranian posture.",
-        "Qatar: 17% LNG export capacity destroyed. QatarEnergy declared force majeure on gas exports. European and Asian LNG supply chains directly impacted.",
-        "Gulf pipeline bypass: Saudi/UAE exports via non-Hormuz routes nearly doubled to ~6M bpd. Market finding workarounds — bullish for medium-term supply.",
-        "IMO negotiating humanitarian corridor for 20,000 stranded seafarers in Gulf. UK sent military planners to work with US on Hormuz reopening plan.",
-        "Russia profiting: 30-day US sanctions waiver still in effect. Moscow selling crude while Gulf supply collapses.",
-        "Trump seeking $200B war funding from Congress. Market reading: war not ending imminently despite de-escalation signals. Tension between rhetoric and budget requests.",
-        "Fertiliser prices soaring as northern hemisphere planting season approaches. USDA expanding emergency support for agriculture borrowers.",
+        "Brent closed $112.19 Friday \u2014 highest since war began. Oil up 45% since Feb 28 ($71 pre-war). Goldman Sachs: elevated through 2027.",
+        "BEST CASE (Goldman): Gradual Hormuz recovery from April \u2192 Brent $70s by Q4 2026. WORST CASE: Triple-digit oil for years.",
+        "US lifted sanctions on 140M barrels Iranian oil at sea. Expires Apr 19. Analysts: 1.4 days global consumption \u2014 symbolic only.",
+        "US also lifted some Russian crude sanctions. Moscow profiting from Gulf supply collapse.",
+        "US gas: $3.91/gallon \u2014 highest since Oct 2022. Bond yields rising. Some traders pricing possible US rate HIKE.",
+        "EIA FORECAST: Brent above $95/bbl for 2 months, falling below $80 in Q3 if Hormuz recovers. US production rising to 13.6M bpd.",
+        "Qatar Ras Laffan: 17% LNG capacity destroyed. Force majeure on gas exports. European/Asian supply chains impacted for years.",
+        "AIRLINES: Air NZ cut 1,100 flights. United cutting routes. IEA urging people to avoid air travel.",
+        "FERTILISER: Soaring as spring planting approaches. 69% of AU urea imports from Middle East.",
+        "TRUMP seeking $200B war funding. Market read: war not ending imminently despite 'winding down' rhetoric.",
       ],
     },
   },
   {
-    id: "asx",
-    title: "ASX 200 / AU MARKETS",
-    icon: "📉",
+    id: "asx", title: "ASX 200 / AU MARKETS", icon: "\uD83D\uDCC9",
     content: {
-      heading: "ASX 200: 8,553 — LOWEST CLOSE OF 2026 / RBA AT 4.10%",
+      heading: "ASX 200: ~8,498 \u2014 DOWN 1.65% THURSDAY / -7.6% MTD",
       lines: [
-        "ASX 200 at 8,553 (Mar 16 close). Lowest close of 2026. Down 6.7% in March. Broke below 8,600 support. Futures -0.71% for Wednesday open.",
-        "RBA HIKED to 4.10% yesterday (Mar 17). Second hike in 2026. Bullock: Recession possible if inflation doesn't come down. Big Four expect May hike → 4.35%.",
-        "Impact: $600K mortgage = +$91/month from yesterday's hike. Two Q1 hikes combined = +$225/month ($2,700/year). Wipes out 2025 rate cuts.",
-        "S&P 500 at lowest since Nov 2025. Global risk-off accelerating. No clear path to de-escalation driving continued hawkish positioning.",
-        "Energy sector only winner: Woodside, Santos, Beach Energy, Ampol all green. Coal miners upgraded (New Hope → Hold with energy security premium).",
-        "Banks +0.41% — benefiting from higher net interest margins, but mortgage stress risk rising. Consumer discretionary, IT, real estate worst hit.",
-        "Gold above US$5,200. Lynas Rare Earths +16% on Japan supply deal extension to 2038. Rare earths in focus as China supply chain questioned.",
-        "ASX support levels: 8,500-8,550. Resistance: 8,700-8,800 needs positive catalyst. Momentum indicators negative.",
-        "CPI: January headline 3.8%. Feb data due Mar 25. If hot, May hike locked in. Trimmed mean forecast revised to 3.7% at June 2026.",
-        "Morgan Stanley: S&P 500 rises avg 2/6/8% at 1/6/12 months post geopolitical shock — BUT breaks down when oil surges 75-100% YoY.",
+        "ASX 200 fell 1.65% to 8,497.8 Thursday. Down ~7.6% from pre-war record of 9,199. Worst month since COVID.",
+        "RBA AT 4.10%: Hiked Mar 17. May hike to 4.35% expected if Feb CPI (due Mar 25) comes in hot.",
+        "MORTGAGE IMPACT: $600K variable = +$225/month from two Q1 hikes ($2,700/year). Wipes out 2025 rate cuts.",
+        "GOLD HIT $5,247+ before pulling back to ~$4,643. Massive volatility. Northern Star -18.8% on guidance warning.",
+        "ENERGY STOCKS ONLY WINNERS: Woodside, Santos, Beach Energy, Ampol all green.",
+        "Materials -2.22%: BHP, Rio Tinto, Fortescue falling. Banks +0.41% on rate margins.",
+        "ASX FORECAST: March end ~8,336 (-9.4%). Gradual recovery expected from Q3 if oil normalises.",
+        "S&P 500 down 1.36% Friday. Nasdaq -2.5%. Global risk-off accelerating.",
+        "FEB CPI due March 25 \u2014 most important AU data release of the month for RBA May decision.",
+        "Energy names paying strong dividends. Woodside ~6% yield. Franking credits intact.",
       ],
     },
   },
   {
-    id: "fuel_au",
-    title: "AUSTRALIA FUEL SITUATION",
-    icon: "⛽",
+    id: "fuel_au", title: "AUSTRALIA FUEL SITUATION", icon: "\u26FD",
     content: {
-      heading: "NATIONAL CRISIS — REGIONAL TOWNS RUNNING DRY",
+      heading: "NATIONAL CRISIS \u2014 107+ NSW STATIONS DRY / DIESEL $2.71/L",
       lines: [
-        "REGIONAL SHORTAGES WORSENING: Robinvale (VIC) — all 3 stations ran dry over weekend. $50 sale limits imposed. \"Never seen this in 25 years.\"",
-        "Wedderburn, Bonnie Doon (VIC) also ran dry. NSW regional towns reporting similar rationing. Farmers and primary producers hardest hit.",
-        "National avg petrol: $2.20+/L (up 50c since Feb 28). Diesel: $2.60+/L — record highs. Melbourne $2.08, Sydney $1.98 (earlier data, likely higher now).",
-        "Govt released 800M litres from reserves + relaxed sulphur standards for 60 days (10ppm → 50ppm). Adds ~100M litres/month — less than 1 day's consumption.",
-        "Ampol: Extra fuel prioritised for regional/rural Australia, especially Queensland.",
-        "NRMA: \"It's not a supply issue — we're getting the same fuel. It's that wholesale prices are at record highs and demand has doubled\" from panic buying.",
-        "ACCC investigating: Pump prices rising IN LINE with wholesale, not lagged. Commissioner Brakey: \"Industry need to explain this wide discrepancy urgently.\"",
-        "Reserves now: ~26 days usable petrol, ~25 days diesel, ~20 days jet fuel (post-release estimates). Still below IEA 90-day requirement — non-compliant since 2012.",
-        "Analysts: ULP91 could hit $2.50-$3.50/L. RBA Bullock warned $3/L would cause \"significant challenges\" for consumers and monetary policy.",
-        "DEMAND DOUBLED: NRMA says fuel supply volumes unchanged — panic buying is the primary driver. Wholesale prices at record highs flowing directly to pumps.",
+        "SYDNEY: Petrol $2.30/L (NRMA, up 70c since Feb 15). Diesel $2.71/L (up 50c in one week). Premium 98 at $2.54/L.",
+        "107+ NSW stations experienced diesel shortages. 42 stations completely fuel-free. Regional prices significantly higher.",
+        "DEMAND SPIKE: 35-40% surge in regional areas from panic buying. Independent retailers worst hit.",
+        "NATIONAL CABINET convened on fuel supply. Govt position: 'national crisis.' Released 800M litres from MSO reserves + 60-day sulphur waiver.",
+        "Sulphur waiver adds ~100M litres/month \u2014 less than 1 day's national consumption. Insufficient for sustained shortage.",
+        "RESERVES: ~26 days diesel, ~29 days petrol. Down from 34 days diesel on Mar 6. Non-compliant with IEA 90-day requirement since 2012.",
+        "NFF WARNING: Food prices could rise up to 50% if shortages persist through seeding season.",
+        "ACCC investigating wholesale-to-retail spread. Pump prices tracking wholesale 'too closely.'",
+        "Analysts: ULP91 could hit $3.50/L in extreme scenario. RBA warned $3/L would cause 'significant challenges.'",
+        "Diesel breaks the economy first: freight, farming, mining, emergency backup power all depend on it.",
       ],
     },
   },
   {
-    id: "scenarios",
-    title: "SCENARIO ANALYSIS",
-    icon: "🔮",
+    id: "scenarios", title: "SCENARIO ANALYSIS", icon: "\uD83D\uDD2E",
     content: {
-      heading: "PROBABILITY-WEIGHTED FORECASTS — MAR 21",
+      heading: "PROBABILITY-WEIGHTED FORECASTS \u2014 MAR 22 \u2014 REBALANCED",
       lines: [
-        "SCENARIO A — MANAGED WIND-DOWN (45%): Netanyahu confirmed energy halt. Oil easing. Phased framework emerging. IMO + UK planners working on Hormuz. Strongest de-escalation day yet. ↑ FROM 40%.",
-        "SCENARIO B — ENERGY ESCALATION SPIRAL (10%): Netanyahu halt + Trump $200B request means energy war phase likely over. Iran warned \"zero restraint\" but trigger removed IF Israel complies. ↓ FROM 15%.",
-        "SCENARIO C — EXTENDED ATTRIT (30%): Military strikes continue. $200B funding request + 2,500 more Marines = US preparing for longer campaign. Energy war paused but ground war grinds on.",
-        "SCENARIO D — REGIME COLLAPSE (15%): 7+ leaders killed. Iran still building missiles. Khamenei issuing text-only statements (no video/audio). Internal status uncertain. Nowruz protest window.",
-        "DE-ESCALATION SIGNALS NOW AT 10: Previous 8 + Netanyahu confirmed energy halt + Oil pulling back from $115 to $108. Escalation signals holding at 6. Gap widening.",
-        "THE CONTRADICTION: De-escalation signals stacking BUT Trump requesting $200B + deploying 2,500 more Marines. Words say \"winding down.\" Budget says \"settling in.\"",
-        "KEY QUESTION: Is the energy halt the beginning of a phased ceasefire, or just a tactical pause while military strikes continue? Netanyahu's compliance is the test.",
-        "IRAN'S POSTURE: \"Zero restraint\" warning + \"still building missiles\" + \"fraction of firepower used\" = Iran wants to project strength. But launch rate down 90% tells the real story.",
-        "TRIGGER WATCH: Netanyahu compliance (does energy halt hold?), Hormuz reopening progress, $200B Congressional vote, Feb CPI (Mar 25), Iran Nowruz protests, oil Monday open.",
+        "\u26A0 MAJOR REBALANCE: Nuclear targeting both sides (Natanz/Dimona) + IDF 'halfway' + ground op plans. Wind-down no longer sole leader.",
+        "SCENARIO A \u2014 MANAGED WIND-DOWN (35%): \u2193 FROM 45%. IDF says 3 more weeks minimum. Ground plans drawn up. $200B budget. Energy halt holds but war broadening.",
+        "SCENARIO B \u2014 ENERGY ESCALATION SPIRAL (15%): \u2191 FROM 10%. Nuclear site targeting = new escalation ladder. Dimona shows Iran can threaten Israel's nuclear program.",
+        "SCENARIO C \u2014 EXTENDED ATTRIT (35%): NOW JOINT LEADING. \u2191 FROM 30%. IDF 'halfway' = Passover + 3 weeks. More Marines. Ground plans. Close air support aircraft deployed.",
+        "SCENARIO D \u2014 REGIME COLLAPSE (15%): 8+ leaders killed. But Khamenei issued statement. Iran executing sophisticated Dimona strikes. Regime functional.",
+        "ESCALATION SIGNALS: Natanz struck, Dimona struck, Diego Garcia targeted, ground op plans, 70th wave, IDF 'halfway', cluster bombs on kindergartens. Count: 8.",
+        "DE-ESCALATION SIGNALS: Energy halt holds, 22-nation statement, oil sanctions lifted, IEA measures, UK planners on Hormuz. Count: 6.",
+        "THE SHIFT: Yesterday esc=6, de-esc=10. Today roughly EVEN. Nuclear exchange changed everything. No longer trending toward exit.",
+        "TRIGGER WATCH: Feb CPI (Mar 25). Hormuz reopening. $200B vote. Iran Nowruz protests. Mojtaba Khamenei status. Passover (Apr 12).",
       ],
     },
   },
-  {
-    id: "actions",
-    title: "PERSONAL ACTION ITEMS",
-    icon: "✅",
-    content: {
-      heading: "WATCH LIST — DAY 22",
-      lines: [
-        "NETANYAHU ENERGY HALT CONFIRMED — the de-escalation thesis is playing out. Energy-for-energy exchange appears to be pausing. Oil eased $7 on the announcement.",
-        "THE CONTRADICTION: $200B war funding request + 2,500 more Marines ≠ \"winding down.\" Words say exit, budget says stay. Watch what the money does, not what the tweets say.",
-        "DE-ESCALATION SIGNALS NOW 10 vs ESCALATION 6. Gap widening. Energy halt + oil pullback added to the count overnight. Strongest de-escalation momentum since Feb 28.",
-        "RBA: Oil dropping from $115 to $108. If it holds below $100 over next 2 weeks, May hike becomes uncertain. Feb CPI (Mar 25) is the deciding data point.",
-        "ASX: Wind-down at 45%. If it hits 50%+ next week, watch for rotation from energy into recovery names — travel, consumer discretionary, banks.",
-        "HORMUZ: IMO negotiating humanitarian corridor for 20,000 stranded seafarers. UK sent military planners to work with US on reopening plan. Progress forming.",
-        "FUEL: US gas $3.91/gal (highest since Oct 2022). AU tracking similar trajectory. Grocery cascade in full swing — diesel freight costs hitting shelves now.",
-        "UKRAINE: 220 drone experts deployed across 5 ME countries. Zelensky brokering \"serious agreements.\" Ukraine monetising its war expertise — geopolitical chess move.",
-        "IRAN POSTURE: \"Zero restraint\" warning + \"still building missiles\" + \"fraction of firepower\" = projecting strength. But launch rate -90% tells the real story.",
-        "WEEKEND WATCH: Nowruz/Eid protests. Oil Sunday night futures. $200B Congressional reaction. Lebanon talks. Netanyahu energy halt compliance.",
-      ],
-    },
-  },
-];
-
-const KEY_METRICS = [
-  { label: "WAR DAY", value: "22", color: "var(--crt-red)" },
-  { label: "BRENT", value: "$108", color: "var(--crt-red)", delta: "+$37", deltaColor: "#ff4400" },
-  { label: "ASX 200", value: "8,553", color: "var(--crt-red)", delta: "-7.1%", deltaColor: "#ff4400" },
-  { label: "RBA RATE", value: "4.10%", color: "var(--crt-amber)", delta: "+25bp", deltaColor: "#ff4400" },
-  { label: "AU PETROL", value: "$2.20+", color: "var(--crt-amber)", delta: "+50¢", deltaColor: "#ff4400" },
-  { label: "IRAN LAUNCH", value: "-90%", color: "var(--crt-green)", delta: "↓↓", deltaColor: "#44cc44" },
-  { label: "ENERGY HALT", value: "CONFIRMED", color: "var(--crt-green)", delta: "NETANYAHU", deltaColor: "#44cc44" },
-  { label: "SCENARIO", value: "WIND-DOWN 45%", color: "var(--crt-cyan)", delta: "LEADING", deltaColor: "#00ffcc" },
 ];
 
 const DEFCON_LEVELS = [
@@ -652,42 +292,27 @@ const DEFCON_LEVELS = [
 ];
 
 const THREAT_MATRIX = [
-  { theatre: "IRAN (MAINLAND)", level: "CRITICAL", color: "#ff0000", detail: "Active strikes Day 17" },
-  { theatre: "STRAIT OF HORMUZ", level: "CRITICAL", color: "#ff0000", detail: "Energy war + blockade" },
-  { theatre: "LEBANON", level: "SEVERE", color: "#ff4400", detail: "Ground ops + air campaign" },
-  { theatre: "GULF STATES", level: "HIGH", color: "#ffaa00", detail: "Sustained Iranian strikes" },
-  { theatre: "ISRAEL (HOME)", level: "HIGH", color: "#ffaa00", detail: "Daily missile barrages" },
-  { theatre: "IRAQ", level: "ELEVATED", color: "#cccc00", detail: "Proxy attacks on US bases" },
-  { theatre: "CYPRUS", level: "ELEVATED", color: "#cccc00", detail: "Hezbollah drone strikes" },
-  { theatre: "GLOBAL ECON", level: "CRITICAL", color: "#ff0000", detail: "Energy war / $108+ oil" },
-  { theatre: "AUSTRALIA", level: "HIGH", color: "#ffaa00", detail: "Fuel crisis / reserves low" },
+  { theatre: "IRAN (MAINLAND)", level: "CRITICAL", color: "#ff0000" },
+  { theatre: "STRAIT OF HORMUZ", level: "CRITICAL", color: "#ff0000" },
+  { theatre: "LEBANON", level: "SEVERE", color: "#ff4400" },
+  { theatre: "ISRAEL (HOME)", level: "SEVERE", color: "#ff4400" },
+  { theatre: "GULF STATES", level: "HIGH", color: "#ffaa00" },
+  { theatre: "NUCLEAR", level: "ELEVATED", color: "#cccc00" },
+  { theatre: "IRAQ", level: "ELEVATED", color: "#cccc00" },
+  { theatre: "GLOBAL ECON", level: "CRITICAL", color: "#ff0000" },
+  { theatre: "AUSTRALIA", level: "HIGH", color: "#ffaa00" },
 ];
 
-function useClock() {
-  const [time, setTime] = useState(new Date());
-  useEffect(() => {
-    const t = setInterval(() => setTime(new Date()), 1000);
-    return () => clearInterval(t);
-  }, []);
-  return time;
-}
-
-function DefconGauge({ level }) {
-  const segments = 20;
-  const activeCount = Math.round(((5 - level) / 4) * segments);
-  const colors = ["#4488ff", "#44cc44", "#ffaa00", "#ff4400", "#ff0000"];
-  return (
-    <div className="defcon-gauge">
-      {Array.from({ length: segments }, (_, i) => {
-        const colorIdx = Math.min(4, Math.floor((i / segments) * 5));
-        return (
-          <div key={i} className={"defcon-seg" + (i < activeCount ? " active" : "")}
-            style={{ backgroundColor: colors[colorIdx], color: colors[colorIdx] }} />
-        );
-      })}
-    </div>
-  );
-}
+const KEY_METRICS = [
+  { label: "WAR DAY", value: "23", color: "var(--crt-red)" },
+  { label: "BRENT", value: "$112", color: "var(--crt-red)", delta: "+$41 FRI", deltaColor: "#ff4400" },
+  { label: "ASX 200", value: "8,498", color: "var(--crt-red)", delta: "-7.6%", deltaColor: "#ff4400" },
+  { label: "RBA RATE", value: "4.10%", color: "var(--crt-amber)", delta: "MAY\u21924.35%?", deltaColor: "#ff4400" },
+  { label: "AU DIESEL", value: "$2.71", color: "var(--crt-red)", delta: "+50\u00A2/WK", deltaColor: "#ff4400" },
+  { label: "IRAN DEAD", value: "1,444", color: "var(--crt-red)", delta: "204 KIDS", deltaColor: "#ff4400" },
+  { label: "NUCLEAR", value: "BOTH SIDES", color: "var(--crt-red)", delta: "ESCALATION", deltaColor: "#ff4400" },
+  { label: "SCENARIOS", value: "A=C 35%", color: "var(--crt-cyan)", delta: "TIED", deltaColor: "#00ffcc" },
+];
 
 function KeyMetrics() {
   return (
@@ -706,16 +331,12 @@ function KeyMetrics() {
 function ThreatMatrix() {
   return (
     <div className="threat-matrix">
-      <div style={{ fontSize: 15, letterSpacing: 2, color: "var(--crt-green)" }}>
-        &#9670; THREAT MATRIX &mdash; MULTI-THEATRE
-      </div>
+      <div style={{ fontSize: 15, letterSpacing: 2, color: "var(--crt-green)" }}>{"\u25C6"} THREAT MATRIX</div>
       <div className="threat-grid">
         {THREAT_MATRIX.map((t) => (
           <div key={t.theatre} className="threat-cell">
             <span>{t.theatre}</span>
-            <span className="threat-level" style={{ color: t.color, border: "1px solid " + t.color }}>
-              {t.level}
-            </span>
+            <span className="threat-level" style={{ color: t.color, border: `1px solid ${t.color}` }}>{t.level}</span>
           </div>
         ))}
       </div>
@@ -724,31 +345,39 @@ function ThreatMatrix() {
 }
 
 function Section({ section, isOpen, toggle }) {
-  const hasDelta = ["sitrep","kinetic","iran_response","lebanon","hormuz","oil","asx","fuel_au","scenarios","actions"].includes(section.id);
   return (
     <div className="section-block">
-      <div className={"section-header" + (isOpen ? " open" : "")} onClick={toggle}>
+      <div className={`section-header ${isOpen ? "open" : ""}`} onClick={toggle}>
+        <span style={{ fontSize: 12 }}>{isOpen ? "\u25BC" : "\u25B6"}</span>
         <span>{section.icon}</span>
         <span>{section.title}</span>
-        {hasDelta && <span className="delta-badge">UPDATED</span>}
-        <span className={"section-chevron" + (isOpen ? " open" : "")}>{"\u25B6"}</span>
       </div>
       {isOpen && (
         <div className="section-body">
           <div className="section-heading">{section.content.heading}</div>
-          {section.content.lines.map((line, i) => {
-            const isCrit = line.includes("CRITICAL") || line.includes("KIA") || line.includes("killed") || line.includes("crisis");
-            const isHL = line.includes("ADVANTAGE") || line.includes("SCENARIO") || line.includes("WATCH") || line.includes("CHANGE SINCE") || line.includes("WILDCARD") || line.includes("NEW FACTOR");
-            return (
-              <div key={i} className={"intel-line" + (isCrit ? " critical" : isHL ? " highlight" : "")}>
-                {line}
-              </div>
-            );
-          })}
+          {section.content.lines.map((line, i) => (
+            <div key={i} className="intel-line">{line}</div>
+          ))}
         </div>
       )}
     </div>
   );
+}
+
+function DefconGauge({ level }) {
+  return (
+    <div className="defcon-gauge">
+      {DEFCON_LEVELS.map((d) => (
+        <div key={d.level} className={`defcon-seg ${d.level >= level ? "active" : ""}`} style={{ backgroundColor: d.color }} />
+      ))}
+    </div>
+  );
+}
+
+function useClock() {
+  const [now, setNow] = useState(new Date());
+  useEffect(() => { const id = setInterval(() => setNow(new Date()), 1000); return () => clearInterval(id); }, []);
+  return now;
 }
 
 /* ── FUEL DEPLETION MODULE ── */
@@ -830,16 +459,10 @@ function FuelForecast() {
   }
   function yPos(val) { return pT + pH - (val / maxV) * pH; }
 
-  var fuels = [
-    { name: "PETROL", key: "petrol" },
-    { name: "DIESEL", key: "diesel" },
-    { name: "JET FUEL", key: "jet" }
-  ];
-
+  var fuels = [{ name: "PETROL", key: "petrol" }, { name: "DIESEL", key: "diesel" }, { name: "JET FUEL", key: "jet" }];
   var presetKeys = Object.keys(FUEL_SCENARIOS);
 
   return React.createElement("div", null,
-    // Countdown cards
     React.createElement("div", { className: "countdown-row" },
       fuels.map(function(f) {
         var days = dryDays[f.key] !== null ? dryDays[f.key] : 120;
@@ -855,21 +478,16 @@ function FuelForecast() {
         );
       })
     ),
-
-    // Presets
     React.createElement("div", { className: "presets" },
       presetKeys.map(function(key) {
         var s = FUEL_SCENARIOS[key];
         return React.createElement("button", {
-          key: key,
-          className: "preset-btn " + (preset === key ? "active" : ""),
+          key: key, className: "preset-btn " + (preset === key ? "active" : ""),
           style: { border: "1px solid " + s.color, color: s.color },
           onClick: function() { applyPreset(key); }
         }, s.name);
       })
     ),
-
-    // Controls
     React.createElement("div", { className: "ctrl-box" },
       React.createElement("div", { className: "ctrl-title" }, "INTERACTIVE PARAMETERS"),
       React.createElement("div", { className: "ctrl-grid" },
@@ -891,41 +509,32 @@ function FuelForecast() {
           (res ? "[ON]" : "[OFF]") + " MSO RESERVE RELEASE (762 ML)")
       )
     ),
-
-    // SVG Chart
     React.createElement("div", { className: "chart-panel" },
       React.createElement("div", { className: "chart-title" }, "DEPLETION CURVES - MILLION LITRES REMAINING"),
       React.createElement("svg", { viewBox: "0 0 " + W + " " + H, style: { width: "100%", height: "auto", fontFamily: "'Share Tech Mono', monospace" } },
-        // Grid
         [0, 0.25, 0.5, 0.75, 1].map(function(f) {
           var y = pT + pH * (1 - f);
           return React.createElement("line", { key: "g" + f, x1: pL, y1: y, x2: pL + pW, y2: y, stroke: "#1a3a1a", strokeDasharray: "3 3" });
         }),
-        // Y labels
         [0, 0.25, 0.5, 0.75, 1].map(function(f) {
           var y = pT + pH * (1 - f);
           return React.createElement("text", { key: "yl" + f, x: pL - 5, y: y + 4, textAnchor: "end", fill: "#3a7a3a", fontSize: "10" }, (maxV * f / 1000).toFixed(1) + "k");
         }),
-        // X labels
         [0, 30, 60, 90, 120].map(function(d) {
           var x = pL + (d / 120) * pW;
           var dt = data[d] ? data[d].date : "";
           return React.createElement("text", { key: "xl" + d, x: x, y: pT + pH + 20, textAnchor: "middle", fill: "#3a7a3a", fontSize: "10" }, dt);
         }),
-        // Ref lines
         React.createElement("line", { x1: pL, y1: yPos(14 * FUEL_DAILY_ML.diesel), x2: pL + pW, y2: yPos(14 * FUEL_DAILY_ML.diesel), stroke: "#ffaa00", strokeDasharray: "6 3" }),
         React.createElement("text", { x: pL + pW - 5, y: yPos(14 * FUEL_DAILY_ML.diesel) - 4, textAnchor: "end", fill: "#ffaa00", fontSize: "9" }, "RATIONING 14d"),
         React.createElement("line", { x1: pL, y1: yPos(7 * FUEL_DAILY_ML.diesel), x2: pL + pW, y2: yPos(7 * FUEL_DAILY_ML.diesel), stroke: "#ff3333", strokeDasharray: "6 3" }),
         React.createElement("text", { x: pL + pW - 5, y: yPos(7 * FUEL_DAILY_ML.diesel) - 4, textAnchor: "end", fill: "#ff3333", fontSize: "9" }, "EMERGENCY 7d"),
-        // Area fills
         React.createElement("path", { d: makeArea("diesel"), fill: "rgba(255,102,0,0.15)" }),
         React.createElement("path", { d: makeArea("petrol"), fill: "rgba(51,255,51,0.15)" }),
         React.createElement("path", { d: makeArea("jet"), fill: "rgba(0,255,204,0.15)" }),
-        // Lines
         React.createElement("path", { d: makePath("petrol"), fill: "none", stroke: "#33ff33", strokeWidth: "2" }),
         React.createElement("path", { d: makePath("diesel"), fill: "none", stroke: "#ff6600", strokeWidth: "2" }),
         React.createElement("path", { d: makePath("jet"), fill: "none", stroke: "#00ffcc", strokeWidth: "2" }),
-        // Axes
         React.createElement("line", { x1: pL, y1: pT, x2: pL, y2: pT + pH, stroke: "#3a7a3a" }),
         React.createElement("line", { x1: pL, y1: pT + pH, x2: pL + pW, y2: pT + pH, stroke: "#3a7a3a" })
       ),
@@ -937,20 +546,17 @@ function FuelForecast() {
         React.createElement("div", { className: "legend-item", style: { color: "#ff3333" } }, "--- EMERGENCY (7d)")
       )
     ),
-
-    // Context notes
     React.createElement("div", { className: "ctx-notes" },
       React.createElement("div", { className: "ctx-title" }, "SUPPLY CHAIN CONTEXT"),
-      React.createElement("div", { className: "ctx-line crit" }, "Strait of Hormuz effectively closed. 20% of global seaborne oil transits here. 3 tankers hit by Iranian fire."),
+      React.createElement("div", { className: "ctx-line crit" }, "Strait of Hormuz effectively closed. 21+ attacks on commercial vessels since Mar 1. 3,000+ vessels stranded."),
       React.createElement("div", { className: "ctx-line crit" }, "China banned refined fuel exports. Thailand suspended exports. Singapore under force majeure."),
-      React.createElement("div", { className: "ctx-line warn" }, "107+ NSW fuel stations experienced diesel shortages. Regional centres past $3.00/L."),
+      React.createElement("div", { className: "ctx-line warn" }, "107+ NSW fuel stations experienced diesel shortages. Sydney diesel $2.71/L. Regional centres past $3.00/L."),
       React.createElement("div", { className: "ctx-line warn" }, "Even with ceasefire, first meaningful supply doesn't reach AU terminals until weeks 8-10 post-ceasefire."),
       React.createElement("div", { className: "ctx-line warn" }, "Full recovery: minimum 4-6 months from ceasefire. Emergency crude-to-refined round trip: 30-40 days."),
       React.createElement("div", { className: "ctx-line" }, "69% of Australia's imported urea fertiliser comes from Middle East. Food impact lags fuel by ~6 months."),
       React.createElement("div", { className: "ctx-line" }, "NFF president warned food prices could rise up to 50%."),
       React.createElement("div", { className: "ctx-line" }, "Diesel breaks the economy first: freight, farming, mining, emergency backup power all depend on it.")
     ),
-
     React.createElement("div", { className: "ctx-notes" },
       React.createElement("div", { className: "ctx-title" }, "DATA SOURCES"),
       React.createElement("div", { className: "ctx-line" }, "Mar 3 data: Energy Minister Chris Bowen, Parliament Question Time"),
@@ -989,11 +595,10 @@ function OPSCEN() {
       <div className="scanlines" />
       <div className="opscen-container">
         <div className="header-bar">
-          <div className="header-title crt-glow">{"\u25E4"} OPSCEN v5.9 {"\u25E2"}</div>
-          <div className="header-sub">OPERATIONS CENTRE &mdash; IRAN THEATRE INTELLIGENCE BRIEFING &mdash; 21 MARCH 2026</div>
-          <div className="header-sub" style={{ color: "var(--crt-red)" }}>
-            <span className="pulse-dot" />
-            CONFLICT DAY 22 &mdash; OPERATION EPIC FURY &mdash; ACTIVE COMBAT OPERATIONS
+          <div className="header-title crt-glow">{"\u25E4"} OPSCEN v6.0 {"\u25E2"}</div>
+          <div className="header-sub">IRAN THEATRE INTELLIGENCE BRIEFING &mdash; OPERATION EPIC FURY &mdash; DAY 23</div>
+          <div className="header-sub" style={{ color: "var(--crt-red)", marginTop: 2 }}>
+            {"\u26A0"} NUCLEAR SITES TARGETED BOTH SIDES &mdash; SCENARIOS REBALANCED
           </div>
         </div>
 
@@ -1015,14 +620,14 @@ function OPSCEN() {
                   <span style={{ color: defconInfo.color, fontSize: 12 }}>{defconInfo.label}</span>
                 </div>
                 <div style={{ fontSize: 12, color: "var(--crt-dim)", marginTop: 4 }}>
-                  REGIONAL CONFLICT &bull; MULTI-THEATRE &bull; NO NUCLEAR USE (YET)
+                  REGIONAL CONFLICT &bull; MULTI-THEATRE &bull; NUCLEAR SITES TARGETED
                 </div>
               </div>
               <div className="clock-panel">
                 <div style={{ fontSize: 14, color: "var(--crt-green)", letterSpacing: 2 }}>SYSTEM CLOCK</div>
                 <div style={{ fontSize: 22, color: "var(--crt-amber)", marginTop: 6, fontFamily: "'Share Tech Mono', monospace" }}>{aestStr}</div>
                 <div style={{ fontSize: 13, color: "var(--crt-dim)", marginTop: 2, fontFamily: "'Share Tech Mono', monospace" }}>{utcStr}</div>
-                <div style={{ fontSize: 12, color: "var(--crt-dim)", marginTop: 4 }}>BRIEFING EPOCH: 21-MAR-2026 0800 AEDT</div>
+                <div style={{ fontSize: 12, color: "var(--crt-dim)", marginTop: 4 }}>BRIEFING EPOCH: 22-MAR-2026 0900 AEDT</div>
               </div>
             </div>
 
@@ -1043,7 +648,7 @@ function OPSCEN() {
         {activeTab === "fuel" && <FuelForecast />}
 
         <div className="footer-bar">
-          <span>OPSCEN v5.9 &bull; RETSA GROUP INTELLIGENCE</span>
+          <span>OPSCEN v6.0 &bull; RETSA GROUP INTELLIGENCE</span>
           <span>CLASSIFICATION: OPEN SOURCE</span>
           <span><span className="blink" style={{ color: "var(--crt-red)" }}>&bull;</span> LIVE</span>
         </div>

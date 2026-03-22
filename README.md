@@ -1,4 +1,4 @@
-# OPSCEN v5.9.1 — Iran Theatre Intelligence Briefing
+# OPSCEN v6.0 — Iran Theatre Intelligence Briefing
 
 A real-time military operations centre dashboard tracking the 2026 Iran conflict, built entirely in [Claude](https://claude.ai) by [RETSA Group](https://retsagroup.com.au).
 
@@ -17,7 +17,7 @@ Two words. Fresh every morning. The news comes to me now.
 - **CRT military aesthetic** — retro-futuristic operations centre design
 - **Two-tab interface** — Briefing view + interactive Fuel Depletion Forecast
 - **Key metrics dashboard** — quick-reference tiles at top of page
-- **10 collapsible intelligence sections** covering all theatres of the conflict
+- **9 collapsible intelligence sections** covering all theatres of the conflict
 - **Australian Fuel Forecast module** — interactive depletion projections for petrol, diesel, and jet fuel with scenario presets and adjustable parameters
 - **Live system clock** (AEDT + UTC)
 - **DEFCON gauge** with visual assessment
@@ -26,14 +26,15 @@ Two words. Fresh every morning. The news comes to me now.
 - **Australian-specific sections** — ASX 200, RBA rate impacts, fuel crisis monitoring
 - **UPDATED badges** showing what changed since last briefing
 
-## Current Briefing: Day 22
+## Current Briefing: Day 23
 
-- Operation Epic Fury — US/Israel joint strikes continue
-- Strait of Hormuz effectively closed
-- Dubai Airport hit by drone — flights suspended
-- Regional Australian towns running dry on fuel
-- RBA hiked rates to 4.10% — Bullock discussing recession possibility
-- Brent crude at $102/bbl
+- Nuclear sites targeted on BOTH sides — US hit Natanz, Iran hit Dimona
+- IDF chief says campaign at "halfway" point — fighting through Passover
+- 22 nations condemned Iran's Hormuz closure including Australia
+- Brent crude hit $112.19 — war high
+- Sydney diesel at $2.71/L — 107 NSW stations diesel-dry
+- Scenarios rebalanced: Wind-down 35%, Extended Attrit 35% (tied)
+- US drew up ground invasion plans + deploying 2,500 more Marines
 
 ## How it works
 
