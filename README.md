@@ -1,4 +1,4 @@
-# OPSCEN v6.1.1 — Iran Theatre Intelligence Briefing
+# OPSCEN v6.2 — Iran Theatre Intelligence Briefing
 
 A real-time military operations centre dashboard tracking the 2026 Iran conflict, built entirely in [Claude](https://claude.ai) by [RETSA Group](https://retsagroup.com.au).
 
@@ -26,17 +26,18 @@ Two words. Fresh every morning. The news comes to me now.
 - **Australian-specific sections** — ASX 200, RBA rate impacts, fuel crisis monitoring
 - **UPDATED badges** showing what changed since last briefing
 
-## Current Briefing: Day 24
+## Current Briefing: Day 26
 
-- **TRUMP BLINKS**: 5-day grace period on energy strikes after "productive talks"
-- **Oil crashes 14%** — Brent from $112 to $96 — biggest drop of the war
-- Grace period countdown (days) ticking in header
-- DEFCON back to 3 — energy escalation paused
-- Three scenario pivots in 72 hours: Wind-Down 45% → 20% → 40%
-- ASX 8,428 with three sectors in bear market territory
-- AU 10-year yield at 5.17% — highest since 2011
-- Talks "subject to success" — if they fail by Friday, back to ultimatum
-- Hormuz still closed, 3,000+ vessels stranded, 107 NSW stations dry
+- **Iran DENIES all talks** with US — calls Trump "deceitful," says "fake news to manipulate markets"
+- But backchannels through Pakistan, Turkey, Egypt **confirmed real** — Iran reviewing "points from US through mediators"
+- **$3 trillion** S&P 500 swing in 56 minutes on Monday (Trump claimed talks → Iran denied)
+- Grace period: **3 days remaining** (expires Friday March 28)
+- Brent oil volatile: $112 → $96 → $104 → ~$103 in 4 days
+- **82,000+ civilian structures** damaged/destroyed in Iran (Red Crescent)
+- Iran death toll 1,500+ / Israel 15 / Lebanon 1,029+
+- AU CPI data dropping today (pre-war data — "overtaken by events")
+- IEA head: "Worse than 1973 and 1979 combined"
+- Lebanon expelled Iranian ambassador — strongest move against Iran
 
 ## How it works
 
