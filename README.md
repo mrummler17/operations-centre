@@ -1,4 +1,4 @@
-# OPSCEN v6.2 — Iran Theatre Intelligence Briefing
+# OPSCEN v6.3 — Iran Theatre Intelligence Briefing
 
 A real-time military operations centre dashboard tracking the 2026 Iran conflict, built entirely in [Claude](https://claude.ai) by [RETSA Group](https://retsagroup.com.au).
 
@@ -26,18 +26,21 @@ Two words. Fresh every morning. The news comes to me now.
 - **Australian-specific sections** — ASX 200, RBA rate impacts, fuel crisis monitoring
 - **UPDATED badges** showing what changed since last briefing
 
-## Current Briefing: Day 26
+## Current Briefing: Day 27
 
-- **Iran DENIES all talks** with US — calls Trump "deceitful," says "fake news to manipulate markets"
-- But backchannels through Pakistan, Turkey, Egypt **confirmed real** — Iran reviewing "points from US through mediators"
-- **$3 trillion** S&P 500 swing in 56 minutes on Monday (Trump claimed talks → Iran denied)
-- Grace period: **3 days remaining** (expires Friday March 28)
-- Brent oil volatile: $112 → $96 → $104 → ~$103 in 4 days
-- **82,000+ civilian structures** damaged/destroyed in Iran (Red Crescent)
-- Iran death toll 1,500+ / Israel 15 / Lebanon 1,029+
-- AU CPI data dropping today (pre-war data — "overtaken by events")
-- IEA head: "Worse than 1973 and 1979 combined"
-- Lebanon expelled Iranian ambassador — strongest move against Iran
+- **Iran REJECTED US 15-point ceasefire plan** — called it "maximalist, unreasonable"
+- Iran issued **5 CONDITIONS**: halt aggression, guarantees, reparations, end all fronts, Hormuz sovereignty
+- Both sides now have formal proposals on the table — first time in 27 days
+- **In-person Pakistan talks** pushed for as early as Friday (grace period expiry)
+- Iran wants **Vance**, not Witkoff/Kushner for negotiations
+- **1,000 US 82nd Airborne** troops deploying despite talks
+- Iran death toll **1,750+** / Israel 15 / Lebanon **1,072+** (33 killed overnight)
+- Israel expanding reserve mobilisation to **400,000**
+- **Philippines** declared state of national emergency over energy supply
+- **Kuwait airport** hit by drone — fuel tank fire
+- Grace period: **2 days remaining** (expires Friday March 28)
+- Brent ~$103 (volatile: $112→$96→$104→$103)
+
 
 ## How it works
 
