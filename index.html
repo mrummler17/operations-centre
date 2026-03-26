@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>OPSCEN v6.4 — Iran Theatre Intelligence Briefing</title>
-<meta name="description" content="Real-time ops centre tracking the 2026 Iran conflict. Iran rejects 15-point plan, issues 5 conditions. Grace period 2 days. Built in Claude by RETSA Group.">
+<meta name="description" content="Real-time ops centre tracking the 2026 Iran conflict. Grace period extended to April 6. IRGC navy chief killed. Russia exposed. Built in Claude by RETSA Group.">
 <meta property="og:title" content="OPSCEN v6.4 — Iran Theatre Intelligence Briefing">
-<meta property="og:description" content="Day 27 — Iran rejects US 15-point ceasefire. Issues 5 conditions inc. Hormuz sovereignty. In-person Pakistan talks Friday? 1,750+ dead. 82nd Airborne deploying.">
+<meta property="og:description" content="Day 28 — Grace period extended 10 days to April 6. IRGC navy chief killed. Russia providing intel+drones to Iran. 3,000+ dead. Israel racing to destroy targets before ceasefire.">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=VT323&family=Share+Tech+Mono&display=swap" rel="stylesheet">
@@ -43,7 +43,7 @@
   .section-body { padding: 10px 14px; }
   .section-heading { font-family: 'Share Tech Mono', monospace; font-size: 14px; color: var(--crt-amber); letter-spacing: 1px; margin-bottom: 8px; padding-bottom: 6px; border-bottom: 1px solid var(--crt-border); }
   .intel-line { font-size: 15px; line-height: 1.5; padding: 3px 0; padding-left: 14px; position: relative; color: var(--crt-text); }
-  .intel-line::before { content: '▸'; position: absolute; left: 0; color: var(--crt-dim); }
+  .intel-line::before { content: '\\25B8'; position: absolute; left: 0; color: var(--crt-dim); }
   .key-metrics-bar { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 6px; margin-bottom: 12px; }
   .metric-card { border: 1px solid var(--crt-border); padding: 8px; text-align: center; background: var(--crt-panel); }
   .metric-label { font-size: 11px; color: var(--crt-dim); letter-spacing: 2px; }
@@ -92,6 +92,7 @@
 .ctx-line.crit { color: var(--crt-red); }
 .ctx-line.warn { color: var(--crt-amber); }
 @media (max-width: 600px) { .countdown-row { grid-template-columns: 1fr; } .ctrl-grid { grid-template-columns: 1fr; } .tab-btn { font-size: 15px; letter-spacing: 1px; } }
+
 </style>
 </head>
 <body>
@@ -105,18 +106,18 @@ const SECTIONS = [
     title: "SITUATION REPORT",
     icon: "⚡",
     content: {
-      heading: "DAY 27 — IRAN REJECTS 15-POINT PLAN / ISSUES 5 CONDITIONS / IN-PERSON TALKS FRIDAY?",
+      heading: "DAY 28 — GRACE PERIOD EXTENDED 10 DAYS TO APRIL 6 / IRGC NAVY CHIEF KILLED / RUSSIA EXPOSED",
       lines: [
-        "⚠ IRAN REJECTED US 15-POINT CEASEFIRE PLAN: Called it 'maximalist, unreasonable.' Military spokesman mocked US: 'You are negotiating with yourselves. Don't dress up your defeat as an agreement.'",
-        "IRAN'S 5 CONDITIONS: (1) Complete halt to aggression, (2) Guarantees war won't resume, (3) War reparations, (4) End war on ALL fronts inc. Hezbollah/Iraq, (5) Iranian sovereignty over Strait of Hormuz.",
-        "THIS IS PROGRESS: Both sides now have formal proposals on the table. Iran's rejection is an opening negotiating position, not a door slam. The 5 conditions define Iran's bargaining range.",
-        "PAKISTAN DELIVERED 15-POINT PLAN: US proposal included sanctions relief, nuclear rollback, missile limits, Hormuz reopening. Iran called it 'excessive.' But they reviewed it — that's engagement.",
-        "IN-PERSON TALKS FRIDAY? Mediators pushing for US-Iran meeting in Pakistan as early as Friday (grace period expiry day). Egyptian + Pakistani officials confirmed to Al Jazeera.",
-        "IRAN WANTS VANCE, NOT WITKOFF/KUSHNER: Tehran told intermediaries they feel 'stabbed in the back' by Witkoff and Kushner. Want VP Vance or Rubio. Trump confirmed Vance + Rubio leading negotiations.",
-        "BUT: 1,000 US 82ND AIRBORNE troops deploying to Middle East in coming days. Military buildup continues alongside diplomatic track. Carrot and stick.",
-        "IRAN DEAD: 1,750+ (first full toll in weeks — up from 1,500). Israel expanding reserve mobilisation to 400,000 (from 280,000). Philippines declared state of national emergency.",
-        "KUWAIT AIRPORT HIT: Drone struck fuel tank, sparked fire. Iran charging fees for Hormuz passage to 'non-enemy' nations — Pakistan, India ships waved through.",
-        "ISRAEL CONCERNED: US may declare 1-month ceasefire unilaterally to force negotiation window. Netanyahu: will continue attacks 'to protect our vital interests, in any case.'",
+        "⚠ GRACE PERIOD EXTENDED: Trump posted after markets closed Thu: 'As per Iranian Government request, I am pausing Energy Plant destruction by 10 Days to Monday, April 6, 2026, 8PM ET.' Friday deadline GONE.",
+        "ISRAEL KILLED IRGC NAVY CHIEF: The commander responsible for the Hormuz blockade eliminated in targeted airstrike. Massive blow to Iran's naval command and Hormuz operations.",
+        "ISRAEL RACING AGAINST CEASEFIRE: IDF 'speeding up targeting in next 48 hours' — trying to destroy arms factories before possible ceasefire. Defence chief ordered acceleration.",
+        "TRUMP FLOATED TAKING IRAN'S OIL: 'It's an option.' Compared to Venezuela 'joint venture' where US 'made a lot of money.' Most provocative statement of the entire war.",
+        "RUSSIA EXPOSED: UK intelligence + EU diplomat Kallas confirmed Russia providing intelligence AND drone training to Iran. Kallas: 'Russia helping Iran target Americans, kill Americans.'",
+        "8 TANKERS THROUGH HORMUZ: Pakistani-flagged vessels passed through. Trump (watching Fox): 'I guess we're dealing with the right people.' Called it 'a present from Iran.'",
+        "IRAN DEAD: 1,900+ (deputy health minister). Total across all theatres: 3,000+. Israel: 18 killed + 2 soldiers. US: 13 service members killed.",
+        "BUSHEHR NUCLEAR PLANT struck again Tuesday night. Atomic Energy Org: 'renewed attack by American-Israeli enemy.' No reported leakage.",
+        "IRAN GROUND FORCES COMMANDER: 'Every inch of Iranian territory is protected. All enemy movements monitored. We are prepared for any scenario.' — signalling ground invasion readiness.",
+        "WITKOFF PUBLICLY PRESENTED 15-point plan at Cabinet meeting. Trump: 'I'm not desperate to make a deal.' Iran still calling it 'maximalist, unreasonable.'",
       ],
     },
   },
@@ -265,18 +266,18 @@ const SECTIONS = [
     title: "SCENARIO ANALYSIS",
     icon: "🔮",
     content: {
-      heading: "DAY 27 — FORMAL PROPOSALS EXCHANGED / FRIDAY PIVOT / 48 HOURS",
+      heading: "DAY 28 — GRACE EXTENDED / ISRAEL RACING CLOCK / NEGOTIATION WINDOW WIDENED",
       lines: [
-        "⚠ BOTH SIDES NOW HAVE PROPOSALS ON THE TABLE: US 15-point plan (via Pakistan) vs Iran's 5 conditions. This is formal negotiation, not denial. The game has shifted from 'are there talks?' to 'what's the deal?'",
-        "SCENARIO A — MANAGED WIND-DOWN (35%): HOLDING. Iran's rejection is an OPENING POSITION. The 5 conditions define bargaining range. In-person Pakistan talks as early as Friday = strongest diplomatic signal yet.",
-        "SCENARIO B — ENERGY ESCALATION SPIRAL (15%): Grace period expires Friday. If Pakistan talks don't materialise, Trump faces the power plant decision again. 82nd Airborne deploying = hedge against talk failure.",
-        "SCENARIO C — EXTENDED WAR (35%): Joint leading. Iran's 5 conditions are maximalist (reparations + Hormuz sovereignty = non-starters for US). If neither side compromises, grinding war continues through Passover.",
-        "SCENARIO D — REGIME COLLAPSE (15%): 1,750+ dead. 82,000 structures. But Iran is negotiating — issuing formal conditions, choosing preferred negotiators (Vance over Witkoff). This is a functional state, not a collapsing one.",
-        "IRAN'S 5 CONDITIONS vs US 15 POINTS: The gap is enormous. Hormuz sovereignty is a non-starter. Reparations is a non-starter. But 'halt to aggression' + 'guarantees' + 'end all fronts' = negotiable framework.",
-        "THE VANCE SIGNAL: Iran wants the VP, not the envoy. This is Iran saying 'send someone with real authority.' It's also Iran splitting the US team. Smart diplomacy.",
-        "ISRAEL'S FEAR: US may declare 1-month ceasefire unilaterally. Netanyahu would be forced to comply or defy Washington. This is the wedge between US and Israeli war aims.",
-        "MARKET SIGNAL: Oil at ~$103. Not crashing further (deal not imminent) but not surging (escalation paused). Market pricing in extended negotiation, not quick resolution.",
-        "FRIDAY IS STILL THE PIVOT: Grace period expires. In-person talks possible in Pakistan. Both sides have proposals. The next 48 hours determine whether this becomes a negotiation or returns to escalation.",
+        "⚠ GRACE PERIOD EXTENDED TO APRIL 6: Removes ALL time pressure. Gives 10 more days for backchannel through Pakistan/Turkey/Egypt to produce framework. Oil should ease further.",
+        "SCENARIO A — MANAGED WIND-DOWN (35%): HOLDING. Grace extension = strongest signal yet that Trump wants off-ramp. But Iran's 5 conditions vs US 15 points = huge gap. Negotiation, not resolution.",
+        "SCENARIO B — ENERGY ESCALATION SPIRAL (10%): ↓ FROM 15%. Grace extension to Apr 6 shelves this for 10 days. Only revives if talks collapse completely AND Trump follows through.",
+        "SCENARIO C — EXTENDED WAR (40%): ↑ NOW LEADING. Israel racing to destroy targets before ceasefire. IDF 'speeding up' strikes. Iran's 5 conditions are maximalist. Grinding war most likely through April.",
+        "SCENARIO D — REGIME COLLAPSE (15%): IRGC navy chief killed. 1,900+ dead. But Iran ground forces signalling readiness. Regime battered, reconstituting, negotiating. Not collapsing.",
+        "THE ISRAEL WILDCARD: Israel is NOT part of US-Iran talks. IDF speeding up targeting to hit arms factories before any ceasefire. Netanyahu: 'will protect our vital interests, in any case.' Israel could torpedo any deal.",
+        "RUSSIA FACTOR: UK intelligence + EU confirmed Russia providing intel + drone training to Iran. This links Ukraine and Iran wars. EU demanding US pressure Russia in exchange for Hormuz cooperation.",
+        "TRUMP'S 'TAKE THE OIL' TRIAL BALLOON: Compared Iran to Venezuela 'joint venture.' If serious, this reframes the war from security operation to resource extraction. Massive implications.",
+        "8 TANKERS THROUGH HORMUZ: Pakistani ships waved through = de facto partial reopening for 'non-enemy' states. Iran codifying sovereignty + fees via parliament. New Hormuz regime emerging.",
+        "APRIL 6 DEADLINE: 10 days of negotiation runway. Israel will use every one of them to destroy as much military capability as possible. The race is diplomacy vs military facts on the ground.",
       ],
     },
   },
@@ -331,7 +332,7 @@ const CRT_STYLES = `
   .section-body { padding: 10px 14px; }
   .section-heading { font-family: 'Share Tech Mono', monospace; font-size: 14px; color: var(--crt-amber); letter-spacing: 1px; margin-bottom: 8px; padding-bottom: 6px; border-bottom: 1px solid var(--crt-border); }
   .intel-line { font-size: 15px; line-height: 1.5; padding: 3px 0; padding-left: 14px; position: relative; color: var(--crt-text); }
-  .intel-line::before { content: '▸'; position: absolute; left: 0; color: var(--crt-dim); }
+  .intel-line::before { content: '\\25B8'; position: absolute; left: 0; color: var(--crt-dim); }
   .key-metrics-bar { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 6px; margin-bottom: 12px; }
   .metric-card { border: 1px solid var(--crt-border); padding: 8px; text-align: center; background: var(--crt-panel); }
   .metric-label { font-size: 11px; color: var(--crt-dim); letter-spacing: 2px; }
@@ -349,14 +350,14 @@ const CRT_STYLES = `
 `;
 
 const KEY_METRICS = [
-  { label: "WAR DAY", value: "27", color: "var(--crt-red)" },
+  { label: "WAR DAY", value: "28", color: "var(--crt-red)" },
   { label: "BRENT", value: "$103", color: "var(--crt-amber)", delta: "VOLATILE", deltaColor: "#ffaa00" },
-  { label: "GRACE LEFT", value: "FRI 28", color: "var(--crt-amber)", delta: "2 DAYS", deltaColor: "#ffaa00" },
-  { label: "IRAN PLAN", value: "REJECTED", color: "var(--crt-red)", delta: "5 CONDITIONS", deltaColor: "#ffaa00" },
-  { label: "IRAN DEAD", value: "1,750+", color: "var(--crt-red)", delta: "82K BLDGS", deltaColor: "#ff4400" },
-  { label: "82ND ABN", value: "1,000", color: "var(--crt-red)", delta: "DEPLOYING", deltaColor: "#ff4400" },
-  { label: "LEAD SCENARIO", value: "EXTENDED", color: "var(--crt-amber)", delta: "35%", deltaColor: "#ffaa00" },
-  { label: "WIND-DOWN", value: "35%", color: "var(--crt-cyan)", delta: "TALKS FRI?", deltaColor: "#00ffcc" },
+  { label: "GRACE LEFT", value: "APR 6", color: "var(--crt-amber)", delta: "+10 DAYS", deltaColor: "#44cc44" },
+  { label: "IRGC NAVY", value: "CHIEF KIA", color: "var(--crt-green)", delta: "HORMUZ CMD", deltaColor: "#44cc44" },
+  { label: "TOTAL DEAD", value: "3,000+", color: "var(--crt-red)", delta: "IRAN 1,900+", deltaColor: "#ff4400" },
+  { label: "RUSSIA", value: "EXPOSED", color: "var(--crt-red)", delta: "INTEL+DRONES", deltaColor: "#ff4400" },
+  { label: "LEAD SCENARIO", value: "EXTENDED", color: "var(--crt-amber)", delta: "40%", deltaColor: "#ffaa00" },
+  { label: "WIND-DOWN", value: "35%", color: "var(--crt-cyan)", delta: "APR 6 WINDOW", deltaColor: "#00ffcc" },
 ];
 
 function KeyMetrics() { return (<div className="key-metrics-bar">{KEY_METRICS.map((m) => (<div key={m.label} className="metric-card"><div className="metric-label">{m.label}</div><div className="metric-value" style={{ color: m.color }}>{m.value}</div>{m.delta && <div className="metric-delta" style={{ color: m.deltaColor }}>{m.delta}</div>}</div>))}</div>); }
@@ -365,14 +366,16 @@ function Section({ section, isOpen, toggle }) { return (<div className="section-
 function DefconGauge({ level }) { return (<div className="defcon-gauge">{DEFCON_LEVELS.map((d) => (<div key={d.level} className={`defcon-seg ${d.level >= level ? "active" : ""}`} style={{ backgroundColor: d.color }} />))}</div>); }
 function useClock() { const [now, setNow] = useState(new Date()); useEffect(() => { const id = setInterval(() => setNow(new Date()), 1000); return () => clearInterval(id); }, []); return now; }
 
+
 /* FUEL MODULE */
-const FUEL_BASE_DATE = new Date("2026-03-10"), FUEL_STOCKS_ML = { petrol: 1606, diesel: 2757, jet: 812 }, FUEL_DAILY_ML = { petrol: 43.4, diesel: 91.9, jet: 28 }, FUEL_MSO_ML = { petrol: 400, diesel: 362, jet: 0 }, FUEL_SULPHUR_BOOST = 3.3;
+const FUEL_BASE_DATE = new Date("2026-03-10"), FUEL_STOCKS_ML = { petrol: 1606, diesel: 2757, jet: 812 }, FUEL_DAILY_ML = { petrol: 43.4, diesel: 91.9, jet: 28 }, FUEL_MSO_ML = { petrol: 400, diesel: 362, jet: 0 };
 const FUEL_SCENARIOS = { optimistic: { name: "GOVT OPTIMISTIC", demand: 1.0, imports: 80, refBoost: true, reserve: true, color: "#44cc44" }, current: { name: "CURRENT TRAJECTORY", demand: 1.3, imports: 60, refBoost: true, reserve: true, color: "#ffaa00" }, prolonged: { name: "HORMUZ PROLONGED", demand: 1.5, imports: 30, refBoost: true, reserve: true, color: "#ff6600" }, worst: { name: "WORST CASE", demand: 2.0, imports: 10, refBoost: false, reserve: false, color: "#ff0000" } };
 function projectFuel(p){var iF=p.imports/100,data=[],s={petrol:1606,diesel:2757,jet:812},rPD={petrol:p.reserve?FUEL_MSO_ML.petrol/21:0,diesel:p.reserve?FUEL_MSO_ML.diesel/21:0,jet:0},dD={petrol:null,diesel:null,jet:null};for(var d=0;d<=120;d++){data.push({day:d,date:new Date(FUEL_BASE_DATE.getTime()+d*864e5).toLocaleDateString("en-AU",{day:"numeric",month:"short"}),petrol:Math.max(0,s.petrol),diesel:Math.max(0,s.diesel),jet:Math.max(0,s.jet)});["petrol","diesel","jet"].forEach(function(f){var c=FUEL_DAILY_ML[f]*p.demand,im=FUEL_DAILY_ML[f]*iF,b=(f==="petrol"&&p.refBoost)?3.3:0,r=(d>=7&&d<28)?rPD[f]:0;s[f]=s[f]-c+im+b+r;if(s[f]<=0&&dD[f]===null){dD[f]=d;s[f]=0;}});}return{data:data,dryDays:dD};}
 function fuelDaysColor(d){return d<=7?"var(--crt-red)":d<=14?"var(--crt-amber)":"var(--crt-green)";}
 function fuelStatus(d){if(d<=0)return{text:"DEPLETED",color:"var(--crt-red)",bg:"rgba(255,50,50,0.15)",border:"var(--crt-red)"};if(d<=7)return{text:"EMERGENCY",color:"var(--crt-red)",bg:"rgba(255,50,50,0.1)",border:"var(--crt-red)"};if(d<=14)return{text:"RATIONING LIKELY",color:"var(--crt-amber)",bg:"rgba(255,170,0,0.1)",border:"var(--crt-amber)"};return{text:"MONITORING",color:"var(--crt-green)",bg:"rgba(50,255,50,0.05)",border:"var(--crt-green)"};}
 function FuelForecast(){var sD=useState(1.3),sI=useState(60),sR=useState(true),sRs=useState(true),sP=useState("current");var demand=sD[0],setDemand=sD[1],imports=sI[0],setImports=sI[1],refB=sR[0],setRefB=sR[1],res=sRs[0],setRes=sRs[1],preset=sP[0],setPreset=sP[1];function ap(k){var s=FUEL_SCENARIOS[k];setDemand(s.demand);setImports(s.imports);setRefB(s.refBoost);setRes(s.reserve);setPreset(k);}var r=projectFuel({demand:demand,imports:imports,refBoost:refB,reserve:res}),data=r.data,dryDays=r.dryDays;var W=900,H=300,pL=55,pR=15,pT=15,pB=35,pW=W-pL-pR,pH=H-pT-pB,maxV=Math.max(1606,2757,812)*1.05;function mP(k){var p=[];for(var i=0;i<=120;i++){var x=pL+(i/120)*pW,y=pT+pH-(data[i][k]/maxV)*pH;p.push((i===0?"M":"L")+x.toFixed(1)+","+y.toFixed(1));}return p.join(" ");}function mA(k){return mP(k)+" L"+(pL+pW)+","+(pT+pH)+" L"+pL+","+(pT+pH)+" Z";}function yP(v){return pT+pH-(v/maxV)*pH;}var fuels=[{name:"PETROL",key:"petrol"},{name:"DIESEL",key:"diesel"},{name:"JET FUEL",key:"jet"}];
-return React.createElement("div",null,React.createElement("div",{className:"countdown-row"},fuels.map(function(f){var days=dryDays[f.key]!==null?dryDays[f.key]:120,dep=dryDays[f.key]!==null;var dd=dep?new Date(FUEL_BASE_DATE.getTime()+dryDays[f.key]*864e5).toLocaleDateString("en-AU",{day:"numeric",month:"short"}):"120+ DAYS";var st=fuelStatus(dep?0:days);return React.createElement("div",{key:f.key,className:"cd-card"},React.createElement("div",{className:"cd-label"},f.name),React.createElement("div",{className:"cd-value",style:{color:dep?"var(--crt-red)":fuelDaysColor(days)}},dep?days:days>=120?"120+":days),React.createElement("div",{className:"cd-sub"},"DAYS UNTIL DEPLETION"),React.createElement("div",{className:"cd-sub",style:{color:dep?"var(--crt-red)":"var(--crt-dim)",marginTop:2}},dep?"DRY: "+dd:dd),React.createElement("div",{className:"cd-status",style:{color:st.color,background:st.bg,border:"1px solid "+st.border}},st.text));})),React.createElement("div",{className:"presets"},Object.keys(FUEL_SCENARIOS).map(function(k){var s=FUEL_SCENARIOS[k];return React.createElement("button",{key:k,className:"preset-btn "+(preset===k?"active":""),style:{border:"1px solid "+s.color,color:s.color},onClick:function(){ap(k);}},s.name);})),React.createElement("div",{className:"ctrl-box"},React.createElement("div",{className:"ctrl-title"},"INTERACTIVE PARAMETERS"),React.createElement("div",{className:"ctrl-grid"},React.createElement("div",{className:"ctrl-item"},React.createElement("label",null,"DEMAND MULTIPLIER ",React.createElement("span",{className:"ctrl-val"},demand.toFixed(1)+"x")),React.createElement("input",{type:"range",min:"0.8",max:"2.5",step:"0.1",value:demand,onChange:function(e){setDemand(parseFloat(e.target.value));setPreset(null);}})),React.createElement("div",{className:"ctrl-item"},React.createElement("label",null,"IMPORT FLOW RATE ",React.createElement("span",{className:"ctrl-val"},imports+"%")),React.createElement("input",{type:"range",min:"0",max:"100",step:"5",value:imports,onChange:function(e){setImports(parseInt(e.target.value));setPreset(null);}}))),React.createElement("div",{className:"toggle-row"},React.createElement("button",{className:"toggle-btn "+(refB?"on":""),onClick:function(){setRefB(!refB);setPreset(null);}},(refB?"[ON]":"[OFF]")+" SULPHUR WAIVER (+3.3 ML/day petrol)"),React.createElement("button",{className:"toggle-btn "+(res?"on":""),onClick:function(){setRes(!res);setPreset(null);}},(res?"[ON]":"[OFF]")+" MSO RESERVE RELEASE (762 ML)"))),React.createElement("div",{className:"chart-panel"},React.createElement("div",{className:"chart-title"},"DEPLETION CURVES - MILLION LITRES REMAINING"),React.createElement("svg",{viewBox:"0 0 "+W+" "+H,style:{width:"100%",height:"auto",fontFamily:"'Share Tech Mono', monospace"}},[0,.25,.5,.75,1].map(function(f){var y=pT+pH*(1-f);return React.createElement("line",{key:"g"+f,x1:pL,y1:y,x2:pL+pW,y2:y,stroke:"#1a3a1a",strokeDasharray:"3 3"})}),[0,.25,.5,.75,1].map(function(f){var y=pT+pH*(1-f);return React.createElement("text",{key:"yl"+f,x:pL-5,y:y+4,textAnchor:"end",fill:"#3a7a3a",fontSize:"10"},(maxV*f/1000).toFixed(1)+"k")}),[0,30,60,90,120].map(function(d){var x=pL+(d/120)*pW;return React.createElement("text",{key:"xl"+d,x:x,y:pT+pH+20,textAnchor:"middle",fill:"#3a7a3a",fontSize:"10"},data[d]?data[d].date:"");}),React.createElement("line",{x1:pL,y1:yP(14*91.9),x2:pL+pW,y2:yP(14*91.9),stroke:"#ffaa00",strokeDasharray:"6 3"}),React.createElement("text",{x:pL+pW-5,y:yP(14*91.9)-4,textAnchor:"end",fill:"#ffaa00",fontSize:"9"},"RATIONING 14d"),React.createElement("line",{x1:pL,y1:yP(7*91.9),x2:pL+pW,y2:yP(7*91.9),stroke:"#ff3333",strokeDasharray:"6 3"}),React.createElement("text",{x:pL+pW-5,y:yP(7*91.9)-4,textAnchor:"end",fill:"#ff3333",fontSize:"9"},"EMERGENCY 7d"),React.createElement("path",{d:mA("diesel"),fill:"rgba(255,102,0,0.15)"}),React.createElement("path",{d:mA("petrol"),fill:"rgba(51,255,51,0.15)"}),React.createElement("path",{d:mA("jet"),fill:"rgba(0,255,204,0.15)"}),React.createElement("path",{d:mP("petrol"),fill:"none",stroke:"#33ff33",strokeWidth:"2"}),React.createElement("path",{d:mP("diesel"),fill:"none",stroke:"#ff6600",strokeWidth:"2"}),React.createElement("path",{d:mP("jet"),fill:"none",stroke:"#00ffcc",strokeWidth:"2"}),React.createElement("line",{x1:pL,y1:pT,x2:pL,y2:pT+pH,stroke:"#3a7a3a"}),React.createElement("line",{x1:pL,y1:pT+pH,x2:pL+pW,y2:pT+pH,stroke:"#3a7a3a"})),React.createElement("div",{className:"legend-row"},React.createElement("div",{className:"legend-item"},React.createElement("div",{className:"legend-dot",style:{background:"#33ff33"}})," PETROL"),React.createElement("div",{className:"legend-item"},React.createElement("div",{className:"legend-dot",style:{background:"#ff6600"}})," DIESEL (PRIORITY)"),React.createElement("div",{className:"legend-item"},React.createElement("div",{className:"legend-dot",style:{background:"#00ffcc"}})," JET FUEL"),React.createElement("div",{className:"legend-item",style:{color:"#ffaa00"}},"--- RATIONING (14d)"),React.createElement("div",{className:"legend-item",style:{color:"#ff3333"}},"--- EMERGENCY (7d)"))),React.createElement("div",{className:"ctx-notes"},React.createElement("div",{className:"ctx-title"},"SUPPLY CHAIN CONTEXT"),React.createElement("div",{className:"ctx-line crit"},"Hormuz still de facto closed. 3,000+ vessels stranded. Oil pullback = expectations, not physical supply."),React.createElement("div",{className:"ctx-line crit"},"China banned refined exports. Thailand suspended. Singapore force majeure."),React.createElement("div",{className:"ctx-line warn"},"107+ NSW stations diesel-dry. Sydney diesel $2.71/L. Pump prices won't drop this week."),React.createElement("div",{className:"ctx-line warn"},"Even with ceasefire, first AU supply arrives weeks 8-10 post-agreement."),React.createElement("div",{className:"ctx-line"},"69% of AU urea from Middle East. NFF: food prices up 50% if shortages persist."),React.createElement("div",{className:"ctx-line"},"Diesel breaks the economy first: freight, farming, mining, emergency backup.")),React.createElement("div",{className:"ctx-notes"},React.createElement("div",{className:"ctx-title"},"DATA SOURCES"),React.createElement("div",{className:"ctx-line"},"Mar 3: Energy Minister Bowen, Parliament. Mar 10: DCCEEW MSO Report."),React.createElement("div",{className:"ctx-line"},"Diesel lost 4 days cover in 7 calendar days (Mar 3-10).")));}
+return React.createElement("div",null,React.createElement("div",{className:"countdown-row"},fuels.map(function(f){var days=dryDays[f.key]!==null?dryDays[f.key]:120,dep=dryDays[f.key]!==null;var dd=dep?new Date(FUEL_BASE_DATE.getTime()+dryDays[f.key]*864e5).toLocaleDateString("en-AU",{day:"numeric",month:"short"}):"120+ DAYS";var st=fuelStatus(dep?0:days);return React.createElement("div",{key:f.key,className:"cd-card"},React.createElement("div",{className:"cd-label"},f.name),React.createElement("div",{className:"cd-value",style:{color:dep?"var(--crt-red)":fuelDaysColor(days)}},dep?days:days>=120?"120+":days),React.createElement("div",{className:"cd-sub"},"DAYS UNTIL DEPLETION"),React.createElement("div",{className:"cd-sub",style:{color:dep?"var(--crt-red)":"var(--crt-dim)",marginTop:2}},dep?"DRY: "+dd:dd),React.createElement("div",{className:"cd-status",style:{color:st.color,background:st.bg,border:"1px solid "+st.border}},st.text));})),React.createElement("div",{className:"presets"},Object.keys(FUEL_SCENARIOS).map(function(k){var s=FUEL_SCENARIOS[k];return React.createElement("button",{key:k,className:"preset-btn "+(preset===k?"active":""),style:{border:"1px solid "+s.color,color:s.color},onClick:function(){ap(k);}},s.name);})),React.createElement("div",{className:"ctrl-box"},React.createElement("div",{className:"ctrl-title"},"INTERACTIVE PARAMETERS"),React.createElement("div",{className:"ctrl-grid"},React.createElement("div",{className:"ctrl-item"},React.createElement("label",null,"DEMAND MULTIPLIER ",React.createElement("span",{className:"ctrl-val"},demand.toFixed(1)+"x")),React.createElement("input",{type:"range",min:"0.8",max:"2.5",step:"0.1",value:demand,onChange:function(e){setDemand(parseFloat(e.target.value));setPreset(null);}})),React.createElement("div",{className:"ctrl-item"},React.createElement("label",null,"IMPORT FLOW RATE ",React.createElement("span",{className:"ctrl-val"},imports+"%")),React.createElement("input",{type:"range",min:"0",max:"100",step:"5",value:imports,onChange:function(e){setImports(parseInt(e.target.value));setPreset(null);}}))),React.createElement("div",{className:"toggle-row"},React.createElement("button",{className:"toggle-btn "+(refB?"on":""),onClick:function(){setRefB(!refB);setPreset(null);}},(refB?"[ON]":"[OFF]")+" SULPHUR WAIVER (+3.3 ML/day petrol)"),React.createElement("button",{className:"toggle-btn "+(res?"on":""),onClick:function(){setRes(!res);setPreset(null);}},(res?"[ON]":"[OFF]")+" MSO RESERVE RELEASE (762 ML)"))),React.createElement("div",{className:"chart-panel"},React.createElement("div",{className:"chart-title"},"DEPLETION CURVES - MILLION LITRES REMAINING"),React.createElement("svg",{viewBox:"0 0 "+W+" "+H,style:{width:"100%",height:"auto",fontFamily:"'Share Tech Mono', monospace"}},[0,.25,.5,.75,1].map(function(f){var y=pT+pH*(1-f);return React.createElement("line",{key:"g"+f,x1:pL,y1:y,x2:pL+pW,y2:y,stroke:"#1a3a1a",strokeDasharray:"3 3"})}),[0,.25,.5,.75,1].map(function(f){var y=pT+pH*(1-f);return React.createElement("text",{key:"yl"+f,x:pL-5,y:y+4,textAnchor:"end",fill:"#3a7a3a",fontSize:"10"},(maxV*f/1000).toFixed(1)+"k")}),[0,30,60,90,120].map(function(d){var x=pL+(d/120)*pW;return React.createElement("text",{key:"xl"+d,x:x,y:pT+pH+20,textAnchor:"middle",fill:"#3a7a3a",fontSize:"10"},data[d]?data[d].date:"");}),React.createElement("line",{x1:pL,y1:yP(14*91.9),x2:pL+pW,y2:yP(14*91.9),stroke:"#ffaa00",strokeDasharray:"6 3"}),React.createElement("text",{x:pL+pW-5,y:yP(14*91.9)-4,textAnchor:"end",fill:"#ffaa00",fontSize:"9"},"RATIONING 14d"),React.createElement("line",{x1:pL,y1:yP(7*91.9),x2:pL+pW,y2:yP(7*91.9),stroke:"#ff3333",strokeDasharray:"6 3"}),React.createElement("text",{x:pL+pW-5,y:yP(7*91.9)-4,textAnchor:"end",fill:"#ff3333",fontSize:"9"},"EMERGENCY 7d"),React.createElement("path",{d:mA("diesel"),fill:"rgba(255,102,0,0.15)"}),React.createElement("path",{d:mA("petrol"),fill:"rgba(51,255,51,0.15)"}),React.createElement("path",{d:mA("jet"),fill:"rgba(0,255,204,0.15)"}),React.createElement("path",{d:mP("petrol"),fill:"none",stroke:"#33ff33",strokeWidth:"2"}),React.createElement("path",{d:mP("diesel"),fill:"none",stroke:"#ff6600",strokeWidth:"2"}),React.createElement("path",{d:mP("jet"),fill:"none",stroke:"#00ffcc",strokeWidth:"2"}),React.createElement("line",{x1:pL,y1:pT,x2:pL,y2:pT+pH,stroke:"#3a7a3a"}),React.createElement("line",{x1:pL,y1:pT+pH,x2:pL+pW,y2:pT+pH,stroke:"#3a7a3a"})),React.createElement("div",{className:"legend-row"},React.createElement("div",{className:"legend-item"},React.createElement("div",{className:"legend-dot",style:{background:"#33ff33"}})," PETROL"),React.createElement("div",{className:"legend-item"},React.createElement("div",{className:"legend-dot",style:{background:"#ff6600"}})," DIESEL (PRIORITY)"),React.createElement("div",{className:"legend-item"},React.createElement("div",{className:"legend-dot",style:{background:"#00ffcc"}})," JET FUEL"),React.createElement("div",{className:"legend-item",style:{color:"#ffaa00"}},"--- RATIONING (14d)"),React.createElement("div",{className:"legend-item",style:{color:"#ff3333"}},"--- EMERGENCY (7d)"))),React.createElement("div",{className:"ctx-notes"},React.createElement("div",{className:"ctx-title"},"SUPPLY CHAIN CONTEXT"),React.createElement("div",{className:"ctx-line crit"},"Hormuz still de facto closed. 3,000+ vessels stranded. 8 Pakistani tankers passed = crack, not reopening."),React.createElement("div",{className:"ctx-line crit"},"Iran codifying Hormuz sovereignty + fees via parliament. New maritime regime emerging."),React.createElement("div",{className:"ctx-line warn"},"107+ NSW stations diesel-dry. Sydney diesel $2.71/L. Pump prices lagging oil by 2-3 weeks."),React.createElement("div",{className:"ctx-line warn"},"Even with ceasefire, first AU supply arrives weeks 8-10 post-agreement."),React.createElement("div",{className:"ctx-line"},"69% of AU urea from Middle East. NFF: food prices up 50% if shortages persist."),React.createElement("div",{className:"ctx-line"},"Diesel breaks the economy first: freight, farming, mining, emergency backup.")),React.createElement("div",{className:"ctx-notes"},React.createElement("div",{className:"ctx-title"},"DATA SOURCES"),React.createElement("div",{className:"ctx-line"},"Mar 3: Energy Minister Bowen, Parliament. Mar 10: DCCEEW MSO Report."),React.createElement("div",{className:"ctx-line"},"Diesel lost 4 days cover in 7 calendar days (Mar 3-10).")));}
+
 
 function OPSCEN() {
   const clock = useClock();
@@ -386,7 +389,7 @@ function OPSCEN() {
   const utcStr = clock.toISOString().replace("T"," ").slice(0,19)+"Z";
   const aest = new Date(clock.getTime()+11*3600000);
   const aestStr = aest.toISOString().replace("T"," ").slice(0,19)+" AEDT";
-  const deadlineUTC = new Date(Date.UTC(2026,2,28,11,0,0));
+  const deadlineUTC = new Date(Date.UTC(2026,3,7,0,0,0));
   const msLeft = deadlineUTC - clock;
   const daysLeft = Math.max(0, Math.ceil(msLeft/86400000));
   const countdownStr = msLeft > 0 ? `${daysLeft} DAY${daysLeft!==1?"S":""} REMAINING` : "EXPIRED";
@@ -396,8 +399,8 @@ function OPSCEN() {
       <div className="opscen-container">
         <div className="header-bar">
           <div className="header-title crt-glow">{"\u25E4"} OPSCEN v6.4 {"\u25E2"}</div>
-          <div className="header-sub">IRAN THEATRE INTELLIGENCE BRIEFING &mdash; OPERATION EPIC FURY &mdash; DAY 27</div>
-          <div className="header-sub" style={{ color: "var(--crt-amber)", marginTop: 2 }}>IRAN REJECTS 15-PT PLAN &mdash; ISSUES 5 CONDITIONS &mdash; PAKISTAN TALKS FRIDAY?</div>
+          <div className="header-sub">IRAN THEATRE INTELLIGENCE BRIEFING &mdash; OPERATION EPIC FURY &mdash; DAY 28</div>
+          <div className="header-sub" style={{ color: "var(--crt-amber)", marginTop: 2 }}>GRACE EXTENDED TO APR 6 &mdash; IRGC NAVY CHIEF KILLED &mdash; RUSSIA EXPOSED</div>
           <div style={{ textAlign: "center", marginTop: 8, fontSize: 32, color: "var(--crt-amber)", fontFamily: "'Share Tech Mono', monospace", textShadow: "0 0 10px #ffaa00, 0 0 20px #ffaa00" }}>GRACE PERIOD: {countdownStr}</div>
         </div>
         <div className="tab-bar">
@@ -411,13 +414,13 @@ function OPSCEN() {
               <div style={{ fontSize: 14, color: "var(--crt-green)", letterSpacing: 2 }}>DEFCON ASSESSMENT</div>
               <DefconGauge level={defconLevel} />
               <div style={{ display: "flex", justifyContent: "space-between", fontSize: 14 }}><span style={{ color: defconInfo.color }}>DEFCON {defconLevel}</span><span style={{ color: defconInfo.color, fontSize: 12 }}>{defconInfo.label}</span></div>
-              <div style={{ fontSize: 12, color: "var(--crt-dim)", marginTop: 4 }}>ENERGY PAUSED &bull; FORMAL PROPOSALS EXCHANGED &bull; 82ND AIRBORNE DEPLOYING</div>
+              <div style={{ fontSize: 12, color: "var(--crt-dim)", marginTop: 4 }}>GRACE EXTENDED APR 6 &bull; IRGC NAVY CHIEF KILLED &bull; 82ND AIRBORNE DEPLOYING</div>
             </div>
             <div className="clock-panel">
               <div style={{ fontSize: 14, color: "var(--crt-green)", letterSpacing: 2 }}>SYSTEM CLOCK</div>
               <div style={{ fontSize: 22, color: "var(--crt-amber)", marginTop: 6, fontFamily: "'Share Tech Mono', monospace" }}>{aestStr}</div>
               <div style={{ fontSize: 13, color: "var(--crt-dim)", marginTop: 2, fontFamily: "'Share Tech Mono', monospace" }}>{utcStr}</div>
-              <div style={{ fontSize: 12, color: "var(--crt-dim)", marginTop: 4 }}>BRIEFING EPOCH: 26-MAR-2026 0800 AEDT</div>
+              <div style={{ fontSize: 12, color: "var(--crt-dim)", marginTop: 4 }}>BRIEFING EPOCH: 28-MAR-2026 0800 AEDT</div>
             </div>
           </div>
           <ThreatMatrix />
@@ -432,6 +435,7 @@ function OPSCEN() {
   );
 }
 ReactDOM.createRoot(document.getElementById('root')).render(<OPSCEN />);
+
 </script>
 </body>
 </html>

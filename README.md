@@ -26,20 +26,20 @@ Two words. Fresh every morning. The news comes to me now.
 - **Australian-specific sections** — ASX 200, RBA rate impacts, fuel crisis monitoring
 - **UPDATED badges** showing what changed since last briefing
 
-## Current Briefing: Day 27
+## Current Briefing: Day 28
 
-- **Iran REJECTED US 15-point ceasefire plan** — called it "maximalist, unreasonable"
-- Iran issued **5 CONDITIONS**: halt aggression, guarantees, reparations, end all fronts, Hormuz sovereignty
-- Both sides now have formal proposals on the table — first time in 27 days
-- **In-person Pakistan talks** pushed for as early as Friday (grace period expiry)
-- Iran wants **Vance**, not Witkoff/Kushner for negotiations
-- **1,000 US 82nd Airborne** troops deploying despite talks
-- Iran death toll **1,750+** / Israel 15 / Lebanon **1,072+** (33 killed overnight)
-- Israel expanding reserve mobilisation to **400,000**
-- **Philippines** declared state of national emergency over energy supply
-- **Kuwait airport** hit by drone — fuel tank fire
-- Grace period: **2 days remaining** (expires Friday March 28)
-- Brent ~$103 (volatile: $112→$96→$104→$103)
+- **Grace period EXTENDED 10 days** to Monday April 6, 8PM ET — "as per Iranian Government request"
+- **IRGC Navy chief KILLED** — the commander responsible for the Hormuz blockade eliminated by Israeli airstrike
+- **Russia EXPOSED** providing intelligence + drone training to Iran — UK intelligence + EU confirmed
+- Israel **racing to destroy targets** before ceasefire — IDF "speeding up" strikes in next 48 hours
+- Trump floated **"taking Iran's oil"** — compared to Venezuela "joint venture"
+- **8 Pakistani tankers** passed through Hormuz — Trump called it "a present from Iran"
+- Total dead **3,000+** across all theatres (Iran 1,900+ / Lebanon 1,072+ / Israel 18 + 2 soldiers / US 13)
+- Iran's 5 conditions vs US 15-point plan — gap is enormous but both sides have proposals on table
+- Israel mobilising **400,000 reserves** / 1,000 US 82nd Airborne deploying
+- **Bushehr nuclear plant** struck again — Iran's Atomic Energy Org: "renewed attack"
+- Extended War now **leading scenario at 40%** — Israel creating military facts before diplomacy catches up
+- Countdown timer now targeting **April 6**
 
 
 ## How it works
