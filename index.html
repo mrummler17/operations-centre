@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OPSCEN v6.3 — Iran Theatre Intelligence Briefing</title>
+<title>OPSCEN v6.4 — Iran Theatre Intelligence Briefing</title>
 <meta name="description" content="Real-time ops centre tracking the 2026 Iran conflict. Iran rejects 15-point plan, issues 5 conditions. Grace period 2 days. Built in Claude by RETSA Group.">
-<meta property="og:title" content="OPSCEN v6.3 — Iran Theatre Intelligence Briefing">
+<meta property="og:title" content="OPSCEN v6.4 — Iran Theatre Intelligence Briefing">
 <meta property="og:description" content="Day 27 — Iran rejects US 15-point ceasefire. Issues 5 conditions inc. Hormuz sovereignty. In-person Pakistan talks Friday? 1,750+ dead. 82nd Airborne deploying.">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -395,7 +395,7 @@ function OPSCEN() {
       <div className="scanlines" />
       <div className="opscen-container">
         <div className="header-bar">
-          <div className="header-title crt-glow">{"\u25E4"} OPSCEN v6.3 {"\u25E2"}</div>
+          <div className="header-title crt-glow">{"\u25E4"} OPSCEN v6.4 {"\u25E2"}</div>
           <div className="header-sub">IRAN THEATRE INTELLIGENCE BRIEFING &mdash; OPERATION EPIC FURY &mdash; DAY 27</div>
           <div className="header-sub" style={{ color: "var(--crt-amber)", marginTop: 2 }}>IRAN REJECTS 15-PT PLAN &mdash; ISSUES 5 CONDITIONS &mdash; PAKISTAN TALKS FRIDAY?</div>
           <div style={{ textAlign: "center", marginTop: 8, fontSize: 32, color: "var(--crt-amber)", fontFamily: "'Share Tech Mono', monospace", textShadow: "0 0 10px #ffaa00, 0 0 20px #ffaa00" }}>GRACE PERIOD: {countdownStr}</div>
@@ -425,7 +425,7 @@ function OPSCEN() {
           {SECTIONS.map((s) => (<Section key={s.id} section={s} isOpen={!!openSections[s.id]} toggle={() => toggle(s.id)} />))}
         </React.Fragment>)}
         {activeTab === "fuel" && <FuelForecast />}
-        <div className="footer-bar"><span>OPSCEN v6.3 &bull; RETSA GROUP INTELLIGENCE</span><span>CLASSIFICATION: OPEN SOURCE</span><span><span className="blink" style={{ color: "var(--crt-red)" }}>&bull;</span> LIVE</span></div>
+        <div className="footer-bar"><span>OPSCEN v6.4 &bull; RETSA GROUP INTELLIGENCE</span><span>CLASSIFICATION: OPEN SOURCE</span><span><span className="blink" style={{ color: "var(--crt-red)" }}>&bull;</span> LIVE</span></div>
         <div className="built-with">Built entirely in <a href="https://claude.ai" target="_blank" rel="noopener">Claude</a> by <a href="https://retsagroup.com.au" target="_blank" rel="noopener">RETSA Group</a> &bull; <a href="https://x.com/Marcus_Rummler" target="_blank" rel="noopener">@Marcus_Rummler</a></div>
       </div>
     </React.Fragment>
