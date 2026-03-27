@@ -1,4 +1,4 @@
-# OPSCEN v6.4 — Iran Theatre Intelligence Briefing
+# OPSCEN v6.5 — Iran Theatre Intelligence Briefing
 
 A real-time military operations centre dashboard tracking the 2026 Iran conflict, built entirely in [Claude](https://claude.ai) by [RETSA Group](https://retsagroup.com.au).
 
