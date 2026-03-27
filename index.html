@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OPSCEN v6.5 — Iran Theatre Intelligence Briefing</title>
+<title>OPSCEN v6.6 — Iran Theatre Intelligence Briefing</title>
 <meta name="description" content="Real-time ops centre tracking the 2026 Iran conflict. Grace period extended to April 6. IRGC navy chief killed. Russia exposed. Built in Claude by RETSA Group.">
-<meta property="og:title" content="OPSCEN v6.5 — Iran Theatre Intelligence Briefing">
+<meta property="og:title" content="OPSCEN v6.6 — Iran Theatre Intelligence Briefing">
 <meta property="og:description" content="Day 28 — Grace period extended 10 days to April 6. IRGC navy chief killed. Russia providing intel+drones to Iran. 3,000+ dead. Israel racing to destroy targets before ceasefire.">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -106,19 +106,18 @@ const SECTIONS = [
     title: "SITUATION REPORT",
     icon: "⚡",
     content: {
-      heading: "DAY 28 — GRACE PERIOD EXTENDED 10 DAYS TO APRIL 6 / IRGC NAVY CHIEF KILLED / RUSSIA EXPOSED",
+      heading: "DAY 28 — ISRAEL STRIKES 2 NUCLEAR SITES / GRACE EXTENDED APR 6 / BRENT BACK TO $107",
       lines: [
-        "[!] GRACE PERIOD EXTENDED: Trump posted after markets closed Thu: 'As per Iranian Government request, I am pausing Energy Plant destruction by 10 Days to Monday, April 6, 2026, 8PM ET.' Friday deadline GONE.",
-        "ISRAEL KILLED IRGC NAVY CHIEF: The commander responsible for the Hormuz blockade eliminated in targeted airstrike. Massive blow to Iran's naval command and Hormuz operations.",
-        "ISRAEL RACING AGAINST CEASEFIRE: IDF 'speeding up targeting in next 48 hours' — trying to destroy arms factories before possible ceasefire. Defence chief ordered acceleration.",
-        "TRUMP FLOATED TAKING IRAN'S OIL: 'It's an option.' Compared to Venezuela 'joint venture' where US 'made a lot of money.' Most provocative statement of the entire war.",
-        "RUSSIA EXPOSED: UK intelligence + EU diplomat Kallas confirmed Russia providing intelligence AND drone training to Iran. Kallas: 'Russia helping Iran target Americans, kill Americans.'",
-        "8 TANKERS THROUGH HORMUZ: Pakistani-flagged vessels passed through. Trump (watching Fox): 'I guess we're dealing with the right people.' Called it 'a present from Iran.'",
-        "IRAN DEAD: 1,900+ (deputy health minister). Total across all theatres: 3,000+. Israel: 18 killed + 2 soldiers. US: 13 service members killed.",
-        "BUSHEHR NUCLEAR PLANT struck again Tuesday night. Atomic Energy Org: 'renewed attack by American-Israeli enemy.' No reported leakage.",
-        "IRAN GROUND FORCES COMMANDER: 'Every inch of Iranian territory is protected. All enemy movements monitored. We are prepared for any scenario.' — signalling ground invasion readiness.",
-        "WITKOFF PUBLICLY PRESENTED 15-point plan at Cabinet meeting. Trump: 'I'm not desperate to make a deal.' Iran still calling it 'maximalist, unreasonable.'",
-      ],
+        "[!] ISRAEL HIT TWO NUCLEAR FACILITIES TODAY: Yazd uranium plant ('only one of its kind' for raw uranium processing) + Arak heavy water reactor. Iran FM Araghchi: 'HEAVY price for Israeli crimes.'",
+        "KATZ: 'Attacks will ESCALATE AND EXPAND to additional targets.' IDF also struck missile factories 'in the heart of Tehran' + steel factories in Isfahan (1 killed, 15 wounded).",
+        "GRACE PERIOD EXTENDED TO APR 6: Trump posted after markets Thu: 'As per Iranian Government request, pausing Energy Plant destruction by 10 Days.' But energy pause doesn't cover NUCLEAR strikes by Israel.",
+        "BRENT BACK TO $107: Up 45%+ since war began. S&P 500 fell on opening - 5th straight losing week, longest in nearly 4 years. Markets losing faith in talks.",
+        "303 US TROOPS WOUNDED: Up from 290 earlier this week. 75% traumatic brain injuries. 10 still seriously wounded. 273 returned to duty.",
+        "KHARG ISLAND: NPR reports Trump weighing seizure of Iran's main oil processing facility. 3,000 82nd Airborne + thousands of Marines deploying.",
+        "RUBIO AT G7: Warned Iran may set up PERMANENT Hormuz tolling system post-war. 'Neither Hormuz nor any waterway should be controlled or tolled by a terroristic government.'",
+        "KUWAIT PORTS DAMAGED: Shuwaikh Port + Mubarak Al Kabeer Port (China Belt and Road) sustained 'material damage.' Riyadh hit again by missiles + drones.",
+        "LEBANON: 1,116 killed, 3,229 wounded, 121 children dead. Iraq: 96 killed. Gulf states: 30+ killed (many migrant workers).",
+        "G7 CALLED FOR IMMEDIATE HALT to attacks on populations and infrastructure. Egypt/Turkey/Pakistan intensifying mediation efforts for direct US-Iran talks."],
     },
   },
   {
@@ -398,9 +397,9 @@ function OPSCEN() {
       <div className="scanlines" />
       <div className="opscen-container">
         <div className="header-bar">
-          <div className="header-title crt-glow">{"\u25E4"} OPSCEN v6.5 {"\u25E2"}</div>
+          <div className="header-title crt-glow">{"\u25E4"} OPSCEN v6.6 {"\u25E2"}</div>
           <div className="header-sub">IRAN THEATRE INTELLIGENCE BRIEFING &mdash; OPERATION EPIC FURY &mdash; DAY 28</div>
-          <div className="header-sub" style={{ color: "var(--crt-amber)", marginTop: 2 }}>GRACE EXTENDED TO APR 6 &mdash; IRGC NAVY CHIEF KILLED &mdash; RUSSIA EXPOSED</div>
+          <div className="header-sub" style={{ color: "var(--crt-amber)", marginTop: 2 }}>ISRAEL STRIKES 2 NUCLEAR SITES &mdash; GRACE EXTENDED APR 6 &mdash; BRENT $107</div>
           <div style={{ textAlign: "center", marginTop: 8, fontSize: 32, color: "var(--crt-amber)", fontFamily: "'Share Tech Mono', monospace", textShadow: "0 0 10px #ffaa00, 0 0 20px #ffaa00" }}>GRACE PERIOD: {countdownStr}</div>
         </div>
         <div className="tab-bar">
@@ -420,7 +419,7 @@ function OPSCEN() {
               <div style={{ fontSize: 14, color: "var(--crt-green)", letterSpacing: 2 }}>SYSTEM CLOCK</div>
               <div style={{ fontSize: 22, color: "var(--crt-amber)", marginTop: 6, fontFamily: "'Share Tech Mono', monospace" }}>{aestStr}</div>
               <div style={{ fontSize: 13, color: "var(--crt-dim)", marginTop: 2, fontFamily: "'Share Tech Mono', monospace" }}>{utcStr}</div>
-              <div style={{ fontSize: 12, color: "var(--crt-dim)", marginTop: 4 }}>BRIEFING EPOCH: 28-MAR-2026 0800 AEDT</div>
+              <div style={{ fontSize: 12, color: "var(--crt-dim)", marginTop: 4 }}>BRIEFING EPOCH: 28-MAR-2026 2100 AEDT</div>
             </div>
           </div>
           <ThreatMatrix />
@@ -428,7 +427,7 @@ function OPSCEN() {
           {SECTIONS.map((s) => (<Section key={s.id} section={s} isOpen={!!openSections[s.id]} toggle={() => toggle(s.id)} />))}
         </React.Fragment>)}
         {activeTab === "fuel" && <FuelForecast />}
-        <div className="footer-bar"><span>OPSCEN v6.5 &bull; RETSA GROUP INTELLIGENCE</span><span>CLASSIFICATION: OPEN SOURCE</span><span><span className="blink" style={{ color: "var(--crt-red)" }}>&bull;</span> LIVE</span></div>
+        <div className="footer-bar"><span>OPSCEN v6.6 &bull; RETSA GROUP INTELLIGENCE</span><span>CLASSIFICATION: OPEN SOURCE</span><span><span className="blink" style={{ color: "var(--crt-red)" }}>&bull;</span> LIVE</span></div>
         <div className="built-with">Built entirely in <a href="https://claude.ai" target="_blank" rel="noopener">Claude</a> by <a href="https://retsagroup.com.au" target="_blank" rel="noopener">RETSA Group</a> &bull; <a href="https://x.com/Marcus_Rummler" target="_blank" rel="noopener">@Marcus_Rummler</a></div>
       </div>
     </React.Fragment>

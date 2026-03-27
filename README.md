@@ -1,4 +1,4 @@
-# OPSCEN v6.5 — Iran Theatre Intelligence Briefing
+# OPSCEN v6.6 — Iran Theatre Intelligence Briefing
 
 A real-time military operations centre dashboard tracking the 2026 Iran conflict, built entirely in [Claude](https://claude.ai) by [RETSA Group](https://retsagroup.com.au).
 
@@ -28,18 +28,18 @@ Two words. Fresh every morning. The news comes to me now.
 
 ## Current Briefing: Day 28
 
-- **Grace period EXTENDED 10 days** to Monday April 6, 8PM ET — "as per Iranian Government request"
-- **IRGC Navy chief KILLED** — the commander responsible for the Hormuz blockade eliminated by Israeli airstrike
-- **Russia EXPOSED** providing intelligence + drone training to Iran — UK intelligence + EU confirmed
-- Israel **racing to destroy targets** before ceasefire — IDF "speeding up" strikes in next 48 hours
-- Trump floated **"taking Iran's oil"** — compared to Venezuela "joint venture"
-- **8 Pakistani tankers** passed through Hormuz — Trump called it "a present from Iran"
-- Total dead **3,000+** across all theatres (Iran 1,900+ / Lebanon 1,072+ / Israel 18 + 2 soldiers / US 13)
-- Iran's 5 conditions vs US 15-point plan — gap is enormous but both sides have proposals on table
-- Israel mobilising **400,000 reserves** / 1,000 US 82nd Airborne deploying
-- **Bushehr nuclear plant** struck again — Iran's Atomic Energy Org: "renewed attack"
-- Extended War now **leading scenario at 40%** — Israel creating military facts before diplomacy catches up
-- Countdown timer now targeting **April 6**
+- **Israel struck TWO NUCLEAR FACILITIES** Friday — Yazd uranium plant + Arak heavy water reactor
+- Iran FM Araghchi: "HEAVY price for Israeli crimes" — promises retaliation
+- Israel Defence Min Katz: attacks will **"escalate and expand"** to additional targets
+- Grace period **extended 10 days to April 6** — but doesn't cover Israeli nuclear strikes
+- **Brent back to $107** — S&P 500 in 5th straight losing week (longest in 4 years)
+- **303 US troops wounded** — 75% traumatic brain injuries
+- Trump weighing **seizure of Kharg Island** (Iran's main oil facility) — 3,000 82nd Airborne deploying
+- Rubio warned G7 that Iran may set up **permanent Hormuz tolling system** post-war
+- Kuwait ports **damaged** — Shuwaikh + Mubarak Al Kabeer (Belt and Road)
+- Lebanon: **1,116 killed** / Iraq: 96 killed / Gulf states: 30+ killed
+- G7 called for **immediate halt** to attacks on populations and infrastructure
+- Countdown timer targeting **April 6** — Extended War leading scenario at 40%
 
 
 ## How it works
