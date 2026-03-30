@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OPSCEN v6.9 — Iran Theatre Intelligence Briefing</title>
+<title>OPSCEN v6.10 — Iran Theatre Intelligence Briefing</title>
 <meta name="description" content="Real-time ops centre tracking the 2026 Iran conflict. Day 31. Islamabad peace summit. Houthis 5th front. Kharg Island in play. 585 AU fuel outages. Built in Claude by RETSA Group.">
-<meta property="og:title" content="OPSCEN v6.9 — Iran Theatre Intelligence Briefing">
+<meta property="og:title" content="OPSCEN v6.10 — Iran Theatre Intelligence Briefing">
 <meta property="og:description" content="Day 31 — Islamabad peace summit underway. Houthis enter as 5th front. Trump: Iran agreed to most of 15 points. Kharg Island seizure in play. 585 AU fuel outages via checkpetrol.com.au.">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -70,30 +70,30 @@
 .tab-btn.active { border-color: var(--crt-green); color: var(--crt-green); background: rgba(0,40,0,0.3); box-shadow: 0 0 8px rgba(51,255,51,0.2); }
 .countdown-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 12px; }
 .cd-card { border: 1px solid var(--crt-border); padding: 12px; text-align: center; background: var(--crt-panel); }
-.cd-label { font-size: 14px; color: var(--crt-dim); letter-spacing: 2px; margin-bottom: 4px; }
-.cd-value { font-size: 42px; margin: 4px 0; }
-.cd-sub { font-size: 11px; color: var(--crt-dim); letter-spacing: 1px; }
-.cd-status { font-size: 12px; margin-top: 6px; padding: 2px 8px; display: inline-block; letter-spacing: 1px; }
+.cd-label { font-size: 0.9em; color: var(--crt-dim); letter-spacing: 2px; margin-bottom: 4px; }
+.cd-value { font-size: 2.6em; margin: 4px 0; }
+.cd-sub { font-size: 0.7em; color: var(--crt-dim); letter-spacing: 1px; }
+.cd-status { font-size: 0.75em; margin-top: 6px; padding: 2px 8px; display: inline-block; letter-spacing: 1px; }
 .presets { display: flex; gap: 6px; margin-bottom: 12px; flex-wrap: wrap; }
-.preset-btn { background: none; font-family: 'VT323', monospace; font-size: 14px; padding: 6px 12px; cursor: pointer; letter-spacing: 1px; transition: all 0.2s; }
+.preset-btn { background: none; font-family: 'VT323', monospace; font-size: 0.9em; padding: 6px 12px; cursor: pointer; letter-spacing: 1px; transition: all 0.2s; }
 .preset-btn:hover, .preset-btn.active { background: rgba(255,255,255,0.05); }
 .ctrl-box { border: 1px solid var(--crt-border); padding: 12px; margin-bottom: 12px; background: var(--crt-panel); }
-.ctrl-title { font-size: 14px; color: var(--crt-green); letter-spacing: 2px; margin-bottom: 10px; }
+.ctrl-title { font-size: 0.9em; color: var(--crt-green); letter-spacing: 2px; margin-bottom: 10px; }
 .ctrl-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-.ctrl-item label { display: block; font-size: 13px; color: var(--crt-dim); margin-bottom: 4px; }
+.ctrl-item label { display: block; font-size: 0.85em; color: var(--crt-dim); margin-bottom: 4px; }
 .ctrl-val { color: var(--crt-amber); }
 .ctrl-item input[type="range"] { width: 100%; accent-color: var(--crt-green); }
 .toggle-row { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
-.toggle-btn { background: none; border: 1px solid var(--crt-border); color: var(--crt-dim); font-family: 'VT323', monospace; font-size: 13px; padding: 4px 10px; cursor: pointer; }
+.toggle-btn { background: none; border: 1px solid var(--crt-border); color: var(--crt-dim); font-family: 'VT323', monospace; font-size: 0.85em; padding: 4px 10px; cursor: pointer; }
 .toggle-btn.on { border-color: var(--crt-green); color: var(--crt-green); }
 .chart-panel { border: 1px solid var(--crt-border); padding: 12px; margin-bottom: 12px; background: var(--crt-panel); }
-.chart-title { font-size: 14px; color: var(--crt-green); letter-spacing: 2px; margin-bottom: 10px; }
-.legend-row { display: flex; gap: 16px; margin-top: 8px; flex-wrap: wrap; font-size: 13px; }
+.chart-title { font-size: 0.9em; color: var(--crt-green); letter-spacing: 2px; margin-bottom: 10px; }
+.legend-row { display: flex; gap: 16px; margin-top: 8px; flex-wrap: wrap; font-size: 0.85em; }
 .legend-item { display: flex; align-items: center; gap: 6px; color: var(--crt-dim); }
 .legend-dot { width: 10px; height: 10px; border-radius: 2px; }
 .ctx-notes { border: 1px solid var(--crt-border); padding: 12px; margin-bottom: 8px; background: var(--crt-panel); }
-.ctx-title { font-size: 14px; color: var(--crt-green); letter-spacing: 2px; margin-bottom: 8px; }
-.ctx-line { font-size: 14px; line-height: 1.5; padding: 2px 0; color: var(--crt-dim); }
+.ctx-title { font-size: 0.9em; color: var(--crt-green); letter-spacing: 2px; margin-bottom: 8px; }
+.ctx-line { font-size: 0.9em; line-height: 1.5; padding: 2px 0; color: var(--crt-dim); }
 .ctx-line.crit { color: var(--crt-red); }
 .ctx-line.warn { color: var(--crt-amber); }
 @media (max-width: 600px) { .countdown-row { grid-template-columns: 1fr; } .ctrl-grid { grid-template-columns: 1fr; } .tab-btn { font-size: 15px; letter-spacing: 1px; } }
@@ -412,7 +412,7 @@ function OPSCEN() {
       <div className="opscen-container" style={{ fontSize: fontScale }}>
         <div className="header-bar">
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-            <div className="header-title crt-glow">{"\u25E4"} OPSCEN v6.9 {"\u25E2"}</div>
+            <div className="header-title crt-glow">{"\u25E4"} OPSCEN v6.10 {"\u25E2"}</div>
             <div className="font-controls">
               <button className={`font-btn ${fontSize === 0 ? "active" : ""}`} onClick={() => setFontSize(0)} style={{ fontSize: 13 }}>A-</button>
               <button className={`font-btn ${fontSize === 1 ? "active" : ""}`} onClick={() => setFontSize(1)} style={{ fontSize: 16 }}>A</button>
@@ -448,7 +448,7 @@ function OPSCEN() {
           {SECTIONS.map((s) => (<Section key={s.id} section={s} isOpen={!!openSections[s.id]} toggle={() => toggle(s.id)} />))}
         </React.Fragment>)}
         {activeTab === "fuel" && <FuelForecast />}
-        <div className="footer-bar"><span>OPSCEN v6.9 &bull; RETSA GROUP INTELLIGENCE</span><span>CLASSIFICATION: OPEN SOURCE</span><span><span className="blink" style={{ color: "var(--crt-red)" }}>&bull;</span> LIVE</span></div>
+        <div className="footer-bar"><span>OPSCEN v6.10 &bull; RETSA GROUP INTELLIGENCE</span><span>CLASSIFICATION: OPEN SOURCE</span><span><span className="blink" style={{ color: "var(--crt-red)" }}>&bull;</span> LIVE</span></div>
         <div className="built-with">Built entirely in <a href="https://claude.ai" target="_blank" rel="noopener">Claude</a> by <a href="https://retsagroup.com.au" target="_blank" rel="noopener">RETSA Group</a> &bull; <a href="https://x.com/Marcus_Rummler" target="_blank" rel="noopener">@Marcus_Rummler</a> &bull; Fuel outage data via <a href="https://checkpetrol.com.au" target="_blank" rel="noopener">checkpetrol.com.au</a></div>
       </div>
     </React.Fragment>
