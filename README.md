@@ -1,4 +1,4 @@
-# OPSCEN v6.10 — Iran Theatre Intelligence Briefing
+# OPSCEN v6.11 — Iran Theatre Intelligence Briefing
 
 A real-time military operations centre dashboard tracking the 2026 Iran conflict, built entirely in [Claude](https://claude.ai) by [RETSA Group](https://retsagroup.com.au).
 
@@ -26,21 +26,21 @@ Two words. Fresh every morning. The news comes to me now.
 - **Australian-specific sections** — ASX 200, RBA rate impacts, fuel crisis monitoring
 - **UPDATED badges** showing what changed since last briefing
 
-## Current Briefing: Day 31
+## Current Briefing: Day 32
 
-- **Islamabad peace summit** — Pakistan/Turkey/Egypt/Saudi Arabia FMs meeting to end the war
-- Trump: Iran agreed to **"most of" 15 points** — but Iran's 5 conditions still on table
-- **Houthis entered as 5th front** — fired missiles at Israel from Yemen (Eilat area)
-- Trump weighing **seizure of Kharg Island** (90% of Iran's oil exports)
-- **USS Tripoli** arrived with 3,500 Marines + 3,000 82nd Airborne deploying = ground invasion capability
-- Prince Sultan Air Base **hit twice** — 29 US soldiers injured, E-3 Sentry damaged, Russia provided satellite imagery
-- Iran pushing **NPT exit** after Yazd + Arak nuclear sites struck
-- **Universities now targets** on both sides — IRGC declared US/Israeli universities in Gulf as legitimate targets
-- UK sending **mine-clearing ship** RFA Lyme Bay to help reopen Hormuz
-- **585 AU fuel outages** via checkpetrol.com.au (VIC 233, QLD 176, NSW 164)
-- Free public transport in **Victoria** (April) and **Tasmania** (until July)
-- Grace period extended to **April 6** — Extended War leading scenario at 40%
-- **Fuel outage data** now sourced from checkpetrol.com.au (@ideacasino + @hameonline)
+- **Trump's most extreme threat**: destroy ALL power plants, oil wells, Kharg Island + desalination if deal not reached
+- **Brent hit $116** — up 60% since war began, heading for record monthly jump
+- **Pentagon preparing "weeks of ground operations"** — 6,000-8,000 US troops now in proximity
+- Iran: "Our men are WAITING for American soldiers to set fire to them"
+- **Spain closed airspace** to US military — first NATO ally to break
+- Iran warns of **Bab al-Mandeb front** (Red Sea) if islands attacked — two chokepoints threatened simultaneously
+- **Kuwait desalination plant attacked** — Indian worker killed — desal threat no longer theoretical
+- **Lebanon: 1,247 killed** — Lebanese soldier killed at checkpoint — Indonesian UN peacekeeper killed
+- Rubio to Al Jazeera: Trump "prefers diplomacy" — but total destruction threats say otherwise
+- CNN analysis: war at "one-month fork in the road" — ground invasion or face-saving exit
+- Grace period expires **April 6** — 6 days remaining
+- Energy Escalation scenario jumped to **20%** — Extended War leading at **35%**
+- Wind-Down dropped to **25%** — talks described as "excessive, unrealistic, unreasonable" by Iran
 
 
 ## How it works

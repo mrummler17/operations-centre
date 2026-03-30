@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OPSCEN v6.10 — Iran Theatre Intelligence Briefing</title>
-<meta name="description" content="Real-time ops centre tracking the 2026 Iran conflict. Day 31. Islamabad peace summit. Houthis 5th front. Kharg Island in play. 585 AU fuel outages. Built in Claude by RETSA Group.">
-<meta property="og:title" content="OPSCEN v6.10 — Iran Theatre Intelligence Briefing">
-<meta property="og:description" content="Day 31 — Islamabad peace summit underway. Houthis enter as 5th front. Trump: Iran agreed to most of 15 points. Kharg Island seizure in play. 585 AU fuel outages via checkpetrol.com.au.">
+<title>OPSCEN v6.11 — Iran Theatre Intelligence Briefing</title>
+<meta name="description" content="Day 32. Trump threatens total destruction of power plants, oil wells, Kharg Island + desalination. Ground invasion prep. Brent $116. Built in Claude by RETSA Group.">
+<meta property="og:title" content="OPSCEN v6.11 — Iran Theatre Intelligence Briefing">
+<meta property="og:description" content="Day 32 — Trump threatens to destroy ALL power plants, oil wells, Kharg Island + desalination. Pentagon prepping ground ops. Brent $116 (+60%). Spain closes airspace. 585 AU fuel outages.">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=VT323&family=Share+Tech+Mono&display=swap" rel="stylesheet">
@@ -37,7 +37,7 @@
   .threat-level { font-size: 12px; padding: 1px 6px; font-weight: bold; letter-spacing: 1px; }
   .section-block { border: 1px solid var(--crt-border); margin-bottom: 6px; background: var(--crt-panel); transition: border-color 0.2s; }
   .section-block:hover { border-color: var(--crt-dim); }
-  .section-header { display: flex; align-items: center; gap: 10px; padding: 10px 14px; cursor: pointer; user-select: none; font-size: 17px; letter-spacing: 2px; color: var(--crt-green); border-bottom: 1px solid transparent; transition: all 0.2s; }
+  .section-header { display: flex; align-items: center; gap: 10px; padding: 10px 14px; cursor: pointer; user-select: none; font-size: 1.05em; letter-spacing: 2px; color: var(--crt-green); border-bottom: 1px solid transparent; transition: all 0.2s; }
   .section-header:hover { background: rgba(0, 60, 0, 0.15); }
   .section-header.open { border-bottom-color: var(--crt-border); }
   .section-body { padding: 10px 14px; }
@@ -55,19 +55,22 @@
   .built-with { text-align: center; font-size: 13px; color: var(--crt-dim); margin-top: 8px; padding-bottom: 20px; }
   .built-with a { color: var(--crt-green); text-decoration: none; }
   .built-with a:hover { text-decoration: underline; }
-  
-.font-controls { display: flex; gap: 4px; align-items: center; }
-.font-btn { background: none; border: 1px solid var(--crt-border); color: var(--crt-dim); font-family: 'VT323', monospace; padding: 2px 8px; cursor: pointer; transition: all 0.2s; }
-.font-btn:hover { border-color: var(--crt-green); color: var(--crt-green); }
-.font-btn.active { border-color: var(--crt-green); color: var(--crt-green); background: rgba(0,40,0,0.3); }
-@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+  @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
   .blink { animation: blink 1s infinite; }
+  .font-controls { display: flex; gap: 4px; align-items: center; }
+  .font-btn { background: none; border: 1px solid var(--crt-border); color: var(--crt-dim); font-family: 'VT323', monospace; padding: 2px 8px; cursor: pointer; transition: all 0.2s; }
+  .font-btn:hover { border-color: var(--crt-green); color: var(--crt-green); }
+  .font-btn.active { border-color: var(--crt-green); color: var(--crt-green); background: rgba(0,40,0,0.3); }
   @media (max-width: 600px) { .header-title { font-size: 20px; letter-spacing: 3px; } .key-metrics-bar { grid-template-columns: repeat(2, 1fr); } .threat-grid { grid-template-columns: 1fr; } .status-row { flex-direction: column; } .footer-bar { flex-direction: column; text-align: center; } }
 
 .tab-bar { display: flex; gap: 4px; margin-bottom: 12px; }
 .tab-btn { flex: 1; padding: 10px; background: var(--crt-panel); border: 1px solid var(--crt-border); color: var(--crt-dim); font-family: 'VT323', monospace; font-size: 18px; cursor: pointer; letter-spacing: 3px; transition: all 0.2s; }
 .tab-btn:hover { border-color: var(--crt-green); color: var(--crt-green); }
 .tab-btn.active { border-color: var(--crt-green); color: var(--crt-green); background: rgba(0,40,0,0.3); box-shadow: 0 0 8px rgba(51,255,51,0.2); }
+.font-controls { display: flex; gap: 4px; align-items: center; }
+.font-btn { background: none; border: 1px solid var(--crt-border); color: var(--crt-dim); font-family: 'VT323', monospace; padding: 2px 8px; cursor: pointer; transition: all 0.2s; }
+.font-btn:hover { border-color: var(--crt-green); color: var(--crt-green); }
+.font-btn.active { border-color: var(--crt-green); color: var(--crt-green); background: rgba(0,40,0,0.3); }
 .countdown-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 12px; }
 .cd-card { border: 1px solid var(--crt-border); padding: 12px; text-align: center; background: var(--crt-panel); }
 .cd-label { font-size: 0.9em; color: var(--crt-dim); letter-spacing: 2px; margin-bottom: 4px; }
@@ -111,18 +114,18 @@ const SECTIONS = [
     title: "SITUATION REPORT",
     icon: "⚡",
     content: {
-      heading: "DAY 31 -- ISLAMABAD PEACE SUMMIT / HOUTHIS 5TH FRONT / TRUMP: IRAN AGREED TO MOST OF 15 POINTS",
+      heading: "DAY 32 -- TRUMP: DESTROY ALL POWER PLANTS, OIL WELLS, KHARG ISLAND + DESALINATION / BRENT $116 / GROUND INVASION PREP",
       lines: [
-        "[!] ISLAMABAD PEACE SUMMIT: Pakistan/Turkey/Egypt/Saudi Arabia FMs meeting to end the war. Pakistan ready to HOST direct US-Iran talks 'in coming days.' Most significant diplomatic event yet.",
-        "TRUMP: Iran agreed to 'MOST OF' the 15-point demands. But Iran's 5 conditions remain on the table. Gap narrowing but Hormuz sovereignty + reparations still non-starters.",
-        "KHARG ISLAND IN PLAY: Trump told Financial Times 'maybe we take Kharg Island, maybe we don't. We have a lot of options.' Island handles 90% of Iran's oil exports. Would need extended US presence.",
-        "HOUTHIS = 5TH FRONT: Yemen-based militia fired missiles at Israel (Eilat area) Saturday. War now spans Iran, Lebanon, Iraq, Gulf states, and Yemen. Escalation ladder extending.",
-        "PRINCE SULTAN AIR BASE HIT TWICE: 29 US soldiers injured across two attacks. E-3 Sentry early warning aircraft damaged. Russia provided satellite imagery for the targeting.",
-        "IRAN PUSHING NPT EXIT: Politicians calling for withdrawal from Nuclear Non-Proliferation Treaty after US-Israel struck Yazd + Arak nuclear sites. Would remove all international oversight.",
-        "UNIVERSITIES NOW TARGETS: US-Israel bombed Iranian universities. IRGC responded by declaring all 'Zionist and American' universities in Gulf as legitimate targets (Texas A&M Qatar, NYU Abu Dhabi, Northwestern Qatar).",
-        "UK SENDING MINE-CLEARING SHIP: RFA Lyme Bay with drone fleet heading to help reopen Hormuz. Rubio warned G7 that Iran may set up permanent Hormuz tolling system post-war.",
-        "AU FUEL RESPONSE: Victoria + Tasmania announced FREE public transport (April for VIC, until July for TAS). WA seeing big spike in public transport usage since war began.",
-        "ONE MONTH IN: 1/3 of Iran's missile arsenal confirmed destroyed. But 393 attack waves against Israel. 19 killed, 5,768 wounded in Israel. Iran's power was 'underestimated' -- Al Jazeera assessment.",
+        "[!] TRUMP'S MOST EXTREME THREAT: Truth Social -- if deal not reached soon, US will destroy ALL power plants, oil wells, Kharg Island, and 'possibly all desalinization plants.' Total civilian infrastructure destruction.",
+        "BRENT HIT $116: Up 60% since war began. Heading for RECORD monthly jump. Oil surging on ground invasion fears + expanded threat list. WTI at $103.",
+        "PENTAGON PREPARING 'WEEKS OF GROUND OPERATIONS': WashPost report. Kharg Island seizure + coastal raids to find weapons targeting shipping. 6,000-8,000 US ground troops now in proximity.",
+        "IRAN'S RESPONSE: Ghalibaf: 'Enemy sends messages of negotiation while secretly planning ground attack. Our men are WAITING for American soldiers to set fire to them.'",
+        "IRAN WARNS OF BAB AL-MANDEB FRONT: If islands attacked, Iran will open new front at Red Sea chokepoint (Yemen/Djibouti). Would threaten SECOND global shipping route.",
+        "SPAIN CLOSED AIRSPACE to US military planes involved in Iran attacks. 'We don't authorize use of military bases or airspace for actions related to the war.' First NATO ally to do this.",
+        "RUBIO TO AL JAZEERA: Trump 'prefers diplomacy.' Direct talks via intermediaries 'ongoing.' But the threat list keeps expanding while he claims talks are 'going very well.'",
+        "IRAN CALLS US PLAN 'EXCESSIVE, UNREALISTIC, UNREASONABLE': Monday statement. CNN analysis: war has hit 'one-month fork in the road.' Down one path = ground invasion. Down the other = face-saving exit.",
+        "KUWAIT DESAL PLANT ATTACKED: Indian worker killed. Power generation and water desalination plant damaged. The desalination threat is no longer theoretical.",
+        "LEBANON: 1,247 killed (+124 children). Lebanese SOLDIER killed at checkpoint by Israeli strike. Indonesian UN PEACEKEEPER killed Sunday. War expanding to uniformed international personnel.",
       ],
     },
   },
@@ -259,7 +262,7 @@ const SECTIONS = [
         "FREE PUBLIC TRANSPORT: Victoria free trains/trams/buses for April. Tasmania free buses/ferries until July. WA seeing big spike in public transport usage.",
         "Brent at ~$107 (+50% since war began). 20 Pakistani ships now passing through Hormuz (2/day). But AU-bound shipping still not flowing.",
         "Hormuz de facto closed for most commercial traffic. Iran codifying sovereignty + tolling via parliament. UK sending mine-clearing ship RFA Lyme Bay.",
-        "IF ISLAMABAD TALKS SUCCEED > Hormuz reopening framework > first meaningful AU supply arrives weeks 8-10 post-agreement. Full recovery 4-6 months.",
+        "IF GROUND INVASION PREP SUCCEED > Hormuz reopening framework > first meaningful AU supply arrives weeks 8-10 post-agreement. Full recovery 4-6 months.",
         "IF TALKS FAIL > Back to power plant ultimatum Apr 6 > complete Hormuz closure > sea mines > depletion forecast worst case.",
         "Govt MSO release + sulphur waiver still active. Fuel Supply Taskforce in PM&C. NOSEC discussing national dashboard (weeks away).",
         "Diesel breaks the economy first: freight, farming, mining, emergency backup. NFF: food prices up 50% if shortages persist through seeding season.",
@@ -271,21 +274,22 @@ const SECTIONS = [
     title: "SCENARIO ANALYSIS",
     icon: "🔮",
     content: {
-      heading: "DAY 31 — NEW FRONT OPENED / HORMUZ CRACKING / INVASION HARDWARE ARRIVING",
+      heading: "DAY 32 — FORK IN THE ROAD: GROUND INVASION OR FACE-SAVING EXIT",
       lines: [
-        "[!] HOUTHIS ENTERING = WAR WIDENING: Yemen is now the 5th active front (Iran, Lebanon, Iraq, Gulf, Yemen). This COMPLICATES any ceasefire — more parties = more demands = harder to negotiate.",
-        "SCENARIO A — MANAGED WIND-DOWN (30%): DOWN FROM 35%. Houthi entry + nuclear strikes + USS Tripoli = escalation signals outweigh diplomatic signals. 20 Pakistani ships positive but insufficient.",
-        "SCENARIO B — ENERGY ESCALATION SPIRAL (10%): Grace period holds until Apr 6. But Israel hitting nuclear sites independent of US energy pause. Escalation happening — just not on energy targets.",
-        "SCENARIO C — EXTENDED WAR (40%): STILL LEADING. Trump says 3,554 targets left. IDF overstretched but accelerating. Iran sustaining offensive. Houthis adding pressure. Grinding war through April.",
-        "SCENARIO D — REGIME COLLAPSE (20%): UP FROM 15%. 1/3 of missile arsenal destroyed. Nuclear sites hit. IRGC navy chief killed. USS Tripoli = amphibious invasion capability now in theatre.",
-        "THE HORMUZ SIGNAL: 20 Pakistani ships = first formal passage deal. Iran codifying fees via parliament. A new Hormuz regime is EMERGING — not open, not closed, but controlled and monetised.",
-        "ISRAEL vs US: Israel hitting nuclear sites while Trump claims talks 'going very well.' Israel not part of US-Iran talks. IDF accelerating to create facts before any ceasefire.",
-        "USS TRIPOLI: 3,500 Marines with amphibious assault capability + 3,000 82nd Airborne = ground invasion infrastructure. Trump denies troops but hardware says otherwise.",
-        "PAKISTAN WEEKEND TALKS: Turkey says meetings possible this weekend. If they happen, first face-to-face. If not, grace period bleeds out without progress.",
-        "1/3 MISSILE ARSENAL DESTROYED: US confirmed. But Iran sustaining attacks from remaining 2/3. Houthis adding new missile vector from Yemen. Degraded but not defeated.",
+        "[!] CNN ANALYSIS: War has hit 'one-month fork in the road.' One path = fast-escalating ground conflict + worldwide economic conflagration. Other path = face-saving exit for both sides.",
+        "SCENARIO A — MANAGED WIND-DOWN (25%): DOWN FROM 30%. Trump's total destruction threat + ground invasion prep = OPPOSITE of wind-down. But Rubio told Al Jazeera Trump 'prefers diplomacy.' Words vs actions diverging sharply.",
+        "SCENARIO B — ENERGY ESCALATION SPIRAL (20%): UP FROM 10%. Trump explicitly threatened power plants + oil wells + Kharg + desalination. This is no longer hypothetical. Apr 6 deadline = trigger date.",
+        "SCENARIO C — EXTENDED WAR (35%): STILL LEADING but pressure building toward either resolution or explosion. Can't grind indefinitely with 6-8K ground troops arriving and $116 oil.",
+        "SCENARIO D — REGIME COLLAPSE / GROUND INVASION (20%): Pentagon preparing 'weeks of ground operations.' Kharg seizure options developed. But Iran says it's 'WAITING' for US troops. This would be catastrophic.",
+        "THE DESALINATION ESCALATION: Kuwait desal plant already hit. Trump threatening ALL Iranian desal plants. 42% of world desal in Middle East. This is a water weapon — affects 100M+ civilians.",
+        "SPAIN WILDCARD: First NATO ally to close airspace to US Iran operations. If others follow, US logistics chain degrades. Political fractures in the Western alliance widening.",
+        "IRAN'S BAB AL-MANDEB THREAT: If islands attacked, Iran opens Red Sea front. Combined with Hormuz closure = TWO global shipping chokepoints under threat simultaneously.",
+        "TRUMP'S RHETORIC PATTERN: Threaten maximally, then negotiate. But each threat cycle escalates further. Power plants > oil wells > Kharg > desalination. The ceiling keeps rising.",
+        "APR 6 DEADLINE: 6 days. Either framework emerges from Pakistan-mediated talks or Trump faces decision: follow through on total destruction or blink for the third time.",
       ],
     },
   },
+
 ];
 
 const DEFCON_LEVELS = [
@@ -332,7 +336,7 @@ const CRT_STYLES = `
   .threat-level { font-size: 12px; padding: 1px 6px; font-weight: bold; letter-spacing: 1px; }
   .section-block { border: 1px solid var(--crt-border); margin-bottom: 6px; background: var(--crt-panel); transition: border-color 0.2s; }
   .section-block:hover { border-color: var(--crt-dim); }
-  .section-header { display: flex; align-items: center; gap: 10px; padding: 10px 14px; cursor: pointer; user-select: none; font-size: 17px; letter-spacing: 2px; color: var(--crt-green); border-bottom: 1px solid transparent; transition: all 0.2s; }
+  .section-header { display: flex; align-items: center; gap: 10px; padding: 10px 14px; cursor: pointer; user-select: none; font-size: 1.05em; letter-spacing: 2px; color: var(--crt-green); border-bottom: 1px solid transparent; transition: all 0.2s; }
   .section-header:hover { background: rgba(0, 60, 0, 0.15); }
   .section-header.open { border-bottom-color: var(--crt-border); }
   .section-body { padding: 10px 14px; }
@@ -350,26 +354,27 @@ const CRT_STYLES = `
   .built-with { text-align: center; font-size: 13px; color: var(--crt-dim); margin-top: 8px; padding-bottom: 20px; }
   .built-with a { color: var(--crt-green); text-decoration: none; }
   .built-with a:hover { text-decoration: underline; }
-  
-.font-controls { display: flex; gap: 4px; align-items: center; }
-.font-btn { background: none; border: 1px solid var(--crt-border); color: var(--crt-dim); font-family: 'VT323', monospace; padding: 2px 8px; cursor: pointer; transition: all 0.2s; }
-.font-btn:hover { border-color: var(--crt-green); color: var(--crt-green); }
-.font-btn.active { border-color: var(--crt-green); color: var(--crt-green); background: rgba(0,40,0,0.3); }
-@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+  @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
   .blink { animation: blink 1s infinite; }
+  .font-controls { display: flex; gap: 4px; align-items: center; }
+  .font-btn { background: none; border: 1px solid var(--crt-border); color: var(--crt-dim); font-family: 'VT323', monospace; padding: 2px 8px; cursor: pointer; transition: all 0.2s; }
+  .font-btn:hover { border-color: var(--crt-green); color: var(--crt-green); }
+  .font-btn.active { border-color: var(--crt-green); color: var(--crt-green); background: rgba(0,40,0,0.3); }
   @media (max-width: 600px) { .header-title { font-size: 20px; letter-spacing: 3px; } .key-metrics-bar { grid-template-columns: repeat(2, 1fr); } .threat-grid { grid-template-columns: 1fr; } .status-row { flex-direction: column; } .footer-bar { flex-direction: column; text-align: center; } }
 `;
 
 const KEY_METRICS = [
-  { label: "WAR DAY", value: "31", color: "var(--crt-red)" },
-  { label: "BRENT", value: "$107", color: "var(--crt-amber)", delta: "+50% WAR", deltaColor: "#ffaa00" },
-  { label: "GRACE LEFT", value: "APR 6", color: "var(--crt-amber)", delta: "+10 DAYS", deltaColor: "#44cc44" },
-  { label: "HOUTHIS", value: "IN WAR", color: "var(--crt-red)", delta: "NEW FRONT", deltaColor: "#ff4400" },
-  { label: "HORMUZ", value: "20 SHIPS", color: "var(--crt-green)", delta: "2/DAY PAK", deltaColor: "#44cc44" },
-  { label: "USS TRIPOLI", value: "3,500", color: "var(--crt-red)", delta: "MARINES", deltaColor: "#ff4400" },
-  { label: "LEAD SCENARIO", value: "EXTENDED", color: "var(--crt-amber)", delta: "40%", deltaColor: "#ffaa00" },
+  { label: "WAR DAY", value: "32", color: "var(--crt-red)" },
+  { label: "BRENT", value: "$116", color: "var(--crt-amber)", delta: "+60% WAR", deltaColor: "#ffaa00" },
+  { label: "GRACE ENDS", value: "APR 6", color: "var(--crt-amber)", delta: "8PM ET MON", deltaColor: "#ffaa00" },
+  { label: "GROUND", value: "PREP", color: "var(--crt-red)", delta: "6-8K TROOPS", deltaColor: "#ff4400" },
+  { label: "DESAL", value: "TARGETED", color: "var(--crt-red)", delta: "KUWAIT HIT", deltaColor: "#ff4400" },
+  { label: "SPAIN", value: "CLOSED", color: "var(--crt-amber)", delta: "AIRSPACE", deltaColor: "#ffaa00" },
+  { label: "LEAD SCENARIO", value: "EXTENDED", color: "var(--crt-amber)", delta: "45%", deltaColor: "#ffaa00" },
   { label: "WIND-DOWN", value: "30%", color: "var(--crt-cyan)", delta: "HOUTHIS HURT", deltaColor: "#ffaa00" },
 ];
+
+
 
 function KeyMetrics() { return (<div className="key-metrics-bar">{KEY_METRICS.map((m) => (<div key={m.label} className="metric-card"><div className="metric-label">{m.label}</div><div className="metric-value" style={{ color: m.color }}>{m.value}</div>{m.delta && <div className="metric-delta" style={{ color: m.deltaColor }}>{m.delta}</div>}</div>))}</div>); }
 function ThreatMatrix() { return (<div className="threat-matrix"><div style={{ fontSize: 15, letterSpacing: 2, color: "var(--crt-green)" }}>{"\u25C6"} THREAT MATRIX</div><div className="threat-grid">{THREAT_MATRIX.map((t) => (<div key={t.theatre} className="threat-cell"><span>{t.theatre}</span><span className="threat-level" style={{ color: t.color, border: `1px solid ${t.color}` }}>{t.level}</span></div>))}</div></div>); }
@@ -412,15 +417,15 @@ function OPSCEN() {
       <div className="opscen-container" style={{ fontSize: fontScale }}>
         <div className="header-bar">
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-            <div className="header-title crt-glow">{"\u25E4"} OPSCEN v6.10 {"\u25E2"}</div>
+            <div className="header-title crt-glow">{"\u25E4"} OPSCEN v6.11 {"\u25E2"}</div>
             <div className="font-controls">
               <button className={`font-btn ${fontSize === 0 ? "active" : ""}`} onClick={() => setFontSize(0)} style={{ fontSize: 13 }}>A-</button>
               <button className={`font-btn ${fontSize === 1 ? "active" : ""}`} onClick={() => setFontSize(1)} style={{ fontSize: 16 }}>A</button>
               <button className={`font-btn ${fontSize === 2 ? "active" : ""}`} onClick={() => setFontSize(2)} style={{ fontSize: 20 }}>A+</button>
             </div>
           </div>
-          <div className="header-sub">IRAN THEATRE INTELLIGENCE BRIEFING &mdash; OPERATION EPIC FURY &mdash; DAY 31</div>
-          <div className="header-sub" style={{ color: "var(--crt-amber)", marginTop: 2 }}>ISLAMABAD SUMMIT &mdash; HOUTHIS 5TH FRONT &mdash; KHARG ISLAND IN PLAY</div>
+          <div className="header-sub">IRAN THEATRE INTELLIGENCE BRIEFING &mdash; OPERATION EPIC FURY &mdash; DAY 32</div>
+          <div className="header-sub" style={{ color: "var(--crt-amber)", marginTop: 2 }}>TOTAL DESTRUCTION THREATENED &mdash; GROUND INVASION PREP &mdash; BRENT $116</div>
           <div style={{ textAlign: "center", marginTop: 8, fontSize: 32, color: "var(--crt-amber)", fontFamily: "'Share Tech Mono', monospace", textShadow: "0 0 10px #ffaa00, 0 0 20px #ffaa00" }}>GRACE PERIOD: {countdownStr}</div>
         </div>
         <div className="tab-bar">
@@ -434,13 +439,13 @@ function OPSCEN() {
               <div style={{ fontSize: 14, color: "var(--crt-green)", letterSpacing: 2 }}>DEFCON ASSESSMENT</div>
               <DefconGauge level={defconLevel} />
               <div style={{ display: "flex", justifyContent: "space-between", fontSize: 14 }}><span style={{ color: defconInfo.color }}>DEFCON {defconLevel}</span><span style={{ color: defconInfo.color, fontSize: 12 }}>{defconInfo.label}</span></div>
-              <div style={{ fontSize: 12, color: "var(--crt-dim)", marginTop: 4 }}>ISLAMABAD TALKS &bull; ENERGY PAUSED TO APR 6 &bull; HOUTHIS 5TH FRONT</div>
+              <div style={{ fontSize: 12, color: "var(--crt-dim)", marginTop: 4 }}>GROUND INVASION PREP &bull; TOTAL DESTRUCTION THREAT &bull; BRENT $116</div>
             </div>
             <div className="clock-panel">
               <div style={{ fontSize: 14, color: "var(--crt-green)", letterSpacing: 2 }}>SYSTEM CLOCK</div>
               <div style={{ fontSize: 22, color: "var(--crt-amber)", marginTop: 6, fontFamily: "'Share Tech Mono', monospace" }}>{aestStr}</div>
               <div style={{ fontSize: 13, color: "var(--crt-dim)", marginTop: 2, fontFamily: "'Share Tech Mono', monospace" }}>{utcStr}</div>
-              <div style={{ fontSize: 12, color: "var(--crt-dim)", marginTop: 4 }}>BRIEFING EPOCH: 30-MAR-2026 1600 AEDT</div>
+              <div style={{ fontSize: 12, color: "var(--crt-dim)", marginTop: 4 }}>BRIEFING EPOCH: 31-MAR-2026 0800 AEDT</div>
             </div>
           </div>
           <ThreatMatrix />
@@ -448,7 +453,7 @@ function OPSCEN() {
           {SECTIONS.map((s) => (<Section key={s.id} section={s} isOpen={!!openSections[s.id]} toggle={() => toggle(s.id)} />))}
         </React.Fragment>)}
         {activeTab === "fuel" && <FuelForecast />}
-        <div className="footer-bar"><span>OPSCEN v6.10 &bull; RETSA GROUP INTELLIGENCE</span><span>CLASSIFICATION: OPEN SOURCE</span><span><span className="blink" style={{ color: "var(--crt-red)" }}>&bull;</span> LIVE</span></div>
+        <div className="footer-bar"><span>OPSCEN v6.11 &bull; RETSA GROUP INTELLIGENCE</span><span>CLASSIFICATION: OPEN SOURCE</span><span><span className="blink" style={{ color: "var(--crt-red)" }}>&bull;</span> LIVE</span></div>
         <div className="built-with">Built entirely in <a href="https://claude.ai" target="_blank" rel="noopener">Claude</a> by <a href="https://retsagroup.com.au" target="_blank" rel="noopener">RETSA Group</a> &bull; <a href="https://x.com/Marcus_Rummler" target="_blank" rel="noopener">@Marcus_Rummler</a> &bull; Fuel outage data via <a href="https://checkpetrol.com.au" target="_blank" rel="noopener">checkpetrol.com.au</a></div>
       </div>
     </React.Fragment>
