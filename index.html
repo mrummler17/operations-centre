@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OPSCEN v6.8 — Iran Theatre Intelligence Briefing</title>
+<title>OPSCEN v6.9 — Iran Theatre Intelligence Briefing</title>
 <meta name="description" content="Real-time ops centre tracking the 2026 Iran conflict. Day 31. Islamabad peace summit. Houthis 5th front. Kharg Island in play. 585 AU fuel outages. Built in Claude by RETSA Group.">
-<meta property="og:title" content="OPSCEN v6.8 — Iran Theatre Intelligence Briefing">
+<meta property="og:title" content="OPSCEN v6.9 — Iran Theatre Intelligence Briefing">
 <meta property="og:description" content="Day 31 — Islamabad peace summit underway. Houthis enter as 5th front. Trump: Iran agreed to most of 15 points. Kharg Island seizure in play. 585 AU fuel outages via checkpetrol.com.au.">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,7 +33,7 @@
   .defcon-seg.active { opacity: 1; box-shadow: 0 0 6px currentColor; }
   .threat-matrix { border: 1px solid var(--crt-border); padding: 10px; margin-bottom: 12px; background: var(--crt-panel); }
   .threat-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px; margin-top: 8px; }
-  .threat-cell { display: flex; justify-content: space-between; align-items: center; padding: 6px 10px; border: 1px solid #1a2a1a; font-size: 15px; background: rgba(0,0,0,0.3); }
+  .threat-cell { display: flex; justify-content: space-between; align-items: center; padding: 6px 10px; border: 1px solid #1a2a1a; font-size: 0.95em; background: rgba(0,0,0,0.3); }
   .threat-level { font-size: 12px; padding: 1px 6px; font-weight: bold; letter-spacing: 1px; }
   .section-block { border: 1px solid var(--crt-border); margin-bottom: 6px; background: var(--crt-panel); transition: border-color 0.2s; }
   .section-block:hover { border-color: var(--crt-dim); }
@@ -41,8 +41,8 @@
   .section-header:hover { background: rgba(0, 60, 0, 0.15); }
   .section-header.open { border-bottom-color: var(--crt-border); }
   .section-body { padding: 10px 14px; }
-  .section-heading { font-family: 'Share Tech Mono', monospace; font-size: 15px; color: var(--crt-amber); letter-spacing: 1px; margin-bottom: 8px; padding-bottom: 6px; border-bottom: 1px solid var(--crt-border); }
-  .intel-line { font-size: 16px; line-height: 1.6; padding: 3px 0; padding-left: 14px; position: relative; color: var(--crt-text); }
+  .section-heading { font-family: 'Share Tech Mono', monospace; font-size: 0.95em; color: var(--crt-amber); letter-spacing: 1px; margin-bottom: 8px; padding-bottom: 6px; border-bottom: 1px solid var(--crt-border); }
+  .intel-line { font-size: 1em; line-height: 1.6; padding: 3px 0; padding-left: 14px; position: relative; color: var(--crt-text); }
   .intel-line::before { content: '▸'; position: absolute; left: 0; color: var(--crt-dim); }
   .key-metrics-bar { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 6px; margin-bottom: 12px; }
   .metric-card { border: 1px solid var(--crt-border); padding: 8px; text-align: center; background: var(--crt-panel); }
@@ -55,7 +55,12 @@
   .built-with { text-align: center; font-size: 13px; color: var(--crt-dim); margin-top: 8px; padding-bottom: 20px; }
   .built-with a { color: var(--crt-green); text-decoration: none; }
   .built-with a:hover { text-decoration: underline; }
-  @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+  
+.font-controls { display: flex; gap: 4px; align-items: center; }
+.font-btn { background: none; border: 1px solid var(--crt-border); color: var(--crt-dim); font-family: 'VT323', monospace; padding: 2px 8px; cursor: pointer; transition: all 0.2s; }
+.font-btn:hover { border-color: var(--crt-green); color: var(--crt-green); }
+.font-btn.active { border-color: var(--crt-green); color: var(--crt-green); background: rgba(0,40,0,0.3); }
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
   .blink { animation: blink 1s infinite; }
   @media (max-width: 600px) { .header-title { font-size: 20px; letter-spacing: 3px; } .key-metrics-bar { grid-template-columns: repeat(2, 1fr); } .threat-grid { grid-template-columns: 1fr; } .status-row { flex-direction: column; } .footer-bar { flex-direction: column; text-align: center; } }
 
@@ -323,7 +328,7 @@ const CRT_STYLES = `
   .defcon-seg.active { opacity: 1; box-shadow: 0 0 6px currentColor; }
   .threat-matrix { border: 1px solid var(--crt-border); padding: 10px; margin-bottom: 12px; background: var(--crt-panel); }
   .threat-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px; margin-top: 8px; }
-  .threat-cell { display: flex; justify-content: space-between; align-items: center; padding: 6px 10px; border: 1px solid #1a2a1a; font-size: 15px; background: rgba(0,0,0,0.3); }
+  .threat-cell { display: flex; justify-content: space-between; align-items: center; padding: 6px 10px; border: 1px solid #1a2a1a; font-size: 0.95em; background: rgba(0,0,0,0.3); }
   .threat-level { font-size: 12px; padding: 1px 6px; font-weight: bold; letter-spacing: 1px; }
   .section-block { border: 1px solid var(--crt-border); margin-bottom: 6px; background: var(--crt-panel); transition: border-color 0.2s; }
   .section-block:hover { border-color: var(--crt-dim); }
@@ -331,8 +336,8 @@ const CRT_STYLES = `
   .section-header:hover { background: rgba(0, 60, 0, 0.15); }
   .section-header.open { border-bottom-color: var(--crt-border); }
   .section-body { padding: 10px 14px; }
-  .section-heading { font-family: 'Share Tech Mono', monospace; font-size: 15px; color: var(--crt-amber); letter-spacing: 1px; margin-bottom: 8px; padding-bottom: 6px; border-bottom: 1px solid var(--crt-border); }
-  .intel-line { font-size: 16px; line-height: 1.6; padding: 3px 0; padding-left: 14px; position: relative; color: var(--crt-text); }
+  .section-heading { font-family: 'Share Tech Mono', monospace; font-size: 0.95em; color: var(--crt-amber); letter-spacing: 1px; margin-bottom: 8px; padding-bottom: 6px; border-bottom: 1px solid var(--crt-border); }
+  .intel-line { font-size: 1em; line-height: 1.6; padding: 3px 0; padding-left: 14px; position: relative; color: var(--crt-text); }
   .intel-line::before { content: '▸'; position: absolute; left: 0; color: var(--crt-dim); }
   .key-metrics-bar { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 6px; margin-bottom: 12px; }
   .metric-card { border: 1px solid var(--crt-border); padding: 8px; text-align: center; background: var(--crt-panel); }
@@ -345,7 +350,12 @@ const CRT_STYLES = `
   .built-with { text-align: center; font-size: 13px; color: var(--crt-dim); margin-top: 8px; padding-bottom: 20px; }
   .built-with a { color: var(--crt-green); text-decoration: none; }
   .built-with a:hover { text-decoration: underline; }
-  @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+  
+.font-controls { display: flex; gap: 4px; align-items: center; }
+.font-btn { background: none; border: 1px solid var(--crt-border); color: var(--crt-dim); font-family: 'VT323', monospace; padding: 2px 8px; cursor: pointer; transition: all 0.2s; }
+.font-btn:hover { border-color: var(--crt-green); color: var(--crt-green); }
+.font-btn.active { border-color: var(--crt-green); color: var(--crt-green); background: rgba(0,40,0,0.3); }
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
   .blink { animation: blink 1s infinite; }
   @media (max-width: 600px) { .header-title { font-size: 20px; letter-spacing: 3px; } .key-metrics-bar { grid-template-columns: repeat(2, 1fr); } .threat-grid { grid-template-columns: 1fr; } .status-row { flex-direction: column; } .footer-bar { flex-direction: column; text-align: center; } }
 `;
@@ -382,6 +392,8 @@ function OPSCEN() {
   const clock = useClock();
   const [openSections, setOpenSections] = useState({ sitrep: true });
   const [allOpen, setAllOpen] = useState(false);
+  const [fontSize, setFontSize] = useState(1);
+  const fontScale = [14, 16, 19][fontSize];
   const [activeTab, setActiveTab] = useState("briefing");
   const defconLevel = 3;
   const toggle = useCallback((id) => { setOpenSections((p) => ({ ...p, [id]: !p[id] })); }, []);
@@ -397,9 +409,16 @@ function OPSCEN() {
   return (
     <React.Fragment>
       <div className="scanlines" />
-      <div className="opscen-container">
+      <div className="opscen-container" style={{ fontSize: fontScale }}>
         <div className="header-bar">
-          <div className="header-title crt-glow">{"\u25E4"} OPSCEN v6.8 {"\u25E2"}</div>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+            <div className="header-title crt-glow">{"\u25E4"} OPSCEN v6.9 {"\u25E2"}</div>
+            <div className="font-controls">
+              <button className={`font-btn ${fontSize === 0 ? "active" : ""}`} onClick={() => setFontSize(0)} style={{ fontSize: 13 }}>A-</button>
+              <button className={`font-btn ${fontSize === 1 ? "active" : ""}`} onClick={() => setFontSize(1)} style={{ fontSize: 16 }}>A</button>
+              <button className={`font-btn ${fontSize === 2 ? "active" : ""}`} onClick={() => setFontSize(2)} style={{ fontSize: 20 }}>A+</button>
+            </div>
+          </div>
           <div className="header-sub">IRAN THEATRE INTELLIGENCE BRIEFING &mdash; OPERATION EPIC FURY &mdash; DAY 31</div>
           <div className="header-sub" style={{ color: "var(--crt-amber)", marginTop: 2 }}>ISLAMABAD SUMMIT &mdash; HOUTHIS 5TH FRONT &mdash; KHARG ISLAND IN PLAY</div>
           <div style={{ textAlign: "center", marginTop: 8, fontSize: 32, color: "var(--crt-amber)", fontFamily: "'Share Tech Mono', monospace", textShadow: "0 0 10px #ffaa00, 0 0 20px #ffaa00" }}>GRACE PERIOD: {countdownStr}</div>
@@ -429,7 +448,7 @@ function OPSCEN() {
           {SECTIONS.map((s) => (<Section key={s.id} section={s} isOpen={!!openSections[s.id]} toggle={() => toggle(s.id)} />))}
         </React.Fragment>)}
         {activeTab === "fuel" && <FuelForecast />}
-        <div className="footer-bar"><span>OPSCEN v6.8 &bull; RETSA GROUP INTELLIGENCE</span><span>CLASSIFICATION: OPEN SOURCE</span><span><span className="blink" style={{ color: "var(--crt-red)" }}>&bull;</span> LIVE</span></div>
+        <div className="footer-bar"><span>OPSCEN v6.9 &bull; RETSA GROUP INTELLIGENCE</span><span>CLASSIFICATION: OPEN SOURCE</span><span><span className="blink" style={{ color: "var(--crt-red)" }}>&bull;</span> LIVE</span></div>
         <div className="built-with">Built entirely in <a href="https://claude.ai" target="_blank" rel="noopener">Claude</a> by <a href="https://retsagroup.com.au" target="_blank" rel="noopener">RETSA Group</a> &bull; <a href="https://x.com/Marcus_Rummler" target="_blank" rel="noopener">@Marcus_Rummler</a> &bull; Fuel outage data via <a href="https://checkpetrol.com.au" target="_blank" rel="noopener">checkpetrol.com.au</a></div>
       </div>
     </React.Fragment>
