@@ -1,4 +1,4 @@
-# OPSCEN v6.6 — Iran Theatre Intelligence Briefing
+# OPSCEN v6.8 — Iran Theatre Intelligence Briefing
 
 A real-time military operations centre dashboard tracking the 2026 Iran conflict, built entirely in [Claude](https://claude.ai) by [RETSA Group](https://retsagroup.com.au).
 
@@ -26,20 +26,21 @@ Two words. Fresh every morning. The news comes to me now.
 - **Australian-specific sections** — ASX 200, RBA rate impacts, fuel crisis monitoring
 - **UPDATED badges** showing what changed since last briefing
 
-## Current Briefing: Day 28
+## Current Briefing: Day 31
 
-- **Israel struck TWO NUCLEAR FACILITIES** Friday — Yazd uranium plant + Arak heavy water reactor
-- Iran FM Araghchi: "HEAVY price for Israeli crimes" — promises retaliation
-- Israel Defence Min Katz: attacks will **"escalate and expand"** to additional targets
-- Grace period **extended 10 days to April 6** — but doesn't cover Israeli nuclear strikes
-- **Brent back to $107** — S&P 500 in 5th straight losing week (longest in 4 years)
-- **303 US troops wounded** — 75% traumatic brain injuries
-- Trump weighing **seizure of Kharg Island** (Iran's main oil facility) — 3,000 82nd Airborne deploying
-- Rubio warned G7 that Iran may set up **permanent Hormuz tolling system** post-war
-- Kuwait ports **damaged** — Shuwaikh + Mubarak Al Kabeer (Belt and Road)
-- Lebanon: **1,116 killed** / Iraq: 96 killed / Gulf states: 30+ killed
-- G7 called for **immediate halt** to attacks on populations and infrastructure
-- Countdown timer targeting **April 6** — Extended War leading scenario at 40%
+- **Islamabad peace summit** — Pakistan/Turkey/Egypt/Saudi Arabia FMs meeting to end the war
+- Trump: Iran agreed to **"most of" 15 points** — but Iran's 5 conditions still on table
+- **Houthis entered as 5th front** — fired missiles at Israel from Yemen (Eilat area)
+- Trump weighing **seizure of Kharg Island** (90% of Iran's oil exports)
+- **USS Tripoli** arrived with 3,500 Marines + 3,000 82nd Airborne deploying = ground invasion capability
+- Prince Sultan Air Base **hit twice** — 29 US soldiers injured, E-3 Sentry damaged, Russia provided satellite imagery
+- Iran pushing **NPT exit** after Yazd + Arak nuclear sites struck
+- **Universities now targets** on both sides — IRGC declared US/Israeli universities in Gulf as legitimate targets
+- UK sending **mine-clearing ship** RFA Lyme Bay to help reopen Hormuz
+- **585 AU fuel outages** via checkpetrol.com.au (VIC 233, QLD 176, NSW 164)
+- Free public transport in **Victoria** (April) and **Tasmania** (until July)
+- Grace period extended to **April 6** — Extended War leading scenario at 40%
+- **Fuel outage data** now sourced from checkpetrol.com.au (@ideacasino + @hameonline)
 
 
 ## How it works
