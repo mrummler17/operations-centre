@@ -1,4 +1,4 @@
-# OPSCEN v6.11 — Iran Theatre Intelligence Briefing
+# OPSCEN v6.12 — Iran Theatre Intelligence Briefing
 
 A real-time military operations centre dashboard tracking the 2026 Iran conflict, built entirely in [Claude](https://claude.ai) by [RETSA Group](https://retsagroup.com.au).
 
@@ -26,21 +26,19 @@ Two words. Fresh every morning. The news comes to me now.
 - **Australian-specific sections** — ASX 200, RBA rate impacts, fuel crisis monitoring
 - **UPDATED badges** showing what changed since last briefing
 
-## Current Briefing: Day 32
+## Current Briefing: Day 32 (Afternoon Update)
 
-- **Trump's most extreme threat**: destroy ALL power plants, oil wells, Kharg Island + desalination if deal not reached
-- **Brent hit $116** — up 60% since war began, heading for record monthly jump
-- **Pentagon preparing "weeks of ground operations"** — 6,000-8,000 US troops now in proximity
-- Iran: "Our men are WAITING for American soldiers to set fire to them"
-- **Spain closed airspace** to US military — first NATO ally to break
-- Iran warns of **Bab al-Mandeb front** (Red Sea) if islands attacked — two chokepoints threatened simultaneously
-- **Kuwait desalination plant attacked** — Indian worker killed — desal threat no longer theoretical
-- **Lebanon: 1,247 killed** — Lebanese soldier killed at checkpoint — Indonesian UN peacekeeper killed
-- Rubio to Al Jazeera: Trump "prefers diplomacy" — but total destruction threats say otherwise
-- CNN analysis: war at "one-month fork in the road" — ground invasion or face-saving exit
+- **Trump may end war WITHOUT reopening Hormuz** — Times of Israel report. Massive shift from original demand
+- **Gulf allies pushing for MORE war** — Saudi Arabia + UAE urging Trump to continue, calling it "historic opportunity"
+- **Iran fired CLUSTER BOMBS at central Israel** — Bnei Brak, Ramat Gan, Petah Tikva hit. First cluster munition use
+- **4 Israeli soldiers killed** in Lebanon. IDF shifting to "economic damage" targets in Iran
+- **50,000+ US special forces** in Middle East region (NYT). Pentagon briefing today — first in 2 weeks
+- **82,000+ civilian structures destroyed** in Iran (Red Crescent)
+- Iran FM spokesperson: "Over 31 days, NO negotiations with America"
+- Chinese COSCO mega-ships **turned back** from Hormuz at Larak Island toll booth
 - Grace period expires **April 6** — 6 days remaining
-- Energy Escalation scenario jumped to **20%** — Extended War leading at **35%**
-- Wind-Down dropped to **25%** — talks described as "excessive, unrealistic, unreasonable" by Iran
+- Font size controls (A-/A/A+) for improved readability
+- Fuel outage data via checkpetrol.com.au — 585 outages across 6,610 stations
 
 
 ## How it works
