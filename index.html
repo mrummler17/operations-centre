@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OPSCEN v6.14 — Iran Theatre Intelligence Briefing</title>
-<meta name="description" content="Day 35. Trump: stone ages in 2-3 weeks. F-15 shot down over Iran. NATO exit threatened. Bridge bombed on Nature Day. Brent $119 record month. Built in Claude by RETSA Group.">
-<meta property="og:title" content="OPSCEN v6.14 — Iran Theatre Intelligence Briefing">
-<meta property="og:description" content="Day 35 — Trump addresses nation: stone ages in 2-3 weeks. F-15 shot down, WSO missing. Bridge bombed killing 8 civilians. NATO exit threatened. Physical oil hit $141 (highest since 2008). 585 AU fuel outages.">
+<title>OPSCEN v6.15 — Iran Theatre Intelligence Briefing</title>
+<meta name="description" content="Day 36. Trump sets a 48-hour deadline, Iran rejects the ceasefire claim, and Hormuz remains effectively choked. Australia is still watching fuel supply and market spillovers.">
+<meta property="og:title" content="OPSCEN v6.15 — Iran Theatre Intelligence Briefing">
+<meta property="og:description" content="Day 36 — Trump warns Iran has 48 hours to surrender, Tehran says ceasefire claims are false, regional mediation continues, oil stays elevated and Australia remains on fuel watch.">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=VT323&family=Share+Tech+Mono&display=swap" rel="stylesheet">
@@ -14,7 +14,6 @@
 <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
 <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.9/babel.min.js"></script>
 <style>
-
   @import url('https://fonts.googleapis.com/css2?family=VT323&family=Share+Tech+Mono&display=swap');
   * { box-sizing: border-box; margin: 0; padding: 0; }
   :root { --crt-green: #33ff33; --crt-amber: #ffaa00; --crt-red: #ff3333; --crt-cyan: #00ffcc; --crt-dim: #4a9a4a; --crt-bg: #0a0e0a; --crt-panel: #0d120d; --crt-border: #1e4a1e; --crt-text: #33dd33; --crt-scanline: rgba(0,0,0,0.08); }
@@ -61,406 +60,468 @@
   .font-btn { background: none; border: 1px solid var(--crt-border); color: var(--crt-dim); font-family: 'VT323', monospace; padding: 2px 8px; cursor: pointer; transition: all 0.2s; }
   .font-btn:hover { border-color: var(--crt-green); color: var(--crt-green); }
   .font-btn.active { border-color: var(--crt-green); color: var(--crt-green); background: rgba(0,40,0,0.3); }
-  @media (max-width: 600px) { .header-title { font-size: 20px; letter-spacing: 3px; } .key-metrics-bar { grid-template-columns: repeat(2, 1fr); } .threat-grid { grid-template-columns: 1fr; } .status-row { flex-direction: column; } .footer-bar { flex-direction: column; text-align: center; } }
-
-.tab-bar { display: flex; gap: 4px; margin-bottom: 12px; }
-.tab-btn { flex: 1; padding: 10px; background: var(--crt-panel); border: 1px solid var(--crt-border); color: var(--crt-dim); font-family: 'VT323', monospace; font-size: 18px; cursor: pointer; letter-spacing: 3px; transition: all 0.2s; }
-.tab-btn:hover { border-color: var(--crt-green); color: var(--crt-green); }
-.tab-btn.active { border-color: var(--crt-green); color: var(--crt-green); background: rgba(0,40,0,0.3); box-shadow: 0 0 8px rgba(51,255,51,0.2); }
-.font-controls { display: flex; gap: 4px; align-items: center; }
-.font-btn { background: none; border: 1px solid var(--crt-border); color: var(--crt-dim); font-family: 'VT323', monospace; padding: 2px 8px; cursor: pointer; transition: all 0.2s; }
-.font-btn:hover { border-color: var(--crt-green); color: var(--crt-green); }
-.font-btn.active { border-color: var(--crt-green); color: var(--crt-green); background: rgba(0,40,0,0.3); }
-.countdown-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 12px; }
-.cd-card { border: 1px solid var(--crt-border); padding: 12px; text-align: center; background: var(--crt-panel); }
-.cd-label { font-size: 0.9em; color: var(--crt-dim); letter-spacing: 2px; margin-bottom: 4px; }
-.cd-value { font-size: 2.6em; margin: 4px 0; }
-.cd-sub { font-size: 0.7em; color: var(--crt-dim); letter-spacing: 1px; }
-.cd-status { font-size: 0.75em; margin-top: 6px; padding: 2px 8px; display: inline-block; letter-spacing: 1px; }
-.presets { display: flex; gap: 6px; margin-bottom: 12px; flex-wrap: wrap; }
-.preset-btn { background: none; font-family: 'VT323', monospace; font-size: 0.9em; padding: 6px 12px; cursor: pointer; letter-spacing: 1px; transition: all 0.2s; }
-.preset-btn:hover, .preset-btn.active { background: rgba(255,255,255,0.05); }
-.ctrl-box { border: 1px solid var(--crt-border); padding: 12px; margin-bottom: 12px; background: var(--crt-panel); }
-.ctrl-title { font-size: 0.9em; color: var(--crt-green); letter-spacing: 2px; margin-bottom: 10px; }
-.ctrl-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-.ctrl-item label { display: block; font-size: 0.85em; color: var(--crt-dim); margin-bottom: 4px; }
-.ctrl-val { color: var(--crt-amber); }
-.ctrl-item input[type="range"] { width: 100%; accent-color: var(--crt-green); }
-.toggle-row { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
-.toggle-btn { background: none; border: 1px solid var(--crt-border); color: var(--crt-dim); font-family: 'VT323', monospace; font-size: 0.85em; padding: 4px 10px; cursor: pointer; }
-.toggle-btn.on { border-color: var(--crt-green); color: var(--crt-green); }
-.chart-panel { border: 1px solid var(--crt-border); padding: 12px; margin-bottom: 12px; background: var(--crt-panel); }
-.chart-title { font-size: 0.9em; color: var(--crt-green); letter-spacing: 2px; margin-bottom: 10px; }
-.legend-row { display: flex; gap: 16px; margin-top: 8px; flex-wrap: wrap; font-size: 0.85em; }
-.legend-item { display: flex; align-items: center; gap: 6px; color: var(--crt-dim); }
-.legend-dot { width: 10px; height: 10px; border-radius: 2px; }
-.ctx-notes { border: 1px solid var(--crt-border); padding: 12px; margin-bottom: 8px; background: var(--crt-panel); }
-.ctx-title { font-size: 0.9em; color: var(--crt-green); letter-spacing: 2px; margin-bottom: 8px; }
-.ctx-line { font-size: 0.9em; line-height: 1.5; padding: 2px 0; color: var(--crt-dim); }
-.ctx-line.crit { color: var(--crt-red); }
-.ctx-line.warn { color: var(--crt-amber); }
-@media (max-width: 600px) { .countdown-row { grid-template-columns: 1fr; } .ctrl-grid { grid-template-columns: 1fr; } .tab-btn { font-size: 15px; letter-spacing: 1px; } }
-
+  .tab-bar { display: flex; gap: 4px; margin-bottom: 12px; }
+  .tab-btn { flex: 1; padding: 10px; background: var(--crt-panel); border: 1px solid var(--crt-border); color: var(--crt-dim); font-family: 'VT323', monospace; font-size: 18px; cursor: pointer; letter-spacing: 3px; transition: all 0.2s; }
+  .tab-btn:hover { border-color: var(--crt-green); color: var(--crt-green); }
+  .tab-btn.active { border-color: var(--crt-green); color: var(--crt-green); background: rgba(0,40,0,0.3); box-shadow: 0 0 8px rgba(51,255,51,0.2); }
+  .countdown-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 12px; }
+  .cd-card { border: 1px solid var(--crt-border); padding: 12px; text-align: center; background: var(--crt-panel); }
+  .cd-label { font-size: 0.9em; color: var(--crt-dim); letter-spacing: 2px; margin-bottom: 4px; }
+  .cd-value { font-size: 2.6em; margin: 4px 0; }
+  .cd-sub { font-size: 0.7em; color: var(--crt-dim); letter-spacing: 1px; }
+  .cd-status { font-size: 0.75em; margin-top: 6px; padding: 2px 8px; display: inline-block; letter-spacing: 1px; }
+  .presets { display: flex; gap: 6px; margin-bottom: 12px; flex-wrap: wrap; }
+  .preset-btn { background: none; font-family: 'VT323', monospace; font-size: 0.9em; padding: 6px 12px; cursor: pointer; letter-spacing: 1px; transition: all 0.2s; }
+  .preset-btn:hover, .preset-btn.active { background: rgba(255,255,255,0.05); }
+  .ctrl-box { border: 1px solid var(--crt-border); padding: 12px; margin-bottom: 12px; background: var(--crt-panel); }
+  .ctrl-title { font-size: 0.9em; color: var(--crt-green); letter-spacing: 2px; margin-bottom: 10px; }
+  .ctrl-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .ctrl-item label { display: block; font-size: 0.85em; color: var(--crt-dim); margin-bottom: 4px; }
+  .ctrl-val { color: var(--crt-amber); }
+  .ctrl-item input[type="range"] { width: 100%; accent-color: var(--crt-green); }
+  .toggle-row { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
+  .toggle-btn { background: none; border: 1px solid var(--crt-border); color: var(--crt-dim); font-family: 'VT323', monospace; font-size: 0.85em; padding: 4px 10px; cursor: pointer; }
+  .toggle-btn.on { border-color: var(--crt-green); color: var(--crt-green); }
+  .chart-panel { border: 1px solid var(--crt-border); padding: 12px; margin-bottom: 12px; background: var(--crt-panel); }
+  .chart-title { font-size: 0.9em; color: var(--crt-green); letter-spacing: 2px; margin-bottom: 10px; }
+  .legend-row { display: flex; gap: 16px; margin-top: 8px; flex-wrap: wrap; font-size: 0.85em; }
+  .legend-item { display: flex; align-items: center; gap: 6px; color: var(--crt-dim); }
+  .legend-dot { width: 10px; height: 10px; border-radius: 2px; }
+  .ctx-notes { border: 1px solid var(--crt-border); padding: 12px; margin-bottom: 8px; background: var(--crt-panel); }
+  .ctx-title { font-size: 0.9em; color: var(--crt-green); letter-spacing: 2px; margin-bottom: 8px; }
+  .ctx-line { font-size: 0.9em; line-height: 1.5; padding: 2px 0; color: var(--crt-dim); }
+  .ctx-line.crit { color: var(--crt-red); }
+  .ctx-line.warn { color: var(--crt-amber); }
+  @media (max-width: 600px) { .header-title { font-size: 20px; letter-spacing: 3px; } .key-metrics-bar { grid-template-columns: repeat(2, 1fr); } .threat-grid { grid-template-columns: 1fr; } .status-row { flex-direction: column; } .footer-bar { flex-direction: column; text-align: center; } .countdown-row { grid-template-columns: 1fr; } .ctrl-grid { grid-template-columns: 1fr; } .tab-btn { font-size: 15px; letter-spacing: 1px; } }
 </style>
 </head>
 <body>
 <div id="root"></div>
 <script type="text/babel">
 const { useState, useEffect, useCallback } = React;
-
-const SECTIONS = [
-  {
-    id: "sitrep",
-    title: "SITUATION REPORT",
-    icon: "⚡",
-    content: {
-      heading: "DAY 35 -- TRUMP: STONE AGES IN 2-3 WEEKS / F-15 SHOT DOWN / BRIDGE BOMBED ON NATURE DAY / NATO EXIT THREATENED",
-      lines: [
-        "[!] TRUMP NATIONAL ADDRESS: 'We are going to hit them extremely hard over the next 2-3 weeks. We're going to bring them back to the Stone Ages.' Core objectives 'nearing completion.' First formal address since war began.",
-        "F-15E STRIKE EAGLE SHOT DOWN OVER IRAN: Pilot rescued. Weapons systems officer MISSING -- search underway. A-10 Warthog also downed during rescue. 2 Black Hawks hit by small arms fire. First US jet lost to enemy fire.",
-        "B1 BRIDGE DESTROYED: Key Tehran-Karaj bridge bombed. 8 killed, 95 wounded -- civilians had gathered underneath for Nature Day celebrations. Trump cheered on Truth Social: 'Much more to follow!'",
-        "NATO EXIT THREATENED: Trump 'strongly considering' pulling US out of NATO. Allies failed to join war. Macron hit back: 'Too much talk. All over the place. When we're serious, we don't say the opposite every day.'",
-        "HORMUZ ABANDONED: Trump told Asian nations to 'take the lead' reopening Hormuz. 'The hard part is done. It should be easy.' Strait will open 'naturally' when war ends. No US commitment to reopen.",
-        "IRAN RESPONSE: Military vowed 'more crushing, broader, and more destructive' attacks. 'You know nothing about our very extensive strategic capacities.' Rejected Trump's assessment Iran is 'decimated.'",
-        "FORMER FM KHARAZI TARGETED: Wife killed in airstrike on his home. He was overseeing possible meeting with VP Vance. Iran called it 'attempt to derail diplomacy.'",
-        "ARMY CHIEF FIRED: Hegseth asked Army Chief of Staff Gen. Randy George to resign -- effective immediately. Purge of military leadership during active war.",
-        "OIL WHIPSAW: Dropped below $100 during speech, surged back to $108 next day. Markets 'disappointed' -- no concrete details on ending war. ASX down 1.1%. Asian markets tumbled.",
-        "IRAN PRESIDENT'S OPEN LETTER: Pezeshkian wrote directly to American people: 'Which of the American people's interests are truly being served by this war?' 60% of Americans disapprove of military action.",
-      ],
-    },
-  },
-  {
-    id: "kinetic",
-    title: "KINETIC OPERATIONS",
-    icon: "🎯",
-    content: {
-      heading: "82,000 STRUCTURES DESTROYED / 'UNPRECEDENTED' TEHRAN STRIKES",
-      lines: [
-        "IRAN RED CRESCENT: 82,000+ civilian structures damaged or destroyed. Scale of destruction now comparable to major historical conflicts.",
-        "ISRAEL HIT IRGC HEADQUARTERS in Tehran on Tuesday. Launched 'wide-scale wave of strikes' described as 'unprecedented' — Al Jazeera correspondent said explosions were largest of the entire war.",
-        "US struck Bandar Abbas radio station — 1 killed. Iran Defence Council warned: attack on southern coast = sea mines across ENTIRE Persian Gulf.",
-        "FIRST WOMAN KILLED IN ISRAEL by Hezbollah: Rocket strike in southern Hula Valley (northern Israel) Tuesday. 2 more wounded by shrapnel.",
-        "TEL AVIV: 220lb warhead missile struck a street Tuesday. 4 wounded. Cluster munition hit Nesher near Haifa (no injuries). 7+ salvos since midnight.",
-        "DIMONA: Further missile sirens Tuesday. 180+ total wounded from Saturday's strikes on Dimona + Arad. 1,000+ homeless.",
-        "Grace period = ENERGY ONLY. All other strikes continue. IDF Defence Min Katz: 'Strike intensity rising significantly this week.' Campaign at 'halfway.'",
-        "IDF diverting combat battalion from Lebanon to West Bank — settler violence averaging 10 attacks/day on Palestinians since March.",
-        "New SNSC secretary: Zolghadr (former IRGC commander) replacing killed Larijani. Regime reconstituting command structure.",
-        "Iran arrested 466 people for 'online destabilisation.' Internet blackout now in 4th week. 80M+ Iranians cut off.",
-      ],
-    },
-  },
-  {
-    id: "iran_response",
-    title: "IRANIAN RETALIATION",
-    icon: "🚀",
-    content: {
-      heading: "'DECEITFUL PRESIDENT' — IRAN DENIES TALKS BUT BACKCHANNELS ARE REAL",
-      lines: [
-        "IRGC STATEMENT: 'Trump's contradictory behaviour will not make us lose sight of the battlefront.' Called him 'deceitful.' Said war continues 'without interruption until complete surrender.'",
-        "Ghalibaf: 'Fake news to manipulate financial and oil markets.' FM spokesman Baghaei: 'There is no dialogue between Tehran and Washington.'",
-        "BUT: Senior Iranian FM official told CBS they 'received points from the US through mediators' and are 'reviewing them.' This is backchannel diplomacy, not denial of contact.",
-        "Senior military adviser to supreme leader: 'War will continue until Tehran receives full compensation for damage sustained.' Sets a very high bar for any deal.",
-        "IRAN'S DEFENCE COUNCIL: Attack on southern coast/islands = sea mines across ENTIRE Gulf. 'The entire Gulf will be in a situation similar to Hormuz for a long time.'",
-        "7+ MISSILE WAVES at Israel Tuesday. Tel Aviv street hit. Dimona sirens again. Cluster munitions in Haifa area. Iran sustaining offensive tempo.",
-        "Hormuz: IRGC naval forces turned back a container ship from Sharjah (UAE) for 'lacking authorization.' De facto blockade continues.",
-        "Iran resumed gas supplies to Iraq (5M cubic metres/day). Maintaining some relationships while at war.",
-        "Backchannel countries: Pakistan (offered to host), Turkey (FM Fidan meeting all sides), Egypt, China (FM: 'talking better than fighting').",
-        "Iran's strategy: Deny direct talks publicly (preserves strength narrative) while engaging through intermediaries (pragmatic diplomacy). Classic dual-track.",
-      ],
-    },
-  },
-  {
-    id: "lebanon",
-    title: "LEBANON / HEZBOLLAH FRONT",
-    icon: "🔥",
-    content: {
-      heading: "ISRAEL TO RETAIN SOUTH OF LITANI / 1,072+ DEAD / BEIRUT EVACUATIONS",
-      lines: [
-        "KATZ: Israel plans to RETAIN TERRITORY south of Litani River — effectively moving the Israeli-Lebanese border. Hezbollah fired 3,500+ missiles/drones at Israel since Mar 2.",
-        "33 KILLED OVERNIGHT including 3-year-old child. Mass evacuation orders for Beirut's southern suburbs. IDF intensifying strikes on Hezbollah targets.",
-        "1,072+ killed in Lebanon. 2,966 wounded. 1M+ displaced. 33 dead in last 24 hours alone. Worst civilian toll of any front.",
-        "Iran's 5 conditions include END WAR ON ALL FRONTS — this means Hezbollah/Lebanon must be part of any deal. Israel won't agree to that.",
-        "Israel pushing FM Saar to get UNSC to designate Hezbollah as 'terrorist organisation.' Would legitimise permanent operations.",
-        "Iraq: 60+ killed. Iraqi govt granted Iran-backed PMF groups 'right to respond' to US attacks. US struck Anbar base killing 15 — Iraq summoned US diplomat.",
-        "Islamic Resistance in Iraq: 23 operations against 'enemy bases' in 24 hours. Iraq being pulled deeper into the conflict.",
-        "2,000+ vessels / 20,000 seafarers stranded. France's military chief planning talks to help restore maritime navigation.",
-        "European stagflation: Sharpest alarm in years. Airlines suspended. Arson attacks on Jewish institutions spreading across Western Europe.",
-        "Lebanon expelled Iranian ambassador. FM Raggi: persona non grata. Strongest Lebanese diplomatic move against Iran in decades.",
-      ],
-    },
-  },
-  {
-    id: "hormuz",
-    title: "STRAIT OF HORMUZ",
-    icon: "🚢",
-    content: {
-      heading: "GRACE PERIOD DAY 3 OF 5 — PREMISE DISPUTED BUT HOLDING",
-      lines: [
-        "GRACE PERIOD: 3 days left (expires ~Friday Mar 28). Energy strikes paused. But the 'productive talks' premise is disputed by Iran.",
-        "THE PARADOX: Trump paused energy strikes citing talks that Iran says don't exist. If Iran keeps denying, does Trump resume strikes Friday?",
-        "CENTCOM's Cooper: Hormuz is 'physically open' but ships stay away because Iran fires on them. Strait technically navigable, practically blockaded.",
-        "IRGC NAVY turned back UAE container ship this week. De facto blockade continues regardless of grace period or talk claims.",
-        "Iran Defence Council: If southern coast attacked, sea mines deployed across ENTIRE Persian Gulf. Escalation from Hormuz to whole Gulf.",
-        "3,000+ vessels still stranded. Insurance at historic highs. Commercial transit effectively zero.",
-        "IEA head Birol: 'Worse than 1973 and 1979 combined.' 40+ energy facilities across 9 countries damaged. IEA released 400M barrels but 'this is not the solution.'",
-        "Pakistan mediating, Turkey brokering, Egypt passing messages. Real diplomatic infrastructure being built even as both sides deny direct talks.",
-        "Qatar Ras Laffan: 5-year repair. Permanent structural damage to global LNG supply.",
-        "If grace period expires without progress: back to power plant ultimatum. If talks advance: possible Hormuz reopening framework.",
-      ],
-    },
-  },
-  {
-    id: "oil",
-    title: "OIL & ENERGY MARKETS",
-    icon: "🛢️",
-    content: {
-      heading: "BRENT ~$103 — WHIPSAW: $112 > $96 > $104 > $103 IN 4 DAYS",
-      lines: [
-        "BRENT: ~$103-104 today. Down from $112 Friday peak. Monday crashed to ~$96 on Trump talk claims, bounced to $104 Tuesday after Iran denied. Extreme volatility.",
-        "$3 TRILLION S&P SWING: Surged 240pts when Trump claimed talks. Fell 120pts when Iran denied. 56 minutes. Markets being moved by Truth Social posts.",
-        "OIL TRAJECTORY: If grace period leads to real talks > Brent could settle $90-95. If talks collapse Friday > snaps back to $110+. Binary outcome.",
-        "Goldman forecast still in play: Best case $70s by Q4 if Hormuz recovers. But 'longer lasting' impact — even with ceasefire, supply chains take months to rebuild.",
-        "US gas: $3.91/gal (+93¢ since war start). Oil pullback takes 2-3 weeks to reach pumps. No immediate consumer relief.",
-        "IEA Birol: Current crisis worse than 1970s oil shocks COMBINED. 40+ facilities across 9 countries damaged. 'No country will be immune.'",
-        "Asian refiners locked in April contracts at massive premiums — $18/bbl over Dubai. Rerouting costs embedded regardless of talks outcome.",
-        "European stagflation: Sharpest alarm in years. Input costs surging, output stalling, confidence collapsing. ECB policy dilemma deepening.",
-        "Ras Laffan: 5-year repair. Global LNG permanently disrupted. Thermal coal surging as substitute.",
-        "WATCH: CPI today (pre-war data, limited market impact). Grace period countdown. Pakistan mediation progress. Friday deadline.",
-      ],
-    },
-  },
-  {
-    id: "asx",
-    title: "ASX 200 / AU MARKETS",
-    icon: "📉",
-    content: {
-      heading: "CPI DAY — 11:30AM AEDT — PRE-WAR DATA 'OVERTAKEN BY EVENTS'",
-      lines: [
-        "[!] CPI DROPS 11:30AM: Feb data expected 3.8% annual (unchanged), trimmed mean 3.4%. This is PRE-WAR data — doesn't capture oil spike or war impact.",
-        "WHY IT STILL MATTERS: Trimmed mean is what RBA watches. If above 3.4%, May hike odds increase. If below, gives RBA room to pause. Even 'old' data moves rates.",
-        "Westpac forecast: Feb CPI +0.1% monthly, 3.8% annual. BUT: Under war scenario, headline could reach 4.6% by June quarter as fuel flows through.",
-        "ASX 200 opened ~8,428 Monday. Three sectors in bear market (Real Estate -23.6%, Materials -23.5%, Small Ords -20%). Oil pullback should help Tuesday/Wednesday.",
-        "AU 10-YEAR YIELD: Hit 5.17% Monday — highest since 2011. Oil pulling back from $112 to $103 should ease this. Watch yield reaction to CPI.",
-        "GOLD: $4,359 > bouncing? Worst week since 1983 last week (-10.5%). If risk appetite improves on talks hope, gold stays under pressure.",
-        "Energy stocks: Gave back some gains as oil pulled back from highs. Still up 16%+ since war began. Woodside, Santos remain core holdings.",
-        "Banks should benefit from easing oil pressure. Consumer discretionary deeply beaten down — potential recovery plays if CPI soft.",
-        "GSFM analyst: 'Even if conflict resolves, impact on oil markets will be longer lasting.' Markets 'waking up' to structural change.",
-        "KEY WATCH: CPI 11:30am, then grace period countdown Fri. This is the week that determines May RBA — and potentially AU mortgage rates.",
-      ],
-    },
-  },
-  {
-    id: "fuel_au",
-    title: "AUSTRALIA FUEL SITUATION",
-    icon: "⛽",
-    content: {
-      heading: "585 STATIONS REPORTING OUTAGES / VIC WORST HIT / FREE TRANSPORT IN 2 STATES",
-      lines: [
-        "[!] CHECKPETROL.COM.AU: 585 stations with potential outages out of 6,610 tracked nationally (9% outage rate). Data via @ideacasino + @hameonline.",
-        "STATE BREAKDOWN: VIC 233 (worst hit), QLD 176, NSW 164, TAS 5, ACT 4, WA 1, SA 1, NT 1. Victoria has overtaken NSW as the most affected state.",
-        "91% of stations still reporting fuel available — but outages concentrated in regional areas and spreading. VIC + QLD + NSW = 98% of all outages.",
-        "FREE PUBLIC TRANSPORT: Victoria free trains/trams/buses for April. Tasmania free buses/ferries until July. WA seeing big spike in public transport usage.",
-        "Brent at ~$107 (+50% since war began). 20 Pakistani ships now passing through Hormuz (2/day). But AU-bound shipping still not flowing.",
-        "Hormuz de facto closed for most commercial traffic. Iran codifying sovereignty + tolling via parliament. UK sending mine-clearing ship RFA Lyme Bay.",
-        "IF F-15 SHOT DOWN SUCCEED > Hormuz reopening framework > first meaningful AU supply arrives weeks 8-10 post-agreement. Full recovery 4-6 months.",
-        "IF TALKS FAIL > Back to power plant ultimatum Apr 6 > complete Hormuz closure > sea mines > depletion forecast worst case.",
-        "Govt MSO release + sulphur waiver still active. Fuel Supply Taskforce in PM&C. NOSEC discussing national dashboard (weeks away).",
-        "Diesel breaks the economy first: freight, farming, mining, emergency backup. NFF: food prices up 50% if shortages persist through seeding season.",
-      ],
-    },
-  },
-  {
-    id: "scenarios",
-    title: "SCENARIO ANALYSIS",
-    icon: "🔮",
-    content: {
-      heading: "DAY 35 — TRUMP SIGNALS EXIT BUT INTENSIFIES / F-15 CHANGES CALCULUS / ALLIANCE FRACTURING",
-      lines: [
-        "[!] THE CONTRADICTION: Trump says war 'nearing completion' and US leaving in 2-3 weeks. But ALSO says 'hit them extremely hard' and 'back to the Stone Ages.' These can't both be true.",
-        "SCENARIO A — MANAGED WIND-DOWN (30%): UP FROM 25%. Trump explicitly set a 2-3 week timeline. If he sticks to it, US exits mid-April regardless of Iran deal. Hormuz left to 'open naturally.'",
-        "SCENARIO B — ENERGY ESCALATION SPIRAL (20%): HOLDING. Trump threatened power plants again: 'hit each and every one simultaneously.' Bridge bombing shows willingness to target civilian infrastructure.",
-        "SCENARIO C — EXTENDED WAR (30%): DOWN FROM 35%. Trump's timeline narrows the window. But Iran vowed 'more crushing, broader, more destructive' attacks. War widening even as US signals exit.",
-        "SCENARIO D — REGIME COLLAPSE / GROUND INVASION (20%): F-15 shot down = first direct air combat loss. WSO missing. Hegseth fired Army chief during active war. Ground troops in theatre but no invasion order yet.",
-        "THE F-15 FACTOR: First US fighter jet shot down by Iran. Pilot rescued but WSO missing. A-10 also lost during rescue. 2 Black Hawks hit. Iran proving it can still fight back — 'decimated' is premature.",
-        "NATO FRACTURE: Trump threatening to leave NATO over allies not joining war. Macron: 'Don't say the opposite every day.' Spain already closed airspace. Alliance solidarity at lowest point in its history.",
-        "THE BRIDGE TEST: B1 bridge bombed with civilians underneath celebrating Nature Day. 8 dead, 95 wounded. Trump celebrated on Truth Social. International law experts: potential war crime.",
-        "IRAN'S DUAL TRACK: Military says fight continues until 'permanent regret and surrender.' But Pezeshkian wrote open letter to Americans appealing for peace. Same dual-track as before — harder to dismiss now.",
-        "APR 6 DEADLINE: 2 days away. But Trump's 2-3 week timeline has effectively superseded it. The real deadline is now mid-April. Grace period may expire without consequence for the third time.",
-      ],
-    }
-  },
-];
-
+const BRIEFING = {"site":{"version":"6.15","title":"OPSCEN v6.15 — Iran Theatre Intelligence Briefing","theatre":"IRAN THEATRE INTELLIGENCE BRIEFING","operation":"OPERATION EPIC FURY","day":36,"subhead":"48-HOUR ULTIMATUM — IRAN REJECTS CEASEFIRE CLAIM — HORMUZ STILL CHOKED","briefingEpoch":"05-APR-2026 1030 AEST","deadlineUtc":"2026-04-07T00:00:00.000Z","defconLevel":3,"defconSummary":"48-HOUR ULTIMATUM • IRAN DENIES CEASEFIRE • HORMUZ STILL CONTESTED","liveLabel":"LIVE"},"meta":{"description":"Day 36. Trump sets a 48-hour deadline, Iran rejects the ceasefire claim, and Hormuz remains effectively choked. Australia is still watching fuel supply and market spillovers.","ogDescription":"Day 36 — Trump warns Iran has 48 hours to surrender, Tehran says ceasefire claims are false, regional mediation continues, oil stays elevated and Australia remains on fuel watch."},"readme":{"repoTitle":"OPSCEN v6.15 — Iran Theatre Intelligence Briefing","tagline":"A real-time military operations centre dashboard tracking the 2026 Iran conflict, built entirely in [Claude](https://claude.ai) by [RETSA Group](https://retsagroup.com.au).","liveUrl":"https://mrummler17.github.io/operations-centre","whatIsThis":["Rather than flicking between 7 News, 9, ABC and YouTube trying to piece together what's happening with Iran — I type \"update briefing\" into Claude.","It searches the web, rebuilds my custom ops centre with today's intel, updates the UI on its own, and gives me personalised action items for my business and household.","Two words. Fresh every morning. The news comes to me now."],"features":["CRT military aesthetic — retro-futuristic operations centre design","Two-tab interface — Briefing view + interactive Fuel Depletion Forecast","Key metrics dashboard — quick-reference tiles at top of page","9 collapsible intelligence sections covering all theatres of the conflict","Australian Fuel Forecast module — interactive depletion projections for petrol, diesel, and jet fuel with scenario presets and adjustable parameters","Live system clock (AEDT + UTC)","DEFCON gauge with visual assessment","Multi-theatre threat matrix — 9 active zones tracked","Scenario analysis with probability-weighted forecasts","Australian-specific sections — ASX 200, RBA rate impacts, fuel crisis monitoring","UPDATED badges showing what changed since last briefing"],"currentBriefing":["Trump says Iran now has 48 hours to surrender or face attacks that would be \"worse than hell\".","Tehran rejected Trump's claim that President Pezeshkian requested a ceasefire and said trust for talks is effectively zero.","Regional mediation is still active through Pakistan, Turkey and Egypt even as public positions harden.","The US says two warplanes were lost in combat operations, with one crew member still listed as missing.","The Strait of Hormuz remains technically open but commercially choked by security risk and Iranian interference.","Oil stayed elevated above prewar levels, with global markets still vulnerable to each new escalation headline.","Lebanon's civilian toll kept rising, with more than 1,400 reported dead and around 1 million displaced.","Australia is moving deeper into fuel-watch mode, with the government saying more than 50 ships are inbound and supply assumptions hinge on mid-April cargoes.","European governments are discussing emergency energy measures as importers absorb higher crude and freight costs.","The working outlook is no clean ceasefire yet: more coercion, more mediation, and another hard deadline."],"howItWorks":["I say \"update briefing\" in Claude","Claude searches the web across multiple sources","It rebuilds the entire dashboard with fresh data","The UI updates without being asked","I get personalised action items"],"tech":"Single self-contained HTML file. React 18 via CDN. Zero build step. Zero dependencies. Deploy anywhere.","author":{"name":"Marcus Rummler","xUrl":"https://x.com/Marcus_Rummler","company":"RETSA Group","companyUrl":"https://retsagroup.com.au","bio":"Founder, [RETSA Group](https://retsagroup.com.au) — Instructional design & AI-powered tech solutions.","note":"I can't code. I've never been able to code. But I've shipped a SaaS product and built a military ops centre. All with AI."},"license":"MIT"},"keyMetrics":[{"label":"WAR DAY","value":"36","color":"var(--crt-red)"},{"label":"DEADLINE","value":"48 HRS","color":"var(--crt-amber)","delta":"APR 6/7 WINDOW","deltaColor":"#ffaa00"},{"label":"HORMUZ","value":"CHOKED","color":"var(--crt-red)","delta":"RISK PRICED IN","deltaColor":"#ff4400"},{"label":"IRAN","value":"DENIES","color":"var(--crt-red)","delta":"NO CEASEFIRE","deltaColor":"#ff4400"},{"label":"US AIR","value":"2 LOST","color":"var(--crt-red)","delta":"1 MISSING","deltaColor":"#ff4400"},{"label":"LEBANON","value":"1.4K+","color":"var(--crt-amber)","delta":"1M DISPLACED","deltaColor":"#ffaa00"},{"label":"LEAD SCENARIO","value":"STANDOFF","color":"var(--crt-amber)","delta":"35%","deltaColor":"#ffaa00"},{"label":"WIND-DOWN","value":"20%","color":"var(--crt-cyan)","delta":"MEDIATION ONLY","deltaColor":"#ffaa00"}],"threatMatrix":[{"theatre":"IRAN (MAINLAND)","level":"CRITICAL","color":"#ff0000"},{"theatre":"STRAIT OF HORMUZ","level":"CRITICAL","color":"#ff0000"},{"theatre":"ISRAEL (HOME)","level":"SEVERE","color":"#ff4400"},{"theatre":"LEBANON","level":"SEVERE","color":"#ff4400"},{"theatre":"YEMEN/HOUTHIS","level":"SEVERE","color":"#ff4400"},{"theatre":"GULF STATES","level":"HIGH","color":"#ffaa00"},{"theatre":"GLOBAL ECON","level":"HIGH","color":"#ffaa00"},{"theatre":"NUCLEAR","level":"HIGH","color":"#ffaa00"},{"theatre":"AUSTRALIA","level":"ELEVATED","color":"#cccc00"},{"theatre":"IRAQ/PROXIES","level":"ELEVATED","color":"#cccc00"}],"sections":[{"id":"sitrep","title":"SITUATION REPORT","icon":"⚡","content":{"heading":"DAY 36 -- 48-HOUR ULTIMATUM / CEASEFIRE CLAIM REJECTED / MEDIATION CHANNELS STILL OPEN","lines":["[!] TRUMP RESET THE CLOCK: On Friday, April 3, he said Iran had 48 hours to surrender or face strikes that would be 'worse than hell'.","TEHRAN REJECTED THE CLAIM that President Pezeshkian asked for a ceasefire. Iranian officials said there had been messages through mediators, but not the direct concession Trump described.","DIPLOMACY ISN'T DEAD: Pakistan, Turkey and Egypt are still carrying messages, showing the public rhetoric is harder than the private channel.","THE WAR IS STILL COSTLY FOR WASHINGTON: US officials say two warplanes have been lost and one crew member remains missing after combat operations over Iran.","TRUMP'S POSITION HAS SHIFTED from promising a shorter war to warning of a new 48-hour cliff. The dashboard now treats that deadline as the central near-term trigger.","IRAN'S PUBLIC LINE REMAINS DEFIANT: officials say trust in US negotiations is effectively zero and reject the idea that Tehran is close to capitulation.","THE CORE TENSION NOW is coercion versus mediated de-escalation: the ultimatum is real, but so are the intermediaries.","MARKETS ARE STILL TRADING THE HEADLINES: every public statement on talks, surrender or shipping access is moving crude and equities.","THE HUMAN COST KEEPS RISING across Iran, Lebanon and Israel while the diplomatic window narrows into early Monday, April 6.","WORKING JUDGMENT: no clean off-ramp yet, only a temporary overlap between maximum pressure and backchannel diplomacy."]}},{"id":"kinetic","title":"KINETIC OPERATIONS","icon":"🎯","content":{"heading":"AIR CAMPAIGN CONTINUES / US AIR LOSSES CONFIRMED / STRIKE TEMPO STILL HIGH","lines":["WASHINGTON HAS NOW PUBLICLY ACKNOWLEDGED losing two warplanes during the Iran campaign. That makes the air war costlier and more politically visible.","ONE CREW MEMBER IS STILL LISTED AS MISSING, keeping search-and-rescue pressure alive and raising the stakes of any further combat losses.","IRANIAN AIR DEFENCES are still contesting the skies enough to disrupt assumptions of complete allied air dominance.","STRIKE OPERATIONS CONTINUE across Iranian military and infrastructure targets even while mediation channels stay active.","THE KEY MILITARY SIGNAL is that neither side is acting like a ceasefire is imminent; force is still being used to shape the negotiating table.","IRAN'S WARNING TO THE GULF REMAINS IN PLACE: attacks on southern coastal infrastructure could trigger much wider maritime disruption.","ISRAEL'S NORTHERN FRONT REMAINS ACTIVE, forcing resources to be split between Iran, Lebanon and home-defence tasks.","COMMERCIAL AVIATION AND SHIPPING remain under stress because the military picture still points to escalation risk, not stabilisation.","EACH FRESH LOSS OR STRIKE now has outsized narrative impact because both camps are trying to prove momentum without conceding vulnerability.","WORKING JUDGMENT: the kinetic phase is still driving the diplomatic phase, not the other way around."]}},{"id":"iran_response","title":"IRANIAN RETALIATION","icon":"🚀","content":{"heading":"IRAN DENIES THE CEASEFIRE STORY BUT CONFIRMS MEDIATED CONTACT","lines":["IRAN'S OFFICIAL LINE: Trump is lying about a requested ceasefire. Tehran says it did not ask Washington for terms in the way he described.","AT THE SAME TIME, Iranian officials have acknowledged receiving US points through intermediaries. That means the channel exists even if the public framing is hostile.","FOREIGN MINISTER ARAQCHI said trust for talks is effectively zero, which is a signal of political posture as much as diplomatic substance.","IRAN CONTINUES TO USE DUAL-TRACK MESSAGING: public defiance for domestic and regional audiences, quiet message-passing to avoid strategic isolation.","THE REGIME IS TRYING TO SHOW it can absorb pressure, reject humiliation and still keep a pathway open if the military balance worsens.","IRAN'S STRAIT THREAT STILL MATTERS because every denial of talks raises the odds that shipping pressure is used as leverage instead.","PUBLIC DENIAL DOES NOT EQUAL NO CONTACT. For the dashboard, the better reading is 'mediated diplomacy under maximal coercion'.","THE COST OF MISREADING THIS is high: markets are reacting to headline rhetoric while the actual signal is buried in intermediary traffic.","IF THE MONDAY DEADLINE PASSES without visible progress, Tehran's public posture suggests it will blame Washington and double down on deterrence.","WORKING JUDGMENT: diplomacy is alive, but only through deniable channels and under heavy military pressure."]}},{"id":"lebanon","title":"LEBANON / HEZBOLLAH FRONT","icon":"🔥","content":{"heading":"LEBANON FRONT STILL BURNING / 1,400+ DEAD / 1M DISPLACED","lines":["LEBANON'S HEALTH MINISTRY TOLL has climbed above 1,400 dead, with roughly 1 million people displaced as strikes continue.","THAT MAKES LEBANON one of the clearest indicators that the wider regional war is not being contained by talk of deadlines or temporary pauses.","ISRAEL IS STILL HITTING Hezbollah-linked targets while the northern front remains live enough to complicate any broader de-escalation package.","ANY SERIOUS DEAL STILL HAS TO ANSWER the Lebanon question, because Tehran keeps tying regional de-escalation to all fronts, not just Iran's mainland.","THE HUMANITARIAN COST here is no longer a secondary theatre issue; it is one of the main political costs of prolonging the war.","EUROPEAN STATES are increasingly focused on spillover risks from Lebanon through migration, shipping and domestic security pressure.","THE LONGER THIS FRONT STAYS HOT, the harder it becomes to market any partial ceasefire as a genuine stabilisation plan.","LEBANON REMAINS A NEGOTIATION SPOILER: even if US-Iran contact improves, the proxy fronts can still break momentum.","WORKING JUDGMENT: this front is still escalation-prone and underpriced in political messaging.","BOTTOM LINE: the northern theatre remains one of the main reasons a clean ceasefire is unlikely in the immediate term."]}},{"id":"hormuz","title":"STRAIT OF HORMUZ","icon":"🚢","content":{"heading":"MONDAY DEADLINE LOOMS / STRAIT TECHNICALLY OPEN / COMMERCIAL FLOW STILL DISTORTED","lines":["THE CENTRAL TIMER NOW is the Monday, April 6 deadline implied by Trump's 48-hour warning on Friday, April 3.","HORMUZ IS STILL BEST DESCRIBED as physically open but commercially choked: ships can move, but many operators still judge the risk profile as unacceptable.","IRANIAN INTERFERENCE, INSURANCE COSTS and the threat of mining keep the strait operating below anything resembling normal conditions.","THIS IS WHY OIL HASN'T NORMALISED even on diplomacy headlines: the market still sees fragile access, not restored confidence.","MEDIATORS ARE TRYING TO BUY TIME, but the shipping picture says the private channel has not yet delivered operational relief.","THE LONGER THE DEADLINE HANGS unresolved, the more likely importers keep rerouting, delaying cargoes or paying crisis pricing.","FOR AUSTRALIA, THE STRAIT QUESTION matters less as a legal status issue and more as a shipping-risk issue. Cargo certainty is what counts.","A TRUE DE-ESCALATION SIGNAL WOULD BE visible commercial normalisation, not just political statements. That has not happened yet.","IF THE DEADLINE PASSES BADLY, Hormuz remains the fastest lever for renewed global energy panic.","WORKING JUDGMENT: de facto disruption persists, and the market still treats the strait as a live coercion zone."]}},{"id":"oil","title":"OIL & ENERGY MARKETS","icon":"🛢️","content":{"heading":"OIL STAYS ELEVATED / HEADLINE VOLATILITY PERSISTS / EMERGENCY MEASURES EXPANDING","lines":["CRUDE REMAINS WELL ABOVE prewar levels because shipping risk has not been solved, only narrated around.","THE MOST IMPORTANT MARKET PATTERN is not a single print, but the speed of reversals every time Washington or Tehran changes tone.","AP REPORTED US crude at $111.54 a barrel on Thursday, April 2, while policymakers across Europe discussed extra intervention to contain the shock.","EUROPE IS NOW CONSIDERING a windfall tax on producers and even partial strategic fuel rationing if the disruption stretches on.","IMPORTERS ARE STILL PAYING a wartime premium through insurance, rerouting and lower confidence in delivery schedules.","THAT MEANS EVEN A BETTER HEADLINE tomorrow would not instantly unwind the real-economy damage already priced into freight and refining chains.","THE MARKET IS STILL TRADING TWO QUESTIONS: does the Monday deadline trigger a new strike cycle, and can Hormuz traffic normalise in practice?","FOR AUSTRALIA, the external signal to watch is not just crude itself but refined-product availability across Asia-Pacific supply chains.","WORKING JUDGMENT: the oil story is still disruption-first, diplomacy-second.","BOTTOM LINE: energy markets remain one hostile headline away from another sharp leg higher."]}},{"id":"asx","title":"ASX 200 / AU MARKETS","icon":"📉","content":{"heading":"AUSTRALIA: OIL SHOCK STILL THE MAIN MARKET TRANSMISSION CHANNEL","lines":["AUSTRALIA'S MARKET RISK is still the imported oil shock rather than a domestic catalyst. Higher crude and freight costs remain the fastest path into local prices.","ABC REPORTED AUSTRALIAN SHARES were hit early in the conflict as oil surged, and that transmission channel remains the key one to watch.","IF CRUDE STAYS ELEVATED into mid-April, petrol and diesel pass-through becomes more visible for households, freight and food costs.","THE RBA PROBLEM is not one single print but the risk that another external energy shock delays any clean disinflation story.","ENERGY NAMES still benefit from the external price shock, while transport-heavy and consumer-sensitive sectors carry the pain.","MORTGAGE HOUSEHOLDS are not directly trading Hormuz, but they will feel it if fuel and logistics costs harden inflation expectations again.","THE LOCAL MARKET TEST is whether traders start treating this as a short war shock or a longer Asia-Pacific supply reset.","WORKING JUDGMENT: Australia's macro exposure remains second-order but real, and oil is still the transmission mechanism.","WATCH: crude direction, Asia refining constraints, shipping insurance and any shift in the Monday deadline.","BOTTOM LINE: if the energy disruption persists, Australia will feel it through prices before it feels it through shortages."]}},{"id":"fuel_au","title":"AUSTRALIA FUEL SITUATION","icon":"⛽","content":{"heading":"AU FUEL WATCH CONTINUES / MORE THAN 50 SHIPS INBOUND / OUTAGES STILL A LIVE ISSUE","lines":["CHECKPETROL'S LIVE TRACKER still shows outages around the country, though recent reporting says the national number has been easing from the earlier spike.","THE GUARDIAN REPORTED on Friday, April 3 that the government says more than 50 fuel ships are now headed to Australia.","ENERGY MINISTER CHRIS BOWEN said the country had roughly 39 days of petrol, 29 days of diesel and 30 days of jet fuel on hand, with fresh cargoes expected around mid-April.","THAT DOES NOT MEAN ALL CLEAR: local outages can still happen even when national stocks look manageable on paper.","AUSTRALIA'S VULNERABILITY is its reliance on imported refined product from Asia. If regional disruption lingers, local stability stays fragile.","PETROL PAIN IS VISIBLE TO CONSUMERS first, but diesel remains the strategic fuel because it underpins freight, agriculture, mining and backup power.","THE BEST SIGNAL FOR THIS PANEL is not rhetoric out of Washington; it is whether ships actually berth on time and refill the system.","IF THE MONDAY DEADLINE ENDS BADLY, the fuel-watch story extends. If mediation buys time, pressure should ease gradually rather than instantly.","WORKING JUDGMENT: Australia is still in a stressed but not yet systemic fuel position.","BOTTOM LINE: monitor CheckPetrol for local pain, but watch inbound cargoes for national relief."]}},{"id":"scenarios","title":"SCENARIO ANALYSIS","icon":"🔮","content":{"heading":"DAY 36 -- ULTIMATUM STANDOFF / MEDIATION WINDOW NARROW / NO CLEAN OFF-RAMP YET","lines":["[!] LEAD SCENARIO -- ULTIMATUM STANDOFF (35%): Trump keeps the coercive deadline alive, Iran refuses the public terms, and mediators scramble to stop the next strike cycle.","SCENARIO A -- EXTENDED WAR OF PRESSURE (30%): still highly plausible because neither side is behaving like it has accepted the other's political frame.","SCENARIO B -- ENERGY ESCALATION SPIRAL (20%): unchanged. Hormuz risk remains the fastest path from military theatre to global economic shock.","SCENARIO C -- MANAGED WIND-DOWN (20%): down. The private channel exists, but the public rhetoric is currently too hard to sell as a near-term settlement.","THE MOST IMPORTANT CHANGE since the previous briefing is that the deadline has replaced the old '2-3 weeks' frame as the immediate market and military trigger.","THE STRONGEST ARGUMENT against a clean ceasefire is that proxy fronts, shipping risk and air losses are still all active at the same time.","THE STRONGEST ARGUMENT against total breakdown is that intermediaries are still passing messages and neither side has fully shut the diplomatic door.","WATCH THE DIFFERENCE between public messaging and operational reality. The former is maximalist; the latter still contains bargaining behaviour.","IF MONDAY PASSES QUIETLY, probability shifts back toward a grudging stand-off. If it explodes, energy escalation becomes the lead case.","BOTTOM LINE: the next 48 hours matter more than any broad narrative about who is winning."]}}],"fuelModule":{"baseDate":"2026-03-10T00:00:00.000Z","stocksMl":{"petrol":1606,"diesel":2757,"jet":812},"dailyMl":{"petrol":43.4,"diesel":91.9,"jet":28},"msoMl":{"petrol":400,"diesel":362,"jet":0},"scenarios":{"optimistic":{"name":"GOVT OPTIMISTIC","demand":1,"imports":80,"refBoost":true,"reserve":true,"color":"#44cc44"},"current":{"name":"CURRENT TRAJECTORY","demand":1.3,"imports":60,"refBoost":true,"reserve":true,"color":"#ffaa00"},"prolonged":{"name":"HORMUZ PROLONGED","demand":1.5,"imports":30,"refBoost":true,"reserve":true,"color":"#ff6600"},"worst":{"name":"WORST CASE","demand":2,"imports":10,"refBoost":false,"reserve":false,"color":"#ff0000"}},"liveContext":[{"text":"585 stations reporting outages out of 6,610 tracked nationally (9% outage rate). Data: @ideacasino + @hameonline.","variant":"crit"},{"text":"VIC 233 / QLD 176 / NSW 164 / TAS 5 / ACT 4 / WA 1 / SA 1 / NT 1. Victoria worst affected.","variant":"crit"},{"text":"91% of stations still reporting fuel available but outages concentrated in regional areas.","variant":"warn"},{"text":"Free public transport: VIC (April) + TAS (until July). WA seeing big spike in PT usage.","variant":"warn"},{"text":"20 Pakistani ships now passing through Hormuz (2/day). AU-bound shipping still not flowing.","variant":"default"},{"text":"Diesel breaks the economy first: freight, farming, mining, emergency backup.","variant":"default"}],"sourceNotes":["Depletion model: Mar 3 Energy Minister Bowen (Parliament) + Mar 10 DCCEEW MSO Report.","Live outages: checkpetrol.com.au (@ideacasino + @hameonline). Updated daily."]},"links":{"claudeUrl":"https://claude.ai","companyUrl":"https://retsagroup.com.au","authorUrl":"https://x.com/Marcus_Rummler","fuelUrl":"https://checkpetrol.com.au"}};
 
 const DEFCON_LEVELS = [
-  { level: 1, label: "NUCLEAR WAR IMMINENT", color: "#ff0000", min: 0, max: 10 },
-  { level: 2, label: "NEXT STEP NUCLEAR WAR", color: "#ff4400", min: 10, max: 30 },
-  { level: 3, label: "INCREASE FORCE READINESS", color: "#ffaa00", min: 30, max: 55 },
-  { level: 4, label: "INCREASED INTELLIGENCE", color: "#44cc44", min: 55, max: 80 },
-  { level: 5, label: "LOWEST READINESS", color: "#4488ff", min: 80, max: 100 },
+  { level: 1, label: "NUCLEAR WAR IMMINENT", color: "#ff0000" },
+  { level: 2, label: "NEXT STEP NUCLEAR WAR", color: "#ff4400" },
+  { level: 3, label: "INCREASE FORCE READINESS", color: "#ffaa00" },
+  { level: 4, label: "INCREASED INTELLIGENCE", color: "#44cc44" },
+  { level: 5, label: "LOWEST READINESS", color: "#4488ff" },
 ];
 
-const THREAT_MATRIX = [
-  { theatre: "IRAN (MAINLAND)", level: "CRITICAL", color: "#ff0000", detail: "Nuclear sites hit / 1,900+ dead" },
-  { theatre: "STRAIT OF HORMUZ", level: "CRITICAL", color: "#ff0000", detail: "20 PAK ships through / fees regime" },
-  { theatre: "ISRAEL (HOME)", level: "SEVERE", color: "#ff4400", detail: "19 dead / Houthi + Iran salvos" },
-  { theatre: "LEBANON", level: "SEVERE", color: "#ff4400", detail: "1,189 dead / journalists targeted" },
-  { theatre: "YEMEN/HOUTHIS", level: "SEVERE", color: "#ff4400", detail: "NEW FRONT / attacking Israel" },
-  { theatre: "GULF STATES", level: "HIGH", color: "#ffaa00", detail: "Kuwait ports damaged / Riyadh hit" },
-  { theatre: "GLOBAL ECON", level: "HIGH", color: "#ffaa00", detail: "Brent $107 / S&P 5th losing week" },
-  { theatre: "NUCLEAR", level: "HIGH", color: "#ffaa00", detail: "Yazd + Arak struck / IAEA restraint" },
-  { theatre: "AUSTRALIA", level: "ELEVATED", color: "#cccc00", detail: "585 outages / free transport 2 states" },
-  { theatre: "IRAQ/PROXIES", level: "ELEVATED", color: "#cccc00", detail: "99 killed / PMF retaliating" },
-];
+function KeyMetrics() {
+  return (
+    <div className="key-metrics-bar">
+      {BRIEFING.keyMetrics.map((metric) => (
+        <div key={metric.label} className="metric-card">
+          <div className="metric-label">{metric.label}</div>
+          <div className="metric-value" style={{ color: metric.color }}>{metric.value}</div>
+          {metric.delta && <div className="metric-delta" style={{ color: metric.deltaColor }}>{metric.delta}</div>}
+        </div>
+      ))}
+    </div>
+  );
+}
 
-const CRT_STYLES = `
-  @import url('https://fonts.googleapis.com/css2?family=VT323&family=Share+Tech+Mono&display=swap');
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  :root { --crt-green: #33ff33; --crt-amber: #ffaa00; --crt-red: #ff3333; --crt-cyan: #00ffcc; --crt-dim: #4a9a4a; --crt-bg: #0a0e0a; --crt-panel: #0d120d; --crt-border: #1e4a1e; --crt-text: #33dd33; --crt-scanline: rgba(0,0,0,0.08); }
-  body { background: var(--crt-bg); color: var(--crt-text); font-family: 'VT323', monospace; overflow-x: hidden; }
-  .scanlines { position: fixed; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none; z-index: 9999; background: repeating-linear-gradient(0deg, transparent, transparent 2px, var(--crt-scanline) 2px, var(--crt-scanline) 4px); }
-  .crt-glow { text-shadow: 0 0 5px currentColor, 0 0 10px currentColor; }
-  .opscen-container { max-width: 1200px; margin: 0 auto; padding: 12px; min-height: 100vh; }
-  .header-bar { border: 1px solid var(--crt-green); padding: 12px 16px; margin-bottom: 12px; background: linear-gradient(180deg, rgba(0,40,0,0.3) 0%, var(--crt-bg) 100%); position: relative; overflow: hidden; }
-  .header-bar::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: var(--crt-green); box-shadow: 0 0 8px var(--crt-green); }
-  .header-title { font-size: 28px; letter-spacing: 6px; color: var(--crt-green); text-align: center; }
-  .header-sub { font-family: 'Share Tech Mono', monospace; font-size: 14px; color: var(--crt-amber); text-align: center; margin-top: 4px; letter-spacing: 2px; }
-  .status-row { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
-  .defcon-panel, .clock-panel { border: 1px solid var(--crt-border); padding: 10px 14px; background: var(--crt-panel); flex: 1; min-width: 200px; }
-  .defcon-gauge { display: flex; gap: 2px; margin: 8px 0; height: 20px; }
-  .defcon-seg { flex: 1; opacity: 0.2; transition: opacity 0.3s; }
-  .defcon-seg.active { opacity: 1; box-shadow: 0 0 6px currentColor; }
-  .threat-matrix { border: 1px solid var(--crt-border); padding: 10px; margin-bottom: 12px; background: var(--crt-panel); }
-  .threat-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px; margin-top: 8px; }
-  .threat-cell { display: flex; justify-content: space-between; align-items: center; padding: 6px 10px; border: 1px solid #1a2a1a; font-size: 0.95em; background: rgba(0,0,0,0.3); }
-  .threat-level { font-size: 12px; padding: 1px 6px; font-weight: bold; letter-spacing: 1px; }
-  .section-block { border: 1px solid var(--crt-border); margin-bottom: 6px; background: var(--crt-panel); transition: border-color 0.2s; }
-  .section-block:hover { border-color: var(--crt-dim); }
-  .section-header { display: flex; align-items: center; gap: 10px; padding: 10px 14px; cursor: pointer; user-select: none; font-size: 1.05em; letter-spacing: 2px; color: var(--crt-green); border-bottom: 1px solid transparent; transition: all 0.2s; }
-  .section-header:hover { background: rgba(0, 60, 0, 0.15); }
-  .section-header.open { border-bottom-color: var(--crt-border); }
-  .section-body { padding: 10px 14px; }
-  .section-heading { font-family: 'Share Tech Mono', monospace; font-size: 0.95em; color: var(--crt-amber); letter-spacing: 1px; margin-bottom: 8px; padding-bottom: 6px; border-bottom: 1px solid var(--crt-border); }
-  .intel-line { font-size: 1em; line-height: 1.6; padding: 3px 0; padding-left: 14px; position: relative; color: var(--crt-text); }
-  .intel-line::before { content: '▸'; position: absolute; left: 0; color: var(--crt-dim); }
-  .key-metrics-bar { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 6px; margin-bottom: 12px; }
-  .metric-card { border: 1px solid var(--crt-border); padding: 8px; text-align: center; background: var(--crt-panel); }
-  .metric-label { font-size: 12px; color: var(--crt-dim); letter-spacing: 2px; }
-  .metric-value { font-size: 24px; margin: 2px 0; }
-  .metric-delta { font-size: 12px; font-family: 'Share Tech Mono', monospace; }
-  .expand-all-btn { background: none; border: 1px solid var(--crt-dim); color: var(--crt-dim); font-family: 'VT323', monospace; font-size: 14px; padding: 4px 12px; cursor: pointer; letter-spacing: 1px; }
-  .expand-all-btn:hover { border-color: var(--crt-green); color: var(--crt-green); }
-  .footer-bar { border: 1px solid var(--crt-border); padding: 10px 16px; margin-top: 12px; display: flex; justify-content: space-between; font-size: 14px; color: var(--crt-dim); flex-wrap: wrap; gap: 8px; }
-  .built-with { text-align: center; font-size: 13px; color: var(--crt-dim); margin-top: 8px; padding-bottom: 20px; }
-  .built-with a { color: var(--crt-green); text-decoration: none; }
-  .built-with a:hover { text-decoration: underline; }
-  @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
-  .blink { animation: blink 1s infinite; }
-  .font-controls { display: flex; gap: 4px; align-items: center; }
-  .font-btn { background: none; border: 1px solid var(--crt-border); color: var(--crt-dim); font-family: 'VT323', monospace; padding: 2px 8px; cursor: pointer; transition: all 0.2s; }
-  .font-btn:hover { border-color: var(--crt-green); color: var(--crt-green); }
-  .font-btn.active { border-color: var(--crt-green); color: var(--crt-green); background: rgba(0,40,0,0.3); }
-  @media (max-width: 600px) { .header-title { font-size: 20px; letter-spacing: 3px; } .key-metrics-bar { grid-template-columns: repeat(2, 1fr); } .threat-grid { grid-template-columns: 1fr; } .status-row { flex-direction: column; } .footer-bar { flex-direction: column; text-align: center; } }
-`;
+function ThreatMatrix() {
+  return (
+    <div className="threat-matrix">
+      <div style={{ fontSize: 15, letterSpacing: 2, color: "var(--crt-green)" }}>{"◆"} THREAT MATRIX</div>
+      <div className="threat-grid">
+        {BRIEFING.threatMatrix.map((theatre) => (
+          <div key={theatre.theatre} className="threat-cell">
+            <span>{theatre.theatre}</span>
+            <span className="threat-level" style={{ color: theatre.color, border: `1px solid ${theatre.color}` }}>{theatre.level}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
 
-const KEY_METRICS = [
-  { label: "WAR DAY", value: "35", color: "var(--crt-red)" },
-  { label: "BRENT", value: "$119", color: "var(--crt-amber)", delta: "RECORD MONTH", deltaColor: "#ffaa00" },
-  { label: "GRACE ENDS", value: "APR 6", color: "var(--crt-amber)", delta: "8PM ET MON", deltaColor: "#ffaa00" },
-  { label: "F-15", value: "DOWN", color: "var(--crt-red)", delta: "WSO MISSING", deltaColor: "#ff4400" },
-  { label: "NATO", value: "EXIT?", color: "var(--crt-red)", delta: "THREATENED", deltaColor: "#ff4400" },
-  { label: "TIMELINE", value: "2-3 WKS", color: "var(--crt-amber)", delta: "STONE AGES", deltaColor: "#ffaa00" },
-  { label: "LEAD SCENARIO", value: "EXTENDED", color: "var(--crt-amber)", delta: "30%", deltaColor: "#ffaa00" },
-  { label: "WIND-DOWN", value: "30%", color: "var(--crt-cyan)", delta: "HOUTHIS HURT", deltaColor: "#ffaa00" },
-];
+function Section({ section, isOpen, toggle }) {
+  return (
+    <div className="section-block">
+      <div className={`section-header ${isOpen ? "open" : ""}`} onClick={toggle}>
+        <span style={{ fontSize: 12 }}>{isOpen ? "▼" : "▶"}</span>
+        <span>{section.icon}</span>
+        <span>{section.title}</span>
+      </div>
+      {isOpen && (
+        <div className="section-body">
+          <div className="section-heading">{section.content.heading}</div>
+          {section.content.lines.map((line, index) => <div key={index} className="intel-line">{line}</div>)}
+        </div>
+      )}
+    </div>
+  );
+}
 
+function DefconGauge({ level }) {
+  return (
+    <div className="defcon-gauge">
+      {DEFCON_LEVELS.map((defcon) => (
+        <div key={defcon.level} className={`defcon-seg ${defcon.level >= level ? "active" : ""}`} style={{ backgroundColor: defcon.color }} />
+      ))}
+    </div>
+  );
+}
 
+function useClock() {
+  const [now, setNow] = useState(new Date());
 
-function KeyMetrics() { return (<div className="key-metrics-bar">{KEY_METRICS.map((m) => (<div key={m.label} className="metric-card"><div className="metric-label">{m.label}</div><div className="metric-value" style={{ color: m.color }}>{m.value}</div>{m.delta && <div className="metric-delta" style={{ color: m.deltaColor }}>{m.delta}</div>}</div>))}</div>); }
-function ThreatMatrix() { return (<div className="threat-matrix"><div style={{ fontSize: 15, letterSpacing: 2, color: "var(--crt-green)" }}>{"\u25C6"} THREAT MATRIX</div><div className="threat-grid">{THREAT_MATRIX.map((t) => (<div key={t.theatre} className="threat-cell"><span>{t.theatre}</span><span className="threat-level" style={{ color: t.color, border: `1px solid ${t.color}` }}>{t.level}</span></div>))}</div></div>); }
-function Section({ section, isOpen, toggle }) { return (<div className="section-block"><div className={`section-header ${isOpen ? "open" : ""}`} onClick={toggle}><span style={{ fontSize: 12 }}>{isOpen ? "\u25BC" : "\u25B6"}</span><span>{section.icon}</span><span>{section.title}</span></div>{isOpen && (<div className="section-body"><div className="section-heading">{section.content.heading}</div>{section.content.lines.map((line, i) => (<div key={i} className="intel-line">{line}</div>))}</div>)}</div>); }
-function DefconGauge({ level }) { return (<div className="defcon-gauge">{DEFCON_LEVELS.map((d) => (<div key={d.level} className={`defcon-seg ${d.level >= level ? "active" : ""}`} style={{ backgroundColor: d.color }} />))}</div>); }
-function useClock() { const [now, setNow] = useState(new Date()); useEffect(() => { const id = setInterval(() => setNow(new Date()), 1000); return () => clearInterval(id); }, []); return now; }
+  useEffect(() => {
+    const id = setInterval(() => setNow(new Date()), 1000);
+    return () => clearInterval(id);
+  }, []);
 
+  return now;
+}
 
-/* FUEL MODULE */
-const FUEL_BASE_DATE = new Date("2026-03-10"), FUEL_STOCKS_ML = { petrol: 1606, diesel: 2757, jet: 812 }, FUEL_DAILY_ML = { petrol: 43.4, diesel: 91.9, jet: 28 }, FUEL_MSO_ML = { petrol: 400, diesel: 362, jet: 0 };
-const FUEL_SCENARIOS = { optimistic: { name: "GOVT OPTIMISTIC", demand: 1.0, imports: 80, refBoost: true, reserve: true, color: "#44cc44" }, current: { name: "CURRENT TRAJECTORY", demand: 1.3, imports: 60, refBoost: true, reserve: true, color: "#ffaa00" }, prolonged: { name: "HORMUZ PROLONGED", demand: 1.5, imports: 30, refBoost: true, reserve: true, color: "#ff6600" }, worst: { name: "WORST CASE", demand: 2.0, imports: 10, refBoost: false, reserve: false, color: "#ff0000" } };
-function projectFuel(p){var iF=p.imports/100,data=[],s={petrol:1606,diesel:2757,jet:812},rPD={petrol:p.reserve?FUEL_MSO_ML.petrol/21:0,diesel:p.reserve?FUEL_MSO_ML.diesel/21:0,jet:0},dD={petrol:null,diesel:null,jet:null};for(var d=0;d<=120;d++){data.push({day:d,date:new Date(FUEL_BASE_DATE.getTime()+d*864e5).toLocaleDateString("en-AU",{day:"numeric",month:"short"}),petrol:Math.max(0,s.petrol),diesel:Math.max(0,s.diesel),jet:Math.max(0,s.jet)});["petrol","diesel","jet"].forEach(function(f){var c=FUEL_DAILY_ML[f]*p.demand,im=FUEL_DAILY_ML[f]*iF,b=(f==="petrol"&&p.refBoost)?3.3:0,r=(d>=7&&d<28)?rPD[f]:0;s[f]=s[f]-c+im+b+r;if(s[f]<=0&&dD[f]===null){dD[f]=d;s[f]=0;}});}return{data:data,dryDays:dD};}
-function fuelDaysColor(d){return d<=7?"var(--crt-red)":d<=14?"var(--crt-amber)":"var(--crt-green)";}
-function fuelStatus(d){if(d<=0)return{text:"DEPLETED",color:"var(--crt-red)",bg:"rgba(255,50,50,0.15)",border:"var(--crt-red)"};if(d<=7)return{text:"EMERGENCY",color:"var(--crt-red)",bg:"rgba(255,50,50,0.1)",border:"var(--crt-red)"};if(d<=14)return{text:"RATIONING LIKELY",color:"var(--crt-amber)",bg:"rgba(255,170,0,0.1)",border:"var(--crt-amber)"};return{text:"MONITORING",color:"var(--crt-green)",bg:"rgba(50,255,50,0.05)",border:"var(--crt-green)"};}
-function FuelForecast(){var sD=useState(1.3),sI=useState(60),sR=useState(true),sRs=useState(true),sP=useState("current");var demand=sD[0],setDemand=sD[1],imports=sI[0],setImports=sI[1],refB=sR[0],setRefB=sR[1],res=sRs[0],setRes=sRs[1],preset=sP[0],setPreset=sP[1];function ap(k){var s=FUEL_SCENARIOS[k];setDemand(s.demand);setImports(s.imports);setRefB(s.refBoost);setRes(s.reserve);setPreset(k);}var r=projectFuel({demand:demand,imports:imports,refBoost:refB,reserve:res}),data=r.data,dryDays=r.dryDays;var W=900,H=300,pL=55,pR=15,pT=15,pB=35,pW=W-pL-pR,pH=H-pT-pB,maxV=Math.max(1606,2757,812)*1.05;function mP(k){var p=[];for(var i=0;i<=120;i++){var x=pL+(i/120)*pW,y=pT+pH-(data[i][k]/maxV)*pH;p.push((i===0?"M":"L")+x.toFixed(1)+","+y.toFixed(1));}return p.join(" ");}function mA(k){return mP(k)+" L"+(pL+pW)+","+(pT+pH)+" L"+pL+","+(pT+pH)+" Z";}function yP(v){return pT+pH-(v/maxV)*pH;}var fuels=[{name:"PETROL",key:"petrol"},{name:"DIESEL",key:"diesel"},{name:"JET FUEL",key:"jet"}];
-return React.createElement("div",null,React.createElement("div",{className:"countdown-row"},fuels.map(function(f){var days=dryDays[f.key]!==null?dryDays[f.key]:120,dep=dryDays[f.key]!==null;var dd=dep?new Date(FUEL_BASE_DATE.getTime()+dryDays[f.key]*864e5).toLocaleDateString("en-AU",{day:"numeric",month:"short"}):"120+ DAYS";var st=fuelStatus(dep?0:days);return React.createElement("div",{key:f.key,className:"cd-card"},React.createElement("div",{className:"cd-label"},f.name),React.createElement("div",{className:"cd-value",style:{color:dep?"var(--crt-red)":fuelDaysColor(days)}},dep?days:days>=120?"120+":days),React.createElement("div",{className:"cd-sub"},"DAYS UNTIL DEPLETION"),React.createElement("div",{className:"cd-sub",style:{color:dep?"var(--crt-red)":"var(--crt-dim)",marginTop:2}},dep?"DRY: "+dd:dd),React.createElement("div",{className:"cd-status",style:{color:st.color,background:st.bg,border:"1px solid "+st.border}},st.text));})),React.createElement("div",{className:"presets"},Object.keys(FUEL_SCENARIOS).map(function(k){var s=FUEL_SCENARIOS[k];return React.createElement("button",{key:k,className:"preset-btn "+(preset===k?"active":""),style:{border:"1px solid "+s.color,color:s.color},onClick:function(){ap(k);}},s.name);})),React.createElement("div",{className:"ctrl-box"},React.createElement("div",{className:"ctrl-title"},"INTERACTIVE PARAMETERS"),React.createElement("div",{className:"ctrl-grid"},React.createElement("div",{className:"ctrl-item"},React.createElement("label",null,"DEMAND MULTIPLIER ",React.createElement("span",{className:"ctrl-val"},demand.toFixed(1)+"x")),React.createElement("input",{type:"range",min:"0.8",max:"2.5",step:"0.1",value:demand,onChange:function(e){setDemand(parseFloat(e.target.value));setPreset(null);}})),React.createElement("div",{className:"ctrl-item"},React.createElement("label",null,"IMPORT FLOW RATE ",React.createElement("span",{className:"ctrl-val"},imports+"%")),React.createElement("input",{type:"range",min:"0",max:"100",step:"5",value:imports,onChange:function(e){setImports(parseInt(e.target.value));setPreset(null);}}))),React.createElement("div",{className:"toggle-row"},React.createElement("button",{className:"toggle-btn "+(refB?"on":""),onClick:function(){setRefB(!refB);setPreset(null);}},(refB?"[ON]":"[OFF]")+" SULPHUR WAIVER (+3.3 ML/day petrol)"),React.createElement("button",{className:"toggle-btn "+(res?"on":""),onClick:function(){setRes(!res);setPreset(null);}},(res?"[ON]":"[OFF]")+" MSO RESERVE RELEASE (762 ML)"))),React.createElement("div",{className:"chart-panel"},React.createElement("div",{className:"chart-title"},"DEPLETION CURVES - MILLION LITRES REMAINING"),React.createElement("svg",{viewBox:"0 0 "+W+" "+H,style:{width:"100%",height:"auto",fontFamily:"'Share Tech Mono', monospace"}},[0,.25,.5,.75,1].map(function(f){var y=pT+pH*(1-f);return React.createElement("line",{key:"g"+f,x1:pL,y1:y,x2:pL+pW,y2:y,stroke:"#1a3a1a",strokeDasharray:"3 3"})}),[0,.25,.5,.75,1].map(function(f){var y=pT+pH*(1-f);return React.createElement("text",{key:"yl"+f,x:pL-5,y:y+4,textAnchor:"end",fill:"#3a7a3a",fontSize:"10"},(maxV*f/1000).toFixed(1)+"k")}),[0,30,60,90,120].map(function(d){var x=pL+(d/120)*pW;return React.createElement("text",{key:"xl"+d,x:x,y:pT+pH+20,textAnchor:"middle",fill:"#3a7a3a",fontSize:"10"},data[d]?data[d].date:"");}),React.createElement("line",{x1:pL,y1:yP(14*91.9),x2:pL+pW,y2:yP(14*91.9),stroke:"#ffaa00",strokeDasharray:"6 3"}),React.createElement("text",{x:pL+pW-5,y:yP(14*91.9)-4,textAnchor:"end",fill:"#ffaa00",fontSize:"9"},"RATIONING 14d"),React.createElement("line",{x1:pL,y1:yP(7*91.9),x2:pL+pW,y2:yP(7*91.9),stroke:"#ff3333",strokeDasharray:"6 3"}),React.createElement("text",{x:pL+pW-5,y:yP(7*91.9)-4,textAnchor:"end",fill:"#ff3333",fontSize:"9"},"EMERGENCY 7d"),React.createElement("path",{d:mA("diesel"),fill:"rgba(255,102,0,0.15)"}),React.createElement("path",{d:mA("petrol"),fill:"rgba(51,255,51,0.15)"}),React.createElement("path",{d:mA("jet"),fill:"rgba(0,255,204,0.15)"}),React.createElement("path",{d:mP("petrol"),fill:"none",stroke:"#33ff33",strokeWidth:"2"}),React.createElement("path",{d:mP("diesel"),fill:"none",stroke:"#ff6600",strokeWidth:"2"}),React.createElement("path",{d:mP("jet"),fill:"none",stroke:"#00ffcc",strokeWidth:"2"}),React.createElement("line",{x1:pL,y1:pT,x2:pL,y2:pT+pH,stroke:"#3a7a3a"}),React.createElement("line",{x1:pL,y1:pT+pH,x2:pL+pW,y2:pT+pH,stroke:"#3a7a3a"})),React.createElement("div",{className:"legend-row"},React.createElement("div",{className:"legend-item"},React.createElement("div",{className:"legend-dot",style:{background:"#33ff33"}})," PETROL"),React.createElement("div",{className:"legend-item"},React.createElement("div",{className:"legend-dot",style:{background:"#ff6600"}})," DIESEL (PRIORITY)"),React.createElement("div",{className:"legend-item"},React.createElement("div",{className:"legend-dot",style:{background:"#00ffcc"}})," JET FUEL"),React.createElement("div",{className:"legend-item",style:{color:"#ffaa00"}},"--- RATIONING (14d)"),React.createElement("div",{className:"legend-item",style:{color:"#ff3333"}},"--- EMERGENCY (7d)"))),React.createElement("div",{className:"ctx-notes"},React.createElement("div",{className:"ctx-title"},"LIVE OUTAGE DATA (via checkpetrol.com.au)"),React.createElement("div",{className:"ctx-line crit"},"585 stations reporting outages out of 6,610 tracked nationally (9% outage rate). Data: @ideacasino + @hameonline."),React.createElement("div",{className:"ctx-line crit"},"VIC 233 / QLD 176 / NSW 164 / TAS 5 / ACT 4 / WA 1 / SA 1 / NT 1. Victoria worst affected."),React.createElement("div",{className:"ctx-line warn"},"91% of stations still reporting fuel available but outages concentrated in regional areas."),React.createElement("div",{className:"ctx-line warn"},"Free public transport: VIC (April) + TAS (until July). WA seeing big spike in PT usage."),React.createElement("div",{className:"ctx-line"},"20 Pakistani ships now passing through Hormuz (2/day). AU-bound shipping still not flowing."),React.createElement("div",{className:"ctx-line"},"Diesel breaks the economy first: freight, farming, mining, emergency backup.")),React.createElement("div",{className:"ctx-notes"},React.createElement("div",{className:"ctx-title"},"FORECAST DATA SOURCES"),React.createElement("div",{className:"ctx-line"},"Depletion model: Mar 3 Energy Minister Bowen (Parliament) + Mar 10 DCCEEW MSO Report."),React.createElement("div",{className:"ctx-line"},"Live outages: checkpetrol.com.au (@ideacasino + @hameonline). Updated daily.")));}
+function formatSydneyTime(date) {
+  const formatter = new Intl.DateTimeFormat("en-AU", {
+    timeZone: "Australia/Sydney",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    hour12: false,
+    timeZoneName: "short",
+  });
+  const parts = formatter.formatToParts(date);
+  const get = (type) => parts.find((part) => part.type === type)?.value || "";
+  return get("year") + "-" + get("month") + "-" + get("day") + " " + get("hour") + ":" + get("minute") + ":" + get("second") + " " + get("timeZoneName");
+}
 
+function formatUtcTime(date) {
+  return date.toISOString().replace("T", " ").slice(0, 19) + "Z";
+}
+
+const FUEL_BASE_DATE = new Date(BRIEFING.fuelModule.baseDate);
+const FUEL_STOCKS_ML = BRIEFING.fuelModule.stocksMl;
+const FUEL_DAILY_ML = BRIEFING.fuelModule.dailyMl;
+const FUEL_MSO_ML = BRIEFING.fuelModule.msoMl;
+const FUEL_SCENARIOS = BRIEFING.fuelModule.scenarios;
+
+function projectFuel(params) {
+  const importFactor = params.imports / 100;
+  const data = [];
+  const stocks = { ...FUEL_STOCKS_ML };
+  const reservePerDay = {
+    petrol: params.reserve ? FUEL_MSO_ML.petrol / 21 : 0,
+    diesel: params.reserve ? FUEL_MSO_ML.diesel / 21 : 0,
+    jet: 0,
+  };
+  const dryDays = { petrol: null, diesel: null, jet: null };
+
+  for (let day = 0; day <= 120; day += 1) {
+    data.push({
+      day,
+      date: new Date(FUEL_BASE_DATE.getTime() + day * 86400000).toLocaleDateString("en-AU", { day: "numeric", month: "short" }),
+      petrol: Math.max(0, stocks.petrol),
+      diesel: Math.max(0, stocks.diesel),
+      jet: Math.max(0, stocks.jet),
+    });
+
+    ["petrol", "diesel", "jet"].forEach((fuel) => {
+      const consumption = FUEL_DAILY_ML[fuel] * params.demand;
+      const imports = FUEL_DAILY_ML[fuel] * importFactor;
+      const refineryBoost = fuel === "petrol" && params.refBoost ? 3.3 : 0;
+      const reserveRelease = day >= 7 && day < 28 ? reservePerDay[fuel] : 0;
+
+      stocks[fuel] = stocks[fuel] - consumption + imports + refineryBoost + reserveRelease;
+
+      if (stocks[fuel] <= 0 && dryDays[fuel] === null) {
+        dryDays[fuel] = day;
+        stocks[fuel] = 0;
+      }
+    });
+  }
+
+  return { data, dryDays };
+}
+
+function fuelDaysColor(days) {
+  if (days <= 7) return "var(--crt-red)";
+  if (days <= 14) return "var(--crt-amber)";
+  return "var(--crt-green)";
+}
+
+function fuelStatus(daysUntilEmpty, depleted) {
+  if (depleted) return { text: "DEPLETED", color: "var(--crt-red)", bg: "rgba(255,50,50,0.15)", border: "var(--crt-red)" };
+  if (daysUntilEmpty <= 7) return { text: "EMERGENCY", color: "var(--crt-red)", bg: "rgba(255,50,50,0.1)", border: "var(--crt-red)" };
+  if (daysUntilEmpty <= 14) return { text: "RATIONING LIKELY", color: "var(--crt-amber)", bg: "rgba(255,170,0,0.1)", border: "var(--crt-amber)" };
+  return { text: "MONITORING", color: "var(--crt-green)", bg: "rgba(50,255,50,0.05)", border: "var(--crt-green)" };
+}
+
+function FuelForecast() {
+  const [demand, setDemand] = useState(FUEL_SCENARIOS.current.demand);
+  const [imports, setImports] = useState(FUEL_SCENARIOS.current.imports);
+  const [refBoost, setRefBoost] = useState(FUEL_SCENARIOS.current.refBoost);
+  const [reserve, setReserve] = useState(FUEL_SCENARIOS.current.reserve);
+  const [preset, setPreset] = useState("current");
+
+  function applyPreset(key) {
+    const scenario = FUEL_SCENARIOS[key];
+    setDemand(scenario.demand);
+    setImports(scenario.imports);
+    setRefBoost(scenario.refBoost);
+    setReserve(scenario.reserve);
+    setPreset(key);
+  }
+
+  const result = projectFuel({ demand, imports, refBoost, reserve });
+  const chartData = result.data;
+  const dryDays = result.dryDays;
+  const width = 900;
+  const height = 300;
+  const paddingLeft = 55;
+  const paddingRight = 15;
+  const paddingTop = 15;
+  const paddingBottom = 35;
+  const plotWidth = width - paddingLeft - paddingRight;
+  const plotHeight = height - paddingTop - paddingBottom;
+  const maxValue = Math.max(FUEL_STOCKS_ML.petrol, FUEL_STOCKS_ML.diesel, FUEL_STOCKS_ML.jet) * 1.05;
+  const fuels = [
+    { name: "PETROL", key: "petrol", color: "#33ff33" },
+    { name: "DIESEL", key: "diesel", color: "#ff6600" },
+    { name: "JET FUEL", key: "jet", color: "#00ffcc" },
+  ];
+
+  function seriesPath(key) {
+    return chartData.map((point, index) => {
+      const x = paddingLeft + (index / 120) * plotWidth;
+      const y = paddingTop + plotHeight - (point[key] / maxValue) * plotHeight;
+      return `${index === 0 ? "M" : "L"}${x.toFixed(1)},${y.toFixed(1)}`;
+    }).join(" ");
+  }
+
+  function areaPath(key) {
+    return `${seriesPath(key)} L${paddingLeft + plotWidth},${paddingTop + plotHeight} L${paddingLeft},${paddingTop + plotHeight} Z`;
+  }
+
+  function yPosition(value) {
+    return paddingTop + plotHeight - (value / maxValue) * plotHeight;
+  }
+
+  return (
+    <div>
+      <div className="countdown-row">
+        {fuels.map((fuel) => {
+          const depleted = dryDays[fuel.key] !== null;
+          const daysUntilEmpty = depleted ? dryDays[fuel.key] : 120;
+          const depletionDate = depleted
+            ? new Date(FUEL_BASE_DATE.getTime() + dryDays[fuel.key] * 86400000).toLocaleDateString("en-AU", { day: "numeric", month: "short" })
+            : "120+ DAYS";
+          const status = fuelStatus(daysUntilEmpty, depleted);
+
+          return (
+            <div key={fuel.key} className="cd-card">
+              <div className="cd-label">{fuel.name}</div>
+              <div className="cd-value" style={{ color: depleted ? "var(--crt-red)" : fuelDaysColor(daysUntilEmpty) }}>
+                {depleted ? daysUntilEmpty : daysUntilEmpty >= 120 ? "120+" : daysUntilEmpty}
+              </div>
+              <div className="cd-sub">DAYS UNTIL DEPLETION</div>
+              <div className="cd-sub" style={{ color: depleted ? "var(--crt-red)" : "var(--crt-dim)", marginTop: 2 }}>
+                {depleted ? `DRY: ${depletionDate}` : depletionDate}
+              </div>
+              <div className="cd-status" style={{ color: status.color, background: status.bg, border: `1px solid ${status.border}` }}>
+                {status.text}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      <div className="presets">
+        {Object.entries(FUEL_SCENARIOS).map(([key, scenario]) => (
+          <button
+            key={key}
+            className={`preset-btn ${preset === key ? "active" : ""}`}
+            style={{ border: `1px solid ${scenario.color}`, color: scenario.color }}
+            onClick={() => applyPreset(key)}
+          >
+            {scenario.name}
+          </button>
+        ))}
+      </div>
+
+      <div className="ctrl-box">
+        <div className="ctrl-title">INTERACTIVE PARAMETERS</div>
+        <div className="ctrl-grid">
+          <div className="ctrl-item">
+            <label>DEMAND MULTIPLIER <span className="ctrl-val">{demand.toFixed(1)}x</span></label>
+            <input type="range" min="0.8" max="2.5" step="0.1" value={demand} onChange={(event) => { setDemand(parseFloat(event.target.value)); setPreset(null); }} />
+          </div>
+          <div className="ctrl-item">
+            <label>IMPORT FLOW RATE <span className="ctrl-val">{imports}%</span></label>
+            <input type="range" min="0" max="100" step="5" value={imports} onChange={(event) => { setImports(parseInt(event.target.value, 10)); setPreset(null); }} />
+          </div>
+        </div>
+        <div className="toggle-row">
+          <button className={`toggle-btn ${refBoost ? "on" : ""}`} onClick={() => { setRefBoost(!refBoost); setPreset(null); }}>
+            {(refBoost ? "[ON]" : "[OFF]") + " SULPHUR WAIVER (+3.3 ML/day petrol)"}
+          </button>
+          <button className={`toggle-btn ${reserve ? "on" : ""}`} onClick={() => { setReserve(!reserve); setPreset(null); }}>
+            {(reserve ? "[ON]" : "[OFF]") + " MSO RESERVE RELEASE (762 ML)"}
+          </button>
+        </div>
+      </div>
+
+      <div className="chart-panel">
+        <div className="chart-title">DEPLETION CURVES - MILLION LITRES REMAINING</div>
+        <svg viewBox={`0 0 ${width} ${height}`} style={{ width: "100%", height: "auto", fontFamily: "'Share Tech Mono', monospace" }}>
+          {[0, 0.25, 0.5, 0.75, 1].map((fraction) => {
+            const y = paddingTop + plotHeight * (1 - fraction);
+            return <line key={`grid-${fraction}`} x1={paddingLeft} y1={y} x2={paddingLeft + plotWidth} y2={y} stroke="#1a3a1a" strokeDasharray="3 3" />;
+          })}
+          {[0, 0.25, 0.5, 0.75, 1].map((fraction) => {
+            const y = paddingTop + plotHeight * (1 - fraction);
+            return <text key={`label-${fraction}`} x={paddingLeft - 5} y={y + 4} textAnchor="end" fill="#3a7a3a" fontSize="10">{(maxValue * fraction / 1000).toFixed(1)}k</text>;
+          })}
+          {[0, 30, 60, 90, 120].map((day) => {
+            const x = paddingLeft + (day / 120) * plotWidth;
+            return <text key={`day-${day}`} x={x} y={paddingTop + plotHeight + 20} textAnchor="middle" fill="#3a7a3a" fontSize="10">{chartData[day] ? chartData[day].date : ""}</text>;
+          })}
+          <line x1={paddingLeft} y1={yPosition(14 * FUEL_DAILY_ML.diesel)} x2={paddingLeft + plotWidth} y2={yPosition(14 * FUEL_DAILY_ML.diesel)} stroke="#ffaa00" strokeDasharray="6 3" />
+          <text x={paddingLeft + plotWidth - 5} y={yPosition(14 * FUEL_DAILY_ML.diesel) - 4} textAnchor="end" fill="#ffaa00" fontSize="9">RATIONING 14d</text>
+          <line x1={paddingLeft} y1={yPosition(7 * FUEL_DAILY_ML.diesel)} x2={paddingLeft + plotWidth} y2={yPosition(7 * FUEL_DAILY_ML.diesel)} stroke="#ff3333" strokeDasharray="6 3" />
+          <text x={paddingLeft + plotWidth - 5} y={yPosition(7 * FUEL_DAILY_ML.diesel) - 4} textAnchor="end" fill="#ff3333" fontSize="9">EMERGENCY 7d</text>
+          <path d={areaPath("diesel")} fill="rgba(255,102,0,0.15)" />
+          <path d={areaPath("petrol")} fill="rgba(51,255,51,0.15)" />
+          <path d={areaPath("jet")} fill="rgba(0,255,204,0.15)" />
+          <path d={seriesPath("petrol")} fill="none" stroke="#33ff33" strokeWidth="2" />
+          <path d={seriesPath("diesel")} fill="none" stroke="#ff6600" strokeWidth="2" />
+          <path d={seriesPath("jet")} fill="none" stroke="#00ffcc" strokeWidth="2" />
+          <line x1={paddingLeft} y1={paddingTop} x2={paddingLeft} y2={paddingTop + plotHeight} stroke="#3a7a3a" />
+          <line x1={paddingLeft} y1={paddingTop + plotHeight} x2={paddingLeft + plotWidth} y2={paddingTop + plotHeight} stroke="#3a7a3a" />
+        </svg>
+        <div className="legend-row">
+          <div className="legend-item"><div className="legend-dot" style={{ background: "#33ff33" }} /> PETROL</div>
+          <div className="legend-item"><div className="legend-dot" style={{ background: "#ff6600" }} /> DIESEL (PRIORITY)</div>
+          <div className="legend-item"><div className="legend-dot" style={{ background: "#00ffcc" }} /> JET FUEL</div>
+          <div className="legend-item" style={{ color: "#ffaa00" }}>--- RATIONING (14d)</div>
+          <div className="legend-item" style={{ color: "#ff3333" }}>--- EMERGENCY (7d)</div>
+        </div>
+      </div>
+
+      <div className="ctx-notes">
+        <div className="ctx-title">LIVE OUTAGE DATA (via checkpetrol.com.au)</div>
+        {BRIEFING.fuelModule.liveContext.map((line) => <div key={line.text} className={`ctx-line ${line.variant === "default" ? "" : line.variant}`}>{line.text}</div>)}
+      </div>
+
+      <div className="ctx-notes">
+        <div className="ctx-title">FORECAST DATA SOURCES</div>
+        {BRIEFING.fuelModule.sourceNotes.map((note) => <div key={note} className="ctx-line">{note}</div>)}
+      </div>
+    </div>
+  );
+}
 
 function OPSCEN() {
   const clock = useClock();
   const [openSections, setOpenSections] = useState({ sitrep: true });
   const [allOpen, setAllOpen] = useState(false);
   const [fontSize, setFontSize] = useState(1);
-  const fontScale = [14, 16, 19][fontSize];
   const [activeTab, setActiveTab] = useState("briefing");
-  const defconLevel = 3;
-  const toggle = useCallback((id) => { setOpenSections((p) => ({ ...p, [id]: !p[id] })); }, []);
-  const toggleAll = useCallback(() => { const n = !allOpen; setAllOpen(n); const s = {}; SECTIONS.forEach((sec) => (s[sec.id] = n)); setOpenSections(s); }, [allOpen]);
-  const defconInfo = DEFCON_LEVELS.find((d) => d.level === defconLevel);
-  const utcStr = clock.toISOString().replace("T"," ").slice(0,19)+"Z";
-  const aest = new Date(clock.getTime()+11*3600000);
-  const aestStr = aest.toISOString().replace("T"," ").slice(0,19)+" AEDT";
-  const deadlineUTC = new Date(Date.UTC(2026,3,7,0,0,0));
-  const msLeft = deadlineUTC - clock;
-  const daysLeft = Math.max(0, Math.ceil(msLeft/86400000));
-  const countdownStr = msLeft > 0 ? `${daysLeft} DAY${daysLeft!==1?"S":""} REMAINING` : "EXPIRED";
+  const fontScale = [14, 16, 19][fontSize];
+  const defconLevel = BRIEFING.site.defconLevel;
+  const defconInfo = DEFCON_LEVELS.find((item) => item.level === defconLevel);
+  const utcStr = formatUtcTime(clock);
+  const sydneyStr = formatSydneyTime(clock);
+  const deadlineUtc = new Date(BRIEFING.site.deadlineUtc);
+  const msLeft = deadlineUtc - clock;
+  const daysLeft = Math.max(0, Math.ceil(msLeft / 86400000));
+  const countdownStr = msLeft > 0 ? `${daysLeft} DAY${daysLeft !== 1 ? "S" : ""} REMAINING` : "EXPIRED";
+
+  const toggleSection = useCallback((id) => {
+    setOpenSections((previous) => ({ ...previous, [id]: !previous[id] }));
+  }, []);
+
+  const toggleAll = useCallback(() => {
+    const nextState = !allOpen;
+    setAllOpen(nextState);
+    const nextSections = {};
+    BRIEFING.sections.forEach((section) => {
+      nextSections[section.id] = nextState;
+    });
+    setOpenSections(nextSections);
+  }, [allOpen]);
+
   return (
     <React.Fragment>
       <div className="scanlines" />
       <div className="opscen-container" style={{ fontSize: fontScale }}>
         <div className="header-bar">
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-            <div className="header-title crt-glow">{"\u25E4"} OPSCEN v6.14 {"\u25E2"}</div>
+            <div className="header-title crt-glow">{"◤"} OPSCEN v{BRIEFING.site.version} {"◢"}</div>
             <div className="font-controls">
               <button className={`font-btn ${fontSize === 0 ? "active" : ""}`} onClick={() => setFontSize(0)} style={{ fontSize: 13 }}>A-</button>
               <button className={`font-btn ${fontSize === 1 ? "active" : ""}`} onClick={() => setFontSize(1)} style={{ fontSize: 16 }}>A</button>
               <button className={`font-btn ${fontSize === 2 ? "active" : ""}`} onClick={() => setFontSize(2)} style={{ fontSize: 20 }}>A+</button>
             </div>
           </div>
-          <div className="header-sub">IRAN THEATRE INTELLIGENCE BRIEFING &mdash; OPERATION EPIC FURY &mdash; DAY 35</div>
-          <div className="header-sub" style={{ color: "var(--crt-amber)", marginTop: 2 }}>STONE AGES IN 2-3 WEEKS &mdash; F-15 SHOT DOWN &mdash; NATO EXIT THREATENED</div>
-          <div style={{ textAlign: "center", marginTop: 8, fontSize: 32, color: "var(--crt-amber)", fontFamily: "'Share Tech Mono', monospace", textShadow: "0 0 10px #ffaa00, 0 0 20px #ffaa00" }}>GRACE PERIOD: {countdownStr}</div>
-        </div>
-        <div className="tab-bar">
-          <button className={"tab-btn "+(activeTab==="briefing"?"active":"")} onClick={() => setActiveTab("briefing")}>{"\u26A1"} BRIEFING</button>
-          <button className={"tab-btn "+(activeTab==="fuel"?"active":"")} onClick={() => setActiveTab("fuel")}>{"\u26FD"} FUEL FORECAST</button>
-        </div>
-        {activeTab === "briefing" && (<React.Fragment>
-          <KeyMetrics />
-          <div className="status-row">
-            <div className="defcon-panel">
-              <div style={{ fontSize: 14, color: "var(--crt-green)", letterSpacing: 2 }}>DEFCON ASSESSMENT</div>
-              <DefconGauge level={defconLevel} />
-              <div style={{ display: "flex", justifyContent: "space-between", fontSize: 14 }}><span style={{ color: defconInfo.color }}>DEFCON {defconLevel}</span><span style={{ color: defconInfo.color, fontSize: 12 }}>{defconInfo.label}</span></div>
-              <div style={{ fontSize: 12, color: "var(--crt-dim)", marginTop: 4 }}>F-15 SHOT DOWN &bull; NATO EXIT THREATENED &bull; STONE AGES 2-3 WKS</div>
-            </div>
-            <div className="clock-panel">
-              <div style={{ fontSize: 14, color: "var(--crt-green)", letterSpacing: 2 }}>SYSTEM CLOCK</div>
-              <div style={{ fontSize: 22, color: "var(--crt-amber)", marginTop: 6, fontFamily: "'Share Tech Mono', monospace" }}>{aestStr}</div>
-              <div style={{ fontSize: 13, color: "var(--crt-dim)", marginTop: 2, fontFamily: "'Share Tech Mono', monospace" }}>{utcStr}</div>
-              <div style={{ fontSize: 12, color: "var(--crt-dim)", marginTop: 4 }}>BRIEFING EPOCH: 04-APR-2026 0900 AEDT</div>
-            </div>
+          <div className="header-sub">{BRIEFING.site.theatre} &mdash; {BRIEFING.site.operation} &mdash; DAY {BRIEFING.site.day}</div>
+          <div className="header-sub" style={{ color: "var(--crt-amber)", marginTop: 2 }}>{BRIEFING.site.subhead}</div>
+          <div style={{ textAlign: "center", marginTop: 8, fontSize: 32, color: "var(--crt-amber)", fontFamily: "'Share Tech Mono', monospace", textShadow: "0 0 10px #ffaa00, 0 0 20px #ffaa00" }}>
+            GRACE PERIOD: {countdownStr}
           </div>
-          <ThreatMatrix />
-          <div style={{ display: "flex", justifyContent: "flex-end", marginBottom: 6 }}><button className="expand-all-btn" onClick={toggleAll}>{allOpen ? "\u25BC COLLAPSE ALL" : "\u25B6 EXPAND ALL"}</button></div>
-          {SECTIONS.map((s) => (<Section key={s.id} section={s} isOpen={!!openSections[s.id]} toggle={() => toggle(s.id)} />))}
-        </React.Fragment>)}
+        </div>
+
+        <div className="tab-bar">
+          <button className={`tab-btn ${activeTab === "briefing" ? "active" : ""}`} onClick={() => setActiveTab("briefing")}>{"⚡"} BRIEFING</button>
+          <button className={`tab-btn ${activeTab === "fuel" ? "active" : ""}`} onClick={() => setActiveTab("fuel")}>{"⛽"} FUEL FORECAST</button>
+        </div>
+
+        {activeTab === "briefing" && (
+          <React.Fragment>
+            <KeyMetrics />
+            <div className="status-row">
+              <div className="defcon-panel">
+                <div style={{ fontSize: 14, color: "var(--crt-green)", letterSpacing: 2 }}>DEFCON ASSESSMENT</div>
+                <DefconGauge level={defconLevel} />
+                <div style={{ display: "flex", justifyContent: "space-between", fontSize: 14 }}>
+                  <span style={{ color: defconInfo.color }}>DEFCON {defconLevel}</span>
+                  <span style={{ color: defconInfo.color, fontSize: 12 }}>{defconInfo.label}</span>
+                </div>
+                <div style={{ fontSize: 12, color: "var(--crt-dim)", marginTop: 4 }}>{BRIEFING.site.defconSummary}</div>
+              </div>
+              <div className="clock-panel">
+                <div style={{ fontSize: 14, color: "var(--crt-green)", letterSpacing: 2 }}>SYSTEM CLOCK</div>
+                <div style={{ fontSize: 22, color: "var(--crt-amber)", marginTop: 6, fontFamily: "'Share Tech Mono', monospace" }}>{sydneyStr}</div>
+                <div style={{ fontSize: 13, color: "var(--crt-dim)", marginTop: 2, fontFamily: "'Share Tech Mono', monospace" }}>{utcStr}</div>
+                <div style={{ fontSize: 12, color: "var(--crt-dim)", marginTop: 4 }}>BRIEFING EPOCH: {BRIEFING.site.briefingEpoch}</div>
+              </div>
+            </div>
+
+            <ThreatMatrix />
+            <div style={{ display: "flex", justifyContent: "flex-end", marginBottom: 6 }}>
+              <button className="expand-all-btn" onClick={toggleAll}>{allOpen ? "▼ COLLAPSE ALL" : "▶ EXPAND ALL"}</button>
+            </div>
+            {BRIEFING.sections.map((section) => (
+              <Section key={section.id} section={section} isOpen={!!openSections[section.id]} toggle={() => toggleSection(section.id)} />
+            ))}
+          </React.Fragment>
+        )}
+
         {activeTab === "fuel" && <FuelForecast />}
-        <div className="footer-bar"><span>OPSCEN v6.14 &bull; RETSA GROUP INTELLIGENCE</span><span>CLASSIFICATION: OPEN SOURCE</span><span><span className="blink" style={{ color: "var(--crt-red)" }}>&bull;</span> LIVE</span></div>
-        <div className="built-with">Built entirely in <a href="https://claude.ai" target="_blank" rel="noopener">Claude</a> by <a href="https://retsagroup.com.au" target="_blank" rel="noopener">RETSA Group</a> &bull; <a href="https://x.com/Marcus_Rummler" target="_blank" rel="noopener">@Marcus_Rummler</a> &bull; Fuel outage data via <a href="https://checkpetrol.com.au" target="_blank" rel="noopener">checkpetrol.com.au</a></div>
+
+        <div className="footer-bar">
+          <span>OPSCEN v{BRIEFING.site.version} • RETSA GROUP INTELLIGENCE</span>
+          <span>CLASSIFICATION: OPEN SOURCE</span>
+          <span><span className="blink" style={{ color: "var(--crt-red)" }}>•</span> {BRIEFING.site.liveLabel}</span>
+        </div>
+        <div className="built-with">
+          Built entirely in <a href={BRIEFING.links.claudeUrl} target="_blank" rel="noopener">Claude</a> by <a href={BRIEFING.links.companyUrl} target="_blank" rel="noopener">RETSA Group</a> • <a href={BRIEFING.links.authorUrl} target="_blank" rel="noopener">@Marcus_Rummler</a> • Fuel outage data via <a href={BRIEFING.links.fuelUrl} target="_blank" rel="noopener">checkpetrol.com.au</a>
+        </div>
       </div>
     </React.Fragment>
   );
 }
-ReactDOM.createRoot(document.getElementById('root')).render(<OPSCEN />);
 
+ReactDOM.createRoot(document.getElementById("root")).render(<OPSCEN />);
 </script>
 </body>
 </html>

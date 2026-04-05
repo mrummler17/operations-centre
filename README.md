@@ -1,4 +1,4 @@
-# OPSCEN v6.14 — Iran Theatre Intelligence Briefing
+# OPSCEN v6.15 — Iran Theatre Intelligence Briefing
 
 A real-time military operations centre dashboard tracking the 2026 Iran conflict, built entirely in [Claude](https://claude.ai) by [RETSA Group](https://retsagroup.com.au).
 
@@ -17,31 +17,27 @@ Two words. Fresh every morning. The news comes to me now.
 - **CRT military aesthetic** — retro-futuristic operations centre design
 - **Two-tab interface** — Briefing view + interactive Fuel Depletion Forecast
 - **Key metrics dashboard** — quick-reference tiles at top of page
-- **9 collapsible intelligence sections** covering all theatres of the conflict
+- **9 collapsible intelligence sections covering all theatres of the conflict**
 - **Australian Fuel Forecast module** — interactive depletion projections for petrol, diesel, and jet fuel with scenario presets and adjustable parameters
-- **Live system clock** (AEDT + UTC)
-- **DEFCON gauge** with visual assessment
+- **Live system clock (AEDT + UTC)**
+- **DEFCON gauge with visual assessment**
 - **Multi-theatre threat matrix** — 9 active zones tracked
-- **Scenario analysis** with probability-weighted forecasts
+- **Scenario analysis with probability-weighted forecasts**
 - **Australian-specific sections** — ASX 200, RBA rate impacts, fuel crisis monitoring
-- **UPDATED badges** showing what changed since last briefing
+- **UPDATED badges showing what changed since last briefing**
 
-## Current Briefing: Day 35
+## Current Briefing: Day 36
 
-- **Trump national address**: "Stone Ages in 2-3 weeks." Core objectives "nearing completion." No concrete exit plan.
-- **F-15E Strike Eagle SHOT DOWN** over Iran — pilot rescued, WSO missing. A-10 also downed during rescue.
-- **B1 bridge destroyed** — 8 killed, 95 wounded. Civilians gathering for Nature Day celebrations. Trump cheered on Truth Social.
-- **NATO exit threatened** — Trump "strongly considering" pulling US out. Macron: "Don't say the opposite every day."
-- **Hormuz abandoned** — Trump told Asian nations to "take the lead." Strait will open "naturally."
-- **Physical oil (Dated Brent) hit $141** — highest since 2008. Brent futures $119. Record monthly surge.
-- **IEA warning**: "April will be much worse than March. In April, there is nothing."
-- **JP Morgan**: $150 oil if Hormuz stays closed through mid-May
-- Iran vowed "more crushing, broader, and more destructive" attacks
-- **Former FM Kharazi targeted** — wife killed. He was overseeing possible Vance meeting.
-- **Army Chief of Staff fired** by Hegseth during active war
-- Iran president's **open letter** to Americans: "Which interests are served by this war?" 60% disapprove.
-- Grace period expires **April 6** — 2 days remaining
-
+- Trump says Iran now has 48 hours to surrender or face attacks that would be "worse than hell".
+- Tehran rejected Trump's claim that President Pezeshkian requested a ceasefire and said trust for talks is effectively zero.
+- Regional mediation is still active through Pakistan, Turkey and Egypt even as public positions harden.
+- The US says two warplanes were lost in combat operations, with one crew member still listed as missing.
+- The Strait of Hormuz remains technically open but commercially choked by security risk and Iranian interference.
+- Oil stayed elevated above prewar levels, with global markets still vulnerable to each new escalation headline.
+- Lebanon's civilian toll kept rising, with more than 1,400 reported dead and around 1 million displaced.
+- Australia is moving deeper into fuel-watch mode, with the government saying more than 50 ships are inbound and supply assumptions hinge on mid-April cargoes.
+- European governments are discussing emergency energy measures as importers absorb higher crude and freight costs.
+- The working outlook is no clean ceasefire yet: more coercion, more mediation, and another hard deadline.
 
 ## How it works
 
