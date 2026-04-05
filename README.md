@@ -47,7 +47,7 @@ Two words. Fresh every morning. The news comes to me now.
 4. I preview the output locally and publish in one command
 5. I also get a ready-to-post X image prompt
 
-No app. No subscription. Just Claude + two words.
+No app. No subscription. Just a tighter workflow.
 
 ## Tech
 
