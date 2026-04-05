@@ -1,14 +1,14 @@
 # OPSCEN v6.15 — Iran Theatre Intelligence Briefing
 
-A real-time military operations centre dashboard tracking the 2026 Iran conflict, built entirely in [Claude](https://claude.ai) by [RETSA Group](https://retsagroup.com.au).
+A real-time military operations centre dashboard tracking the 2026 Iran conflict, originally built in [Claude](https://claude.ai) and now run through a Codex-powered publishing workflow by [RETSA Group](https://retsagroup.com.au).
 
 **[Live Dashboard →](https://mrummler17.github.io/operations-centre)**
 
 ## What is this?
 
-Rather than flicking between 7 News, 9, ABC and YouTube trying to piece together what's happening with Iran — I type "update briefing" into Claude.
+Rather than flicking between 7 News, 9, ABC and YouTube trying to piece together what's happening with Iran — I run an "update briefing" workflow.
 
-It searches the web, rebuilds my custom ops centre with today's intel, updates the UI on its own, and gives me personalised action items for my business and household.
+It searches the web, refreshes my custom ops centre with today's intel, updates the site, and gives me personalised action items for my business and household.
 
 Two words. Fresh every morning. The news comes to me now.
 
@@ -19,7 +19,7 @@ Two words. Fresh every morning. The news comes to me now.
 - **Key metrics dashboard** — quick-reference tiles at top of page
 - **9 collapsible intelligence sections covering all theatres of the conflict**
 - **Australian Fuel Forecast module** — interactive depletion projections for petrol, diesel, and jet fuel with scenario presets and adjustable parameters
-- **Live system clock (AEDT + UTC)**
+- **Live system clock (Sydney + UTC)**
 - **DEFCON gauge with visual assessment**
 - **Multi-theatre threat matrix** — 9 active zones tracked
 - **Scenario analysis with probability-weighted forecasts**
@@ -41,17 +41,17 @@ Two words. Fresh every morning. The news comes to me now.
 
 ## How it works
 
-1. I say "update briefing" in Claude
-2. Claude searches the web across multiple sources
-3. It rebuilds the entire dashboard with fresh data
-4. The UI updates without being asked
-5. I get personalised action items
+1. I run "update briefing" against the structured briefing file
+2. The workflow searches the web across multiple sources
+3. It refreshes the dashboard and README from the latest data
+4. I preview the output locally and publish in one command
+5. I also get a ready-to-post X image prompt
 
 No app. No subscription. Just Claude + two words.
 
 ## Tech
 
-Single self-contained HTML file. React 18 via CDN. Zero build step. Zero dependencies. Deploy anywhere.
+Single self-contained HTML file. React 18 via CDN. Structured JSON briefing data. Local preview and one-command publish. Zero runtime dependencies.
 
 ## Author
 
