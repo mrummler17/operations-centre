@@ -1,4 +1,4 @@
-# OPSCEN v6.15 — Iran Theatre Intelligence Briefing
+# OPSCEN v6.17 — Iran Theatre Intelligence Briefing
 
 A real-time military operations centre dashboard tracking the 2026 Iran conflict, originally built in [Claude](https://claude.ai) and now run through a Codex-powered publishing workflow by [RETSA Group](https://retsagroup.com.au).
 
@@ -26,18 +26,18 @@ Two words. Fresh every morning. The news comes to me now.
 - **Australian-specific sections** — ASX 200, RBA rate impacts, fuel crisis monitoring
 - **UPDATED badges showing what changed since last briefing**
 
-## Current Briefing: Day 36
+## Current Briefing: Day 37
 
-- Trump says Iran now has 48 hours to surrender or face attacks that would be "worse than hell".
-- Tehran rejected Trump's claim that President Pezeshkian requested a ceasefire and said trust for talks is effectively zero.
-- Regional mediation is still active through Pakistan, Turkey and Egypt even as public positions harden.
-- The US says two warplanes were lost in combat operations, with one crew member still listed as missing.
-- The Strait of Hormuz remains technically open but commercially choked by security risk and Iranian interference.
-- Oil stayed elevated above prewar levels, with global markets still vulnerable to each new escalation headline.
-- Lebanon's civilian toll kept rising, with more than 1,400 reported dead and around 1 million displaced.
-- Australia is moving deeper into fuel-watch mode, with the government saying more than 50 ships are inbound and supply assumptions hinge on mid-April cargoes.
-- European governments are discussing emergency energy measures as importers absorb higher crude and freight costs.
-- The working outlook is no clean ceasefire yet: more coercion, more mediation, and another hard deadline.
+- Trump says Tuesday will be 'Power Plant Day' and 'Bridge Day' in Iran if Hormuz is not reopened.
+- The missing US crew member from the downed F-15 is now reportedly rescued after a firefight inside Iran.
+- Tehran rejected the ultimatum as imbalanced and says mediated contact does not equal surrender.
+- The real deadline for Australia is Tuesday morning, April 7, 2026, at about 10am AEST.
+- Hormuz remains technically open but commercially distorted, with shipping risk still doing most of the damage.
+- Oil is still elevated and headline-sensitive, even without another full panic spike overnight.
+- Lebanon remains one of the most dangerous spillover fronts, with the civilian toll still climbing.
+- Australia's fuel picture is stressed but improving, with fewer outages reported and more than 50 ships inbound.
+- The working outlook is still coercion plus mediation, not a clean ceasefire.
+- The next hard trigger is whether the deadline passes quietly or turns into another infrastructure strike cycle.
 
 ## How it works
 
