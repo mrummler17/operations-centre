@@ -1,4 +1,4 @@
-# OPSCEN v6.17 — Iran Theatre Intelligence Briefing
+# OPSCEN v6.18 — Iran Theatre Intelligence Briefing
 
 A real-time military operations centre dashboard tracking the 2026 Iran conflict, originally built in [Claude](https://claude.ai) and now run through a Codex-powered publishing workflow by [RETSA Group](https://retsagroup.com.au).
 
@@ -26,14 +26,14 @@ Two words. Fresh every morning. The news comes to me now.
 - **Australian-specific sections** — ASX 200, RBA rate impacts, fuel crisis monitoring
 - **UPDATED badges showing what changed since last briefing**
 
-## Current Briefing: Day 37
+## Current Briefing: Day 38
 
-- Trump says Tuesday will be 'Power Plant Day' and 'Bridge Day' in Iran if Hormuz is not reopened.
+- Trump says Tuesday will be 'Power Plant Day' and 'Bridge Day' in Iran if Hormuz is not reopened by 8pm ET on Tuesday, April 7.
 - The missing US crew member from the downed F-15 is now reportedly rescued after a firefight inside Iran.
 - Tehran rejected the ultimatum as imbalanced and says mediated contact does not equal surrender.
-- The real deadline for Australia is Tuesday morning, April 7, 2026, at about 10am AEST.
+- For Sydney, that deadline lands at about 10am AEST on Wednesday, April 8, 2026.
 - Hormuz remains technically open but commercially distorted, with shipping risk still doing most of the damage.
-- Oil is still elevated and headline-sensitive, even without another full panic spike overnight.
+- Oil is still elevated and headline-sensitive, with global markets trading every new signal around shipping and escalation.
 - Lebanon remains one of the most dangerous spillover fronts, with the civilian toll still climbing.
 - Australia's fuel picture is stressed but improving, with fewer outages reported and more than 50 ships inbound.
 - The working outlook is still coercion plus mediation, not a clean ceasefire.
