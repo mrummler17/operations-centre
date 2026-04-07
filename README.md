@@ -19,6 +19,7 @@ Two words. Fresh every morning. The news comes to me now.
 - **Key metrics dashboard** — quick-reference tiles at top of page
 - **9 collapsible intelligence sections covering all theatres of the conflict**
 - **Australian Fuel Forecast module** — interactive depletion projections for petrol, diesel, and jet fuel with scenario presets and adjustable parameters
+- **Live radio monitor** — embedded NPR public audio feed inside the dashboard
 - **Live system clock (Sydney + UTC)**
 - **DEFCON gauge with visual assessment**
 - **Multi-theatre threat matrix** — 9 active zones tracked
@@ -28,16 +29,16 @@ Two words. Fresh every morning. The news comes to me now.
 
 ## Current Briefing: Day 39
 
-- The briefing has rolled into deadline day, with Trump's 8pm ET Tuesday, April 7 Hormuz threat landing at 10am AEST on Wednesday, April 8 in Sydney.
-- No verified breakthrough has emerged yet on shipping access, mediation, or a broader pause in strikes.
-- The rescued US crew member is no longer the lead thread; the operational question is what happens when the deadline expires.
-- Tehran is still rejecting the ultimatum publicly while mediated contact appears to remain open through intermediaries.
-- Hormuz remains physically open but commercially distorted, with risk, insurance and confidence still doing most of the damage.
-- Oil markets remain headline-sensitive because traders still see a live shipping-risk problem rather than restored normality.
-- Lebanon remains one of the sharpest spillover fronts, with AP still describing more than 1,400 killed and over 1 million displaced.
-- Australia's fuel position is still stressed, with reserve drawdowns and standards changes buying time rather than removing vulnerability.
+- Trump says his Tuesday 8pm ET deadline is final and keeps the 'Power Plant Day' and 'Bridge Day' threat live if Hormuz is not reopened.
+- The missing US crew member from the downed F-15 is now reportedly rescued after a firefight inside Iran.
+- Tehran rejected the ultimatum as imbalanced and says mediated contact does not equal surrender.
+- For Sydney, that deadline lands at about 10am AEST on Wednesday, April 8, 2026.
+- Hormuz remains technically open but commercially distorted, with shipping risk still doing most of the damage.
+- Oil is still elevated and headline-sensitive, with global markets trading every new signal around shipping and escalation.
+- Lebanon remains one of the most dangerous spillover fronts, with the civilian toll still climbing.
+- Australia's fuel picture is stressed but improving, with fewer outages reported and more than 50 ships inbound.
 - The working outlook is still coercion plus mediation, not a clean ceasefire.
-- The next hard trigger is the post-deadline outcome: quiet standoff, infrastructure strikes, or a narrow mediated delay.
+- The next hard trigger is whether the deadline passes quietly or turns into another infrastructure strike cycle.
 
 ## How it works
 
