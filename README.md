@@ -30,7 +30,7 @@ Two words. Fresh every morning. The news comes to me now.
 ## Current Briefing: Day 40
 
 - Trump now says he is suspending the planned destructive strike package against Iran for two weeks under a Pakistan-mediated 'double-sided ceasefire'.
-- The pause is tied to the complete, immediate and safe reopening of the Strait of Hormuz.
+- The pause is tied to the complete, immediate and safe reopening of the Strait of Hormuz, though that condition remains publicly contentious.
 - That means the Sydney-morning deadline frame has shifted into a temporary negotiation window rather than an immediate strike trigger.
 - The missing US crew member from the downed F-15 is still reported rescued after the weekend firefight inside Iran.
 - Tehran's public line had been against a temporary ceasefire, so the next test is whether the pause holds in practice and on shipping.
