@@ -44,6 +44,8 @@
   .radio-actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
   .radio-link { display: inline-block; border: 1px solid var(--crt-cyan); color: var(--crt-cyan); text-decoration: none; padding: 6px 10px; font-size: 13px; letter-spacing: 1px; }
   .radio-link:hover { background: rgba(0,255,204,0.08); }
+  .radio-toggle { display: inline-block; border: 1px solid var(--crt-amber); color: var(--crt-amber); background: transparent; padding: 6px 10px; font-family: 'VT323', monospace; font-size: 13px; letter-spacing: 1px; cursor: pointer; }
+  .radio-toggle:hover { background: rgba(255,170,0,0.08); }
   .radio-frame { width: 100%; min-height: 220px; border: 1px solid #163c32; background: #060906; }
   .defcon-gauge { display: flex; gap: 2px; margin: 8px 0; height: 20px; }
   .defcon-seg { flex: 1; opacity: 0.2; transition: opacity 0.3s; }
@@ -204,6 +206,8 @@ function Ticker() {
 }
 
 function LiveRadioPanel() {
+  const [audioEnabled, setAudioEnabled] = useState(true);
+
   return (
     <div className="radio-panel">
       <div className="radio-head">
@@ -212,21 +216,28 @@ function LiveRadioPanel() {
       <div className="radio-meta">
         embedded public radio feed for continuous live coverage inside opscen.
       </div>
-      <iframe
-        className="radio-frame"
-        src="https://www.npr.org/player/embed/474392706/474392796"
-        title="NPR Live Audio"
-        loading="lazy"
-        referrerPolicy="no-referrer"
-        frameBorder="0"
-        scrolling="no"
-      />
+      {audioEnabled ? (
+        <iframe
+          className="radio-frame"
+          src="https://one.npr.org/"
+          title="NPR One"
+          loading="lazy"
+          referrerPolicy="no-referrer"
+        />
+      ) : (
+        <div className="radio-frame" style={{ display: "flex", alignItems: "center", justifyContent: "center", color: "var(--crt-dim)", fontFamily: "'Share Tech Mono', monospace", fontSize: 13, letterSpacing: 1, textTransform: "uppercase" }}>
+          npr audio monitor offline
+        </div>
+      )}
       <div className="radio-actions">
+        <button className="radio-toggle" onClick={() => setAudioEnabled((value) => !value)}>
+          {audioEnabled ? "stop audio" : "reload audio"}
+        </button>
         <a className="radio-link" href="https://one.npr.org/" target="_blank" rel="noopener">open npr one</a>
         <a className="radio-link" href="https://www.npr.org/" target="_blank" rel="noopener">open npr home</a>
       </div>
       <div className="radio-meta" style={{ marginTop: 10 }}>
-        if the embed is blocked by browser or site policy, the links still give you a quick jump to live public coverage.
+        if the embed is blocked by browser or site policy, or the player controls are awkward, the local stop button unloads the feed completely.
       </div>
     </div>
   );
