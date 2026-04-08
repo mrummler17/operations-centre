@@ -1,4 +1,4 @@
-# OPSCEN v6.21 — Iran Theatre Intelligence Briefing
+# OPSCEN v6.22 — Iran Theatre Intelligence Briefing
 
 A real-time military operations centre dashboard tracking the 2026 Iran conflict, originally built in [Claude](https://claude.ai) and now run through a Codex-powered publishing workflow by [RETSA Group](https://retsagroup.com.au).
 
@@ -27,18 +27,18 @@ Two words. Fresh every morning. The news comes to me now.
 - **Australian-specific sections** — ASX 200, RBA rate impacts, fuel crisis monitoring
 - **UPDATED badges showing what changed since last briefing**
 
-## Current Briefing: Day 40
+## Current Briefing: Day 41
 
-- Trump now says he is suspending the planned destructive strike package against Iran for two weeks under a Pakistan-mediated 'double-sided ceasefire'.
-- The pause is tied to the complete, immediate and safe reopening of the Strait of Hormuz, though that condition remains publicly contentious.
-- That means the Sydney-morning deadline frame has shifted into a temporary negotiation window rather than an immediate strike trigger.
+- The two-week US-Iran ceasefire pause is now in effect, with Pakistan credited for the mediation push that prevented an immediate strike cycle.
+- Markets have reacted with a relief rally as oil prices dropped sharply from the panic highs built during the Hormuz crisis.
+- The key test is no longer the old Sydney deadline but whether Strait of Hormuz traffic actually normalises in practice.
 - The missing US crew member from the downed F-15 is still reported rescued after the weekend firefight inside Iran.
-- Tehran's public line had been against a temporary ceasefire, so the next test is whether the pause holds in practice and on shipping.
+- Tehran's public line remains cautious, so the next test is whether the pause holds in practice and on shipping.
 - Hormuz remains technically open but commercially distorted, with shipping risk still doing most of the damage.
-- Oil is still elevated and headline-sensitive, with global markets trading every new signal around shipping and escalation.
+- Oil is still headline-sensitive even after the drop, with traders watching every signal around shipping and ceasefire durability.
 - Lebanon remains one of the most dangerous spillover fronts, with the civilian toll still climbing.
 - Australia's fuel picture is stressed but improving, with fewer outages reported and more than 50 ships inbound.
-- The working outlook is now coercion plus mediation under a short pause, not a clean peace settlement.
+- The working outlook is now uneasy pause plus mediation, not a clean peace settlement.
 - The next hard trigger is whether Hormuz conditions improve materially during the two-week window.
 
 ## How it works
