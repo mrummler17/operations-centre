@@ -17,29 +17,16 @@
 <style>
   @import url('https://fonts.googleapis.com/css2?family=VT323&family=Share+Tech+Mono&display=swap');
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  :root { --crt-green: #33ff33; --crt-amber: #ffaa00; --crt-red: #ff3333; --crt-cyan: #00ffcc; --crt-dim: #4a9a4a; --crt-bg: #0a0e0a; --crt-panel: #0d120d; --crt-panel-soft: rgba(11,17,12,0.84); --crt-border: #1e4a1e; --crt-border-soft: rgba(51,120,68,0.42); --crt-text: #33dd33; --crt-text-soft: #b8ccb8; --crt-scanline: rgba(0,0,0,0.08); --space-section: 32px; --space-stack: 20px; --space-card: 24px; --space-card-tight: 16px; }
+  :root { --crt-green: #33ff33; --crt-amber: #ffaa00; --crt-red: #ff3333; --crt-cyan: #00ffcc; --crt-dim: #4a9a4a; --crt-bg: #0a0e0a; --crt-panel: #0d120d; --crt-border: #1e4a1e; --crt-text: #33dd33; --crt-scanline: rgba(0,0,0,0.08); }
   body { background: var(--crt-bg); color: var(--crt-text); font-family: 'VT323', monospace; overflow-x: hidden; }
   .scanlines { position: fixed; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none; z-index: 9999; background: repeating-linear-gradient(0deg, transparent, transparent 2px, var(--crt-scanline) 2px, var(--crt-scanline) 4px); }
-  .crt-glow { text-shadow: 0 0 4px currentColor, 0 0 8px currentColor; }
-  .opscen-container { max-width: 1240px; margin: 0 auto; padding: 18px 16px 26px; min-height: 100vh; }
-  .header-bar { border: 1px solid rgba(51,255,51,0.7); padding: 20px var(--space-card) 22px; margin-bottom: var(--space-section); background: linear-gradient(180deg, rgba(0,40,0,0.28) 0%, rgba(6,14,8,0.94) 68%, var(--crt-bg) 100%); position: relative; overflow: hidden; }
+  .crt-glow { text-shadow: 0 0 5px currentColor, 0 0 10px currentColor; }
+  .opscen-container { max-width: 1200px; margin: 0 auto; padding: 12px; min-height: 100vh; }
+  .header-bar { border: 1px solid var(--crt-green); padding: 12px 16px; margin-bottom: 12px; background: linear-gradient(180deg, rgba(0,40,0,0.3) 0%, var(--crt-bg) 100%); position: relative; overflow: hidden; }
   .header-bar::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: var(--crt-green); box-shadow: 0 0 8px var(--crt-green); }
-  .header-title { font-size: 36px; letter-spacing: 6px; color: var(--crt-green); text-align: left; }
-  .header-kicker { display: inline-flex; align-items: center; justify-content: center; min-height: 28px; padding: 4px 12px; border: 1px solid rgba(53,134,77,0.75); background: rgba(8, 22, 12, 0.78); color: #65ff82; font-family: 'Share Tech Mono', monospace; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; }
-  .header-shell { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(260px, 0.7fr); gap: 34px; align-items: stretch; margin-top: 18px; }
-  .header-copy { min-width: 0; }
-  .header-meta { margin-top: 14px; display: grid; gap: 8px; }
-  .header-line { font-family: 'Share Tech Mono', monospace; font-size: 14px; color: #d39a38; letter-spacing: 1.4px; text-transform: uppercase; }
-  .header-hero { margin-top: 28px; max-width: 760px; }
-  .header-alert { font-family: 'Share Tech Mono', monospace; font-size: 27px; color: #e7b65c; letter-spacing: 1.1px; text-transform: uppercase; line-height: 1.28; max-width: 14ch; }
-  .header-summary { margin-top: 18px; max-width: 650px; color: var(--crt-text-soft); font-family: 'Share Tech Mono', monospace; font-size: 18px; line-height: 1.72; }
-  .grace-card { border: 1px solid var(--crt-border-soft); background: linear-gradient(180deg, rgba(10,20,12,0.82) 0%, rgba(8,18,11,0.95) 100%); padding: 28px 24px 24px; min-height: 100%; display: flex; flex-direction: column; justify-content: center; align-self: stretch; }
-  .grace-label { color: #6ea777; font-family: 'Share Tech Mono', monospace; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; text-align: center; opacity: 0.8; }
-  .grace-value { margin-top: 14px; color: var(--crt-amber); font-family: 'Share Tech Mono', monospace; font-size: 52px; letter-spacing: 1px; text-align: center; text-shadow: 0 0 10px #ffaa00, 0 0 20px rgba(255,170,0,0.5); }
-  .grace-sub { margin-top: 10px; color: #648369; font-family: 'Share Tech Mono', monospace; font-size: 12px; line-height: 1.45; text-align: center; opacity: 0.85; }
-  .header-strip { margin-top: 22px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
-  .header-strip-item { border: 1px solid rgba(25,56,40,0.7); background: rgba(8, 21, 13, 0.56); padding: 8px 12px; color: #587a5d; font-family: 'Share Tech Mono', monospace; font-size: 10px; letter-spacing: 1px; text-transform: uppercase; text-align: center; }
-  .ticker-wrap { margin-top: 20px; border: 1px solid var(--crt-border-soft); background: rgba(0, 0, 0, 0.22); overflow: hidden; position: relative; }
+  .header-title { font-size: 28px; letter-spacing: 6px; color: var(--crt-green); text-align: center; }
+  .header-sub { font-family: 'Share Tech Mono', monospace; font-size: 14px; color: var(--crt-amber); text-align: center; margin-top: 4px; letter-spacing: 2px; }
+  .ticker-wrap { margin-top: 10px; border: 1px solid var(--crt-border); background: rgba(0, 0, 0, 0.35); overflow: hidden; position: relative; }
   .ticker-wrap::before, .ticker-wrap::after { content: ""; position: absolute; top: 0; bottom: 0; width: 28px; z-index: 2; pointer-events: none; }
   .ticker-wrap::before { left: 0; background: linear-gradient(90deg, var(--crt-bg), rgba(10,14,10,0)); }
   .ticker-wrap::after { right: 0; background: linear-gradient(270deg, var(--crt-bg), rgba(10,14,10,0)); }
@@ -47,48 +34,44 @@
   .ticker-wrap:hover .ticker-track { animation-play-state: paused; }
   .ticker-item { flex: 0 0 auto; padding: 7px 18px; color: var(--crt-cyan); font-family: 'Share Tech Mono', monospace; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; white-space: nowrap; }
   .ticker-sep { color: var(--crt-dim); margin-left: 18px; }
-  .controls-band { display: flex; gap: 10px; margin-bottom: var(--space-section); padding: 8px; border: 1px solid var(--crt-border-soft); background: rgba(7, 15, 9, 0.58); }
-  .content-stack { display: grid; gap: var(--space-section); }
-  .briefing-stack { display: grid; gap: var(--space-stack); }
-  .status-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-stack); margin-bottom: 0; }
-  .defcon-panel, .clock-panel { border: 1px solid var(--crt-border-soft); padding: 18px; background: var(--crt-panel-soft); min-width: 0; }
-  .radio-panel { border: 1px solid rgba(30,74,30,0.55); padding: 16px 18px; background: rgba(10, 15, 11, 0.72); margin-bottom: 0; }
+  .status-row { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
+  .defcon-panel, .clock-panel { border: 1px solid var(--crt-border); padding: 10px 14px; background: var(--crt-panel); flex: 1; min-width: 200px; }
+  .radio-panel { border: 1px solid var(--crt-border); padding: 10px 14px; background: var(--crt-panel); margin-bottom: 12px; }
   .radio-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 10px; flex-wrap: wrap; }
-  .radio-title { font-size: 13px; color: #58d26a; letter-spacing: 2px; opacity: 0.92; }
+  .radio-title { font-size: 14px; color: var(--crt-green); letter-spacing: 2px; }
   .radio-badge { border: 1px solid var(--crt-amber); color: var(--crt-amber); padding: 2px 8px; font-size: 11px; letter-spacing: 1px; }
-  .radio-meta { color: #5f8664; font-family: 'Share Tech Mono', monospace; font-size: 11px; line-height: 1.6; margin-bottom: 10px; }
+  .radio-meta { color: var(--crt-dim); font-family: 'Share Tech Mono', monospace; font-size: 12px; line-height: 1.5; margin-bottom: 10px; }
   .radio-actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
   .radio-link { display: inline-block; border: 1px solid var(--crt-cyan); color: var(--crt-cyan); text-decoration: none; padding: 6px 10px; font-size: 13px; letter-spacing: 1px; }
   .radio-link:hover { background: rgba(0,255,204,0.08); }
   .radio-toggle { display: inline-block; border: 1px solid var(--crt-amber); color: var(--crt-amber); background: transparent; padding: 6px 10px; font-family: 'VT323', monospace; font-size: 13px; letter-spacing: 1px; cursor: pointer; }
   .radio-toggle:hover { background: rgba(255,170,0,0.08); }
-  .radio-frame { width: 100%; min-height: 124px; border: 1px solid rgba(22,60,50,0.65); background: #060906; }
+  .radio-frame { width: 100%; min-height: 220px; border: 1px solid #163c32; background: #060906; }
   .defcon-gauge { display: flex; gap: 2px; margin: 8px 0; height: 20px; }
   .defcon-seg { flex: 1; opacity: 0.2; transition: opacity 0.3s; }
   .defcon-seg.active { opacity: 1; box-shadow: 0 0 6px currentColor; }
-  .threat-matrix { border: 1px solid var(--crt-border-soft); padding: 16px 18px; margin-bottom: 0; background: var(--crt-panel-soft); }
-  .threat-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 8px; margin-top: 12px; }
-  .threat-cell { display: flex; justify-content: space-between; align-items: center; padding: 9px 11px; border: 1px solid rgba(26,42,26,0.55); font-size: 0.95em; background: rgba(0,0,0,0.18); }
+  .threat-matrix { border: 1px solid var(--crt-border); padding: 10px; margin-bottom: 12px; background: var(--crt-panel); }
+  .threat-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px; margin-top: 8px; }
+  .threat-cell { display: flex; justify-content: space-between; align-items: center; padding: 6px 10px; border: 1px solid #1a2a1a; font-size: 0.95em; background: rgba(0,0,0,0.3); }
   .threat-level { font-size: 12px; padding: 1px 6px; font-weight: bold; letter-spacing: 1px; }
-  .section-block { border: 1px solid rgba(30,74,30,0.48); margin-bottom: 0; background: rgba(10,15,11,0.76); transition: border-color 0.2s, background 0.2s; }
-  .section-block:hover { border-color: rgba(74,154,74,0.72); background: rgba(11,17,12,0.84); }
-  .section-header { display: flex; align-items: center; gap: 10px; padding: 12px 16px; cursor: pointer; user-select: none; font-size: 1.05em; letter-spacing: 2px; color: var(--crt-green); border-bottom: 1px solid transparent; transition: all 0.2s; }
-  .section-header:hover { background: rgba(0, 60, 0, 0.08); }
-  .section-header.open { border-bottom-color: rgba(30,74,30,0.48); }
-  .section-body { padding: 16px 18px 18px; }
-  .section-heading { font-family: 'Share Tech Mono', monospace; font-size: 1em; color: var(--crt-amber); letter-spacing: 1.1px; margin-bottom: 14px; padding-bottom: 10px; border-bottom: 1px solid rgba(30,74,30,0.42); }
-  .intel-list { display: grid; gap: 10px; }
-  .intel-line { font-size: 1.02em; line-height: 1.78; padding: 0 0 0 16px; position: relative; color: var(--crt-text-soft); }
-  .intel-line::before { content: '▸'; position: absolute; left: 0; top: 0; color: #5f8b66; }
-  .key-metrics-bar { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-bottom: 0; }
-  .metric-card { border: 1px solid rgba(30,74,30,0.44); padding: 16px 12px 14px; text-align: center; background: linear-gradient(180deg, rgba(10,17,12,0.92) 0%, rgba(8,12,9,0.86) 100%); }
-  .metric-label { font-size: 11px; color: #5d8463; letter-spacing: 2px; }
-  .metric-value { font-size: 28px; margin: 4px 0; line-height: 1.05; }
-  .metric-delta { font-size: 11px; font-family: 'Share Tech Mono', monospace; letter-spacing: 0.7px; }
+  .section-block { border: 1px solid var(--crt-border); margin-bottom: 6px; background: var(--crt-panel); transition: border-color 0.2s; }
+  .section-block:hover { border-color: var(--crt-dim); }
+  .section-header { display: flex; align-items: center; gap: 10px; padding: 10px 14px; cursor: pointer; user-select: none; font-size: 1.05em; letter-spacing: 2px; color: var(--crt-green); border-bottom: 1px solid transparent; transition: all 0.2s; }
+  .section-header:hover { background: rgba(0, 60, 0, 0.15); }
+  .section-header.open { border-bottom-color: var(--crt-border); }
+  .section-body { padding: 10px 14px; }
+  .section-heading { font-family: 'Share Tech Mono', monospace; font-size: 0.95em; color: var(--crt-amber); letter-spacing: 1px; margin-bottom: 8px; padding-bottom: 6px; border-bottom: 1px solid var(--crt-border); }
+  .intel-line { font-size: 1em; line-height: 1.6; padding: 3px 0; padding-left: 14px; position: relative; color: var(--crt-text); }
+  .intel-line::before { content: '▸'; position: absolute; left: 0; color: var(--crt-dim); }
+  .key-metrics-bar { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 6px; margin-bottom: 12px; }
+  .metric-card { border: 1px solid var(--crt-border); padding: 8px; text-align: center; background: var(--crt-panel); }
+  .metric-label { font-size: 12px; color: var(--crt-dim); letter-spacing: 2px; }
+  .metric-value { font-size: 24px; margin: 2px 0; }
+  .metric-delta { font-size: 12px; font-family: 'Share Tech Mono', monospace; }
   .expand-all-btn { background: none; border: 1px solid var(--crt-dim); color: var(--crt-dim); font-family: 'VT323', monospace; font-size: 14px; padding: 4px 12px; cursor: pointer; letter-spacing: 1px; }
   .expand-all-btn:hover { border-color: var(--crt-green); color: var(--crt-green); }
-  .footer-bar { border: 1px solid var(--crt-border-soft); padding: 12px 16px; margin-top: var(--space-section); display: flex; justify-content: space-between; font-size: 13px; color: #5b815f; flex-wrap: wrap; gap: 8px; background: rgba(8,13,9,0.62); }
-  .built-with { text-align: center; font-size: 12px; color: #55785a; margin-top: 10px; padding-bottom: 20px; }
+  .footer-bar { border: 1px solid var(--crt-border); padding: 10px 16px; margin-top: 12px; display: flex; justify-content: space-between; font-size: 14px; color: var(--crt-dim); flex-wrap: wrap; gap: 8px; }
+  .built-with { text-align: center; font-size: 13px; color: var(--crt-dim); margin-top: 8px; padding-bottom: 20px; }
   .built-with a { color: var(--crt-green); text-decoration: none; }
   .built-with a:hover { text-decoration: underline; }
   @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
@@ -98,8 +81,8 @@
   .font-btn { background: none; border: 1px solid var(--crt-border); color: var(--crt-dim); font-family: 'VT323', monospace; padding: 2px 8px; cursor: pointer; transition: all 0.2s; }
   .font-btn:hover { border-color: var(--crt-green); color: var(--crt-green); }
   .font-btn.active { border-color: var(--crt-green); color: var(--crt-green); background: rgba(0,40,0,0.3); }
-  .tab-bar { display: flex; gap: 6px; margin-bottom: 0; }
-  .tab-btn { flex: 1; padding: 12px 10px; background: rgba(10,16,11,0.78); border: 1px solid rgba(30,74,30,0.44); color: #648e69; font-family: 'VT323', monospace; font-size: 18px; cursor: pointer; letter-spacing: 3px; transition: all 0.2s; }
+  .tab-bar { display: flex; gap: 4px; margin-bottom: 12px; }
+  .tab-btn { flex: 1; padding: 10px; background: var(--crt-panel); border: 1px solid var(--crt-border); color: var(--crt-dim); font-family: 'VT323', monospace; font-size: 18px; cursor: pointer; letter-spacing: 3px; transition: all 0.2s; }
   .tab-btn:hover { border-color: var(--crt-green); color: var(--crt-green); }
   .tab-btn.active { border-color: var(--crt-green); color: var(--crt-green); background: rgba(0,40,0,0.3); box-shadow: 0 0 8px rgba(51,255,51,0.2); }
   .countdown-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 12px; }
@@ -111,7 +94,7 @@
   .presets { display: flex; gap: 6px; margin-bottom: 12px; flex-wrap: wrap; }
   .preset-btn { background: none; font-family: 'VT323', monospace; font-size: 0.9em; padding: 6px 12px; cursor: pointer; letter-spacing: 1px; transition: all 0.2s; }
   .preset-btn:hover, .preset-btn.active { background: rgba(255,255,255,0.05); }
-  .ctrl-box { border: 1px solid var(--crt-border); padding: var(--space-card-tight); margin-bottom: var(--space-stack); background: var(--crt-panel); }
+  .ctrl-box { border: 1px solid var(--crt-border); padding: 12px; margin-bottom: 12px; background: var(--crt-panel); }
   .ctrl-title { font-size: 0.9em; color: var(--crt-green); letter-spacing: 2px; margin-bottom: 10px; }
   .ctrl-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
   .ctrl-item label { display: block; font-size: 0.85em; color: var(--crt-dim); margin-bottom: 4px; }
@@ -120,18 +103,17 @@
   .toggle-row { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
   .toggle-btn { background: none; border: 1px solid var(--crt-border); color: var(--crt-dim); font-family: 'VT323', monospace; font-size: 0.85em; padding: 4px 10px; cursor: pointer; }
   .toggle-btn.on { border-color: var(--crt-green); color: var(--crt-green); }
-  .chart-panel { border: 1px solid rgba(30,74,30,0.44); padding: var(--space-card-tight); margin-bottom: var(--space-stack); background: rgba(10,15,11,0.76); }
+  .chart-panel { border: 1px solid var(--crt-border); padding: 12px; margin-bottom: 12px; background: var(--crt-panel); }
   .chart-title { font-size: 0.9em; color: var(--crt-green); letter-spacing: 2px; margin-bottom: 10px; }
   .legend-row { display: flex; gap: 16px; margin-top: 8px; flex-wrap: wrap; font-size: 0.85em; }
   .legend-item { display: flex; align-items: center; gap: 6px; color: var(--crt-dim); }
   .legend-dot { width: 10px; height: 10px; border-radius: 2px; }
-  .ctx-notes { border: 1px solid rgba(30,74,30,0.44); padding: var(--space-card-tight); margin-bottom: var(--space-stack); background: rgba(10,15,11,0.76); }
-  .ctx-title { font-size: 0.88em; color: var(--crt-green); letter-spacing: 2px; margin-bottom: 10px; }
-  .ctx-line { font-size: 0.9em; line-height: 1.65; padding: 3px 0; color: #6c906f; }
+  .ctx-notes { border: 1px solid var(--crt-border); padding: 12px; margin-bottom: 8px; background: var(--crt-panel); }
+  .ctx-title { font-size: 0.9em; color: var(--crt-green); letter-spacing: 2px; margin-bottom: 8px; }
+  .ctx-line { font-size: 0.9em; line-height: 1.5; padding: 2px 0; color: var(--crt-dim); }
   .ctx-line.crit { color: var(--crt-red); }
   .ctx-line.warn { color: var(--crt-amber); }
-  @media (max-width: 900px) { .header-shell { grid-template-columns: 1fr; gap: 18px; } .grace-card { min-height: 0; } .header-title { text-align: left; } .header-strip { grid-template-columns: 1fr; } .key-metrics-bar { grid-template-columns: repeat(2, minmax(0, 1fr)); } .header-summary { max-width: 100%; } .status-row { grid-template-columns: 1fr; } }
-  @media (max-width: 600px) { .opscen-container { padding: 14px 12px 20px; } .header-bar { padding: 16px 16px 14px; } .header-title { font-size: 24px; letter-spacing: 3px; } .header-line { font-size: 12px; } .header-alert { font-size: 20px; max-width: 100%; } .header-summary { font-size: 16px; line-height: 1.62; } .grace-value { font-size: 34px; } .key-metrics-bar { grid-template-columns: repeat(2, 1fr); } .threat-grid { grid-template-columns: 1fr; } .footer-bar { flex-direction: column; text-align: center; } .countdown-row { grid-template-columns: 1fr; } .ctrl-grid { grid-template-columns: 1fr; } .tab-btn { font-size: 15px; letter-spacing: 1px; } .controls-band { padding: 6px; } }
+  @media (max-width: 600px) { .header-title { font-size: 20px; letter-spacing: 3px; } .key-metrics-bar { grid-template-columns: repeat(2, 1fr); } .threat-grid { grid-template-columns: 1fr; } .status-row { flex-direction: column; } .footer-bar { flex-direction: column; text-align: center; } .countdown-row { grid-template-columns: 1fr; } .ctrl-grid { grid-template-columns: 1fr; } .tab-btn { font-size: 15px; letter-spacing: 1px; } }
 </style>
 </head>
 <body>
@@ -149,10 +131,9 @@ const DEFCON_LEVELS = [
 ];
 
 function KeyMetrics() {
-  const featuredMetrics = BRIEFING.keyMetrics.slice(0, 4);
   return (
     <div className="key-metrics-bar">
-      {featuredMetrics.map((metric) => (
+      {BRIEFING.keyMetrics.map((metric) => (
         <div key={metric.label} className="metric-card">
           <div className="metric-label">{metric.label}</div>
           <div className="metric-value" style={{ color: metric.color }}>{metric.value}</div>
@@ -190,9 +171,7 @@ function Section({ section, isOpen, toggle }) {
       {isOpen && (
         <div className="section-body">
           <div className="section-heading">{section.content.heading}</div>
-          <div className="intel-list">
-            {section.content.lines.map((line, index) => <div key={index} className="intel-line">{line}</div>)}
-          </div>
+          {section.content.lines.map((line, index) => <div key={index} className="intel-line">{line}</div>)}
         </div>
       )}
     </div>
@@ -552,85 +531,57 @@ function OPSCEN() {
       <div className="scanlines" />
       <div className="opscen-container" style={{ fontSize: fontScale }}>
         <div className="header-bar">
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 18 }}>
-            <div className="header-kicker">LIVE // DEFCON {defconLevel} // DAY {BRIEFING.site.day}</div>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+            <div className="header-title crt-glow">{"◤"} OPSCEN v{BRIEFING.site.version} {"◢"}</div>
             <div className="font-controls">
               <button className={`font-btn ${fontSize === 0 ? "active" : ""}`} onClick={() => setFontSize(0)} style={{ fontSize: 13 }}>A-</button>
               <button className={`font-btn ${fontSize === 1 ? "active" : ""}`} onClick={() => setFontSize(1)} style={{ fontSize: 16 }}>A</button>
               <button className={`font-btn ${fontSize === 2 ? "active" : ""}`} onClick={() => setFontSize(2)} style={{ fontSize: 20 }}>A+</button>
             </div>
           </div>
-          <div className="header-shell">
-            <div className="header-copy">
-              <div className="header-title crt-glow">OPSCEN v{BRIEFING.site.version}</div>
-              <div className="header-meta">
-                <div className="header-line">{BRIEFING.site.theatre}</div>
-                <div className="header-line">{BRIEFING.site.operation} &mdash; DAY {BRIEFING.site.day}</div>
-              </div>
-              <div className="header-hero">
-                <div className="header-alert">{BRIEFING.site.subhead}</div>
-                <div className="header-summary">
-                  {BRIEFING.readme.currentBriefing[0]} {BRIEFING.readme.currentBriefing[1]}
-                </div>
-              </div>
-            </div>
-            <div className="grace-card">
-              <div className="grace-label">Grace Period</div>
-              <div className="grace-value">{countdownStr.replace(" REMAINING", "")}</div>
-              <div className="grace-sub">Remaining in current pause window</div>
-            </div>
-          </div>
-          <div className="header-strip">
-            <div className="header-strip-item">briefing epoch // {BRIEFING.site.briefingEpoch}</div>
-            <div className="header-strip-item">defcon // {defconLevel}</div>
-            <div className="header-strip-item">lead scenario // {BRIEFING.keyMetrics[6]?.value || "n/a"} {BRIEFING.keyMetrics[6]?.delta || ""}</div>
+          <div className="header-sub">{BRIEFING.site.theatre} &mdash; {BRIEFING.site.operation} &mdash; DAY {BRIEFING.site.day}</div>
+          <div className="header-sub" style={{ color: "var(--crt-amber)", marginTop: 2 }}>{BRIEFING.site.subhead}</div>
+          <div style={{ textAlign: "center", marginTop: 8, fontSize: 32, color: "var(--crt-amber)", fontFamily: "'Share Tech Mono', monospace", textShadow: "0 0 10px #ffaa00, 0 0 20px #ffaa00" }}>
+            GRACE PERIOD: {countdownStr}
           </div>
           <Ticker />
         </div>
 
-        <div className="controls-band">
-          <div className="tab-bar">
-            <button className={`tab-btn ${activeTab === "briefing" ? "active" : ""}`} onClick={() => setActiveTab("briefing")}>{"⚡"} BRIEFING</button>
-            <button className={`tab-btn ${activeTab === "fuel" ? "active" : ""}`} onClick={() => setActiveTab("fuel")}>{"⛽"} FUEL FORECAST</button>
-          </div>
+        <div className="tab-bar">
+          <button className={`tab-btn ${activeTab === "briefing" ? "active" : ""}`} onClick={() => setActiveTab("briefing")}>{"⚡"} BRIEFING</button>
+          <button className={`tab-btn ${activeTab === "fuel" ? "active" : ""}`} onClick={() => setActiveTab("fuel")}>{"⛽"} FUEL FORECAST</button>
         </div>
 
         {activeTab === "briefing" && (
-          <div className="content-stack">
-            <div className="briefing-stack">
-              <KeyMetrics />
-              <div className="status-row">
-                <div className="defcon-panel">
-                  <div style={{ fontSize: 14, color: "var(--crt-green)", letterSpacing: 2 }}>DEFCON ASSESSMENT</div>
-                  <DefconGauge level={defconLevel} />
-                  <div style={{ display: "flex", justifyContent: "space-between", fontSize: 14 }}>
-                    <span style={{ color: defconInfo.color }}>DEFCON {defconLevel}</span>
-                    <span style={{ color: defconInfo.color, fontSize: 12 }}>{defconInfo.label}</span>
-                  </div>
-                  <div style={{ fontSize: 12, color: "var(--crt-dim)", marginTop: 4 }}>{BRIEFING.site.defconSummary}</div>
+          <React.Fragment>
+            <LiveRadioPanel />
+            <KeyMetrics />
+            <div className="status-row">
+              <div className="defcon-panel">
+                <div style={{ fontSize: 14, color: "var(--crt-green)", letterSpacing: 2 }}>DEFCON ASSESSMENT</div>
+                <DefconGauge level={defconLevel} />
+                <div style={{ display: "flex", justifyContent: "space-between", fontSize: 14 }}>
+                  <span style={{ color: defconInfo.color }}>DEFCON {defconLevel}</span>
+                  <span style={{ color: defconInfo.color, fontSize: 12 }}>{defconInfo.label}</span>
                 </div>
-                <div className="clock-panel">
-                  <div style={{ fontSize: 14, color: "var(--crt-green)", letterSpacing: 2 }}>SYSTEM CLOCK</div>
-                  <div style={{ fontSize: 22, color: "var(--crt-amber)", marginTop: 6, fontFamily: "'Share Tech Mono', monospace" }}>{sydneyStr}</div>
-                  <div style={{ fontSize: 13, color: "var(--crt-dim)", marginTop: 2, fontFamily: "'Share Tech Mono', monospace" }}>{utcStr}</div>
-                  <div style={{ fontSize: 12, color: "var(--crt-dim)", marginTop: 4 }}>BRIEFING EPOCH: {BRIEFING.site.briefingEpoch}</div>
-                </div>
+                <div style={{ fontSize: 12, color: "var(--crt-dim)", marginTop: 4 }}>{BRIEFING.site.defconSummary}</div>
               </div>
-              <ThreatMatrix />
+              <div className="clock-panel">
+                <div style={{ fontSize: 14, color: "var(--crt-green)", letterSpacing: 2 }}>SYSTEM CLOCK</div>
+                <div style={{ fontSize: 22, color: "var(--crt-amber)", marginTop: 6, fontFamily: "'Share Tech Mono', monospace" }}>{sydneyStr}</div>
+                <div style={{ fontSize: 13, color: "var(--crt-dim)", marginTop: 2, fontFamily: "'Share Tech Mono', monospace" }}>{utcStr}</div>
+                <div style={{ fontSize: 12, color: "var(--crt-dim)", marginTop: 4 }}>BRIEFING EPOCH: {BRIEFING.site.briefingEpoch}</div>
+              </div>
             </div>
 
-            <div className="briefing-stack">
-              <LiveRadioPanel />
-              <div style={{ display: "flex", justifyContent: "flex-end" }}>
-                <button className="expand-all-btn" onClick={toggleAll}>{allOpen ? "▼ COLLAPSE ALL" : "▶ EXPAND ALL"}</button>
-              </div>
-              <div className="briefing-stack">
-                {BRIEFING.sections.map((section) => (
-                  <Section key={section.id} section={section} isOpen={!!openSections[section.id]} toggle={() => toggleSection(section.id)} />
-                ))}
-              </div>
+            <ThreatMatrix />
+            <div style={{ display: "flex", justifyContent: "flex-end", marginBottom: 6 }}>
+              <button className="expand-all-btn" onClick={toggleAll}>{allOpen ? "▼ COLLAPSE ALL" : "▶ EXPAND ALL"}</button>
             </div>
-          </div>
+            {BRIEFING.sections.map((section) => (
+              <Section key={section.id} section={section} isOpen={!!openSections[section.id]} toggle={() => toggleSection(section.id)} />
+            ))}
+          </React.Fragment>
         )}
 
         {activeTab === "fuel" && <FuelForecast />}
