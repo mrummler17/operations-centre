@@ -1,4 +1,4 @@
-# OPSCEN v6.23 — Iran Theatre Intelligence Briefing
+# OPSCEN v6.24 — Iran Theatre Intelligence Briefing
 
 A real-time military operations centre dashboard tracking the 2026 Iran conflict, originally built in [Claude](https://claude.ai) and now run through a Codex-powered publishing workflow by [RETSA Group](https://retsagroup.com.au).
 
@@ -27,19 +27,19 @@ Two words. Fresh every morning. The news comes to me now.
 - **Australian-specific sections** — ASX 200, RBA rate impacts, fuel crisis monitoring
 - **UPDATED badges showing what changed since last briefing**
 
-## Current Briefing: Day 42
+## Current Briefing: Day 43
 
-- The two-week US-Iran ceasefire pause is still formally in effect, with Pakistan still credited for the mediation push that prevented an immediate strike cycle.
-- Markets have moved from relief rally to caution as tanker traffic through Hormuz remains disrupted.
-- The key test is no longer the old Sydney deadline but whether Strait of Hormuz shipping conditions improve in practice.
+- The two-week US-Iran ceasefire pause is still formally in effect, and high-level talks are now opening in Islamabad under Pakistani mediation.
+- The key shift is diplomatic, but the operational proof point is still Hormuz: commercial traffic remains distorted and confidence has not normalized.
+- Markets are no longer trading only the old strike deadline; they are now trading whether talks produce real shipping relief.
 - The missing US crew member from the downed F-15 is still reported rescued after the weekend firefight inside Iran.
-- Tehran's public line remains cautious, so the next test is whether the pause holds in practice and on shipping.
-- Hormuz remains technically open but commercially distorted, with shipping risk still doing most of the damage.
-- Oil is still headline-sensitive after the earlier drop, with traders watching every signal around shipping and ceasefire durability.
-- Lebanon remains one of the most dangerous spillover fronts, with the civilian toll still climbing.
+- Tehran's public line remains wary, and the pause is still best read as a narrow verification window rather than a durable settlement.
+- Hormuz remains technically open but commercially constrained, with shipowners and insurers still behaving as if coercion risk is live.
+- Oil remains headline-sensitive, with relief capped by lingering maritime risk and ceasefire skepticism.
+- Lebanon remains one of the most dangerous spillover fronts, and continued Israel-Hezbollah violence is the clearest spoiler risk to wider diplomacy.
 - Australia's fuel picture is stressed but improving, with fewer outages reported and more than 50 ships inbound.
-- The working outlook is now fragile pause plus mediation, not a clean peace settlement.
-- The next hard trigger is whether Hormuz conditions improve materially during the two-week window.
+- The working outlook is now fragile pause plus Islamabad talks, not a clean peace settlement.
+- The next hard trigger is whether talks reduce shipping friction in practice during the two-week window.
 
 ## How it works
 
