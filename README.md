@@ -1,4 +1,4 @@
-# OPSCEN v6.24 — Iran Theatre Intelligence Briefing
+# OPSCEN v6.25 — Iran Theatre Intelligence Briefing
 
 A real-time military operations centre dashboard tracking the 2026 Iran conflict, originally built in [Claude](https://claude.ai) and now run through a Codex-powered publishing workflow by [RETSA Group](https://retsagroup.com.au).
 
@@ -27,19 +27,19 @@ Two words. Fresh every morning. The news comes to me now.
 - **Australian-specific sections** — ASX 200, RBA rate impacts, fuel crisis monitoring
 - **UPDATED badges showing what changed since last briefing**
 
-## Current Briefing: Day 43
+## Current Briefing: Day 44
 
-- The two-week US-Iran ceasefire pause is still formally in effect, and high-level talks are now opening in Islamabad under Pakistani mediation.
-- The key shift is diplomatic, but the operational proof point is still Hormuz: commercial traffic remains distorted and confidence has not normalized.
-- Markets are no longer trading only the old strike deadline; they are now trading whether talks produce real shipping relief.
-- The missing US crew member from the downed F-15 is still reported rescued after the weekend firefight inside Iran.
-- Tehran's public line remains wary, and the pause is still best read as a narrow verification window rather than a durable settlement.
-- Hormuz remains technically open but commercially constrained, with shipowners and insurers still behaving as if coercion risk is live.
-- Oil remains headline-sensitive, with relief capped by lingering maritime risk and ceasefire skepticism.
-- Lebanon remains one of the most dangerous spillover fronts, and continued Israel-Hezbollah violence is the clearest spoiler risk to wider diplomacy.
-- Australia's fuel picture is stressed but improving, with fewer outages reported and more than 50 ships inbound.
-- The working outlook is now fragile pause plus Islamabad talks, not a clean peace settlement.
-- The next hard trigger is whether talks reduce shipping friction in practice during the two-week window.
+- The first direct US-Iran round in Islamabad ended early on Sunday, April 12 without an agreement after about 21 hours of talks.
+- That leaves the Pakistan-brokered two-week ceasefire formally alive but still unclear in practical terms.
+- The operational proof point remains Hormuz, where AP reported only 12 ships had been recorded transiting since the ceasefire while US mine-clearing moves began.
+- Markets are no longer pricing only imminent strikes; they are pricing whether any safe maritime corridor actually restores commercial confidence.
+- Both crew members from the downed US F-15 are now reported rescued, removing one earlier uncertainty from the air campaign.
+- Lebanon remains the clearest spoiler front, with the death toll now above 2,000 and direct Israel-Lebanon talks due in Washington this week.
+- Oil fell sharply into the weekend, but Reuters said Brent still settled around $95 and physical-market disruption remains severe.
+- Australia remains on fuel watch: the Guardian tracker still shows widespread station outages, at least six shipments cancelled or deferred, and 50+ ships inbound.
+- Canberra also secured a public supply assurance from Singapore on April 10, which helps the refined-fuel side but does not remove Hormuz risk.
+- The working outlook is now fragile ceasefire without deal, not a clean diplomatic breakthrough.
+- The next hard trigger is visible shipping normalization, not another headline about talks.
 
 ## How it works
 
