@@ -27,19 +27,19 @@ Two words. Fresh every morning. The news comes to me now.
 - **Australian-specific sections** — ASX 200, RBA rate impacts, fuel crisis monitoring
 - **UPDATED badges showing what changed since last briefing**
 
-## Current Briefing: Day 44
+## Current Briefing: Day 46
 
-- The first direct US-Iran round in Islamabad ended early on Sunday, April 12 without an agreement after about 21 hours of talks.
-- That leaves the Pakistan-brokered two-week ceasefire formally alive but still unclear in practical terms.
-- The operational proof point remains Hormuz, where AP reported only 12 ships had been recorded transiting since the ceasefire while US mine-clearing moves began.
-- Markets are no longer pricing only imminent strikes; they are pricing whether any safe maritime corridor actually restores commercial confidence.
-- Both crew members from the downed US F-15 are now reported rescued, removing one earlier uncertainty from the air campaign.
-- Lebanon remains the clearest spoiler front, with the death toll now above 2,000 and direct Israel-Lebanon talks due in Washington this week.
-- Oil fell sharply into the weekend, but Reuters said Brent still settled around $95 and physical-market disruption remains severe.
-- Australia remains on fuel watch: the Guardian tracker still shows widespread station outages, at least six shipments cancelled or deferred, and 50+ ships inbound.
-- Canberra also secured a public supply assurance from Singapore on April 10, which helps the refined-fuel side but does not remove Hormuz risk.
-- The working outlook is now fragile ceasefire without deal, not a clean diplomatic breakthrough.
-- The next hard trigger is visible shipping normalization, not another headline about talks.
+- The two-week US-Iran ceasefire pause has not produced a settlement, and the Islamabad talks have now failed to reach agreement.
+- The key shift is from diplomacy back to coercion: the US is moving to blockade shipping entering and exiting Iranian ports.
+- Hormuz remains technically open to non-Iranian traffic, but commercial confidence has not normalized and tankers are already steering clear.
+- The missing US crew member from the downed F-15 is still reported rescued after the weekend firefight inside Iran.
+- Tehran's public line is now harder again, with Iranian officials treating the blockade as piracy and a breach of the ceasefire framework.
+- Hormuz remains technically open but commercially constrained, with shipowners and insurers still behaving as if coercion risk is live.
+- Oil has swung back higher as markets price the blockade and renewed tanker avoidance.
+- Lebanon remains one of the most dangerous spillover fronts, and continued Israel-Hezbollah violence is the clearest spoiler risk to wider diplomacy.
+- Australia's fuel picture is stressed but improving, with fewer outages reported and more than 50 ships inbound.
+- The working outlook is now fragile ceasefire plus maritime coercion, not a clean peace settlement.
+- The next hard trigger is whether the blockade widens the conflict or forces a new round of concessions.
 
 ## How it works
 
