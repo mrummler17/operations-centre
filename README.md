@@ -1,4 +1,4 @@
-# OPSCEN v6.27 — Iran Theatre Intelligence Briefing
+# OPSCEN v6.26 — Iran Theatre Intelligence Briefing
 
 A real-time military operations centre dashboard tracking the 2026 Iran conflict, originally built in [Claude](https://claude.ai) and now run through a Codex-powered publishing workflow by [RETSA Group](https://retsagroup.com.au).
 
@@ -27,15 +27,19 @@ Two words. Fresh every morning. The news comes to me now.
 - **Australian-specific sections** — ASX 200, RBA rate impacts, fuel crisis monitoring
 - **UPDATED badges showing what changed since last briefing**
 
-## Current Briefing: Day 48
+## Current Briefing: Day 49
 
-- The U.S. blockade of Iranian ports is still active on April 16, 2026, and AP reports Pakistani mediators are still trying to get a second round of U.S.-Iran talks back to Islamabad, but no meeting has been formally locked in.
-- AP also reports U.S. Central Command said no ships got past the blockade in the first 48 hours and 10 merchant vessels turned around, which keeps the coercive pressure real even though the Strait of Hormuz is not fully shut.
-- The most important Australia-specific change is the Geelong refinery fire: Fire Rescue Victoria said the blaze was extinguished and that diesel and petrol production were continuing at reduced rates for safety reasons.
-- Australia remains on fuel watch rather than fuel panic. Bowen's April 13 briefing still points to 38 days of petrol, 31 days of diesel, 28 days of jet fuel and 57 ships inbound, but the domestic refining picture is now weaker than yesterday.
-- Check Petrol's live outage tracker shows 690 stations affected nationally across 964 fuel-type outages, with overall availability at 96% across 7,498 tracked stations.
-- The working outlook is still a fragile maritime standoff with live mediation, not a verified return to the heaviest U.S. strike phase and not yet a durable settlement.
-- The next hard triggers are whether a new Islamabad round is actually scheduled, whether the ceasefire is formally extended before April 22, 2026, and how quickly Geelong petrol output is restored.
+- The two-week US-Iran ceasefire pause has not produced a settlement, and the blockade of Iranian port traffic is now the main coercive tool in play.
+- The key shift is that Tehran now appears to be probing for partial relief by floating freer passage on the Omani side of Hormuz.
+- Hormuz remains technically open to non-Iranian traffic, but commercial confidence has not normalized and tankers are still steering clear.
+- The missing US crew member from the downed F-15 is still reported rescued after the weekend firefight inside Iran.
+- Tehran's public line is still hard, with Iranian officials treating the blockade as piracy, but the Omani-lane proposal suggests it is also testing limited de-escalation options.
+- Hormuz remains technically open but commercially constrained, with shipowners and insurers still behaving as if coercion risk is live.
+- Oil remains headline-sensitive as markets price the blockade against the possibility of narrow shipping relief.
+- Lebanon remains one of the most dangerous spillover fronts, and continued Israel-Hezbollah violence is the clearest spoiler risk to wider diplomacy.
+- Australia's fuel picture is stressed but improving, with fewer outages reported and more than 50 ships inbound.
+- The working outlook is now fragile ceasefire plus maritime coercion, with limited probe signals rather than a clean peace settlement.
+- The next hard trigger is whether any partial Hormuz easing changes tanker behavior in practice.
 
 ## How it works
 
