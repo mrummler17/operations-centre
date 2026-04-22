@@ -1,4 +1,4 @@
-# OPSCEN v6.26 — Iran Theatre Intelligence Briefing
+# OPSCEN v6.27 — Iran Theatre Intelligence Briefing
 
 A real-time military operations centre dashboard tracking the 2026 Iran conflict, originally built in [Claude](https://claude.ai) and now run through a Codex-powered publishing workflow by [RETSA Group](https://retsagroup.com.au).
 
@@ -27,19 +27,19 @@ Two words. Fresh every morning. The news comes to me now.
 - **Australian-specific sections** — ASX 200, RBA rate impacts, fuel crisis monitoring
 - **UPDATED badges showing what changed since last briefing**
 
-## Current Briefing: Day 49
+## Current Briefing: Day 54
 
-- The two-week US-Iran ceasefire pause has not produced a settlement, and the blockade of Iranian port traffic is now the main coercive tool in play.
-- The key shift is that Tehran now appears to be probing for partial relief by floating freer passage on the Omani side of Hormuz.
+- The two-week US-Iran ceasefire pause has now been extended indefinitely, but it still has not produced a settlement.
+- The key shift is that the ceasefire has been prolonged while the blockade of Iranian port traffic remains the main coercive tool in play.
 - Hormuz remains technically open to non-Iranian traffic, but commercial confidence has not normalized and tankers are still steering clear.
 - The missing US crew member from the downed F-15 is still reported rescued after the weekend firefight inside Iran.
-- Tehran's public line is still hard, with Iranian officials treating the blockade as piracy, but the Omani-lane proposal suggests it is also testing limited de-escalation options.
+- Tehran's public line is still hard, with Iranian officials insisting the blockade must end before negotiations can genuinely resume.
 - Hormuz remains technically open but commercially constrained, with shipowners and insurers still behaving as if coercion risk is live.
-- Oil remains headline-sensitive as markets price the blockade against the possibility of narrow shipping relief.
+- Oil remains headline-sensitive as markets price the ceasefire extension against the continued blockade.
 - Lebanon remains one of the most dangerous spillover fronts, and continued Israel-Hezbollah violence is the clearest spoiler risk to wider diplomacy.
 - Australia's fuel picture is stressed but improving, with fewer outages reported and more than 50 ships inbound.
-- The working outlook is now fragile ceasefire plus maritime coercion, with limited probe signals rather than a clean peace settlement.
-- The next hard trigger is whether any partial Hormuz easing changes tanker behavior in practice.
+- The working outlook is now extended ceasefire plus maritime coercion, not a clean peace settlement.
+- The next hard trigger is whether a unified Iranian proposal actually arrives before the ceasefire extension loses credibility.
 
 ## How it works
 
