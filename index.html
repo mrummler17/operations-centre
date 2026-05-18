@@ -22,6 +22,11 @@
   .scanlines { position: fixed; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none; z-index: 9999; background: repeating-linear-gradient(0deg, transparent, transparent 2px, var(--crt-scanline) 2px, var(--crt-scanline) 4px); }
   .crt-glow { text-shadow: 0 0 5px currentColor, 0 0 10px currentColor; }
   .opscen-container { max-width: 1200px; margin: 0 auto; padding: 12px; min-height: 100vh; }
+  .archive-banner { border: 1px solid var(--crt-amber); padding: 12px 16px; margin-bottom: 12px; background: linear-gradient(180deg, rgba(60, 35, 0, 0.35) 0%, rgba(18, 12, 0, 0.9) 100%); box-shadow: inset 0 0 20px rgba(255,170,0,0.08); }
+  .archive-banner-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 6px; }
+  .archive-banner-title { color: var(--crt-amber); font-family: 'Share Tech Mono', monospace; font-size: 15px; letter-spacing: 2px; text-transform: uppercase; }
+  .archive-banner-badge { border: 1px solid var(--crt-amber); color: var(--crt-amber); padding: 2px 8px; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; }
+  .archive-banner-copy { color: #ffd899; font-family: 'Share Tech Mono', monospace; font-size: 12px; line-height: 1.55; }
   .header-bar { border: 1px solid var(--crt-green); padding: 12px 16px; margin-bottom: 12px; background: linear-gradient(180deg, rgba(0,40,0,0.3) 0%, var(--crt-bg) 100%); position: relative; overflow: hidden; }
   .header-bar::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: var(--crt-green); box-shadow: 0 0 8px var(--crt-green); }
   .header-title { font-size: 28px; letter-spacing: 6px; color: var(--crt-green); text-align: center; }
@@ -530,6 +535,15 @@ function OPSCEN() {
     <React.Fragment>
       <div className="scanlines" />
       <div className="opscen-container" style={{ fontSize: fontScale }}>
+        <div className="archive-banner">
+          <div className="archive-banner-head">
+            <div className="archive-banner-title">archive notice // opscen is now retired</div>
+            <div className="archive-banner-badge">final update: v6.30 / day 68</div>
+          </div>
+          <div className="archive-banner-copy">
+            this site is no longer being actively updated. the current dashboard remains online as a final snapshot of the opscen project and should now be treated as an archive rather than a live operational briefing.
+          </div>
+        </div>
         <div className="header-bar">
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
             <div className="header-title crt-glow">{"◤"} OPSCEN v{BRIEFING.site.version} {"◢"}</div>
@@ -589,7 +603,7 @@ function OPSCEN() {
         <div className="footer-bar">
           <span>OPSCEN v{BRIEFING.site.version} • RETSA GROUP INTELLIGENCE</span>
           <span>CLASSIFICATION: OPEN SOURCE</span>
-          <span><span className="blink" style={{ color: "var(--crt-red)" }}>•</span> {BRIEFING.site.liveLabel}</span>
+          <span style={{ color: "var(--crt-amber)" }}>ARCHIVE MODE • FINAL SNAPSHOT</span>
         </div>
         <div className="built-with">
           Originally built in <a href={BRIEFING.links.claudeUrl} target="_blank" rel="noopener">Claude</a>, now run through a Codex-powered workflow by <a href={BRIEFING.links.companyUrl} target="_blank" rel="noopener">RETSA Group</a> • <a href={BRIEFING.links.authorUrl} target="_blank" rel="noopener">@Marcus_Rummler</a> • Fuel outage data via <a href={BRIEFING.links.fuelUrl} target="_blank" rel="noopener">checkpetrol.com.au</a>

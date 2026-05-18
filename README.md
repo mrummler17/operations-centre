@@ -1,5 +1,7 @@
 # OPSCEN v6.30 — Iran Theatre Intelligence Briefing
 
+> Archive notice: OPSCEN is now retired. `v6.30 / Day 68` is the final update, and this site remains online as a snapshot of the project rather than a live briefing.
+
 A real-time military operations centre dashboard tracking the 2026 Iran conflict, originally built in [Claude](https://claude.ai) and now run through a Codex-powered publishing workflow by [RETSA Group](https://retsagroup.com.au).
 
 **[Live Dashboard →](https://mrummler17.github.io/operations-centre)**
